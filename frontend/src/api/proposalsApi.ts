@@ -9,6 +9,7 @@ import {
   ProposalFeedbackSubmissionDTO,
   proposals as defaultProposals,
 } from '../data/proposals'
+import { getToken } from '../data/auth'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
@@ -60,12 +61,22 @@ export async function submitProposalFeedback(
   feedback: ProposalFeedbackSubmissionDTO
   community_aggregate: ProposalCommunityAggregateDTO
 }> {
+  const token = getToken()
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  }
+  if (token) headers.Authorization = `Bearer ${token}`
+
   const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(submission.proposal_id)}/feedback`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    headers,
     body: JSON.stringify(submission),
     signal: AbortSignal.timeout(15000),
   })
+  if (res.status === 401) {
+    throw new Error('Please log in to submit feedback. Your answers are still here.')
+  }
   if (!res.ok) throw new Error('Your response could not be saved. Your answers are still here; please try again.')
   return res.json()
 }

@@ -5,6 +5,8 @@ import { proposals } from './data/proposals'
 import type { Topic } from './data/proposals'
 import { Icon, icon } from './components/Icon'
 import { Sidebar } from './components/Sidebar'
+import { AuthBar } from './components/AuthBar'
+import { fetchCurrentUser, getStoredUser, logout, type AuthUser } from './data/auth'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -37,6 +39,7 @@ export default function App() {
   const [mapError, setMapError] = useState<boolean>(false)
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [dialogData, setDialogData] = useState<DialogData | null>(null)
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(() => getStoredUser())
 
   const [saved, setSaved] = useState<string[]>(() => {
     try {
@@ -80,6 +83,27 @@ export default function App() {
       setToastMessage(null)
     }, 4500)
   }, [])
+
+  // Validate any stored token against the server once on load. If it is
+  // missing or expired the user is quietly treated as logged out.
+  useEffect(() => {
+    let active = true
+    fetchCurrentUser().then(user => {
+      if (active) setCurrentUser(user)
+    })
+    return () => { active = false }
+  }, [])
+
+  const handleAuthenticated = useCallback((user: AuthUser) => {
+    setCurrentUser(user)
+    showToast(`Signed in as ${user.username}. You can now submit feedback.`)
+  }, [showToast])
+
+  const handleLogout = useCallback(() => {
+    logout()
+    setCurrentUser(null)
+    showToast('Logged out. You can still browse all proposals and feedback.')
+  }, [showToast])
 
   const toggleFollow = useCallback((id: string) => {
     setSaved(prev => {
@@ -354,6 +378,12 @@ export default function App() {
         <button className="about-button" id="about-button" onClick={handleOpenAbout}>
           About this project <Icon name="external" />
         </button>
+
+        <AuthBar
+          currentUser={currentUser}
+          onAuthenticated={handleAuthenticated}
+          onLogout={handleLogout}
+        />
       </header>
 
       {/* Main Workspace Layout */}
@@ -376,6 +406,7 @@ export default function App() {
           onClearFilters={clearFilters}
           onToggleFollow={toggleFollow}
           onFitResults={fitResults}
+          currentUser={currentUser}
         />
 
         {/* Map Shell & Outer Map Controls */}

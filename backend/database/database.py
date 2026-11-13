@@ -58,6 +58,9 @@ def ensure_indexes(db: Database) -> None:
             name="uniq_proposal_participant",
         )
         db.feedback.create_index([("proposal_id", ASCENDING), ("submitted_at", ASCENDING)])
+
+        # Users collection: usernames must be unique
+        db.users.create_index([("username", ASCENDING)], unique=True, name="uniq_username")
     except Exception:
         # Indexes may fail if offline or permissions are read-only; allow gracefully
         pass

@@ -153,3 +153,32 @@
   .feedback-form-actions .feedback-action { width:100%; }
   #detail-content .feedback-community-heading h2 { font-size:21px; }
 }
+
+/* Login gate shown in place of the feedback form when not signed in. */
+.feedback-login-gate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid var(--line, #e6e8df);
+  border-radius: 14px;
+  background: #fffef9;
+}
+
+.feedback-login-gate h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.feedback-login-gate p {
+  margin: 0;
+  color: var(--muted, #747d73);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.feedback-login-gate .feedback-invitation-icon .icon {
+  width: 22px;
+  height: 22px;
+}

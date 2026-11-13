@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import type { Proposal, Topic } from '../data/proposals'
+import type { AuthUser } from '../data/auth'
 import { Icon } from './Icon'
 import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
 import type { CommunitySnapshot } from './ProposalFeedback'
@@ -32,6 +33,7 @@ export interface SidebarProps {
   onToggleFollow: (id: string) => void
   onFitResults: () => void
   sidebarRef?: React.RefObject<HTMLElement | null>
+  currentUser: AuthUser | null
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -51,6 +53,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onToggleFollow,
   onFitResults,
   sidebarRef,
+  currentUser,
 }) => {
   const [detailTab, setDetailTab] = useState<'overview' | 'feedback' | 'updates'>('overview')
   const [feedbackOpen, setFeedbackOpen] = useState(false)
@@ -366,7 +369,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div hidden={detailTab !== 'feedback'}>
               <ProposalFeedback key={selectedProposal.id} proposal={selectedProposal}
                 isResponding={feedbackOpen && detailTab === 'feedback'} onRespondingChange={setFeedbackOpen}
-                onCommunityChange={setCommunitySnapshot} />
+                onCommunityChange={setCommunitySnapshot} currentUser={currentUser} />
             </div>
 
             {detailTab === 'updates' && (
