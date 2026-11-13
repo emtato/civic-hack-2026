@@ -85,8 +85,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {!selectedProposal ? (
         <div id="explorer">
           <div className="sidebar-heading">
-            <span className="eyebrow">YOUR NEIGHBOURHOOD. YOUR VOICE.</span>
-            <h1>Change starts <br />close to home.</h1>
+            <h1>Explore local proposals</h1>
             <p>Discover what’s proposed. Share what matters to you.</p>
           </div>
 
@@ -211,66 +210,68 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {selectedProposal.status}
             </span>
             <span className="demo-tag">DEMO STATUS</span>
-          </div>
-          <div className="detail-topic">
-            <Icon name={topicIcons[selectedProposal.topic]} />
-            {selectedProposal.topic}
+            <span className="detail-topic">
+              <Icon name={topicIcons[selectedProposal.topic]} />
+              {selectedProposal.topic}
+            </span>
+            <span className="card-neighbourhood">
+              <Icon name="pin" />
+              {selectedProposal.neighbourhood}
+            </span>
           </div>
           <h1 tabIndex={-1} id="detail-title" ref={detailTitleRef}>
             {selectedProposal.title}
           </h1>
-          <p className="card-neighbourhood">
-            <Icon name="pin" />
-            {selectedProposal.neighbourhood}
-          </p>
           <p className="detail-summary">{selectedProposal.summary}</p>
 
-          <button
-            className={`follow-button ${saved.includes(selectedProposal.id) ? 'following' : ''}`}
-            id="follow-button"
-            aria-pressed={saved.includes(selectedProposal.id)}
-            onClick={() => onToggleFollow(selectedProposal.id)}
-          >
-            <Icon name={saved.includes(selectedProposal.id) ? 'check' : 'bookmark'} />
-            {saved.includes(selectedProposal.id) ? 'Following this proposal' : 'Follow this proposal'}
-          </button>
+          <div className="detail-toolbar">
+            <div className="detail-tabs" role="tablist" aria-label="Proposal information">
+              <button
+                id="tab-overview"
+                role="tab"
+                aria-selected={detailTab === 'overview'}
+                aria-controls="detail-content"
+                tabIndex={detailTab === 'overview' ? 0 : -1}
+                data-detail-tab="overview"
+                onClick={() => setDetailTab('overview')}
+                onKeyDown={e => handleDetailTabKeyDown(e, 0)}
+              >
+                Overview
+              </button>
+              <button
+                id="tab-feedback"
+                role="tab"
+                aria-selected={detailTab === 'feedback'}
+                aria-controls="detail-content"
+                tabIndex={detailTab === 'feedback' ? 0 : -1}
+                data-detail-tab="feedback"
+                onClick={() => setDetailTab('feedback')}
+                onKeyDown={e => handleDetailTabKeyDown(e, 1)}
+              >
+                Community
+              </button>
+              <button
+                id="tab-updates"
+                role="tab"
+                aria-selected={detailTab === 'updates'}
+                aria-controls="detail-content"
+                tabIndex={detailTab === 'updates' ? 0 : -1}
+                data-detail-tab="updates"
+                onClick={() => setDetailTab('updates')}
+                onKeyDown={e => handleDetailTabKeyDown(e, 2)}
+              >
+                Updates
+              </button>
+            </div>
 
-          <div className="detail-tabs" role="tablist" aria-label="Proposal information">
             <button
-              id="tab-overview"
-              role="tab"
-              aria-selected={detailTab === 'overview'}
-              aria-controls="detail-content"
-              tabIndex={detailTab === 'overview' ? 0 : -1}
-              data-detail-tab="overview"
-              onClick={() => setDetailTab('overview')}
-              onKeyDown={e => handleDetailTabKeyDown(e, 0)}
+              className={`follow-button ${saved.includes(selectedProposal.id) ? 'following' : ''}`}
+              id="follow-button"
+              aria-pressed={saved.includes(selectedProposal.id)}
+              onClick={() => onToggleFollow(selectedProposal.id)}
             >
-              Overview
-            </button>
-            <button
-              id="tab-feedback"
-              role="tab"
-              aria-selected={detailTab === 'feedback'}
-              aria-controls="detail-content"
-              tabIndex={detailTab === 'feedback' ? 0 : -1}
-              data-detail-tab="feedback"
-              onClick={() => setDetailTab('feedback')}
-              onKeyDown={e => handleDetailTabKeyDown(e, 1)}
-            >
-              Community
-            </button>
-            <button
-              id="tab-updates"
-              role="tab"
-              aria-selected={detailTab === 'updates'}
-              aria-controls="detail-content"
-              tabIndex={detailTab === 'updates' ? 0 : -1}
-              data-detail-tab="updates"
-              onClick={() => setDetailTab('updates')}
-              onKeyDown={e => handleDetailTabKeyDown(e, 2)}
-            >
-              Updates
+              <Icon name={saved.includes(selectedProposal.id) ? 'check' : 'bookmark'} />
+              {saved.includes(selectedProposal.id) ? 'Following this proposal' : 'Follow this proposal'}
             </button>
           </div>
 
