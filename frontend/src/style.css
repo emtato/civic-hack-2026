@@ -383,7 +383,8 @@ button {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-bottom:11px
+  margin-bottom:11px;
+  gap:10px
 }
 
 .status-badge {
@@ -401,7 +402,8 @@ button {
   width:5px;
   height:5px;
   border-radius:50%;
-  background:currentColor
+  background:currentColor;
+  flex-shrink:0
 }
 
 .status-badge.open {
@@ -419,9 +421,50 @@ button {
   background:#edf0ee
 }
 
+.status-badge.notice-application {
+  color:#245b86;
+  background:#e8f2fc
+}
+
+.status-badge.notice-meeting {
+  color:#704698;
+  background:#f1eafa
+}
+
+.status-badge.notice-intention {
+  color:#946119;
+  background:#fff3d6
+}
+
+.status-badge.notice-amendment {
+  color:#963d6b;
+  background:#fbeaf2
+}
+
+.status-badge.notice-proposal {
+  color:#a34e25;
+  background:#fff0e5
+}
+
+.status-badge.notice-decision {
+  color:#366b42;
+  background:#eaf4e7
+}
+
+.status-badge.notice-surplus {
+  color:#775738;
+  background:#f3ece2
+}
+
+.status-badge.notice-public {
+  color:#246f70;
+  background:#e4f3f1
+}
+
 .card-category {
   width:27px;
   height:27px;
+  flex-shrink:0;
   display:grid;
   place-items:center;
   background:#f0f2e8;

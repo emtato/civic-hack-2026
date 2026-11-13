@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import type { Proposal, Topic } from '../data/proposals'
 import type { AuthUser } from '../data/auth'
+import { getProposalPresentation } from '../data/proposalPresentation'
 import { Icon } from './Icon'
 import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
 import type { CommunitySnapshot } from './ProposalFeedback'
@@ -11,9 +12,6 @@ const topicIcons: Record<Topic, string> = {
   'Streets & transit': 'bus',
   Accessibility: 'access',
 }
-
-const statusClass = (status: string) =>
-  status === 'Open for feedback' ? 'open' : status === 'Updated proposal' ? 'updated' : 'review'
 
 export interface SidebarProps {
   selectedProposal: Proposal | null
@@ -70,6 +68,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const [feedbackOpen, setFeedbackOpen] = useState(false)
   const [communitySnapshot, setCommunitySnapshot] = useState<CommunitySnapshot | null>(null)
   const community = communitySnapshot?.proposalId === selectedProposal?.id ? communitySnapshot : null
+  const selectedPresentation = selectedProposal ? getProposalPresentation(selectedProposal) : null
   const detailTitleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
@@ -167,37 +166,40 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <button className="text-button" onClick={onRetryCatalogue}>Try again</button>
               </div>
             ) : filteredProposals.length > 0 ? (
-              filteredProposals.map(p => (
-                <button
-                  key={p.id}
-                  className="proposal-card"
-                  data-proposal={p.id}
-                  onClick={() => onSelectProposal(p.id)}
-                >
-                  <div className="card-top">
-                    <span className={`status-badge ${statusClass(p.status)}`}>
-                      <i />
-                      {p.status}
-                    </span>
-                    <span className="card-category">
-                      <Icon name={topicIcons[p.topic] || 'pin'} />
-                    </span>
-                  </div>
-                  <h2>{p.title}</h2>
-                  <p className="card-neighbourhood">
-                    <Icon name="pin" />
-                    {p.neighbourhood}
-                  </p>
-                  <p className="card-summary">{p.summary}</p>
-                  {!p.coordinates && <p className="card-neighbourhood">Location not mapped</p>}
-                  <div className="card-footer">
-                    <span>{p.topic}</span>
-                    <span className="card-cta">
-                      Explore proposal <Icon name="arrow" />
-                    </span>
-                  </div>
-                </button>
-              ))
+              filteredProposals.map(p => {
+                const presentation = getProposalPresentation(p)
+                return (
+                  <button
+                    key={p.id}
+                    className="proposal-card"
+                    data-proposal={p.id}
+                    onClick={() => onSelectProposal(p.id)}
+                  >
+                    <div className="card-top">
+                      <span className={`status-badge ${presentation.badgeClass}`} title={p.status}>
+                        <i aria-hidden="true" />
+                        {presentation.badgeLabel}
+                      </span>
+                      <span className="card-category">
+                        <Icon name={topicIcons[p.topic] || 'pin'} />
+                      </span>
+                    </div>
+                    <h2>{presentation.title}</h2>
+                    <p className="card-neighbourhood">
+                      <Icon name="pin" />
+                      {p.neighbourhood}
+                    </p>
+                    <p className="card-summary">{p.summary}</p>
+                    {!p.coordinates && <p className="card-neighbourhood">Location not mapped</p>}
+                    <div className="card-footer">
+                      <span>{p.topic}</span>
+                      <span className="card-cta">
+                        Explore proposal <Icon name="arrow" />
+                      </span>
+                    </div>
+                  </button>
+                )
+              })
             ) : (
               <div className="empty-state">
                 <Icon name={activeTab === 'saved' ? 'bookmark' : 'search'} />
@@ -225,9 +227,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <Icon name="back" /> Back to proposals
           </button>
           <div className="detail-kicker">
-            <span className={`status-badge ${statusClass(selectedProposal.status)}`}>
-              <i />
-              {selectedProposal.status}
+            <span className={`status-badge ${selectedPresentation?.badgeClass}`} title={selectedProposal.status}>
+              <i aria-hidden="true" />
+              {selectedPresentation?.badgeLabel}
             </span>
             <span className="detail-topic">
               <Icon name={topicIcons[selectedProposal.topic] || 'pin'} />
@@ -239,7 +241,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </span>
           </div>
           <h1 tabIndex={-1} id="detail-title" ref={detailTitleRef}>
-            {selectedProposal.title}
+            {selectedPresentation?.title}
           </h1>
 
           <div className="detail-toolbar">

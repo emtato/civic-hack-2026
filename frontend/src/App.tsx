@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import type { Proposal, Topic } from './data/proposals'
 import { fetchProposals } from './api/proposalsApi'
 import { hasMapCoordinates } from './api/catalogue'
+import { getProposalPresentation } from './data/proposalPresentation'
 import { Icon, icon } from './components/Icon'
 import { Sidebar } from './components/Sidebar'
 import { AuthBar } from './components/AuthBar'
@@ -295,6 +296,7 @@ export default function App() {
     markerLayer.clearLayers()
 
     filteredProposals.filter(hasMapCoordinates).forEach(p => {
+      const { title, badgeLabel } = getProposalPresentation(p)
       const marker = L.marker(p.coordinates, {
         icon: L.divIcon({
           className: 'proposal-marker-wrap',
@@ -302,13 +304,13 @@ export default function App() {
           iconSize: [46, 54],
           iconAnchor: [23, 50],
         }),
-        title: p.title,
-        alt: `${p.title}, ${p.status}`,
+        title,
+        alt: `${title}, ${badgeLabel}, ${p.status}`,
         keyboard: true,
       }).addTo(markerLayer)
 
       const tooltip = document.createElement('span')
-      tooltip.textContent = p.title
+      tooltip.textContent = title
       marker.bindTooltip(tooltip, { direction: 'top', offset: [0, -44], className: 'proposal-tooltip' })
       marker.on('click', () => openProposal(p.id))
     })
