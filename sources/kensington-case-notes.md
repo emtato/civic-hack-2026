@@ -1,6 +1,6 @@
 # First-case recommendation: Kensington Market Safe Streets
 
-Checked November 13, 2026. These are team research notes, not an official municipal record or an implemented dataset. Recommendation: use the 2023 consultation/revision as a historical demonstration, with synthetic participants. The user has not yet confirmed this case choice.
+Checked November 13, 2026. These are team research notes, not an official municipal record or an implemented dataset. Following the user's acquisition correction, Kensington is a possible historical revision example within a selectively imported multi-proposal catalogue. It is not the application scope or an approved standalone starting implementation.
 
 ## Why start here
 
@@ -27,6 +27,6 @@ Do not present the 2023 consultation as accepting official input today. The appl
 
 ## Data acquisition decision
 
-For the first working cycle, curate this small source package into the application's own records. A third-party proposal API is not a prerequisite. FastAPI will expose the application's own proposal/response API to the frontend. Automated city-source ingestion can be designed later without changing the core resident feedback workflow.
+The current plan is a reusable selected-batch importer, one common proposal format, MongoDB storage and a generic FastAPI/frontend experience. This source package can supply a deep revision example within that catalogue. Do not hardcode the application around this case.
 
 Still outstanding: final case confirmation, exact snapshot feature extraction, map coordinates/geometry, shared fixture creation, and two secondary real-item accuracy checks.
