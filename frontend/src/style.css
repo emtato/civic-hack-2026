@@ -1141,6 +1141,13 @@ dialog p {
     border:0;
     padding-bottom:66px
   }
+  .workspace.detail-open .sidebar {
+    width:100%;
+    max-width:none
+  }
+  .follow-button {
+    max-width:none
+  }
   .sidebar-heading {
     padding-top:28px
   }
