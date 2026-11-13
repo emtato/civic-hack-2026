@@ -4,6 +4,36 @@ The importer is implemented in `importer.py`; the rich internal contract is
 `imported_data_dto.py`. The selection manifest is `data/example-selection.json`.
 Run commands below from `backend/` using the project's virtual environment.
 
+## Structured example enrichment
+
+The selected batch has also been formatted using `format_examples.py` and the
+source-anchored interpretations in `data/proposal-enrichment.json`. On November
+13, approximately 2:23 p.m. Eastern, all 24 existing `imported_proposals` records
+were updated in place and read back successfully: 24 summaries, 52 evidence-linked
+features, category-specific details, extracted date mentions for 19 records,
+16 representative source points and eight citywide examples.
+
+```sh
+.venv/bin/python format_examples.py
+.venv/bin/python format_examples.py --write
+```
+
+The first command makes `data/proposals.formatted.json` locally. The second
+reads the selected records from MongoDB, validates the complete batch, updates
+only enrichment fields and verifies the saved values by reading them back.
+Existing IDs, raw snapshots, published proposals and feedback are preserved.
+Existing nonempty summaries/features/versions are retained. Source-content hashes
+must match the curated evidence before enrichment is applied. This is a selected
+example formatter, not an automatic semantic extractor for arbitrary new notices.
+
+Status is dated to the source notice, not a claim of current consultation status.
+Dates retain their original context and need verification before being used as
+deadlines. Representative map points use an actual supplied address coordinate;
+they are not surveyed project boundaries and remain geographically unverified.
+One version is stored for the notice snapshot; no municipal revision is invented.
+Unsupported amounts, impacts, neighbourhoods and current participation remain
+unknown. The app still needs its own catalogue-fetch/display integration.
+
 ## What was downloaded
 
 Two unmodified Toronto Public Notices JSON responses were fetched for research:
@@ -114,7 +144,9 @@ The import does **not** invent summaries, infer personal effects, assume an
 adopted decision is still open, infer deadlines from meetings, or treat repeated
 source notices as confirmed participant responses. All 24 initially need review.
 The raw API's event arrays were empty even for notices containing meeting dates
-in their HTML descriptions, so dates and participation remain unpopulated.
+in their HTML descriptions. The raw-import step leaves these unknown; the
+example formatter subsequently extracts date mentions and available archived
+participation instructions while retaining their context and review flags.
 
 The current frontend API uses the separate `proposals_DTO.py` display contract.
 It needs a reviewed projection/publishing step before these rich imports appear

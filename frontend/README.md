@@ -1,6 +1,6 @@
 # proviso frontend
 
-A Vite + React + TypeScript prototype for discovering proposals and recording feedback. The labelled demo mode works without a backend or API key.
+A Vite + React + TypeScript prototype for discovering proposals and recording feedback. The catalogue loads from FastAPI; feedback retains its explicitly labelled local demo mode when its endpoints are unavailable.
 
 ```sh
 npm install
@@ -31,7 +31,35 @@ npm run dev
 - `src/components/ProposalFeedback.css`: feedback-specific styling and responsive layouts.
 - `src/data/proposalFeedbackDTO.ts`: the shared aggregate/submission contract and immutable demo aggregate updates.
 - `src/data/feedbackSession.ts`: unverified browser identity and explicitly local demo storage.
-- `src/data/proposals.ts`: typed frontend fixtures. Replace these with API responses later.
+- `src/data/proposals.ts`: display types and legacy fixtures. The explorer/map do not load the fixture array.
+- `src/api/proposalsApi.ts`: published catalogue and feedback requests.
+- `src/api/catalogue.ts`: validation of public catalogue records and map-coordinate checks.
+
+## Proposal catalogue connection
+
+The explorer calls `GET /api/proposals` on startup and stores the response in
+React state. `VITE_API_BASE_URL` defaults to `http://localhost:8000`; copy
+`.env.example` to `.env.local` to choose another backend origin. Restart Vite
+after changing the setting; deployed builds need it configured at build time.
+The backend must allow the frontend origin through CORS.
+
+The expected response is an array of published display DTOs: `id`, `title`,
+`neighbourhood`, `topic`, `status`, `coordinates`, `summary`, `changes`, `source`,
+`shape` and optional `community_aggregate`. This is not the rich import envelope.
+The backend owns conversion of imported records to this format.
+
+The catalogue shows loading, a retryable error, or an empty published catalogue.
+Neither request failure nor an empty array silently loads fixtures. Topic/status
+filters and the map legend come from fetched records. Missing or invalid
+coordinates keep a record in the list without a marker; coordinate order is
+latitude/longitude. Missing shapes do not create invented project boundaries.
+Saved follow IDs survive asynchronous loading. Source titles render as plain
+text in map tooltips. Existing sample comments are explicitly labelled examples.
+
+Verified using a temporary API fixture: error/retry recovery, dynamic categories,
+two records with one marker, filtering and opening an unmapped record, and an
+empty response. This does not verify the parallel backend's imported-record
+projection or production deployment.
 - `src/style.css`: layout, visual styling and mobile breakpoints.
 
 Project references are real, but summaries, statuses, locations, feature questions and seeded community feedback are illustrative. They do not establish an active participation window, official boundaries or a verified proposal version. Feedback is not an official City submission. Use synthetic input in this prototype.

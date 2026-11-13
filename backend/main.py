@@ -1,7 +1,7 @@
 """FastAPI entry point and HTTP controller.
 
 Run from backend/ with:
-    uvicorn main:app --reload
+.venv/bin/python -m uvicorn main:app --reload
 """
 
 import os

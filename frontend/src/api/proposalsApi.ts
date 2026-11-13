@@ -1,53 +1,41 @@
 /**
  * Client API for proposals and community feedback persistence.
- * Read-only catalogue calls can use sample proposals. Writes must succeed on the server.
+ * Catalogue and feedback calls use the server; catalogue failures stay visible.
  */
 
-import {
+import type {
   Proposal,
   ProposalCommunityAggregateDTO,
   ProposalFeedbackSubmissionDTO,
-  proposals as defaultProposals,
 } from '../data/proposals'
 import { getToken } from '../data/auth'
+import { parseProposalCatalogue } from './catalogue'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
 /**
- * Fetch all proposals from MongoDB backend (or fallback to static set).
+ * Fetch the published proposal catalogue. An empty array is a valid result.
  */
-export async function fetchProposals(): Promise<Proposal[]> {
-  try {
-    const res = await fetch(`${API_BASE}/api/proposals`, {
-      headers: { Accept: 'application/json' },
-    })
-    if (res.ok) {
-      const data: Proposal[] = await res.json()
-      if (Array.isArray(data) && data.length > 0) {
-        return data
-      }
-    }
-  } catch (err) {
-    console.warn('Backend API unavailable, using local proposals:', err)
-  }
-  return defaultProposals
+export async function fetchProposals(signal?: AbortSignal): Promise<Proposal[]> {
+  const timeout = AbortSignal.timeout(20000)
+  const res = await fetch(`${API_BASE}/api/proposals`, {
+    headers: { Accept: 'application/json' },
+    signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
+  })
+  if (!res.ok) throw new Error('Proposals could not be loaded. Please try again.')
+  return parseProposalCatalogue(await res.json())
 }
 
 /**
- * Fetch a single proposal by ID from MongoDB backend (or fallback to static set).
+ * Fetch one published proposal. Missing records return null.
  */
 export async function fetchProposal(id: string): Promise<Proposal | null> {
-  try {
-    const res = await fetch(`${API_BASE}/api/proposals/${id}`, {
-      headers: { Accept: 'application/json' },
-    })
-    if (res.ok) {
-      return (await res.json()) as Proposal
-    }
-  } catch (err) {
-    console.warn(`Backend API unavailable for proposal ${id}, using local fallback:`, err)
-  }
-  return defaultProposals.find(p => p.id === id) || null
+  const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(id)}`, {
+    headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(20000),
+  })
+  if (res.status === 404) return null
+  if (!res.ok) throw new Error('This proposal could not be loaded.')
+  return parseProposalCatalogue([await res.json()])[0]
 }
 
 /**

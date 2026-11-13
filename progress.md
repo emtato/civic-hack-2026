@@ -53,6 +53,14 @@ Next review should inspect an actual fetched record and its normalized equivalen
 
 ## Checkpoint log
 
+### November 13 — frontend catalogue connected
+
+- **Authorized scope:** frontend step 2; backend collection conversion is being handled separately.
+- **Implemented:** API-backed catalogue state, request cancellation/timeout, visible retryable failures and empty catalogue, dynamic topic/status filters and legend, null-coordinate handling, asynchronous map fit and preserved follow IDs. No silent fixture fallback for proposal reads.
+- **Verified:** production build and all 10 frontend tests passed. Browser fixture checks covered error → retry → two fetched records/one marker, new topics/statuses, filtering, opening a citywide record without coordinates, and empty catalogue handling.
+- **Documentation:** `frontend/.env.example` and README explain `VITE_API_BASE_URL`, the public display DTO and CORS/deployment expectations.
+- **Remaining dependency:** the real backend must expose reviewed imported examples through `/api/proposals` in the display shape. This task did not change backend collections, API routes or formatting.
+
 ### November 13 — proposal feedback section implemented
 
 - **Architecture:** Sidebar uses a separate `ProposalFeedback` component, with `FeedbackForm` for entry/review and feedback-specific CSS. Overview now opens the working response flow. Switching detail tabs preserves a draft.

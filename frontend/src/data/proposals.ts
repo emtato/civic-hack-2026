@@ -4,8 +4,8 @@ import {
 
 export * from './proposalFeedbackDTO'
 
-export type ProposalStatus = 'Open for feedback' | 'Under review' | 'Updated proposal'
-export type Topic = 'Public space' | 'Streets & transit' | 'Accessibility'
+export type ProposalStatus = string
+export type Topic = string
 
 export interface Proposal {
   id: string
@@ -13,7 +13,7 @@ export interface Proposal {
   neighbourhood: string
   topic: Topic
   status: ProposalStatus
-  coordinates: [number, number]
+  coordinates: [number, number] | null
   summary: string
   changes: string[]
   source: string

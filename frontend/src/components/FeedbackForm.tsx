@@ -73,7 +73,6 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
       <span className="eyebrow">{reviewing ? 'REVIEW YOUR PERSPECTIVE' : 'YOUR EVERYDAY EXPERIENCE MATTERS'}</span>
       <h2 ref={titleRef} tabIndex={-1}>{reviewing ? 'Does this reflect what you mean?' : existing ? 'Update your perspective.' : 'Make your perspective count.'}</h2>
       <p className="feedback-intro">{reviewing ? 'Check your position and requirement before saving. Your original words stay alongside your recorded requirement.' : 'Tell us where you stand and what would make a difference. You can come back and edit your response.'}</p>
-      <p className="feedback-session-note"><Icon name="info" />Unverified demo session · Use fictional input. This is not an official City submission.</p>
 
       <form onSubmit={event => {
         event.preventDefault()
@@ -164,14 +163,14 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
             </dl>
             <label className="feedback-checkbox"><input type="checkbox" required checked={confirmed} disabled={saving} onChange={e => setConfirmed(e.target.checked)} /><span>I confirm this requirement and its meaning reflect what I want to say.</span></label>
           </div>}
-          <p className="feedback-help">{demo ? 'This response will update the sample results on this device only.' : 'This response will be stored by the prototype and included in its aggregate results.'} Editing an existing response replaces it without adding another participant.</p>
+          <p className="feedback-help">{demo ? 'This response will be saved on this device only.' : 'This response will be included in community results.'} Editing an existing response replaces it without adding another participant.</p>
         </div>}
 
         {error && <p className="feedback-error" role="alert"><Icon name="info" />{error}</p>}
         <div className="feedback-form-actions">
           {reviewing && <button className="feedback-secondary-button" type="button" disabled={saving} onClick={() => { setReviewing(false); setConfirmed(false) }}><Icon name="back" />Edit answers</button>}
           <button type="submit" className="feedback-action" disabled={saving || (reviewing && hasCondition && !confirmed)}>
-            {saving ? 'Saving your response…' : !reviewing ? 'Review your response' : demo ? 'Save demo response on this device' : existing ? 'Save updated response' : 'Save your response'}<Icon name={reviewing ? 'check' : 'arrow'} />
+            {saving ? 'Saving your response…' : !reviewing ? 'Review your response' : demo ? 'Save response on this device' : existing ? 'Save updated response' : 'Save your response'}<Icon name={reviewing ? 'check' : 'arrow'} />
           </button>
         </div>
       </form>

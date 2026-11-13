@@ -14,11 +14,15 @@ const topicIcons: Record<Topic, string> = {
 const statusClass = (status: string) =>
   status === 'Open for feedback' ? 'open' : status === 'Updated proposal' ? 'updated' : 'review'
 
-const TOPICS = ['All topics', 'Public space', 'Streets & transit', 'Accessibility'] as const
-
 export interface SidebarProps {
   selectedProposal: Proposal | null
   filteredProposals: Proposal[]
+  topics: string[]
+  statuses: string[]
+  catalogueCount: number
+  catalogueState: 'loading' | 'ready' | 'error'
+  catalogueError: string
+  onRetryCatalogue: () => void
   activeTab: 'explore' | 'saved'
   saved: string[]
   topic: string
@@ -39,6 +43,12 @@ export interface SidebarProps {
 export const Sidebar: React.FC<SidebarProps> = ({
   selectedProposal,
   filteredProposals,
+  topics,
+  statuses,
+  catalogueCount,
+  catalogueState,
+  catalogueError,
+  onRetryCatalogue,
   activeTab,
   saved,
   topic,
@@ -109,7 +119,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
 
           <div className="topic-filters" aria-label="Filter by topic">
-            {TOPICS.map(t => (
+            {topics.map(t => (
               <button
                 key={t}
                 className={`topic-chip ${t === topic ? 'active' : ''}`}
@@ -127,8 +137,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           <div className="results-toolbar">
             <span id="result-count" aria-live="polite">
-              {filteredProposals.length} {activeTab === 'saved' ? 'followed ' : ''}proposal
-              {filteredProposals.length === 1 ? '' : 's'}
+              {catalogueState === 'loading' ? 'Loading proposals…' : catalogueState === 'error' ? 'Proposals unavailable' : (
+                <>{filteredProposals.length} {activeTab === 'saved' ? 'followed ' : ''}proposal
+                {filteredProposals.length === 1 ? '' : 's'}</>
+              )}
             </span>
             <label className="status-filter">
               <span className="sr-only">Filter by status</span>
@@ -141,15 +153,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 }}
               >
                 <option value="all">All statuses</option>
-                <option>Open for feedback</option>
-                <option>Updated proposal</option>
-                <option>Under review</option>
+                {statuses.map(value => <option key={value} value={value}>{value}</option>)}
               </select>
             </label>
           </div>
 
-          <div id="proposal-list" className="proposal-list">
-            {filteredProposals.length > 0 ? (
+          <div id="proposal-list" className="proposal-list" aria-busy={catalogueState === 'loading'}>
+            {catalogueState === 'loading' ? (
+              <div className="empty-state" role="status"><Icon name="clock" /><h2>Loading proposals…</h2><p>Connecting to the proposal catalogue.</p></div>
+            ) : catalogueState === 'error' ? (
+              <div className="empty-state" role="alert"><Icon name="info" /><h2>Proposals couldn’t load</h2><p>{catalogueError}</p>
+                <button className="text-button" onClick={onRetryCatalogue}>Try again</button>
+              </div>
+            ) : filteredProposals.length > 0 ? (
               filteredProposals.map(p => (
                 <button
                   key={p.id}
@@ -163,7 +179,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       {p.status}
                     </span>
                     <span className="card-category">
-                      <Icon name={topicIcons[p.topic]} />
+                      <Icon name={topicIcons[p.topic] || 'pin'} />
                     </span>
                   </div>
                   <h2>{p.title}</h2>
@@ -172,6 +188,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {p.neighbourhood}
                   </p>
                   <p className="card-summary">{p.summary}</p>
+                  {!p.coordinates && <p className="card-neighbourhood">Location not mapped</p>}
                   <div className="card-footer">
                     <span>{p.topic}</span>
                     <span className="card-cta">
@@ -184,26 +201,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div className="empty-state">
                 <Icon name={activeTab === 'saved' ? 'bookmark' : 'search'} />
                 <h2>
-                  {activeTab === 'saved' && !saved.length
+                  {!catalogueCount ? 'No proposals published yet' : activeTab === 'saved' && !saved.length
                     ? 'Keep a place in mind.'
                     : 'No matching proposals'}
                 </h2>
                 <p>
-                  {activeTab === 'saved' && !saved.length
+                  {!catalogueCount ? 'Published proposals will appear here when available.' : activeTab === 'saved' && !saved.length
                     ? 'Open a proposal and follow it to find it here.'
                     : 'Try another search or clear your filters.'}
                 </p>
-                <button id="clear-filters" className="text-button" onClick={onClearFilters}>
+                {!!catalogueCount && <button id="clear-filters" className="text-button" onClick={onClearFilters}>
                   Clear filters
-                </button>
+                </button>}
               </div>
             )}
           </div>
 
-          <div className="demo-note">
-            <Icon name="info" />
-            <p>A preview of local participation. Project references are real; statuses, locations and interactions are illustrative.</p>
-          </div>
         </div>
       ) : (
         <div id="proposal-detail">
@@ -215,9 +228,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <i />
               {selectedProposal.status}
             </span>
-            <span className="demo-tag">DEMO STATUS</span>
             <span className="detail-topic">
-              <Icon name={topicIcons[selectedProposal.topic]} />
+              <Icon name={topicIcons[selectedProposal.topic] || 'pin'} />
               {selectedProposal.topic}
             </span>
             <span className="card-neighbourhood">
@@ -285,7 +297,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div className="proposal-overview">
                 <div className="overview-main">
                   <section className="overview-card overview-brief" aria-labelledby="overview-brief-heading">
-                    <span className="eyebrow">THE PROPOSAL</span>
                     <h2 id="overview-brief-heading">At a glance</h2>
                     <p>{selectedProposal.summary}</p>
                     <ul className="overview-changes">
@@ -293,9 +304,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         <li key={change}><Icon name="check" /><span>{change}</span></li>
                       ))}
                     </ul>
-                    <a className="source-link" href={selectedProposal.source} target="_blank" rel="noopener noreferrer">
+                    {!selectedProposal.coordinates && <p>No map location is available for this proposal.</p>}
+                    {selectedProposal.source && <a className="source-link" href={selectedProposal.source} target="_blank" rel="noopener noreferrer">
                       Read the official proposal <Icon name="external" />
-                    </a>
+                    </a>}
                   </section>
 
                   <section className="overview-card overview-sentiment" aria-labelledby="overview-sentiment-heading">
@@ -307,7 +319,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       <p role="status">Loading community sentiment…</p>
                     ) : (
                       <>
-                        <p className="overview-caption">{community.mode === 'demo' ? 'Sample + device responses' : 'Prototype responses'} · Not a representative vote.</p>
+                        <p className="overview-caption">Not a representative vote.</p>
                         <DistributionChart counts={community.aggregate.position_distribution} total={community.aggregate.total_participants} />
                       </>
                     )}
@@ -333,7 +345,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     <div>
                       <h2 id="overview-participate-heading">Your feedback & comments</h2>
                       <p>Share where you stand, leave a comment, or tell us what would make this proposal work for you.</p>
-                      <span className="overview-caption">Prototype only · This is not an official City submission.</span>
                     </div>
                     <button className="primary-button" id="preview-feedback"
                       onClick={() => { setDetailTab('feedback'); setFeedbackOpen(true) }}>
@@ -342,10 +353,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   </section>
                   <section className="overview-card overview-comments" aria-labelledby="overview-comments-heading">
                     <div className="overview-card-heading">
-                      <h2 id="overview-comments-heading">Comments</h2>
-                      <span>Placeholder comments</span>
+                      <h2 id="overview-comments-heading">Example comments</h2>
                     </div>
-                    <div className="overview-comments-list" role="region" aria-label="Placeholder community comments" tabIndex={0}>
+                    <p className="overview-caption">Illustrative comments; these were not submitted about this proposal.</p>
+                    <div className="overview-comments-list" role="region" aria-label="Example comments" tabIndex={0}>
                       {[
                         { author: 'Local resident', text: 'More space to walk and gather would make this a much nicer place to spend time.' },
                         { author: 'Business owner', text: 'Please keep a practical way for deliveries to reach nearby businesses in the morning.' },
@@ -360,7 +371,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         </article>
                       ))}
                     </div>
-                    <p className="overview-caption">Fictional examples · Scroll to read more</p>
+                    <p className="overview-caption">Scroll to read more</p>
                   </section>
                 </div>
               </div>
@@ -381,18 +392,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
           </div>
 
-          <div className="detail-disclaimer">
-            <Icon name="info" />
-            <p>Prototype preview. Summary and highlighted route are illustrative. Check the official project page for boundaries, current plans and participation dates.</p>
-          </div>
 
         </div>
       )}
 
-      <footer className="sidebar-footer">
-        <span>Small contributions. Shared possibilities.</span>
-        <span className="footer-flower">✳</span>
-      </footer>
     </aside>
   )
 }
