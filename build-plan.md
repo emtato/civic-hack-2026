@@ -14,7 +14,7 @@ A resident opens a real proposal, understands its source and status, records a p
 
 Example: “I support this if accessible pickup remains near this entrance in the evening.” The system preserves the location and time requirement, rather than reducing that to “parking concern.” A revision introducing morning commercial loading does not automatically satisfy it.
 
-Aim for one excellent complete cycle. Include two additional real agenda items for the brief's required accuracy checks; they need not have equally elaborate revision demonstrations. [Challenge requirements](challenge-1.md)
+Build one reusable proposal experience backed by a selectively imported MongoDB catalogue. User-selected demo target: at least 20 relevant example proposals, selected for topic and geographic variety, with three real agenda items checked in depth and at least one complete revision cycle. Catalogue breadth and revision depth are separate goals; do not hardcode the application around Kensington. [Challenge requirements](challenge-1.md)
 
 ## 2. Technology decisions
 
@@ -27,7 +27,7 @@ Aim for one excellent complete cycle. Include two additional real agenda items f
 | Database | MongoDB Atlas Free, accessed through PyMongo | Store responses and their version history. Atlas offers a free proof-of-concept cluster; PyMongo is its Python driver. [Atlas setup](https://www.mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster/), [PyMongo guide](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/get-started/) |
 | Map | Leaflet with an appropriate basemap | Proposal markers/areas and optional concern pins. Hand-enter checked coordinates for the few sample cases. Preserve the basemap attribution. [Leaflet guide](https://leafletjs.com/examples/quick-start/) |
 | AI | One provider/model supplied by the user | First extract suggested concerns and conditions. Add revision relevance only after feedback submission works. |
-| Proposal/source preparation | Manually curated, checked records | Start from official item pages and reports. A city-wide crawler, document upload pipeline, vector database, and general chatbot do not serve the first demo. |
+| Proposal/source preparation | Selective offline import into one common record format | Fetch a selected batch from a verified city source/API, retain source data, normalize and review it, then serve MongoDB records during the demo. Do not fetch the city source on each user page view. |
 
 Flow: browser on GitHub Pages → FastAPI on Render → MongoDB Atlas and the LLM provider. The browser displays the result; the backend owns saved data, counts, and secret credentials.
 
@@ -56,15 +56,17 @@ The normal command while developing is `npm run dev`. Stop it with Ctrl+C. [Vite
 
 ### A. Choose sources and agree on the shared data
 
-Timebox source selection to about 45 minutes. Choose a street/access proposal because its separate design features and mapped concerns suit the current idea. Inspect the Esplanade or Kensington sources already linked in the idea file as leads, then choose based on accessible evidence rather than the name.
+Updated direction following the user's correction: build a small reusable import path and a multi-proposal catalogue from the outset. The checkpoints below organize verification; they are not separate throwaway applications. Keep one shared proposal format and one generic UI.
 
-Current recommendation after checking the records: [Kensington Market, 2023.TE6.54](sources/kensington-case-notes.md). An official attachment directly documents the earlier design and revised recommendation. Start with this source package and two historical snapshots; obtaining a third-party proposals API is not a prerequisite. Case confirmation and exact feature extraction remain outstanding.
+Toronto's Public Notices JSON API is now a verified acquisition source: a date-filtered request returned 648 records and a direct download succeeded. See [the source assessment](sources/import-source-assessment.md) for the exact URL, observed fields, counts and caveats. This does not establish comprehensive coverage of all proposals. Council agenda pages are another source, but parsing HTML is not the same as using a documented API.
 
-Prepare one primary item with two dated, source-supported versions if available. Record its official identifier, location, actual procedural status, material conditions, source passages, and verified participation route or closed/unknown state. Distinguish a staff recommendation from an adopted decision. Do not infer a comment deadline from a meeting date.
+Next acquisition task: select at least 20 relevant examples from the verified response, supplementing selected agenda pages if needed for variety, and map common fields into one internal format. Skip irrelevant notices. Multiple notices may describe one proposal: preserve source IDs and group using explicit proposal/agenda references where available; flag ambiguous matches rather than deduplicating by title alone. In the observed payload every `eventList` is empty, including descriptions that contain meeting dates, so empty event data must remain unknown pending extraction/review.
 
-If a suitable real version pair is unavailable within the timebox, keep the real proposal context and use a clearly labelled hypothetical revision scenario. Do not present invented design changes as municipal action. A genuine historical revision replay is preferable when the records support it.
+The import runs outside the resident interaction: fetch selected records → keep raw source and retrieval date → normalize common fields → extract/check relevant features and evidence → mark reviewed examples ready → save in MongoDB. Re-running it updates city-source fields without deleting participant responses or overwriting historical snapshots. Keep source-record IDs stable and distinguish import/review state from the official decision status.
 
-Also choose two smaller real agenda items for later checks. Use synthetic, clearly labelled contributions for the demo; do not copy personal public correspondence into participant profiles.
+Common fields include proposal/source IDs, title, topic, decision body and procedural status, relevant dates, source links, geographic scope, feature list, and version snapshots. Features and their questions are data within each proposal, not separate hardcoded screens. Allow missing facts explicitly; a city-wide proposal need not have a precise map pin. A meeting date is not automatically an input deadline, and a notice publication date is not a decision date.
+
+Choose three real agenda items from the selected catalogue for thorough source/status/participation checks. [Kensington](sources/kensington-case-notes.md) remains a useful possible historical revision example within that catalogue, not the whole product. Its official design-change attachment supplies a promising real version pair; exact features still require checking. Use a clearly labelled hypothetical revision only if a real pair cannot support the demonstration. All synthetic participant feedback remains labelled.
 
 Agree on just two main record types before splitting work:
 
@@ -79,15 +81,15 @@ Use one response per demo participant per proposal version; multiple conditions 
 
 **Implementation decisions for this stage:**
 
-- Keep checked proposal fixtures in the repository and load them into the backend's data store. A fixture is a small prepared example used consistently during development and demonstrations. Both developers use the same fixture; independently maintained frontend and backend examples will drift.
+- Keep a reproducible selected-source list and a non-sensitive export of checked imported examples in the repository. Both developers use the same normalized records. The frontend reads them through FastAPI; source-specific field mapping stays in the importer so adding another source does not require replacing the UI.
 - Give each proposal version stable feature IDs, such as a particular loading segment or entrance. A feature ID stays the same across versions when it still refers to the same thing. A new or removed feature is explicitly marked.
 - Use five explicit position labels: strongly oppose, oppose, neutral, support, strongly support. Store unsure separately. A missing response is neither neutral nor unsure. Display distributions rather than inventing a combined approval score.
 - Each condition keeps an ID, feature/topic, desired arrangement, applicable location/time, and an explicit indication of whether the participant made their support conditional on it. Preserve the original text alongside the structured interpretation.
 - Prepare at least six synthetic participants that expose the important cases: evening accessible pickup, morning commercial delivery, opposite requests about one feature, unconditional support, opposition unrelated to the changed feature, and unsure. Their counts are demonstration data, never evidence of real public opinion.
 
-**Work sequence:** choose the primary source → record its checked facts → establish version/feature IDs → write one example response and the synthetic cases → agree on the request/response fields. Source research and initial account setup can run alongside the UI skeleton.
+**Work sequence:** verify a selected-source payload → agree on the common record format → implement the selected-batch import → check/prepare the example catalogue → establish version/feature IDs and synthetic responses. Backend connectivity and the generic UI skeleton can proceed alongside the import against the same agreed record format.
 
-**Checkpoint evidence:** official item/report links with supporting passages, verification date and status; the selected version-pair or declared hypothetical fallback; a common proposal/response example; the two secondary item IDs; and named ownership of the next tasks.
+**Checkpoint evidence:** a real source payload; its normalized equivalent and provenance; selected-record count and exclusions; a common proposal/response contract; three agenda-item references for deeper checks; and a source-supported revision pair or disclosed fallback. Do not mark the importer working solely because source documentation exists.
 
 **Complete when:** both developers can use the same sample proposal and response without inventing incompatible field names. Capture the example payloads in a short shared note. The initial repository commit now exists (`971f28d`); continue making short, reviewable commits as each checkpoint works.
 
