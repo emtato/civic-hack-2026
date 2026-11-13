@@ -99,12 +99,12 @@ button {
 }
 
 .app-header {
-  height:82px;
+  height:54px;
   flex-shrink:0;
   display:flex;
   align-items:center;
-  padding:0 32px;
-  gap:32px;
+  padding:0 24px;
+  gap:24px;
   border-bottom:1px solid var(--line);
   background:#fffef9;
   z-index:1001
@@ -114,11 +114,11 @@ button {
   display:flex;
   align-items:center;
   text-decoration:none;
-  gap:10px;
+  gap:8px;
   font-family:'Manrope',sans-serif;
-  font-size:31px;
+  font-size:24px;
   font-weight:800;
-  letter-spacing:-1.8px
+  letter-spacing:-1.3px
 }
 
 .brand-mark {
@@ -126,36 +126,36 @@ button {
   place-items:center;
   background:var(--green);
   color:#faf8e9;
-  border-radius:10px;
-  width:35px;
-  height:37px;
+  border-radius:8px;
+  width:28px;
+  height:30px;
   transform:rotate(-5deg);
   margin-right:2px
 }
 
 .brand-mark .icon {
-  width:24px;
-  height:24px
+  width:18px;
+  height:18px
 }
 
 .brand-dot {
   color:#c17a44;
-  margin-left:-10px
+  margin-left:-8px
 }
 
 .main-nav {
   align-self:stretch;
   display:flex;
-  margin-left:38px;
-  gap:26px
+  margin-left:24px;
+  gap:22px
 }
 
 .nav-item {
   display:flex;
   align-items:center;
-  gap:8px;
-  padding:3px 0 0;
-  border-bottom:3px solid transparent;
+  gap:7px;
+  padding:2px 0 0;
+  border-bottom:2px solid transparent;
   font-weight:600;
   color:#83897f;
   font-size:13px
@@ -201,15 +201,6 @@ button {
   width:13px
 }
 
-.prototype-label {
-  font-size:9px;
-  letter-spacing:1.3px;
-  border:1px solid #d8ddcc;
-  padding:6px 8px;
-  border-radius:4px;
-  color:#78816b
-}
-
 .workspace {
   display:flex;
   flex:1;
@@ -228,7 +219,14 @@ button {
   box-shadow:8px 0 28px #203d2c08;
   overflow-y:auto;
   scrollbar-width:thin;
-  scrollbar-color:#d0d5c8 transparent
+  scrollbar-color:#d0d5c8 transparent;
+  transition:width .32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change:width
+}
+
+.workspace.detail-open .sidebar {
+  width:75%;
+  max-width:calc(100% - 220px)
 }
 
 .sidebar-heading {
@@ -527,69 +525,35 @@ button {
   filter:saturate(.42) contrast(.93)
 }
 
-.map-heading {
+.map-controls-stack {
   position:absolute;
-  top:25px;
-  left:25px;
-  display:flex;
-  align-items:center;
-  gap:13px;
-  background:#fffef9f5;
-  border:1px solid #dce2d3;
-  box-shadow:0 4px 18px #3a4b2a0a;
-  z-index:500;
-  border-radius:9px;
-  padding:15px 17px;
-  pointer-events:none;
-  min-width:300px
-}
-
-.live-dot {
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#6d8c4b;
-  box-shadow:0 0 0 5px #eef1e6;
-  margin:0 3px
-}
-
-.map-heading strong {
-  display:block;
-  font-size:12px;
-  font-weight:600
-}
-
-.map-heading div>span {
-  display:block;
-  font-size:10px;
-  color:#8b9280;
-  margin-top:4px
-}
-
-.map-city {
-  font-size:8px;
-  letter-spacing:1.4px;
-  margin-left:auto;
-  padding-left:20px;
-  color:#8a967b
-}
-
-.map-tools {
-  position:absolute;
-  right:24px;
-  top:25px;
+  right:15px;
+  bottom:15px;
   z-index:500;
   display:flex;
   flex-direction:column;
+  gap:8px;
+  width:180px;
+  pointer-events:none
+}
+
+.map-tools {
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
   background:#fffef9;
-  border:1px solid #dce2d3;
+  border:1px solid #dde2d4;
   border-radius:8px;
   box-shadow:0 3px 12px #3a4b2a0c;
-  overflow:hidden
+  overflow:hidden;
+  pointer-events:auto;
+  width:100%
 }
 
 .map-tools button {
-  padding:12px;
+  flex:1;
+  min-width:0;
+  padding:10px 0;
   display:grid;
   place-items:center;
   color:#52684a
@@ -599,31 +563,35 @@ button {
   background:#eaf0e0
 }
 
+.map-tools button:active {
+  background:#dfe7d3
+}
+
 .map-tools .icon {
-  width:18px;
-  height:18px
+  width:17px;
+  height:17px
 }
 
 .tool-divider {
-  border-top:1px solid var(--line);
-  margin:0 9px
+  width:1px;
+  height:16px;
+  background:var(--line);
+  align-self:center;
+  flex-shrink:0
 }
 
 .map-legend {
-  position:absolute;
-  left:25px;
-  bottom:30px;
   background:#fffef9f5;
   border:1px solid #dde2d4;
   border-radius:8px;
-  padding:15px 18px;
-  z-index:500;
+  padding:13px 16px;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:9px;
   font-size:10px;
   box-shadow:0 3px 16px #3a4b2a08;
-  pointer-events:none
+  pointer-events:none;
+  width:100%
 }
 
 .legend-title {
@@ -631,10 +599,8 @@ button {
   letter-spacing:1.3px;
   font-weight:600;
   color:#929980;
-  display:flex;
-  gap:8px;
-  align-items:center;
-  margin-bottom:3px
+  display:block;
+  margin-bottom:2px
 }
 
 .map-legend>span:not(:first-child) {
@@ -648,7 +614,8 @@ button {
   width:7px;
   height:7px;
   border-radius:50%;
-  display:inline-block
+  display:inline-block;
+  flex-shrink:0
 }
 
 .legend-dot.open {
@@ -661,28 +628,6 @@ button {
 
 .legend-dot.review {
   background:#79828b
-}
-
-.map-hint {
-  position:absolute;
-  bottom:38px;
-  right:25px;
-  z-index:500;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:10px;
-  color:#626f54;
-  background:#fffff4e8;
-  padding:10px 14px;
-  border:1px solid #dce3cf;
-  border-radius:30px;
-  pointer-events:none
-}
-
-.map-hint .icon {
-  width:14px;
-  height:14px
 }
 
 .leaflet-control-attribution {
@@ -743,9 +688,10 @@ button {
 
 .map-error {
   position:absolute;
-  top:115px;
+  top:20px;
   left:25px;
-  right:80px;
+  right:25px;
+  max-width:440px;
   z-index:500;
   font-size:12px;
   padding:12px;
@@ -787,7 +733,9 @@ button {
 }
 
 #proposal-detail {
-  padding:24px
+  padding:32px 48px;
+  max-width:840px;
+  width:100%
 }
 
 .back-button {
@@ -852,9 +800,10 @@ button {
   justify-content:center;
   gap:9px;
   border:1px solid #cdd7c1;
+  max-width:320px;
   width:100%;
   border-radius:6px;
-  padding:11px;
+  padding:11px 20px;
   margin-top:22px;
   font-size:12px;
   background:#fcfdf5
@@ -1130,12 +1079,12 @@ dialog p {
 
 @media(max-width:1100px) {
   .app-header {
-    padding:0 22px;
-    gap:22px
+    padding:0 20px;
+    gap:18px
   }
   .main-nav {
     margin-left:12px;
-    gap:20px
+    gap:18px
   }
   .header-location {
     display:none
@@ -1146,45 +1095,32 @@ dialog p {
   .sidebar {
     width:350px
   }
-  .map-hint {
-    display:none
-  }
-  .map-heading {
-    min-width:260px;
-    left:18px
-  }
-  .map-city {
-    display:none
-  }
-  .map-tools {
-    right:18px
-  }
 }
 
 @media(max-width:760px) {
   .app-header {
-    height:66px;
-    padding:0 18px;
-    gap:16px
+    height:50px;
+    padding:0 16px;
+    gap:14px
   }
   .brand {
-    font-size:27px;
+    font-size:21px;
     gap:6px
   }
   .brand-mark {
-    width:29px;
-    height:31px;
-    border-radius:8px
+    width:24px;
+    height:25px;
+    border-radius:6px
   }
   .brand-mark .icon {
-    width:20px;
-    height:20px
+    width:15px;
+    height:15px
   }
   .brand-dot {
     margin-left:-6px
   }
   .main-nav {
-    gap:17px;
+    gap:14px;
     margin-left:auto
   }
   .nav-item {
@@ -1193,7 +1129,7 @@ dialog p {
   .nav-item .icon {
     display:none
   }
-  .prototype-label,.about-button {
+  .about-button {
     display:none
   }
   .workspace {
@@ -1282,39 +1218,31 @@ dialog p {
     width:16px;
     height:16px
   }
-  .map-heading {
-    top:18px;
-    left:14px;
-    right:68px;
-    min-width:0;
-    padding:13px
-  }
-  .map-tools {
-    top:18px;
-    right:12px
+  .map-controls-stack {
+    right:14px;
+    bottom:86px;
+    width:170px;
+    gap:6px
   }
   .map-tools button {
-    padding:10px
+    padding:8px 0
   }
-  .map-heading strong {
-    font-size:11px
-  }
-  .map-heading div>span {
-    font-size:9px
+  .map-tools .icon {
+    width:15px;
+    height:15px
   }
   .map-legend {
-    left:14px;
-    bottom:98px;
-    padding:12px 14px;
+    padding:11px 13px;
     font-size:9px;
-    gap:8px
+    gap:7px
   }
   .leaflet-control-attribution {
     font-size:8px!important
   }
   .map-error {
     left:14px;
-    top:100px
+    top:14px;
+    right:14px
   }
   .toast {
     bottom:85px;

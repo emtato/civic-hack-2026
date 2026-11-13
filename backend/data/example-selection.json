@@ -1,0 +1,148 @@
+{
+  "selection": [
+    {
+      "notice_id": 8002,
+      "proposal_key": "toronto-labatt-river-towers",
+      "category": "planning",
+      "selection_reason": "Two residential towers and non-residential space."
+    },
+    {
+      "notice_id": 8004,
+      "proposal_key": "toronto-augusta-hotel",
+      "category": "planning",
+      "selection_reason": "Hotel and restaurant rather than residential redevelopment."
+    },
+    {
+      "notice_id": 7962,
+      "proposal_key": "toronto-neilson-medical-housing",
+      "category": "planning",
+      "selection_reason": "Housing behind an existing medical building."
+    },
+    {
+      "notice_id": 6978,
+      "proposal_key": "toronto-lawrence-heights-revitalization",
+      "category": "planning",
+      "selection_reason": "Social, affordable and market housing with streets and parks."
+    },
+    {
+      "notice_id": 7760,
+      "proposal_key": "toronto-lawrence-heritage-intention",
+      "category": "heritage",
+      "selection_reason": "Proposed heritage designation."
+    },
+    {
+      "notice_id": 7838,
+      "proposal_key": "toronto-weston-heritage-demolition",
+      "category": "heritage",
+      "selection_reason": "Decision concerning heritage demolition/removal."
+    },
+    {
+      "notice_id": 7886,
+      "proposal_key": "toronto-stotts-bridge-heritage",
+      "category": "heritage",
+      "selection_reason": "Heritage alteration involving a bridge."
+    },
+    {
+      "notice_id": 7633,
+      "proposal_key": "toronto-queen-heritage-amendment",
+      "category": "heritage",
+      "selection_reason": "Amendment of a heritage designation by-law."
+    },
+    {
+      "notice_id": 7631,
+      "proposal_key": "toronto-lawrence-road-closure",
+      "category": "transportation",
+      "selection_reason": "Road closure affecting a specified location."
+    },
+    {
+      "notice_id": 7451,
+      "proposal_key": "toronto-permit-parking-area-1e",
+      "category": "transportation",
+      "selection_reason": "Permit-parking-area realignment."
+    },
+    {
+      "notice_id": 7651,
+      "proposal_key": "toronto-aren-levy-lane",
+      "category": "transportation",
+      "selection_reason": "Public street renaming."
+    },
+    {
+      "notice_id": 7615,
+      "proposal_key": "toronto-six-points-road-closure",
+      "category": "transportation",
+      "selection_reason": "Closure involving multiple road portions in Six Points."
+    },
+    {
+      "notice_id": 7674,
+      "proposal_key": "toronto-nightclub-definition",
+      "category": "licensing",
+      "selection_reason": "Entertainment establishment licensing definition."
+    },
+    {
+      "notice_id": 7266,
+      "proposal_key": "toronto-business-licence-action-plan",
+      "category": "licensing",
+      "selection_reason": "Business licensing and permit-process amendments."
+    },
+    {
+      "notice_id": 7267,
+      "proposal_key": "toronto-street-vending-rules",
+      "category": "licensing",
+      "selection_reason": "Street vending and artists by-law review."
+    },
+    {
+      "notice_id": 7531,
+      "proposal_key": "toronto-permit-parking-exclusion-process",
+      "category": "licensing",
+      "selection_reason": "Municipal-code procedure for parking exclusions; source classifies this as Licensing."
+    },
+    {
+      "notice_id": 7297,
+      "proposal_key": "toronto-rentsafeto-fees",
+      "category": "financial",
+      "selection_reason": "Apartment-building sign reissuance fee and exemptions."
+    },
+    {
+      "notice_id": 7128,
+      "proposal_key": "toronto-ravine-permit-fees",
+      "category": "financial",
+      "selection_reason": "New ravine permit fees."
+    },
+    {
+      "notice_id": 6984,
+      "proposal_key": "toronto-budget-user-fees-2026",
+      "category": "financial",
+      "selection_reason": "Budget-wide proposed user-fee changes; source topics are empty."
+    },
+    {
+      "notice_id": 7682,
+      "proposal_key": "toronto-development-application-fees",
+      "category": "financial",
+      "selection_reason": "Site-plan application fees; source tags Licensing/fees; curated financial category."
+    },
+    {
+      "notice_id": 7810,
+      "proposal_key": "toronto-fleet-property-lease",
+      "category": "property_sales",
+      "selection_reason": "Surplus declaration proposing a long-term lease, not necessarily a sale."
+    },
+    {
+      "notice_id": 7473,
+      "proposal_key": "toronto-sheppard-surplus-lane",
+      "category": "property_sales",
+      "selection_reason": "Disposition of portions of a public lane."
+    },
+    {
+      "notice_id": 6141,
+      "proposal_key": "toronto-van-horne-surplus",
+      "category": "property_sales",
+      "selection_reason": "2025 surplus-property declaration at Van Horne Avenue."
+    },
+    {
+      "notice_id": 5957,
+      "proposal_key": "toronto-woodbine-surplus",
+      "category": "property_sales",
+      "selection_reason": "2025 surplus-property declaration at Woodbine Avenue."
+    }
+  ]
+}

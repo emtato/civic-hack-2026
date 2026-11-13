@@ -28,7 +28,6 @@ app.innerHTML = `
     </nav>
     <span class="header-location">${icon('pin')} Toronto, Ontario</span>
     <button class="about-button" id="about-button">About this project ${icon('external')}</button>
-    <span class="prototype-label">PROTOTYPE</span>
   </header>
   <main class="workspace">
     <aside class="sidebar" aria-label="Proposal explorer">
@@ -45,10 +44,21 @@ app.innerHTML = `
     </aside>
     <section class="map-shell" aria-label="Toronto proposal map">
       <div id="map" aria-label="Interactive map showing proposal locations"></div>
-      <div class="map-heading"><span class="live-dot"></span><div><strong>A city in the making</strong><span>Explore the places we share.</span></div><span class="map-city">TORONTO</span></div>
-      <div class="map-tools"><button id="zoom-in" aria-label="Zoom in">${icon('plus')}</button><button id="zoom-out" aria-label="Zoom out">${icon('minus')}</button><span class="tool-divider"></span><button id="reset-map" aria-label="Show all matching proposals" title="Show all matching proposals">${icon('target')}</button></div>
-      <div class="map-legend"><span class="legend-title">PROPOSAL STATUS <span class="demo-tag">DEMO</span></span><span><i class="legend-dot open"></i>Open for feedback</span><span><i class="legend-dot updated"></i>Updated proposal</span><span><i class="legend-dot review"></i>Under review</span></div>
-      <div class="map-hint">${icon('pin')} Pick a place. Be part of what’s next.</div>
+      <div class="map-controls-stack">
+        <div class="map-tools" role="toolbar" aria-label="Map controls">
+          <button id="zoom-in" aria-label="Zoom in" title="Zoom in">${icon('plus')}</button>
+          <span class="tool-divider" aria-hidden="true"></span>
+          <button id="zoom-out" aria-label="Zoom out" title="Zoom out">${icon('minus')}</button>
+          <span class="tool-divider" aria-hidden="true"></span>
+          <button id="reset-map" aria-label="Show all matching proposals" title="Show all matching proposals">${icon('target')}</button>
+        </div>
+        <div class="map-legend" aria-label="Proposal status legend">
+          <span class="legend-title">PROPOSAL STATUS</span>
+          <span><i class="legend-dot open"></i>Open for feedback</span>
+          <span><i class="legend-dot updated"></i>Updated proposal</span>
+          <span><i class="legend-dot review"></i>Under review</span>
+        </div>
+      </div>
       <div id="map-error" class="map-error" role="status" hidden>Map tiles couldn’t load. You can still explore proposals in the list.</div>
     </section>
     <button id="mobile-toggle" class="mobile-toggle">${icon('pin')} Show map</button>
@@ -58,6 +68,7 @@ app.innerHTML = `
 `
 
 const map = L.map('map', { zoomControl: false, scrollWheelZoom: true, minZoom: 10, maxZoom: 18 }).setView([43.658, -79.398], 13)
+map.attributionControl?.setPosition('bottomleft')
 const tiles = L.tileLayer(import.meta.env.VITE_MAP_TILE_URL || 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: import.meta.env.VITE_MAP_ATTRIBUTION || '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   maxZoom: 19,
@@ -104,13 +115,47 @@ function renderList() {
   renderMarkers()
 }
 
+let resizeRaf: number | null = null
+function animateMapResize(onComplete?: () => void, targetCoords?: [number, number]) {
+  if (resizeRaf) cancelAnimationFrame(resizeRaf)
+  const startTime = performance.now()
+  const duration = 340
+  const zoom = targetCoords ? (window.innerWidth < 1200 ? 14 : 15) : map.getZoom()
+
+  function step(now: number) {
+    const elapsed = now - startTime
+    map.invalidateSize({ pan: false })
+    if (targetCoords) {
+      map.setView(targetCoords, zoom, { animate: false })
+    }
+    if (elapsed < duration) {
+      resizeRaf = requestAnimationFrame(step)
+    } else {
+      resizeRaf = null
+      map.invalidateSize()
+      onComplete?.()
+    }
+  }
+  resizeRaf = requestAnimationFrame(step)
+}
+
 function showExplorer() {
   selectedId = null
+  const workspace = document.querySelector('.workspace')!
+  const wasOpen = workspace.classList.contains('detail-open')
+  workspace.classList.remove('detail-open')
   document.querySelector<HTMLElement>('#explorer')!.hidden = false
   document.querySelector<HTMLElement>('#proposal-detail')!.hidden = true
   projectLayer.clearLayers()
   renderList()
   document.querySelector('.sidebar')!.scrollTop = 0
+  if (wasOpen) {
+    animateMapResize(() => {
+      fitResults()
+    })
+  } else {
+    fitResults()
+  }
 }
 
 function openProposal(id: string) {
@@ -163,8 +208,21 @@ function openProposal(id: string) {
   projectLayer.clearLayers()
   L.polyline(p.shape, { color: colors[statusClass(p.status)], weight: 20, opacity: 0.13, lineCap: 'round' }).addTo(projectLayer)
   L.polyline(p.shape, { color: colors[statusClass(p.status)], weight: 4, opacity: 0.85, dashArray: '7 7' }).addTo(projectLayer)
-  map.flyTo(p.coordinates, 15, { duration: 0.7 })
   renderMarkers()
+
+  const workspace = document.querySelector('.workspace')!
+  const wasOpen = workspace.classList.contains('detail-open')
+  workspace.classList.add('detail-open')
+
+  const targetZoom = window.innerWidth < 1200 ? 14 : 15
+  if (!wasOpen) {
+    animateMapResize(() => {
+      map.flyTo(p.coordinates, targetZoom, { duration: 0.25 })
+    }, p.coordinates)
+  } else {
+    map.flyTo(p.coordinates, targetZoom, { duration: 0.5 })
+  }
+
   // On a phone, a map selection opens the readable proposal panel.
   setMobileView(false)
   document.querySelector('.sidebar')!.scrollTop = 0
