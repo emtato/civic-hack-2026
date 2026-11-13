@@ -90,7 +90,7 @@ button {
   transition:background .18s,color .18s,box-shadow .18s
 }
 
-#app {
+#root, #app {
   height:100dvh;
   min-height:440px;
   display:flex;

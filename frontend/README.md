@@ -20,10 +20,11 @@ npm run dev
 
 ## Files to build on
 
-- `src/proposals.ts`: typed frontend fixtures. Replace these with checked proposal records or API responses later.
-- `src/main.ts`: map setup, application state, rendering and event handlers.
+- `src/index.tsx`: application root mounting `<App />`.
+- `src/App.tsx`: main application state, layout, map lifecycle, and explorer/detail views.
+- `src/components/`: modular UI components (e.g. `Icon.tsx`).
+- `src/data/proposals.ts`: typed frontend fixtures. Replace these with API responses later.
 - `src/style.css`: layout, visual styling and mobile breakpoints.
-- `src/icons.ts`: small inline SVG icon helper.
 
 Project references are real, but the UI summaries, statuses, marker locations and route highlights are illustrative. They do not establish an active participation window, official boundaries or a verified proposal version. No feedback is collected and no backend requests are made.
 
