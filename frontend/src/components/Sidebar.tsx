@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import type { Proposal, Topic } from '../data/proposals'
 import { Icon } from './Icon'
-import { ProposalFeedback } from './ProposalFeedback'
+import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
+import type { CommunitySnapshot } from './ProposalFeedback'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -53,6 +54,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const [detailTab, setDetailTab] = useState<'overview' | 'feedback' | 'updates'>('overview')
   const [feedbackOpen, setFeedbackOpen] = useState(false)
+  const [communitySnapshot, setCommunitySnapshot] = useState<CommunitySnapshot | null>(null)
+  const community = communitySnapshot?.proposalId === selectedProposal?.id ? communitySnapshot : null
   const detailTitleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
@@ -222,7 +225,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <h1 tabIndex={-1} id="detail-title" ref={detailTitleRef}>
             {selectedProposal.title}
           </h1>
-          <p className="detail-summary">{selectedProposal.summary}</p>
 
           <div className="detail-toolbar">
             <div className="detail-tabs" role="tablist" aria-label="Proposal information">
@@ -277,34 +279,94 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           <div id="detail-content" role="tabpanel" aria-labelledby={`tab-${detailTab}`}>
             {detailTab === 'overview' && (
-              <>
-                <h2>What’s being considered</h2>
-                <ul className="changes-list">
-                  {selectedProposal.changes.map((change, idx) => (
-                    <li key={idx}>
-                      <Icon name="check" />
-                      <span>{change}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="participation-card">
-                  <span className="eyebrow">MAKE IT WORK FOR YOU</span>
-                  <h3>What would make a difference?</h3>
-                  <p>Your everyday experience is part of the bigger picture.</p>
-                  <button
-                    className="primary-button"
-                    id="preview-feedback"
-                    onClick={() => { setDetailTab('feedback'); setFeedbackOpen(true) }}
-                  >
-                    Share your perspective <Icon name="arrow" />
-                  </button>
+              <div className="proposal-overview">
+                <div className="overview-main">
+                  <section className="overview-card overview-brief" aria-labelledby="overview-brief-heading">
+                    <span className="eyebrow">THE PROPOSAL</span>
+                    <h2 id="overview-brief-heading">At a glance</h2>
+                    <p>{selectedProposal.summary}</p>
+                    <ul className="overview-changes">
+                      {selectedProposal.changes.map(change => (
+                        <li key={change}><Icon name="check" /><span>{change}</span></li>
+                      ))}
+                    </ul>
+                    <a className="source-link" href={selectedProposal.source} target="_blank" rel="noopener noreferrer">
+                      Read the official proposal <Icon name="external" />
+                    </a>
+                  </section>
+
+                  <section className="overview-card overview-sentiment" aria-labelledby="overview-sentiment-heading">
+                    <div className="overview-card-heading">
+                      <h2 id="overview-sentiment-heading">Community sentiment</h2>
+                      {community && community.mode !== 'loading' && <span>{community.aggregate.total_participants} responses</span>}
+                    </div>
+                    {!community || community.mode === 'loading' ? (
+                      <p role="status">Loading community sentiment…</p>
+                    ) : (
+                      <>
+                        <p className="overview-caption">{community.mode === 'demo' ? 'Sample + device responses' : 'Prototype responses'} · Not a representative vote.</p>
+                        <DistributionChart counts={community.aggregate.position_distribution} total={community.aggregate.total_participants} />
+                      </>
+                    )}
+                    <button className="overview-link" onClick={() => { setFeedbackOpen(false); setDetailTab('feedback'); document.getElementById('tab-feedback')?.focus() }}>
+                      Explore community feedback <Icon name="arrow" />
+                    </button>
+                  </section>
+
+                  <section className="overview-card overview-update" aria-labelledby="overview-update-heading">
+                    <span className="overview-section-icon"><Icon name="clock" /></span>
+                    <h2 id="overview-update-heading">Latest update</h2>
+                    <h3>No updates posted yet</h3>
+                    <p>Proposal revisions and project news will appear here when available.</p>
+                    <button className="overview-link" onClick={() => { setDetailTab('updates'); document.getElementById('tab-updates')?.focus() }}>
+                      View updates <Icon name="arrow" />
+                    </button>
+                  </section>
                 </div>
-              </>
+
+                <div className="overview-side">
+                  <section className="overview-card overview-participate" aria-labelledby="overview-participate-heading">
+                    <span className="overview-section-icon"><Icon name="message" /></span>
+                    <div>
+                      <h2 id="overview-participate-heading">Your feedback & comments</h2>
+                      <p>Share where you stand, leave a comment, or tell us what would make this proposal work for you.</p>
+                      <span className="overview-caption">Prototype only · This is not an official City submission.</span>
+                    </div>
+                    <button className="primary-button" id="preview-feedback"
+                      onClick={() => { setDetailTab('feedback'); setFeedbackOpen(true) }}>
+                      {community?.hasResponse ? 'Edit your feedback' : 'Submit feedback / comment'} <Icon name="arrow" />
+                    </button>
+                  </section>
+                  <section className="overview-card overview-comments" aria-labelledby="overview-comments-heading">
+                    <div className="overview-card-heading">
+                      <h2 id="overview-comments-heading">Comments</h2>
+                      <span>Placeholder comments</span>
+                    </div>
+                    <div className="overview-comments-list" role="region" aria-label="Placeholder community comments" tabIndex={0}>
+                      {[
+                        { author: 'Local resident', text: 'More space to walk and gather would make this a much nicer place to spend time.' },
+                        { author: 'Business owner', text: 'Please keep a practical way for deliveries to reach nearby businesses in the morning.' },
+                        { author: 'Regular visitor', text: 'I’d like to see more seating and shade included in the plans.' },
+                        { author: 'Transit rider', text: 'Clear signs and accessible routes to transit stops would make a big difference.' },
+                        { author: 'Neighbourhood resident', text: 'How will access be maintained while the work is underway?' },
+                        { author: 'Community member', text: 'It would be helpful to see how these changes will work in the winter, too.' },
+                      ].map((comment, index) => (
+                        <article className="overview-comment" key={index}>
+                          <div className="overview-comment-author"><span aria-hidden="true">{comment.author.charAt(0)}</span><h3>{comment.author}</h3></div>
+                          <p>{comment.text}</p>
+                        </article>
+                      ))}
+                    </div>
+                    <p className="overview-caption">Fictional examples · Scroll to read more</p>
+                  </section>
+                </div>
+              </div>
             )}
 
             <div hidden={detailTab !== 'feedback'}>
               <ProposalFeedback key={selectedProposal.id} proposal={selectedProposal}
-                isResponding={feedbackOpen && detailTab === 'feedback'} onRespondingChange={setFeedbackOpen} />
+                isResponding={feedbackOpen && detailTab === 'feedback'} onRespondingChange={setFeedbackOpen}
+                onCommunityChange={setCommunitySnapshot} />
             </div>
 
             {detailTab === 'updates' && (
@@ -321,14 +383,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <p>Prototype preview. Summary and highlighted route are illustrative. Check the official project page for boundaries, current plans and participation dates.</p>
           </div>
 
-          <a
-            className="source-link"
-            href={selectedProposal.source}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View official project page <Icon name="external" />
-          </a>
         </div>
       )}
 

@@ -751,7 +751,7 @@ button {
 
 #proposal-detail {
   padding:20px 32px;
-  max-width:840px;
+  container:proposal-detail / inline-size;
   width:100%
 }
 
@@ -999,6 +999,258 @@ button {
   line-height:1.9;
   color:#58654f;
   margin-top:12px
+}
+
+.proposal-overview {
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+  align-items:start;
+  gap:20px
+}
+
+.overview-main {
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  min-width:0;
+  gap:16px
+}
+
+.overview-card {
+  min-width:0;
+  padding:20px;
+  border:1px solid #dce2d4;
+  border-radius:10px;
+  background:#fffefa
+}
+
+.overview-brief {
+  grid-column:1 / -1
+}
+
+.overview-card h2 {
+  line-height:1.4
+}
+
+.overview-brief h2 {
+  margin-top:5px
+}
+
+.overview-card p {
+  margin-top:8px;
+  color:#58654f;
+  font-size:14px;
+  line-height:1.65
+}
+
+.overview-card-heading {
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:6px 12px
+}
+
+.overview-card-heading>span,.overview-caption {
+  font-size:12px;
+  color:#606d54;
+  line-height:1.6
+}
+
+.overview-card .overview-caption {
+  font-size:12px
+}
+
+.overview-changes {
+  list-style:none;
+  padding:0;
+  margin:14px 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  color:#58654f
+}
+
+.overview-changes li {
+  display:flex;
+  align-items:baseline;
+  gap:8px
+}
+
+.overview-changes .icon {
+  align-self:flex-start;
+  width:16px;
+  height:16px;
+  margin-top:3px;
+  color:#648752
+}
+
+.overview-link {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 0;
+  margin-top:12px;
+  color:var(--green);
+  font-size:13px;
+  font-weight:600;
+  text-align:left;
+  text-decoration:underline;
+  text-underline-offset:4px
+}
+
+.overview-link .icon {
+  width:16px;
+  height:16px
+}
+
+.overview-sentiment,.overview-update {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start
+}
+
+.overview-sentiment .feedback-distribution {
+  width:100%;
+  margin-bottom:12px
+}
+
+.overview-sentiment .feedback-distribution-key {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px
+}
+
+.overview-sentiment .overview-link,.overview-update .overview-link {
+  margin-top:auto
+}
+
+.overview-section-icon {
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  background:#edf0e2;
+  color:var(--green);
+  flex-shrink:0
+}
+
+.overview-update h2 {
+  margin-top:12px
+}
+
+.overview-update h3 {
+  font-size:14px;
+  margin-top:14px
+}
+
+.overview-update p {
+  margin-bottom:20px
+}
+
+.overview-side {
+  display:grid;
+  min-width:0;
+  gap:16px
+}
+
+.overview-participate {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
+  background:#edf0e2
+}
+
+.overview-comments {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:380px;
+  overflow:hidden
+}
+
+.overview-comments-list {
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
+  overscroll-behavior-y:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#b8c4ad transparent;
+  margin-top:14px;
+  padding-right:10px
+}
+
+.overview-comments-list:focus-visible {
+  outline:2px solid #c7833f;
+  outline-offset:2px
+}
+
+.overview-comment {
+  padding:14px 0;
+  border-bottom:1px solid var(--line)
+}
+
+.overview-comment:first-child {
+  padding-top:0
+}
+
+.overview-comment:last-child {
+  border-bottom:0
+}
+
+.overview-comment-author {
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+
+.overview-comment-author>span {
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#edf0e2;
+  color:var(--green);
+  font-size:12px;
+  font-weight:600
+}
+
+.overview-comment h3 {
+  font-size:13px;
+  line-height:1.5
+}
+
+.overview-comment p {
+  font-size:13px;
+  overflow-wrap:anywhere
+}
+
+.overview-participate>div {
+  min-width:0
+}
+
+.overview-participate .overview-caption {
+  display:block;
+  margin-top:8px
+}
+
+.overview-participate .primary-button {
+  width:100%;
+  margin-top:0
+}
+
+@container proposal-detail (max-width:1050px) {
+  .overview-main {
+    grid-template-columns:minmax(0,1fr)
+  }
+}
+
+@container proposal-detail (max-width:720px) {
+  .proposal-overview {
+    grid-template-columns:minmax(0,1fr)
+  }
 }
 
 dialog {

@@ -4,17 +4,25 @@ import {
   ORDERED_POSITIONS, ORDERED_STAKEHOLDERS, POSITION_CONFIG, STAKEHOLDER_CONFIG,
   applyFeedbackToAggregate, createEmptyAggregate, formatPercentage,
 } from '../data/proposalFeedbackDTO'
-import type { ConditionClusterDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
+import type { ConditionClusterDTO, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
 import { getParticipantId, readDemoFeedback, saveDemoFeedback } from '../data/feedbackSession'
 import { fetchParticipantFeedback, fetchProposalAggregate, submitProposalFeedback } from '../api/proposalsApi'
 import { FeedbackForm } from './FeedbackForm'
 import { Icon } from './Icon'
 import './ProposalFeedback.css'
 
+export interface CommunitySnapshot {
+  proposalId: string
+  aggregate: ProposalCommunityAggregateDTO
+  mode: 'loading' | 'server' | 'demo'
+  hasResponse: boolean
+}
+
 interface Props {
   proposal: Proposal
   isResponding: boolean
   onRespondingChange: (open: boolean) => void
+  onCommunityChange?: (snapshot: CommunitySnapshot) => void
 }
 
 export const ELEMENT_POSITIONS = ['oppose', 'neutral', 'support', 'unsure'] as const
@@ -81,7 +89,7 @@ function ConditionGroup({ cluster, total }: { cluster: ConditionClusterDTO; tota
   )
 }
 
-export function ProposalFeedback({ proposal, isResponding, onRespondingChange }: Props) {
+export function ProposalFeedback({ proposal, isResponding, onRespondingChange, onCommunityChange }: Props) {
   const [aggregate, setAggregate] = useState(() => proposal.community_aggregate || createEmptyAggregate())
   const [mode, setMode] = useState<'loading' | 'server' | 'demo'>('loading')
   const [response, setResponse] = useState<ProposalFeedbackSubmissionDTO | null>(null)
@@ -92,6 +100,10 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange }:
   const headingRef = useRef<HTMLHeadingElement>(null)
   const savingRef = useRef(false)
   const mountedRef = useRef(true)
+
+  useEffect(() => {
+    onCommunityChange?.({ proposalId: proposal.id, aggregate, mode, hasResponse: !!response })
+  }, [proposal.id, aggregate, mode, response, onCommunityChange])
 
   useEffect(() => {
     mountedRef.current = true
