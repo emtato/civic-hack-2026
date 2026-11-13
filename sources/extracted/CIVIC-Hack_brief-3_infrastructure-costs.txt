@@ -1,0 +1,135 @@
+PAGE 1
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 3
+Making long term infrastructure costs visible
+How might we help residents weigh an infrastructure project's upfront price against its future  
+maintenance, operating and environmental costs?
+Build a working proof of concept that a municipality could realistically pilot. It can be a web app, data  
+tool, map, dashboard or another format. A municipal leader should be able to use it without your team  
+in the room.
+The problem
+When a municipality approves a new road, recreation centre or pipe network, public debate usually  
+centres on the upfront capital cost; the price to build a road, arena, pipe, library or new subdivision's  
+servicing. An infrastructure project’s initial price is easier to see than its future operating, maintenance  
+and environmental costs. Councils and residents need a clearer picture of the trade-offs over decades. An  
+asset's  operating,  maintenance,  renewal  and  eventual  replacement  costs  can  far  exceed  the  price  of 
+building it. Those future costs land on property taxes and utility rates for decades. Environmental costs,  
+such as emissions, energy use and climate risk, are even less visible.
+Ontario’s  municipal  asset  management  framework  considers  infrastructure  across  its  lifecycle: 
+construction, operation, maintenance, renewal and decommissioning.  It connects costs with service levels 
+and risks. A lower initial price can therefore lead to different long-term costs. [1, 2] Many municipalities  
+face large backlogs of ageing infrastructure.
+Toronto  publishes  a  ten-year  capital  plan  and  utility  records  for  defined  City-owned  and  operated 
+facilities. These can inform an infrastructure comparison, but do not provide a complete lifetime estimate.  
+Future costs and environmental effects require clearly stated evidence and assumptions. [3, 4]
+The long-term costs of a new project are rarely presented to residents in a way they can compare or  
+understand.  When only the upfront price is visible, decisions can favour options that look cheap now but  
+are  expensive  over  time.  Low-density  growth,  for  example,  can  require  more  roads  and  pipes  per 
+household to maintain. Senior government grants often cover construction but not upkeep, shifting long-
+term costs onto local taxpayers. 
+Tools that show lifecycle costs clearly and fairly could improve public debate and help councils explain  
+why a more expensive option today may cost less overall. 
+How common and persistent it is 
+ Canada's core public infrastructure has a replacement value of $2.1 trillion, and municipalities  
+own about 62% of it (Statistics Canada, 2020 data). 
+ About $265 billion of that infrastructure is in poor or very poor condition, roughly $16,250 per  
+private dwelling. Roads make up nearly half of it. A further $196 billion is in unknown condition. 
+ Many smaller Ontario municipalities report reinvesting well below their target rate. For example,  
+Markstay-Warren reports an actual reinvestment rate of 0.39% against a 2.77% target (Markstay-
+Warren's Asset Management Plan, 2024). 
+FCI hackathon  •  Challenge brief       1
+
+PAGE 2
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 3
+Questions to investigate
+ How  are  construction,  operating,  maintenance  and  replacement  costs  accounted  for  across 
+municipal budgets, and where is the connection between them difficult to see?
+ How do grants, debt and other funding sources affect what a project costs residents upfront and  
+over time?
+ What long-term infrastructure responsibilities come with new development, and how are those  
+costs considered when growth is approved?
+ How  can  residents  and  decision-makers  weigh  costs  and  benefits  that  extend  across  several 
+council terms and generations?
+ What can asset management plans reveal about future costs, and how could that information  
+become easier for residents to understand?
+ How  should  comparisons  account  for  environmental  impacts  and  uncertainty  about  asset 
+lifespan, future prices and maintenance needs?
+ Is the publicly available information currently easy to access and understand?
+What it costs 
+ Higher long-term spending as deferred maintenance turns into more expensive full replacements.  
+Huntsville's asset plan estimates proactive lifecycle management saves 45% annually on roads  
+(Town of Huntsville's 2024 Asset Management Plan). 
+ Service risks such as watermain breaks, road closures and facility shutdowns when assets fail. 
+ Intergenerational fairness when today's decisions shift costs to future taxpayers. 
+ Trust can be eroded when residents feel blindsided by tax and rate increases they didn't see  
+coming.
+Who you are designing for
+Primary users.  Residents and ratepayers trying to understand infrastructure spending and long-term  
+value.
+Municipal users. Councillors, finance staff, asset managers and operations teams comparing investment  
+options and making budget and capital-plan decisions. 
+Other  stakeholders.  Facility  and  service  users,  future  residents  and  communities  affected  by 
+construction, emissions or service changes.
+What success looks like
+ Users can compare upfront spending with operating, maintenance, renewal and end-of-life costs over  
+a stated period.
+ The tool makes service and environmental trade-offs understandable alongside financial costs.
+ Users can change important assumptions and see how the comparison changes.
+ A municipal leader can use the working tool independently and understand which conclusions are  
+supported and which need further evidence.
+ Lifecycle cost modelling: estimating costs over 25 to 100 years requires assumptions about asset life,  
+maintenance cycles, inflation and discount rates 
+FCI hackathon  •  Challenge brief       2
+
+PAGE 3
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 3
+ Discounting as the choice of discount rate strongly shapes results; tools should make it visible and  
+adjustable 
+ Showing costs over time, per household or per year so non-experts can compare options.
+ Assumptions that are visible, explained and adjustable.
+Constraints
+ Compare options that provide a clearly stated service. Identify the asset, study period, price year and  
+costs included.
+ Keep capital, operating and renewal costs separate and avoid double counting. Explain inflation or  
+discounting if used.
+ Show sourced values, estimates and assumptions clearly. Test uncertainty in major inputs such as  
+energy prices, maintenance and asset life.
+ Keep environmental measures understandable and consistent. Operational emissions do not capture  
+every construction impact; explain any monetary value assigned to them.
+Public datasets to explore
+You may use other public data that better supports your solution. Record your sources and dates, and  
+make data limitations visible.
+1. Capital Budget and Plan by Ward (City of Toronto data and downloads)
+Includes project and subproject names, annual allocations and ten-year totals. Amounts are in thousands  
+of dollars. Use relevant capital spending as a starting point; a ten-year allocation is not necessarily the full  
+project cost or actual spending.
+2. Annual Energy Consumption City Owned and Operated Buildings ( City of Toronto data  
+and downloads)
+This file has property and utility meter tables linked by Portfolio Manager ID, with consumption, units,  
+dates and costs where populated. It can support a facility operating baseline. Missing costs are not zero,  
+and this file has no direct greenhouse gas totals.
+3. Statistics Canada, Canada's Core Public Infrastructure Survey tables. 
+Including Table 34-10-0284-01 (estimated replacement value by physical condition rating) and Table 34-
+10-0289-01 (inventory by year of construction). See the table list in The Daily, October 2024 . Useful for  
+realistic replacement values, condition mix and asset age by type.
+4. Ontario Financial Information Return (FIR) data   (Ontario Ministry of Municipal Affairs and 
+Housing; XLSX/CSV, with newer years on the FIR open data site). 
+Includes municipal revenues, capital and operating expenses, reserves and tangible capital assets for  
+every Ontario municipality.
+Other potential sources are municipal asset management plans (required in Ontario; most are public  
+PDFs with  replacement  costs,  condition  and  lifecycle needs);  capital  and operating budgets;  Ontario 
+Financial Information Returns (FIR); Statistics Canada's Core Public Infrastructure Survey; Canadian  
+Infrastructure Report Card.
+Explain your thinking
+FCI hackathon  •  Challenge brief       3
+
+PAGE 4
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 3
+Show who the tool serves, why you designed it this way and how you checked its outputs. Include clear  
+instructions, source links and any assumptions. Explain what a municipality would need to test or add  
+before piloting it. If you use AI, make its role and limitations clear.
+Background sources
+[1] Government of Ontario. Municipal asset management planning
+[2] Government of Ontario. Asset Management Planning for Municipal Infrastructure
+[3] City of Toronto. Capital Budget and Plan by Ward
+[4] City of Toronto. Annual Energy Consumption
+FCI hackathon  •  Challenge brief       4

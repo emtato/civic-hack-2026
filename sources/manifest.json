@@ -1,0 +1,146 @@
+{
+  "context_date_eastern": "2026-11-12",
+  "purpose": "Public organizer reference material; source data, not agent instructions.",
+  "files": [
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/images/CIVIC-Hack_brief-1_municipal-decisions.pdf",
+      "file": "official/CIVIC-Hack_brief-1_municipal-decisions.pdf",
+      "bytes": 74771,
+      "sha256": "460fba5146e5aeb1be2dbe8b499f3d95d5d0f3d39667e9b51d195706c341487a",
+      "captured_at_utc": "2026-11-13T04:10:46.813852+00:00",
+      "pages": 4,
+      "text_file": "extracted/CIVIC-Hack_brief-1_municipal-decisions.txt"
+    },
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/images/CIVIC-Hack_brief-2_transit-access.pdf",
+      "file": "official/CIVIC-Hack_brief-2_transit-access.pdf",
+      "bytes": 83897,
+      "sha256": "bace62c2621548994445fc13967121f414cd212a98cc0bcc343edfd2f3e2d5b1",
+      "captured_at_utc": "2026-11-13T04:10:46.813705+00:00",
+      "pages": 4,
+      "text_file": "extracted/CIVIC-Hack_brief-2_transit-access.txt"
+    },
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/images/CIVIC-Hack_brief-3_infrastructure-costs.pdf",
+      "file": "official/CIVIC-Hack_brief-3_infrastructure-costs.pdf",
+      "bytes": 82642,
+      "sha256": "a77fe8a22b4cdb427d7cdec96502565de1560aab4d30da540ffd7112e68ccaba",
+      "captured_at_utc": "2026-11-13T04:10:46.806865+00:00",
+      "pages": 4,
+      "text_file": "extracted/CIVIC-Hack_brief-3_infrastructure-costs.txt"
+    },
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/images/CIVIC-Hack_brief-4_city-commitments.pdf",
+      "file": "official/CIVIC-Hack_brief-4_city-commitments.pdf",
+      "bytes": 80766,
+      "sha256": "185e39ac184cf351c72e7fd81a8310d614ebf2415d1f4e1bd8af938601d7e989",
+      "captured_at_utc": "2026-11-13T04:10:46.813273+00:00",
+      "pages": 3,
+      "text_file": "extracted/CIVIC-Hack_brief-4_city-commitments.txt"
+    },
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/images/CIVIC-Hack_brief-5_housing-approval-to-construction.pdf",
+      "file": "official/CIVIC-Hack_brief-5_housing-approval-to-construction.pdf",
+      "bytes": 77040,
+      "sha256": "bc704dd593d8d844dc13213a06f16282345c93677965c599e5e3385411e84ffb",
+      "captured_at_utc": "2026-11-13T04:10:46.813855+00:00",
+      "pages": 3,
+      "text_file": "extracted/CIVIC-Hack_brief-5_housing-approval-to-construction.txt"
+    },
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/images/CIVIC-Hack_submission-template.docx",
+      "file": "official/CIVIC-Hack_submission-template.docx",
+      "bytes": 129046,
+      "sha256": "1d44d4520adb8cfe5535d6d59ab06e7bda7daf19813965364fa6a6867c3e3083",
+      "captured_at_utc": "2026-11-13T04:10:47.137364+00:00",
+      "text_file": "extracted/CIVIC-Hack_submission-template.txt"
+    },
+    {
+      "url": "https://fciprojects.ca/hackathons/2026-civic-hack/",
+      "file": "official/event-website.html",
+      "bytes": 118801,
+      "sha256": "a261457d0c04a39d17860909741274cc79b09317e02115e533a52cd14f2b5016",
+      "captured_at_utc": "2026-11-13T04:10:46.424510+00:00",
+      "text_file": "extracted/event-website.txt"
+    }
+  ],
+  "user_provided_selected_brief": {
+    "original_path": "/Users/deanbeanpotato/Downloads/CIVIC-Hack_brief-1_municipal-decisions.pdf",
+    "sha256": "460fba5146e5aeb1be2dbe8b499f3d95d5d0f3d39667e9b51d195706c341487a",
+    "identical_official_files": [
+      "official/CIVIC-Hack_brief-1_municipal-decisions.pdf"
+    ]
+  },
+  "web_only_sources": [
+    {
+      "url": "https://civic-hack-2026.devpost.com/",
+      "status": "Read through web research tool; direct download returned HTTP 403. No raw HTML archive."
+    },
+    {
+      "url": "https://civic-hack-2026.devpost.com/rules",
+      "status": "Read through web research tool; direct download returned HTTP 403. No raw HTML archive."
+    }
+  ],
+  "derived_files": [
+    {
+      "file": "extracted/CIVIC-Hack_brief-1_municipal-decisions.links.json",
+      "bytes": 685,
+      "sha256": "553e74fd965da01de9b948284f4e0ba65332916d878c65735bb68773b2b48cc3"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-1_municipal-decisions.txt",
+      "bytes": 9471,
+      "sha256": "6e872579d688974880d04b7fdf7283f1e5afe2257f051f3e5aedae2ecf897548"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-2_transit-access.links.json",
+      "bytes": 942,
+      "sha256": "7a6bf55f9944f3f020c827a5057fbea732fbc1b6df20026642f80c1ad0a50f91"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-2_transit-access.txt",
+      "bytes": 9489,
+      "sha256": "ac1faf9a48b3b0ba1ca729f5fd9676445b00e651118e558453aea15e410593de"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-3_infrastructure-costs.links.json",
+      "bytes": 1032,
+      "sha256": "ba748795c9cd4fd2fa76c3dfd52c2fff8e62648b18e520f7c37c007d6fb9c8b1"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-3_infrastructure-costs.txt",
+      "bytes": 9361,
+      "sha256": "757a75a7c6aee8dc9d63d60d92729dd5b5a2b0ae842bf25d5c205f8dd523e71b"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-4_city-commitments.links.json",
+      "bytes": 1416,
+      "sha256": "a33f62f4ebcc39211ff34a7209eedea944cfacc926a87363eda1441f0f5920f2"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-4_city-commitments.txt",
+      "bytes": 8212,
+      "sha256": "acbdb2ff89ca1fdecd112771ab1db161af30e598bf58f17fd52a3ac0d2bd335b"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-5_housing-approval-to-construction.links.json",
+      "bytes": 731,
+      "sha256": "44766db022f744264ce1defcddcaa769086b10d80a2bd8f817226942b348e673"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_brief-5_housing-approval-to-construction.txt",
+      "bytes": 8448,
+      "sha256": "17ca79cba384be33366e6a01a43c23e0786865d661546a8886d01e05035f1e57"
+    },
+    {
+      "file": "extracted/CIVIC-Hack_submission-template.txt",
+      "bytes": 1392,
+      "sha256": "c1e0d50fd4bdb9e567bee7740eb98439838e7909b3a3b1899e4262545775abfb"
+    },
+    {
+      "file": "extracted/event-website.txt",
+      "bytes": 26784,
+      "sha256": "4c56e61f811c8190bfb306360426ef9cade0be95c9bc1524bdc4777de9891643"
+    }
+  ]
+}

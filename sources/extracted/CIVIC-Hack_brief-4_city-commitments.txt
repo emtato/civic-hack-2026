@@ -1,0 +1,118 @@
+PAGE 1
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 4
+Tracking city commitments
+How  might  we  help  residents  see  what  progress  a  municipality  has  made  on  a  public 
+commitment, and what's still unclear?
+Build a working proof of concept that a municipality could realistically pilot. It can be a web app, data  
+tool, map, dashboard or another format. A municipal leader should be able to use it without your team  
+in the room.
+The problem
+Municipalities make many public pledges (strategic plans, housing pledges, budget promises) and set  
+targets, but residents can struggle to find out what has happened since. Progress information may be  
+scattered, outdated, or difficult to compare with the original promise. Reporting could appear in annual  
+reports, committee updates, budget documents, and the occasional dashboard, each with its own format  
+and timeline. Targets also change. Deadlines shift, measures are redefined and plans are replaced, which  
+makes it hard to tell whether a commitment is on track, delayed or quietly dropped.  Residents rarely get a 
+clear answer to a simple question: what did the city promise, and is it happening?
+A commitment needs a clear target, deadline and measure before progress can be assessed. For example,  
+Toronto’s goals include reducing emissions from City-owned buildings by 60% from 2008 levels by 2030.  
+Its facilities plan also sets a 37 MW renewable-energy goal for 2030. [1, 2] The City publishes utility data  
+and an inventory of renewable installations, but the datasets have different coverage and limitations. An  
+installation is evidence of an action; it does not by itself establish energy generated, emissions reduced or  
+achievement of a corporate target. [3, 4]
+The  federal  Housing  Accelerator  Fund  is  a  second  example.  According  to  the  Parliamentary  Budget 
+Officer, CMHC had committed $4.37 billion across 230 agreements, in which governments agreed to carry 
+out 1,744 initiatives toward a target of 112,000 additional homes by 2028. Pledges like these are published 
+in different places and reported on different schedules, so a resident has no single place to see whether a  
+promise is being kept.
+Residents, journalists and community groups who want to hold a city to account must piece together  
+evidence  from  scattered  documents.  Even  staff  can  find  it  hard  to  give  a  clear  status  across  many 
+commitments and departments. 
+There is a need for tools that link a commitment to its measures, show progress over time and are honest  
+about gaps: where data  is  missing,  the measure is vague or  responsibility sits  with another  level of 
+government. 
+How common and persistent it is 
+ In  2019,  municipalities  across  Ontario  and  Canada  declared  climate  emergencies.  Several, 
+including Toronto, Mississauga, Ottawa and Vancouver, have since acknowledged they are not on  
+track to meet their 2030 emissions targets. 
+FCI hackathon  •  Challenge brief       1
+
+PAGE 2
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 4
+ A University of Waterloo study of 38 Ontario municipalities found only 7 published a stand-alone 
+sustainability report and only  2 published a climate change report, a significant gap between  
+planning and reporting ( Municipal Sustainability and Climate Planning: A Study of 38 Canadian  
+Local Governments’ Plans and Reports, 2023)
+ In Ottawa, a 2023 progress report labelled most of the climate plan's priorities "off track." The  
+city's  auditor  general  later  found  accountability  for  targets  hadn't  been  formalized  across 
+departments (City of Ottawa Climate Change Master Plan, 2023).
+Questions to investigate
+ What happens when commitments outlive councils? Plans can cover decades but councils change  
+every four years. 
+ How  will  you  handle  inconsistency  in  reporting  and  lack  of  consensus  over  terms  like  ‘in 
+progress’?
+ Who is responsible for delivering and reporting on a commitment when several departments or  
+partners are involved?
+ What evidence distinguishes actions taken from measurable progress toward a target?
+ How  can  reporting  make  delays,  setbacks,  missing  evidence  and  uncertainty  clear  and 
+understandable?
+ What can existing municipal dashboards teach us about tracking commitments across multiple  
+plans, and where do gaps remain? 
+What it costs 
+ When residents can't see follow-through, they assume nothing happened. 
+ Without clear tracking, councils find out too late that commitments are slipping. 
+ Staff spend time rebuilding progress reports for each request, committee or audit.
+Who you are designing for
+Primary users. Residents seeking a clear account of what a municipality promised and what evidence  
+shows about progress. Community organizations advocating for specific goals. 
+Municipal  users.  Staff  responsible  for  delivering  commitments,  reporting  results  and  answering 
+questions from council.
+Other stakeholders.  Councillors, community organizations, journalists and agencies contributing to  
+delivery. Partners such as chambers of commerce, school boards and nonprofits who share responsibility  
+for outcomes. Funders and senior governments that attach conditions to commitments. 
+What success looks like
+ Users  can  find  the  original  commitment,  responsible  organization,  target  and  deadline  where 
+available.
+ Progress claims link to dated evidence and use clear, consistent status definitions.
+ The tool makes missing information and uncertainty visible without treating them as proof of failure.  
+Flags what is unclear, such as missing data, vague wording or no recent update 
+FCI hackathon  •  Challenge brief       2
+
+PAGE 3
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 4
+ A municipal leader can use the working tool independently, understand the status and see what  
+evidence or follow-up is needed.
+ A record of how commitments have changed over time 
+ A realistic plan for keeping the information current 
+Constraints
+ Preserve  the  original  commitment  and  record  revisions.  Distinguish  activity,  spending,  and 
+outputs from the intended outcome.
+ Use comparable measures, time periods and organizational boundaries. Do not calculate target  
+progress without a suitable baseline.
+ Distinguish “no recent evidence” from “no progress”. Show the measurement date as well as the  
+publication or retrieval date.
+ Do not attribute every change to municipal action. Explain important data gaps and other factors  
+that could affect the result.
+Two public datasets to explore
+You may use other public data that better supports your solution. Record your sources and dates, and  
+make data limitations visible.
+1. Annual Energy Consumption City Owned and Operated Buildings ( City of Toronto data  
+and downloads)
+Provides property and utility meter records for a defined group of facilities. Compare energy use across  
+consistent buildings and periods. The file has no direct emissions totals or established comparable 2008  
+baseline, so energy trends alone cannot measure progress against the emissions target.
+2. Renewable Energy Installations (City of Toronto data and downloads)
+Includes installation locations, system types, dates and sizes.  Check technologies and units before adding  
+capacities; installed capacity is not annual generation.
+Other potential data sources are municipal strategic plans, climate action plans and progress reports;  
+council minutes and staff reports; budget documents; existing municipal dashboards; open data portals.
+Explain your thinking
+Show who the tool serves, why you designed it this way and how you checked its outputs. Include clear  
+instructions, source links and any assumptions. Explain what a municipality would need to test or add  
+before piloting it. If you use AI, make its role and limitations clear.
+Background sources
+[1] City of Toronto. Greening City Operations
+[2] City of Toronto. Transforming City Buildings and Facilities
+[3] City of Toronto. Annual Energy Consumption
+[4] City of Toronto. Renewable Energy Installations
+FCI hackathon  •  Challenge brief       3

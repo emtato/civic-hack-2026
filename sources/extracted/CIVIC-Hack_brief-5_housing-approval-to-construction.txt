@@ -1,0 +1,118 @@
+PAGE 1
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 5
+From housing approval to construction
+How  might  we  help  residents  and  decision-makers  understand  what  happens  between  a  
+housing approval and construction, and where progress gets hard to track?
+Build a working proof of concept that a municipality could realistically pilot. It can be a web app, data  
+tool, map, dashboard or another format. A municipal leader should be able to use it without your team  
+in the room.
+The problem
+Housing  is  one  of  the  most  pressing  issues  facing  Canadian  cities.  Public  debate  often  focuses  on  
+approvals: how quickly councils approve new homes and how many units they approve. But an approval is 
+not a home. After approval, a project typically moves through further stages, such as site plan approval,  
+conditions, financing, pre-sales, building permits, servicing and construction.   Housing approval does not  
+always lead quickly to construction. Residents and decision-makers need to understand the steps between  
+them, where projects sit, and where progress becomes difficult to trace. Many approved units take years to 
+break ground, and some never do. The reasons vary: interest rates, construction costs, market demand,  
+servicing capacity, labour shortages and development charges among them.
+For  example,  Toronto’s  Development  Pipeline  separates  planning  approval,  permit  application  and  
+permit-issued stages. A project counted as approved may still need other approvals. A building permit  
+allows work to proceed, but issuance alone does not confirm that physical construction has started. [1]
+Construction also depends on financing, labour, materials, servicing and market conditions. The Bank of  
+Canada  describes  how  borrowing  costs  and  project  viability  can  affect  whether  housing  proceeds.  
+Planning and permit records cannot reveal all of these conditions for an individual project. [2]
+The pipeline between approval and construction is hard to see. Data sits in different systems: planning  
+applications, building permits, servicing agreements and housing starts. These systems often use different  
+identifiers, and some steps depend on private decisions that are not public at all.   Without a clear view,  
+residents may blame the wrong actor, and decision-makers may pull the wrong levers. Better tools could  
+show where projects stall and why, so that policy responses target the real bottlenecks.
+How common and persistent it is 
+ In the Greater Toronto and Hamilton Area, CivicAction counted 2,220 approved projects (about  
+1.2 million units) on hold in mid-2025, more than four times the number of active projects. That  
+is roughly 12 approved homes for every one under construction. 
+ As  of  December  31,  2025,  Toronto’s  development  pipeline  included  approximately  297,000  
+residential units at the planning-approved stage and a further 65,000 at the building-permit-
+issued stage (City of Toronto’s Development Activity Bulletin, 2025)
+ Ontario housing starts hit their lowest level since 2009 in early 2025 (Financial Accountability  
+Office). The province forecasts about 71,800 starts in 2025, well below the roughly 150,000 a year  
+needed for its 1.5 million homes goal. 
+ 35 of Ontario's 50 largest municipalities missed their 2024 housing targets (STOREYS, 2025).
+FCI hackathon  •  Challenge brief       1
+
+PAGE 2
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 5
+Questions to investigate
+ Which actors and decisions shape the transition from approval to construction, and which parts  
+can a municipality influence?
+ Where  does  visibility  break  between  planning  approval,  permit  application,  permit  issuance, 
+construction start and completion?
+ How should records be connected when projects have multiple phases, addresses, applications,  
+permit revisions, and identifiers?
+ What can public records reveal about timing and status, and what remains private or unobserved,  
+such as financing, pre-sales, ownership or market demand?
+ What other explanations could produce the same signal as a long interval, missing record or  
+permit mismatch?
+ How  does  uncertainty affect municipal planning, funding accountability,  service delivery  and  
+public communication?
+What it costs 
+ Housing affordability suffers as every stalled project is supply that isn't reaching renters and  
+buyers. 
+ Municipal funding as cities can lose provincial funding. Ottawa missed out on its Building Faster  
+Fund allocation after reaching 63% of its 2024 target. 
+ Infrastructure costs when municipalities may build servicing for growth that doesn't arrive on  
+schedule. 
+ Trust  can  be  eroded  and  blame  can  be  incorrectly  assigned  when  without  shared  data,  
+municipalities, developers and the province point at each other. 
+Who you are designing for
+Primary  users.  Residents  waiting  for  housing  and  neighbours  seeking  to  understand  the  status  of 
+approved developments.
+Municipal users. Housing, planning and economic development staff tracking delivery and identifying  
+projects that need follow-up.
+Other stakeholders.  Developers, non-profit housing providers, building officials, utilities, lenders and  
+councillors. Provincial and federal governments funding and setting housing target. 
+What success looks like
+ Users can follow projects through clearly defined approval, permitting, and construction stages.
+ The tool connects project and unit information without counting the same development more than  
+once.
+ It  highlights  long  intervals,  missing  milestones,  and  possible  bottlenecks  while  distinguishing  
+evidence from inference.
+ A municipal leader can use the working tool independently to understand the pipeline and identify  
+useful follow-up questions.
+FCI hackathon  •  Challenge brief       2
+
+PAGE 3
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 5
+Constraints
+ Keep milestones distinct. Planning approval, permit application, permit issuance, construction start  
+and completion or occupancy are different events.
+ Define projects, phases, and units consistently. Multiple addresses, approvals, and permit revisions  
+can refer to the same development or to different phases.
+ Use documented dates for intervals. An application received date is not an approval date, and a  
+missing match is not proof of a construction delay.
+ Separate evidence from inference. A long interval, missing record or permit status may warrant a  
+question; it does not prove that a project has stalled or explain why.
+ Respect  what  public  data  does  not  show.  Financing,  pre-sales,  ownership  decisions,  labour  
+availability, material costs and servicing capacity may be incomplete or private.
+Public datasets to explore
+You may use other public data that better supports your solution. Record your sources and dates, and  
+make data limitations visible.
+1. Development Pipeline (City of Toronto data and downloads)
+Includes pipeline status, application number, date received, address, description, proposed residential  
+units and links to planning records. It is a rolling snapshot rather than a complete milestone history;  
+proposed units are not completed homes.
+2. Building Permits Active Permits (City of Toronto data and downloads)
+Includes permit and revision identifiers, work type, addresses, application and issue dates, status and  
+dwelling-unit  fields.  It  excludes  cleared  records,  and  permit  issuance  alone  does  not  establish  
+construction. Related permits can contain overlapping unit counts.
+3. Application Information Centre (City of Toronto planning applications)
+Provides current information on active Community Planning, Committee of Adjustment and Toronto  
+Local Appeal Body applications. It refreshes daily, and closed applications may not appear. 
+Explain your thinking
+Show who the tool serves, why you designed it this way and how you checked its outputs. Include clear  
+instructions, source links and any assumptions. Explain what a municipality would need to test or add  
+before piloting it. If you use AI, make its role and limitations clear.
+Background sources
+[1] City of Toronto. Development Pipeline
+[2] Bank of Canada. Breaking down the costs of building new housing
+[3] City of Toronto. Application Information Centre
+FCI hackathon  •  Challenge brief       3

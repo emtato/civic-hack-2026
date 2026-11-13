@@ -1,0 +1,137 @@
+PAGE 1
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 2
+Finding gaps in transit access
+How might we use public data to spot where transit schedules make it hard to reach essential  
+destinations, and figure out which improvements matter most and what the trade-offs are,  
+including first-mile/last-mile gaps?
+Build a working proof of concept that a municipality could realistically pilot. It can be a web app, data  
+tool, map, dashboard or another format. A municipal leader should be able to use it without your team  
+in the room.
+The problem
+Transit access varies greatly between the neighbourhoods of a city. Some have far more access issues, and  
+it is hard to surface where the available systems are falling short. A nearby stop may still leave people  
+facing long waits, difficult transfers or a long walk before they can reach an essential destination. A bus  
+stop near your home does not guarantee useful access. What matters is whether the schedule gets you to  
+work, school, a clinic, a grocery store or childcare at the times you need, in a reasonable travel time.  
+Coverage maps show where routes run, not whether trips are practical at 6 a.m., on Sundays or for shift  
+workers. 
+The journey to and from the stop matters too. Missing sidewalks, unsafe crossings, long walks, winter  
+conditions and a lack of bike parking or on-demand options can make a nearby stop unusable. These are  
+first-mile and last-mile gaps.
+The Organisation for Economic Co-operation and Development (OECD) and the International Transport  
+Forum  assess  accessibility  by  the  destinations  people  can  reach  within  a  given  time.  This  makes 
+frequency, connections, and walking access important alongside the location of routes and stops. [1]  
+Statistics Canada calculates convenient access to public transit as the share of people living within 500  
+metres, measured along the street network, of a transit stop. In 2023, the national figure was 75.1% across  
+1,111 municipalities with available data, with Toronto, Montréal and Vancouver above 82%, and smaller  
+metropolitan  areas  generally  lower  (Statistics  Canada,  The  Daily,  2023).  In  2026  Statistics  Canada 
+published a newer table that breaks access down by distance, transit carrying capacity, geography and  
+demographic characteristics (The Daily, June 2026).
+The  TTC  publishes  scheduled  routes,  stops  and  trip  times  for  buses,  streetcars  and  subways.  These 
+records support comparisons across locations and times of day, but do not show actual delays, crowding  
+or every barrier along a walking route. [2] Being near a stop does not mean a bus comes often. A tool that  
+shows service frequency and who is affected would add something the headline statistics cannot.
+How common and persistent it is 
+ A national study found nearly one million low-income Canadians live in urban areas with low  
+transit accessibility, putting them at risk of "transport poverty" (Allen and Farber, 2019). 
+ In the Toronto area alone, the same research team estimated more than 600,000 people struggle  
+with both low income and poor transit options. 
+ A Toronto study found lower-income inner suburbs had transit scores less than a third of more  
+affluent neighbourhoods. 
+FCI hackathon  •  Challenge brief       1
+
+PAGE 2
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 2
+Questions to investigate
+ How do neighbourhood density, land use and street design affect access to frequent transit?
+ How  do transit agencies  balance frequent service  on  busy  routes with coverage across  more 
+neighbourhoods, and who benefits from each approach?
+ How long does it take residents to reach essential destinations at different times of day, including  
+walking, waiting and transfers?
+ Where do first-mile and last-mile gaps make a journey difficult, even when transit service is  
+available nearby?
+ How do transit needs differ for shift workers, caregivers, seniors, newcomers and other residents,  
+and whose experiences might public data miss?
+ Which improvements could make the greatest difference, and what trade-offs would they involve  
+in cost, service frequency, coverage and accessibility?
+What it costs 
+ Economic factors include limited access to jobs which narrows employment options and can force  
+households into costly car ownership. 
+ Health and wellbeing in terms of missed medical appointments, harder access to fresh food, and  
+social isolation, especially for seniors and people with disabilities. 
+ Equity as the burden falls most heavily on low-income households, women balancing work and  
+childcare, and recent immigrants. 
+Who you are designing for
+Primary users:  Transit planners and transportation staff investigating gaps and comparing possible  
+service improvements.
+Secondary  users:  Transit-dependent  residents,  including  students,  shift  workers,  older  adults, 
+caregivers,  and  people  with  mobility  limitations.  Residents  of  fast-growing  suburban  areas  and  new 
+subdivisions. 
+Municipal users.  Equity, planning and sustainability staff who work on access to jobs, services, and  
+housing which are all linked to mobility. City and regional councillors who need an easy-to-read evidence  
+base.
+Other stakeholders.  Neighbourhood groups, accessibility advocates, destination operators and transit  
+agencies. 
+What success looks like
+You might build an access map, an understandable service score or a tool that compares improvements.  
+Include first-mile and last-mile connections (the journey to the first stop and from the final stop to the  
+destination).
+ Users can see where and when access is weaker and understand the criteria behind that finding.  
+Surfacing of specific places and times where access breaks down, not just general averages. 
+ The analysis considers service frequency, waiting, transfers, and access to essential destinations.
+FCI hackathon  •  Challenge brief       2
+
+PAGE 3
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 2
+ Users can compare potential improvements and understand their benefits, resource needs, and trade-
+offs.
+ A municipal leader can explore the working tool independently and identify a useful next step for  
+service planning.
+ A tool that shows transit access at the neighborhood level, combining walking distance to stops with  
+service frequency, plus a way to identify the least-served areas. 
+ Methods that are flexible for when schedules change. 
+ A tool that maps how long it takes to reach essential destinations (groceries, healthcare, jobs, schools)  
+by transit from each neighbourhood, at different times of day 
+ Highlights the worst gaps and who lives there 
+ Tests one or two "what if" improvements (more frequent service, a new route, a first/last-mile option)  
+and shows the trade-offs 
+ Explains results clearly for a non-technical audience .
+Constraints
+ Define what “frequent”, “accessible” or “underserved” means in your analysis. Show the travel times,  
+dates and assumptions used.
+ Use dates covered by the transit feed and account for service calendars. Scheduled service is not the  
+same as reliable service.
+ Make walking estimates and accessibility gaps visible. A straight-line connection does not establish a  
+safe or wheelchair-accessible route.
+ Do not generalize from a few sample locations to all residents. Population or equity claims need  
+supporting geographic and demographic evidence.
+Public datasets to explore
+You may use other public data that better supports your solution. Record your sources and dates, and  
+make data limitations visible.
+1. Merged GTFS TTC Routes and Schedules (City of Toronto data and downloads)
+Includes routes, stops, trips, stop times and service calendars. Use it to measure departures,  
+scheduled connections and travel times. Join tables using route, trip, stop and service identifiers,  
+and check the feed’s service period.
+2. Library Branch General Information (City of Toronto data and downloads)
+Includes branch locations, coordinates, opening hours and service features. Libraries provide a  
+useful example of essential community destinations. Select physical branches and check opening  
+hours; this dataset does not cover all essential services.
+3. Grand River Transit GTFS feed   (Region of Waterloo open data; GTFS schedule, with route and 
+stop data). A local, well-maintained feed. The feed is also listed on the  Mobility Database, and 
+teams can swap in any city's GTFS feed.
+4. Statistics  Canada,  Table  23-10-0314-01:  Access  to  public  transport  by  distance  and 
+carrying  capacity,  geography,  gender,  selected  demographic  and  socio-economic 
+characteristics, and count of public transport stops  (see the June 2026 release). Useful as a 
+benchmark and for demographic context.
+FCI hackathon  •  Challenge brief       3
+
+PAGE 4
+FUTURE CITIES INSTITUTE  |  HACKATHON CHALLENGE 2
+Explain your thinking
+Show who the tool serves, why you designed it this way and how you checked its outputs. Include clear  
+instructions, source links and any assumptions. Explain what a municipality would need to test or add  
+before piloting it. If you use AI, make its role and limitations clear.
+Background sources
+[1] OECD and International Transport Forum. Benchmarking Accessibility in Cities
+[2] Toronto Transit Commission. Merged GTFS TTC Routes and Schedules
+FCI hackathon  •  Challenge brief       4

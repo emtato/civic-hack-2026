@@ -1,0 +1,138 @@
+PAGE 1
+FUTURE CITIES INSTITUTE |  HACKATHON CHALLENGE 1
+Making municipal decisions easier to understand
+How might we help residents understand a proposed municipal decision, how it could affect  
+them, and when they can have a say?
+Build a working proof of concept that a municipality could realistically pilot. It can be a web app, data  
+tool, map, dashboard or another format. A municipal leader should be able to use it without your team  
+in the room.
+The problem
+Municipal decisions on zoning, budgets, bylaws, transit and infrastructure shape daily life more directly  
+than any other level of government. Municipal councils make decisions every week that impact residents:  
+zoning changes, budgets, bike lanes, development applications, fees and service levels. However, council  
+decisions are spread across agendas, minutes and staff reports that most residents never read. A single  
+item can run to hundreds of pages written in planning and legal language. Residents need a clear way to  
+find an issue, understand what it means, and know whether they can still influence it. 
+Public engagement happens at set points: statutory notices, public meetings, delegation deadlines and  
+comment periods. However, comment windows are often short and easy to miss. Most residents only  
+learn about a decision once it's made, or once construction starts.
+Toronto publishes council and committee agendas, reports, recommendations and decisions. Agendas can  
+change as material is added, and a proposal may be amended before a final decision is made. Explaining  
+an issue accurately can require connecting several records. [1]
+Residents can submit written comments and speak at certain committee or board meetings, but the  
+process depends on the meeting and item. The tool needs to distinguish an upcoming opportunity for  
+input from a decision that has already been made. [2] There is a need for tools that translate, personalize  
+and time information: telling a resident what is proposed near them, what it would change, and the next  
+date they can act.
+How common and persistent it is 
+ Only 20% of Canadians say they have ever taken part in a municipal public consultation, and just  
+9% say they are very likely to in the future (Ipsos and Municipal World). 
+ Ontario's average municipal election turnout fell to a record low of about 36% in 2022, down from 
+38.3% in 2018. Over 40 years, it has never risen above 40% (AMO). 
+ In a City of Toronto survey, residents' top challenges were that information is hard to find and  
+that they are unaware of ways to give input. 
+Questions to investigate
+ What makes municipal agendas, staff reports and minutes difficult for residents to understand,  
+and which details are essential to preserve when simplifying them?
+ How can residents follow a proposal through multiple meetings and distinguish what is proposed,  
+what has been decided and what remains open?
+FCI hackathon • Challenge brief       1
+
+PAGE 2
+FUTURE CITIES INSTITUTE |  HACKATHON CHALLENGE 1
+ When and how can residents provide input, and how can those opportunities be made clear  
+before a deadline passes?
+ What information helps residents understand how a proposed decision could affect them and  
+their neighbourhood?
+ How can municipalities show how public input was considered, even if it did not change the final  
+decision?
+ How  could  a  tool  help  municipal  staff  explain  decisions  clearly  while  keeping  information 
+accurate, current, and linked to its sources?
+What it costs 
+ Delays and rework as late opposition can trigger appeals, deferrals and redesigns that a clear early 
+explanation might have avoided. 
+ Missing  voices  with  renters,  newcomers,  students  and  shift  workers  being  least  likely  to 
+participate, so decisions reflect a narrow slice of the community. 
+ Legitimacy is a concern as decisions made without broad understanding are more likely to be  
+contested and less likely to be trusted. 
+ Today's tools publish information but rarely explain it. Residents must already know a decision  
+exists, where to find it and how to read it. This favours people with time, expertise, and familiarity  
+with city hall. Participation then reflects a narrow slice of the community, which weakens the  
+quality of decisions. 
+Who you are designing for
+Primary users.  Residents looking for understandable information about a municipal issue, including  
+people unfamiliar with council processes. This includes renters, newcomers, youth, seniors and people  
+with lower literacy or limited English. Community groups and residents want to know what was decided  
+and how it affects them. An app alone will also miss people offline. 
+Municipal users. Clerks, communications staff and engagement teams helping residents find accurate  
+information and could benefit from a tool that makes decisions more transparent and easier to explain.  
+Councillors and their staff who need quick, accurate summaries and a way to communicate them to their  
+constituents. 
+Other stakeholders. Community associations, local businesses and people affected by a decision. Local  
+journalists and civil advocates who monitor council. 
+What success looks like
+A tool that takes a real municipal decision or staff report and shows, in plain language: 
+ What is being proposed, and why
+ Who and where it affects ("is this near me?") 
+ Key dates, and how and when to have a say 
+ A link back to the source document for every claim  , The tool connects its explanation to the  
+original reports and decision, including important amendments or conditions.
+FCI hackathon • Challenge brief       2
+
+PAGE 3
+FUTURE CITIES INSTITUTE |  HACKATHON CHALLENGE 1
+ Thought given to who the tool might leave out
+ Tested on two or three real agenda items, accurate, and neutral in tone.
+ A municipal leader can use the working tool independently and see how it would support public  
+understanding.
+Constraints
+ Distinguish staff recommendations, committee decisions and final council decisions. 
+ Show the source and date for each explanation.
+ Summaries must preserve important conditions and uncertainty. AI-generated answers need to be  
+checked against the records. A summary that mis-states a decision is worse than no summary. Every  
+summary should link back to the exact source passage. 
+ Verify participation information on the official item page. Do not infer a submission deadline from a  
+meeting date.
+ Use clear, accessible language and avoid displaying unnecessary personal information from public  
+correspondence. Any communications must be non-partisan and presented neutrally. 
+Technical considerations
+ Document parsing as agendas and staff reports are often PDFs with inconsistent structure; extracting  
+the decision, location, timeline and recommendation is non-trivial 
+ Summarization needs a careful approach because language models can simplify text but can also  
+omit, distort or invent details; summaries should link back to the source and flag uncertainty 
+ Geolocation  when  connecting a  decision  to an  address,  ward or neighbourhood requires  parsing 
+addresses, legal descriptions and maps 
+ Personalization is important as "how could this affect me" depends on location, tenure, travel patterns 
+and more, which raises data-minimization questions 
+ Timeline  modelling:  representing  process  stages  (notice,  meeting,  decision,  appeal)  consistently 
+across decision types 
+ Accessibility including WCAG compliance, plain language, translation and mobile-first design.
+Public datasets to explore
+You may use other public data that better supports your solution. Record your sources and dates, and  
+make data limitations visible.
+1. Report  Request  Log  City  Council  and  its  Committees  (City  of  Toronto  data  and 
+downloads)
+Contains adopted requests for staff reports, item references, report-back timing and status. Use it to  
+locate council directions and follow reporting links. It covers report requests, not every decision; a closed  
+request does not prove a wider commitment was delivered.
+2. Members of Toronto City Council Voting Record (City of Toronto data and downloads)
+Contains recorded votes,  agenda  item  references, motion  descriptions and  results. Link  these to the 
+official reports and decisions. Read the motion carefully: a vote may concern an amendment, and not  
+every decision has a recorded vote.
+FCI hackathon • Challenge brief       3
+
+PAGE 4
+FUTURE CITIES INSTITUTE |  HACKATHON CHALLENGE 1
+Other potential datasets to consider are council and committee agendas, minutes and staff reports from  
+local municipalities; Municipal open data portals (zoning, ward boundaries, development applications);  
+Public  notice  pages  and  engagement  platforms  used  by  local  cities ;  Plain-language  and  accessibility 
+guidelines .
+Explain your thinking
+Show who the tool serves, why you designed it this way and how you checked its outputs. Include clear  
+instructions, source links and any assumptions. Explain what a municipality would need to test or add  
+before piloting it. If you use AI, make its role and limitations clear.
+Background sources
+[1] City of Toronto. Be Informed
+[2] City of Toronto. Participate in Council and Committee Meetings
+[3] City of Toronto. Council agendas reports and decisions
+FCI hackathon • Challenge brief       4

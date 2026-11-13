@@ -1,0 +1,48 @@
+Click a field and type. When you're done, save this page as a PDF and add it to your Devpost project.
+Project name
+Your project's name
+Team name
+Type here
+Contact (UWaterloo) email 
+Type here
+Team
+1 to 4 people, with at least one currently enrolled University of Waterloo student. Solo participants must be UW students.
+Name
+School
+Program
+Name
+School
+Program
+Name
+School
+Program
+Name
+School
+Program
+Name
+School
+Program
+The problem
+What aspect of the problem statement did you focus on addressing?
+(60 words)
+Type here
+Your solution
+What did you build? Who will use it? How will they use it?
+(60 words)
+Type here
+What changes
+What is wrong with the current process, and how does your solution address this problem? Explain the scope of impact this tool would create.
+(30 words)
+Type here
+Data sources and tools
+Every dataset, API and tool you used, including AI tools. Say where each dataset came from and what you assumed. Public, open or organizer-provided data only. 
+(60 words)
+Dataset
+Source
+What could be piloted today
+Which of the citizen’s needs have been left unaddressed that you would prioritise for the next iteration. What's ready to go and what’s mocked up?
+(40 words)
+Type here
+Adopting or scaling it
+What approaches are required for a systematic application of your solution across municipalities (Consider municipalities from various provinces across Canada)? 
+Type here

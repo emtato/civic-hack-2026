@@ -1,0 +1,557 @@
+CIVIC Hack 2026 | Future Cities Institute
+CIVIC Hack
+Menu
+Prizes
+Challenge
+Schedule
+Submission
+Questions
+Register
+Received
+03 Nov 2026 · FCI
+Notice of public hackathon
+36 hours
+·
+Online
+·
+12 to 14 November 2026
+CIVIC
+places University of Waterloo students inside Canadian municipalities for eight months to work on a problem the city has lived with for years. CIVIC Hack is the 36-hour version. You take part online, but the audience is live at the
+2026 State of Canada's Cities Summit
+in Ottawa. Municipal leaders there choose the problem on Thursday, and the finished work will be presented and shared with them.
+Launch in
+··
+d
+··
+h
+··
+m
+Launch
+Thursday 12 Nov, 6 pm EST
+Hacking ends
+Saturday 14 Nov, 10 am EST
+Teams
+1 to 4 people, any faculty
+Cost
+Free
+Prizes
+$1,500 cash, plus recognition
+Discord
+Invite emailed after registration
+Register
+Open until launch, on Devpost
+01
+Prizes
+02
+The challenge
+03
+Schedule
+04
+What to submit
+05
+Mentors and judges
+06
+How it's judged
+07
+Team rules
+08
+Questions
+09
+Code of conduct
+CH-1
+Awards
+$1,500 cash total
+Prizes
+Three cash prizes from the judging panel's scores, special recognition for the projects that stand out, and a few things that outlast the weekend.
+First
+$750
+Certificate and digital recognition to share with your network. Featured on FCI's website, newsletter and LinkedIn.
+Second
+$500
+Certificate and digital recognition to share. Featured alongside first.
+Third
+$250
+Certificate and digital recognition to share. Featured alongside first.
+Special recognition
+Alongside the cash prizes, the judging panel gives two special recognition awards. They're non-cash, and each comes with a certificate and digital recognition you can share on LinkedIn.
+Most community-centred project
+Best reflects residents' needs and equity.
+Best storytelling and visualizations
+Strongest demo video and pitch.
+Winners featured on FCI's website, newsletter and LinkedIn
+An invitation to present to FCI staff, members and partners
+A chance to interview with FCI, for any role you'd like to talk about
+CH-2
+Notice of vote
+No. 2611 013
+You'll be solving one of these challenges
+Five municipal problems go to a vote at the
+2026 State of Canada's Cities Summit
+by the Canadian Urban Institute, in Ottawa on Thursday 12 November. Voting closes at 3 pm. The winning problem is revealed at launch, so read all five now and come in with a user in mind.
+1
+Making municipal decisions easier to understand
+How might we help residents understand a proposed municipal decision, how it could affect them, and when they can have a say?
+Full brief, PDF
+2
+Finding gaps in transit access
+How might we use public data to spot where transit schedules make it hard to reach essential destinations, and figure out which improvements matter most and what the trade-offs are, including first-mile/last-mile gaps?
+Full brief, PDF
+3
+Making long-term infrastructure costs visible
+How might we help residents weigh an infrastructure project's upfront price against its future maintenance, operating and environmental costs?
+Full brief, PDF
+4
+Tracking a city's commitments
+How might we help residents see what progress a municipality has made on a public commitment, and what's still unclear?
+Full brief, PDF
+5
+From housing approval to construction
+How might we help residents and decision-makers understand what happens between a housing approval and construction, and where progress gets hard to track?
+Full brief, PDF
+Municipalities across Canada face many of the same problems, so a problem solved well once can be shared, adapted and reused instead of rebuilt from scratch every time. The tool you build should be usable by someone outside your own discipline, and you'll be asked to explain it to them.
+Vote open
+Closes 12 Nov · 3 pm
+CH-3
+Docket
+Ottawa now
+Schedule
+All times Eastern. You take part online from wherever you are.
+Thursday 12
+Vote and launch
+3 pm
+Summit vote closes in Ottawa and the problem statement is finalized
+6 pm
+Launch.
+Welcome, challenge reveal, rules and team formation
+7 pm
+Hacking begins
+Friday 13
+Build
+8 am
+Checkpoint one.
+Post your problem, your user and your idea in two lines
+8:30 am
+Live from the summit,
+until 10 am. The hackathon goes in front of the summit audience. Details below
+10 am
+Mentor office hours
+until 4 pm
+3 pm
+Checkpoint two.
+Post where you've got to
+6 pm
+Checkpoint three.
+Post your progress and read the submission requirements
+Saturday 14
+Judge and showcase
+8 am
+Final checkpoint.
+Submission requirements, one last time
+10 am
+Hacking ends.
+All building stops: no more code, no more generating, no more edits. Submissions are due on Devpost by 10 am, and late submissions are not considered
+10:30
+Round one, asynchronous judging. Judges review the demo videos and reports on Devpost
+12 pm
+Finalists announced,
+top five
+12:30
+Showcase.
+Each finalist gives a five-minute pitch or live demo and takes three minutes of questions
+1:30
+Feedback.
+General feedback from the panel, then how each team might take its project forward
+1:45
+Winners and special recognition, then closing by 2 pm
+Live from the summit · Friday 13 Nov
+You choose the challenge. Our students build the solution.
+8:30 to 10 am EST
+Livestreamed from the
+2026 State of Canada's Cities Summit
+in Ottawa
+With Eryn Stewart and Dr. Leia Minaker of FCI
+Recording available afterward
+On Friday morning Eryn Stewart and Leia Minaker, who run CIVIC, put the hackathon in front of the summit. Municipal leaders, practitioners and researchers in the room see what teams have built in the first 13 hours, weigh in on what's practical and what isn't, and say what a municipality would need before it could put one of these tools to use.
+Watch the livestream. What they say is your brief for the next 24 hours.
+Can't watch live? The recording will be posted here and in the #resources channel on Discord shortly after the session.
+CH-4
+Submission form
+Due 14 Nov · 10 am
+What to submit
+Everything is submitted to Devpost before 10 am on Saturday. Templates provided.
+Field 01
+Required
+Link to your code repository
+A link to a working prototype is welcome, not required. Commits will be checked.
+Field 02
+Required
+Demo video, two to three minutes
+Show the tool working and say who it's for. Over three minutes won't be considered.
+Tips for your video
+Field 03
+Required
+Municipal Readiness Report, one page
+Who would use it, what data and resources it needs, rough cost, privacy, what residents should know and how other municipalities could adapt it. A link to a PDF in your GitHub repository is fine. Think of it as a short case study for other cities.
+Download the template
+Field 04
+Required
+A short description
+The problem, who it's for, your solution and what's next.
+CH-5
+Mentors on call Friday · Judges Saturday
+Mentors and judges
+Mentors are technical and municipal experts on Discord Friday from 10 am to 4 pm to help you get unstuck.
+Eryn Stewart
+Managing Director, Future Cities Institute
+Eryn is Managing Director of the Future Cities Institute. Before FCI, she co-founded and led Indigenous Clean Energy, a community-driven enterprise advancing Indigenous inclusion in Canada's clean energy future. She has been named a Top 30 Under 30 Sustainability Leader and received the University of Waterloo Young Alumni Inspiration Award.
+Expertise
+Strategy, research, sustainable development, clean energy, Indigenous partnerships, climate action
+Clarence Woudsma, PhD, RPP
+Co-Director (Academic), Future Cities Institute · Associate Professor, School of Planning, University of Waterloo
+Clarence was appointed FCI's Co-Director, Academic, in 2026, bringing three decades of applied research in transportation systems, last-mile logistics and urban mobility. He is a Registered Professional Planner who joined Waterloo in 2004 from the University of Calgary. His published work spans commuter rail station access, curbside management in Canadian cities and an analysis of Waterloo's e-scooter pilot.
+Expertise
+Transportation planning, GIS, policy analysis, urban design, freight and last-mile logistics, urban mobility
+Melanie Hains
+Academic Program Development Lead, Future Cities Institute
+Melanie develops academic and professional learning programs at FCI that respond to emerging urban challenges. Her background spans market research, labour market intelligence, program strategy and continuing education at the University of Waterloo.
+Expertise
+User experience, qualitative research, storytelling with data, program strategy, labour market intelligence
+Susan Brown
+Research Coordinator, Future Cities Institute
+Susan is the Research Coordinator at the Future Cities Institute. She supports the Institute's research and knowledge mobilization work, including grant preparation, project management and collaboration between academic, municipal and industry partners.
+Expertise
+Research coordination, knowledge mobilization, cross-sector collaboration
+Pedro Miranda
+PhD candidate, Future Cities Institute
+Works on secure, blockchain-based platforms for public health research, and on how technology can support dynamic consent and resilient health systems.
+Expertise
+Secure data platforms, consent and privacy, health systems
+CH-6
+Return slip
+100 points
+How it's judged
+The judging panel scores every submission out of 100 points: 40 for the project, 20 for software design and code understanding and 40 for how it's presented. Open any criterion to see what a 1, a 3 and a 5 look like.
+40
+Project
+20
+Software
+40
+Presentation
+Part 1
+Project
+40 points
+Problem understanding and stakeholders addressed
+10 points
++
+1 · Limited
+The problem and affected stakeholders are unclear
+Benefits or impacts are largely assumed.
+The solution does not address the needs of the primary stakeholders.
+3 · Meets expectations
+Defines the problem and key stakeholders
+Benefits and impacts are laid out and considers some differing needs or trade-offs.
+The solution only addresses the needs of the primary stakeholders.
+5 · Excellent
+Clearly understands the problem and stakeholder needs beyond the surface level.
+Clearly shows expected benefits and explains potential harms and trade-offs.
+The solution addresses the needs of the primary stakeholders, plus additional stakeholders.
+Project quality and functionality
+15 points
++
+1 · Limited
+The core task cannot be completed, or outputs have major errors.
+Key features are mainly simulated.
+There are existing technical flaws that are not addressed.
+3 · Meets expectations
+The core task works on a relevant example
+Main features are operational, some tertiary features are mocked up.
+Some gaps, errors or workarounds remain.
+5 · Excellent
+The core workflow produces useful, checked outputs.
+Main features are fully operational with very minimal placeholder aspects.
+Results are reliable; data limits and incomplete features are clear. Responsible use of data and AI.
+Design, clarity and feasibility
+10 points
++
+1 · Limited
+Design could not be implemented in a real-world setting without substantial rework to address the municipal context.
+A first-time user needs substantial help to navigate the tool or interpret its output.
+3 · Meets expectations
+Design could be implemented with some tweaks for the municipal context.
+A first-time user can complete the main task with instructions, but encounters some confusing steps or terminology.
+5 · Excellent
+Design could be implemented right away in a municipal context.
+A novice completes the main task independently, supported by clear navigation, plain language, accessible design and useful guidance.
+Potential impact and practical value
+5 points
++
+1 · Limited
+The connection to the challenge statement is unclear; a useful application is not established.
+Design is not an improvement over what already exists or processes already in place.
+Solution is specific to only one example municipal use case.
+3 · Meets expectations
+Clear connection to most aspects of the challenge statement. Connects the project to relevant priorities and identifies a plausible use and benefit for a host, sponsor or municipal partner.
+Design is an incremental improvement over what already might exist.
+Impact is strong but could be difficult to scale to use cases at other municipalities.
+5 · Excellent
+Demonstrates strong alignment with the problem identified in the challenge, a credible organizational use and clear practical value.
+The potential impact is strong and would lead to substantial positive, real-world outcomes.
+The presented solution/tool could be scaled to other municipalities.
+Part 2
+Software design, architecture and code understanding
+20 points
+Software requirements and design (UML)
+5 points
++
+1 · Limited
+Requirements are unclear or incomplete.
+UML diagrams are missing, inaccurate, or inconsistent with the implementation.
+3 · Meets expectations
+Defines essential functional and non-functional requirements.
+Relevant UML diagrams generally align with the implementation.
+5 · Excellent
+Defines clear, complete, and testable requirements.
+Accurate UML diagrams show how the design addresses the requirements and align with the implementation.
+Software architecture rationale and scalability considerations
+5 points
++
+1 · Limited
+Describes the architecture with little justification or connection to requirements.
+Provides little consideration of growth in users, data, or workload.
+3 · Meets expectations
+Explains major architectural choices and connects them to requirements and relevant design principles.
+Identifies likely scalability challenges and explains suitable approaches to address them.
+5 · Excellent
+Justifies architectural choices by comparing alternatives and evaluating trade-offs, including maintainability, testability, scalability, and requirements alignment.
+Analyzes expected growth and potential bottlenecks; justifies design choices and trade-offs using concrete scenarios or evidence.
+Source code awareness
+5 points
++
+1 · Limited
+Cannot adequately explain key code, its behaviour, or its integration.
+Uses generated or copied code without demonstrating understanding or verification.
+3 · Meets expectations
+Explains key code and demonstrates understanding of generated or adapted components.
+Verifies that the code works as intended.
+5 · Excellent
+Clearly explains implementation choices, dependencies, and limitations.
+Demonstrates the ability to modify, debug, and validate generated or adapted code independently.
+Source code, framework, library and algorithm references
+5 points
++
+1 · Limited
+References are missing, incomplete, or insufficient to identify reused sources.
+3 · Meets expectations
+Identifies and cites external code, frameworks, libraries, and algorithms; discloses AI assistance where used.
+5 · Excellent
+Provides complete, traceable references, including relevant versions and licences; clearly identifies adaptations and documents how AI assistance was used and verified.
+Part 3
+Presentation
+40 points
+Municipal readiness report
+20 points
++
+1 · Limited
+The report is difficult to follow; the rationale, evidence or recommendations are unclear or unsupported.
+Not all questions are fully answered.
+3 · Meets expectations
+Explains the problem, approach and results for a municipal audience; includes sources and some limitations and next steps.
+All questions are addressed.
+5 · Excellent
+A clear municipal readiness report that connects stakeholder needs, evidence and results to actionable recommendations and pilot next steps. Sources and limitations are explicit.
+Questions are addressed thoughtfully and completely.
+Demo video
+20 points
++
+1 · Limited
+The video does not clearly explain the problem or show how the tool works; key claims are difficult to assess. No evidence of storytelling.
+3 · Meets expectations
+Explains the problem and intended users and demonstrates the main feature; some steps, benefits or limitations need clarification.
+5 · Excellent
+Clearly explains the problem, users and value. Demonstrates the core workflow and outputs; distinguishes working features from plans. Audio and visuals are understandable and well presented.
+CH-7
+Team rules
+Team rules
+Size
+One to four people.
+Who
+At least one person on every team must be a University of Waterloo student. Any faculty or program.
+Mix
+Mixed disciplines are strongly encouraged but not required. Planners and urban designers, engineers, developers and data scientists, designers, and policy, business and social science students all have a part. The best solutions come from teams that combine different perspectives.
+Forming
+Pre-formed teams are welcome. If you're on your own, use the team-finding channel on Discord once your invite arrives, and the team formation block at launch.
+Starting
+Nothing starts before launch. You can't bring pre-built tools or code written in advance, and commits will be checked. From 10 am Saturday, all building stops.
+Your work
+Your team owns what it builds. By entering, you give FCI and the University of Waterloo permission to show, describe and present the hackathon version of your project, during the event and afterward, with credit to your team.
+Conduct
+CIVIC Hack is a welcoming, inclusive space. Everyone is expected to be respectful, collaborative and professional, and harassment or discrimination of any kind won't be tolerated. If something goes wrong, contact an organizer. The full
+code of conduct
+is below.
+Rules
+The full rules and terms are on
+Devpost
+.
+CH-8
+Questions
+No. 2611 014
+Questions
+01
+Why join?
++
+Five reasons. You work on a real problem, chosen by municipal leaders rather than made up for the event. Your finished work is presented and shared with municipal leaders at the summit. There's $1,500 in cash prizes plus two special recognition awards. You get a look at a public-sector career, and a connection to FCI's CIVIC program. And you walk away with a project, a demo video and a story to tell.
+02
+Who can take part?
++
+Teams of one to four, with at least one University of Waterloo student on each. You don't need to be a coder. We're looking for planners and urban designers, engineers, developers and data scientists, designers, and policy, business and social science students. The best solutions come from teams that combine different perspectives.
+03
+Do I need a team before I register?
++
+No. Teams of one are allowed, and if you'd rather have company, register on your own, mark yourself as looking for a team, and use the team-finding channel on Discord once your invite arrives. There's also a team formation block at launch on Thursday.
+04
+What do we actually build?
++
+A working proof of concept for the challenge that wins the summit vote: a tool a municipality could realistically pilot. It can be a web app, a data tool, a map, a dashboard or something else, as long as a municipal leader could use it without you in the room. This isn't only about writing code. It's about understanding a problem, designing for the people it affects and clearly explaining your thinking.
+05
+Where does it happen?
++
+Entirely online. Registration, submissions and judging are on
+Devpost
+. Teams, help, mentors and announcements are on Discord, and you'll receive the invite by email after registration. Launch and the Saturday showcase are live sessions, and the links go out by email and on Discord.
+06
+Do I have to go to Ottawa?
++
+No. The
+2026 State of Canada's Cities Summit
+is where municipal leaders vote on the challenge, in front of a live audience. You take part in the hackathon online from wherever you are.
+07
+When is the challenge revealed?
++
+At launch, Thursday 12 November at 6 pm EST. The summit vote closes at 3 pm the same day. The five candidates are listed above, so you can think through all of them beforehand.
+08
+What support is there during the event?
++
+Mentors, technical and municipal experts available during office hours to help you get unstuck. A livestreamed panel on municipal AI from the summit on Friday morning, with the recording posted afterward. Video resources on design thinking, pitching and demo videos, recorded so you can watch any time. And a help desk: organizers on Discord throughout the event, including overnight.
+09
+What does "hacking ends" mean?
++
+At 10 am on Saturday all building stops, whatever kind of building it is: writing code, generating code, editing the report, re-cutting the video. Your submission has to be in on Devpost by then. Late submissions are not considered.
+10
+Does it cost anything?
++
+No. Registration is free and open until launch.
+11
+What happens after the event?
++
+Winners are announced on FCI's website, newsletter and LinkedIn, and invited to present to FCI staff, members and partners. The project gallery and recordings are published afterward.
+The organizers
+Future Cities Institute
+Future Cities Institute founded by CAIVAN, at the University of Waterloo, connects research, students and municipalities to work on the problems cities face. Through
+CIVIC
+, City Innovation Via Internships and Co-op, students are placed inside municipalities for eight months to work on a live problem, and the fix is written up and shared so other communities don't have to start from zero.
+CIVIC Hack is the 36-hour version of the same idea.
+Contact
+Questions before Discord opens, or anything you'd rather not ask in public, go to Melanie Hains at
+mhains@uwaterloo.ca
+, with Preethi Raghuraman and Krishnam Jhalani in copy. Once Discord opens, the help channel is the fastest route.
+CH-9
+Code of conduct
+Applies to everyone
+Code of conduct
+CIVIC Hack is about building better cities together. We want everyone, whatever their school, program, background or experience level, to feel welcome and safe taking part. This code applies to all participants, mentors, judges, organizers and partners in every event space: Discord, Devpost, video calls, livestreams and any direct messages between participants.
+Be welcoming and respectful
+Treat everyone with respect, especially people new to hackathons or from different backgrounds and disciplines.
+Give constructive feedback, and take feedback in good faith.
+Respect people's time and boundaries, including when they say no to joining a team or chatting.
+Unacceptable behaviour
+Harassment, intimidation or bullying of any kind.
+Discriminatory comments or jokes about race, ethnicity, gender, gender identity or expression, sexual orientation, disability, religion, age, appearance or any other personal characteristic.
+Sexual language, imagery or advances, in public channels or private messages.
+Unwanted private messages after someone has asked you to stop.
+Sharing someone's personal information without their consent.
+Recording, screenshotting or sharing other people's video, audio or private messages without consent.
+Disrupting talks, livestreams, calls or channels, including spam and trolling.
+Hateful, violent or explicit content in usernames, profile pictures or project submissions.
+Honest work
+Submit work your team built during the hackathon. Credit any open-source code, datasets and AI tools you used.
+Use only public, open or organizer-provided data. Don't use personal or confidential information.
+Don't plagiarize other teams' work.
+Reporting
+If you experience or see behaviour that breaks this code, or if anything makes you feel unsafe, please tell us:
+Direct message any member of the organizer team on Discord.
+Email
+mhains@uwaterloo.ca
+. Preethi Raghuraman and Krishnam Jhalani are copied.
+Reports are handled as confidentially as possible. You won't face retaliation for reporting in good faith.
+Consequences
+Organizers may take any action they consider appropriate, including a warning, removal from Discord or event sessions, disqualification from prizes, or removal from the hackathon. Serious incidents may be referred to the relevant university under its policies, or to the appropriate authorities.
+By participating in CIVIC Hack, you agree to follow this code of conduct.
+Acknowledged on registration
+The FCI
+newsletter
+Join our monthly newsletter for stories from the municipalities we work with, research from our members, and tools that make your job lighter.
+Email address
+*
+First name
+Last name
+Organization
+Your role
+*
+Required. The FCI newsletter, monthly. Unsubscribe any time. We do not share your address.
+Subscribe
+All FCI projects
+FCI@UWaterloo.ca
+Newsletter
+Register on Devpost
+Founded by CAIVAN · University of Waterloo ·
+FCI@UWaterloo.ca
+©
+2026
+Future Cities Institute · fciprojects.ca
+CIVIC Hack
+An FCI event
+Tips for your demo video
+×
+Your video doesn't need to be highly produced. We need to understand the problem, see your solution working and know how a municipality could use it.
+What to show
+Start with the problem.
+In the first 20 seconds, say which challenge you're tackling, who it affects and what goes wrong for them today.
+Show your solution working within 90 seconds.
+Don't spend the first half of your video on background.
+Walk through one task from start to finish.
+Show it from the point of view of a resident or municipal staff member instead of touring every feature.
+Show what changes.
+Make the difference between how things work today and how they'd work with your solution obvious.
+Name your data.
+Tell us which datasets you used, where they came from and what assumptions you made.
+Be upfront about what's real.
+Tell us what works, what doesn't and what's mocked up. Sample data is fine if you say you're using it.
+End with the path forward.
+Explain the impact your solution could have and what a municipality would need to put it to use.
+How to make it
+Keep it to three minutes.
+If it runs long, cut features. Don't rush your narration or speed up the audio.
+Record your screen and narrate over it.
+Show the solution itself, using slides only for brief context if you need them.
+Write a short script in your own words.
+Read it out loud and time it before you record.
+Use tools you already know.
+Zoom, Microsoft Teams or PowerPoint will all do the job, so this isn't the time to learn new editing software.
+Make it easy to hear.
+Record somewhere quiet, use your team's best microphone and listen to a short test clip first.
+Add captions.
+Auto-captions are a good start, but correct any errors, especially names and technical terms.
+Protect privacy and respect copyright.
+Don't show anyone's personal information, and don't use music or images you don't have permission to use.
+Before you submit
+Leave at least three hours before the 10 am Saturday deadline.
+That gives you time to record, polish and upload, and uploads alone can take several hours.
+Test your link.
+Open it in a private browser window while signed out to make sure judges can watch it.
+For review
+12 items
+For review
+×
+Preethi: each item below is marked on the page. Click a question to jump to it, type your answer, then use Copy answers at the bottom and paste them to Nick.
+Copy answers
+Clear
