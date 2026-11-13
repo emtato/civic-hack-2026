@@ -132,11 +132,13 @@ GeoJSON order, explicit grouping versus equal titles, missing selected IDs,
 plain-text extraction, repeat-import preservation and changed-source review.
 They use an in-memory collection double and require no live database.
 
-Last verified: local dry run and all eight regression checks passed. The live
-MongoDB write was not executed because automatic approval review could not
-complete due to a usage limit. A real database write/read check and live fetch
-through the Python importer remain outstanding; the archived source download
-itself was verified separately using HTTP.
+Last verified November 13, approximately 1:10 p.m. Eastern: local dry run and all
+eight regression checks passed. Live import inserted 24 records into
+`civic_hack.imported_proposals`. An independent read-back validated all 24 against
+the rich schema, confirmed four per category and verified all 24 raw snapshots
+in `source_notices`. The prior automatic-approval failure is resolved for this
+write. Live fetch through the Python importer remains untested; the archived
+source download itself was verified separately using HTTP.
 
 Sources: [Toronto API documentation](https://secure.toronto.ca/nm/opendata.do),
 [selected 2026 feed](https://secure.toronto.ca/nm/notices.json?noticeDateFrom=2026-01-01&noticeDateTo=2026-11-13&locationId=1),

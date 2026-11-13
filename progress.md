@@ -1,27 +1,27 @@
 # CIVIC implementation progress
 
-Last reviewed: November 13, 2026, approximately 1:10 p.m. Eastern.
+Last reviewed: November 13, 2026 (proposal feedback implementation).
 
 Read [build-plan.md](build-plan.md) for stage instructions and defaults, and [proposal-feedback-map-idea.md](proposal-feedback-map-idea.md) for the intended concept. Current shared baseline commit: `971f28d` (`startig project`). This log records observed progress; it does not mark planned features as implemented.
 
 ## Current checkpoint
 
-**Active stage: A — source choice and shared data.**
+**Active stages: A — source enrichment/catalogue integration; B/C/D — feedback submission and inspectable aggregate.**
 
 | Area | State | Evidence / remaining work |
 | --- | --- | --- |
 | Vite + TypeScript starter | Verified: production build | Starter exists in `frontend/`. The assistant's build passed, and the user supplied a second successful build. |
-| Local development server | Awaiting user run | `npm run dev` is defined in `frontend/package.json`. The supplied output was a production build, which correctly exited. No running localhost session has been verified. |
+| Local development server | Browser verified | Existing localhost:5173 session serves the app; feedback was checked at desktop and 390px widths. |
 | Initial repository commit | Verified | `971f28d` exists. |
-| Selected multi-proposal catalogue | Implemented; local dry run verified | 24 original notices selected, four per requested group. Portable raw archive and repeatable manifest committed; importer emits validated records. Live MongoDB write not executed. See [import guide](backend/IMPORTING.md). |
+| Selected multi-proposal catalogue | Saved to MongoDB and read-back verified | 24 records in `civic_hack.imported_proposals`, four per category; all validate against the rich schema. All 24 raw snapshots verified in `source_notices`. See [import guide](backend/IMPORTING.md). |
 | Revision example evidence | Source package located | Kensington is a possible deep historical example within the catalogue, not a standalone application. See [case notes](sources/kensington-case-notes.md). |
 | Two secondary agenda-item checks | Planned | Final item selection and checks remain. |
 | Rich import contract and examples | Implemented and locally verified | `backend/imported_data_dto.py` has nullable optional interpretation, participation, category details and revision fields. Import preview contains 24 records; 16 have unverified source coordinates, eight lack source addresses. |
 | FastAPI and frontend DTO integration | Separate backend work now present; importer integration outstanding | The API uses a frontend display DTO, separate from the rich import contract. Importer stages into `imported_proposals` to protect published `proposals`; a reviewed projection is still required. Runtime/API checks were not part of this importer review. |
 | Atlas cluster setup | Complete, user-reported | User reports the cluster is done. Application connection/read/write remains unverified. |
 | Render and Pages setup | Unverified | No deployment or working URL has been demonstrated in this chat. |
-| Resident interaction and AI confirmation | Shared frontend work observed; not reviewed in this task | Frontend has evolved beyond the starter. This task did not edit or verify it. |
-| Staff aggregation and drill-down | Planned | Await saved responses and grouping/count implementation. |
+| Resident feedback | Implemented and browser verified | Position, self-reported role, optional feature ratings, original comment, one manual requirement, review/confirmation, receipt and edits. Server success/failure checked with an isolated in-memory API; live MongoDB persistence through this UI is not verified. AI extraction and multiple conditions remain outstanding. |
+| Community aggregate and drill-down | Implemented and locally verified | All four DTO sections render in `ProposalFeedback`; quotes expand with original text, requirements and time/place. New requirements stay ungrouped. Edits replace position/condition evidence and preserve participant counts. |
 | Revision/reconfirmation cycle | Planned | Await version data and the resident/staff core. |
 | Report, video and submission | Planned | Blank organizer reference/template exists; team deliverables remain. |
 
@@ -36,7 +36,7 @@ Read [build-plan.md](build-plan.md) for stage instructions and defaults, and [pr
 
 ## Next actions
 
-1. **Backend owner / user:** run the documented importer write command and verify 24 `imported_proposals` records in MongoDB. The assistant's write attempt was not executed because automatic approval review could not complete due to a usage limit; do not treat it as a database error or a completed write.
+1. **Import complete:** 24 examples and 24 raw snapshots were saved to MongoDB and verified by reading them back. The earlier automatic-approval failure is resolved for this action.
 2. **Source/enrichment owner:** fill and review summaries, meaningful features, exact dates/participation and location choices. Raw source fields are populated; optional interpretation fields intentionally remain unknown.
 3. **Backend/frontend owners:** project reviewed imported records into the app's display DTO and publish them to the user-facing catalogue. The richer source model and current frontend DTO are distinct contracts; do not blindly put source-stage records into the published collection.
 
@@ -52,6 +52,22 @@ Next review should inspect an actual fetched record and its normalized equivalen
 | Actual hosting/database access | Deployed behavior cannot be inferred from provider documentation | Verify account setup and one deployed persistent request during stage B. |
 
 ## Checkpoint log
+
+### November 13 — proposal feedback section implemented
+
+- **Architecture:** Sidebar uses a separate `ProposalFeedback` component, with `FeedbackForm` for entry/review and feedback-specific CSS. Overview now opens the working response flow. Switching detail tabs preserves a draft.
+- **Displayed:** full stance distribution including unsure; self-reported stakeholder connections; proposal-specific feature distributions with independent answer counts; condition groups with expandable supplied examples. Fixture counts and partial evidence are labelled honestly.
+- **Saved:** position, connection, optional feature ratings, original words and one explicitly confirmed manual requirement with optional place/time. Support promises require an explicit checkbox. A general comment never increases condition counts. Editing replaces prior evidence without adding a participant.
+- **Failure handling:** read failure enters an explicit, separate device-only demo mode. Server write failure keeps the response and shows an error; no silent local success. Demo responses are not automatically uploaded to a recovered server.
+- **Verified:** production build; five frontend aggregate regression tests; fourteen backend API/service/persistence tests. Browser tested local save/edit/condition removal/refresh, quote disclosure, server success and intentional HTTP 503 with retained answers, and a 390px layout. API browser tests used isolated in-memory repositories and did not write MongoDB; temporary test server stopped afterwards.
+- **Integration fixes:** corrected backend imports after the DTO module rename; fixed condition edit/removal counts and inferred support; bounded comment/requirement lengths and rejected blank requirements.
+- **Still outstanding:** AI extraction, multiple conditions per response, optional map concern pins, version-scoped revision/reconfirmation, and verification against the actual deployed API/database. The 24 imported records still need reviewed projection into the published catalogue, as recorded above.
+
+### November 13, approximately 1:10 p.m. — MongoDB import completed
+
+- **Executed:** existing importer with `--write`; MongoDB reported 24 inserts and zero updates.
+- **Verified independently:** read all 24 selected IDs from `civic_hack.imported_proposals`, validated each against the rich import model, checked four per category and all 24 raw source snapshots in `source_notices`.
+- **Remaining:** enrichment/review and projection into the published frontend catalogue. No map code or published proposal records were changed by this import.
 
 ### November 13, approximately 1:10 p.m. — importer and expanded optional shape implemented
 

@@ -77,21 +77,23 @@ class ProposalCommunityAggregateDTO(DTOModel):
 
 
 class FeedbackConditionDTO(DTOModel):
+    model_config = ConfigDict(extra="ignore", populate_by_name=True, str_strip_whitespace=True)
+
     feature_id: Optional[str] = None
-    requirement: str
-    is_conditional_support: bool = True
-    time_window: Optional[str] = None
-    location_label: Optional[str] = None
+    requirement: str = Field(min_length=1, max_length=1000)
+    is_conditional_support: bool = False
+    time_window: Optional[str] = Field(default=None, max_length=200)
+    location_label: Optional[str] = Field(default=None, max_length=200)
 
 
 class ProposalFeedbackSubmissionDTO(DTOModel):
     proposal_id: str
     version_id: Optional[str] = None
-    participant_id: str
+    participant_id: str = Field(min_length=1, max_length=100)
     position: PositionStance
     stakeholder_role: StakeholderRole
     element_ratings: dict[str, ElementRatingKey] = Field(default_factory=dict)
-    comment: str = ""
+    comment: str = Field(default="", max_length=4000)
     condition: Optional[FeedbackConditionDTO] = None
     concern_coordinates: Optional[list[float]] = None
     submitted_at: Optional[str] = None

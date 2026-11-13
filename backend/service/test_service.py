@@ -58,6 +58,42 @@ class ServiceLogicTests(unittest.TestCase):
         self.assertEqual(updated.stakeholder_distribution["resident"], 1)
         self.assertEqual(updated.total_conditions, 1)
 
+    def test_comment_does_not_infer_a_condition_or_support_promise(self):
+        submission = ProposalFeedbackSubmissionDTO(
+            proposal_id="kensington", participant_id="comment-only",
+            position="support", stakeholder_role="resident", comment="I like the idea.",
+        )
+        updated = apply_feedback_to_aggregate(create_empty_aggregate(), submission)
+        self.assertEqual(updated.total_conditions, 0)
+        self.assertEqual(updated.total_participants, 1)
+
+    def test_condition_edits_replace_evidence_and_removal_restores_counts(self):
+        first = ProposalFeedbackSubmissionDTO(
+            proposal_id="kensington", participant_id="condition-editor",
+            position="support", stakeholder_role="resident", comment="Original words",
+            condition=FeedbackConditionDTO(requirement="Morning access", is_conditional_support=True),
+        )
+        second = first.model_copy(deep=True)
+        second.condition = FeedbackConditionDTO(
+            requirement="Evening access", is_conditional_support=False,
+            time_window="Until 8 p.m.", location_label="Entrance",
+        )
+        once = apply_feedback_to_aggregate(create_empty_aggregate(), first)
+        twice = apply_feedback_to_aggregate(once, second, first)
+        self.assertEqual(twice.total_conditions, 1)
+        self.assertEqual(len(twice.condition_clusters[0].items), 1)
+        item = twice.condition_clusters[0].items[0]
+        self.assertEqual(item.extracted_requirement, "Evening access")
+        self.assertFalse(item.is_conditional_support)
+        self.assertEqual(item.time_window, "Until 8 p.m.")
+        without_condition = second.model_copy(deep=True)
+        without_condition.condition = None
+        removed = apply_feedback_to_aggregate(twice, without_condition, second)
+        self.assertEqual(removed.total_participants, 1)
+        self.assertEqual(removed.total_conditions, 0)
+        self.assertEqual(removed.condition_clusters[0].count, 0)
+        self.assertEqual(removed.condition_clusters[0].percentage, 0)
+
     def test_submit_feedback_workflow(self):
         kensington = self.service.get_proposal("kensington")
         initial_participants = kensington.community_aggregate.total_participants

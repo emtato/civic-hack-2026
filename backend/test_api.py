@@ -50,6 +50,15 @@ class ApiIntegrationTests(unittest.TestCase):
         res = self.client.get("/api/proposals/non-existent")
         self.assertEqual(res.status_code, 404)
 
+    def test_blank_requirement_is_rejected_without_counting_a_response(self):
+        res = self.client.post("/api/proposals/kensington/feedback", json={
+            "proposal_id": "kensington", "participant_id": "blank-requirement",
+            "position": "support", "stakeholder_role": "resident",
+            "condition": {"requirement": "   "},
+        })
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(self.service.get_aggregate("kensington").total_participants, 45)
+
     def test_submit_feedback_and_get_aggregate(self):
         feedback_payload = {
             "proposal_id": "kensington",

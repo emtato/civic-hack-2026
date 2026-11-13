@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import type { Proposal, Topic } from '../data/proposals'
 import { Icon } from './Icon'
+import { ProposalFeedback } from './ProposalFeedback'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -28,7 +29,6 @@ export interface SidebarProps {
   onBackToExplorer: () => void
   onClearFilters: () => void
   onToggleFollow: (id: string) => void
-  onOpenFeedbackPreview: (proposalTitle: string) => void
   onFitResults: () => void
   sidebarRef?: React.RefObject<HTMLElement | null>
 }
@@ -48,16 +48,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onBackToExplorer,
   onClearFilters,
   onToggleFollow,
-  onOpenFeedbackPreview,
   onFitResults,
   sidebarRef,
 }) => {
   const [detailTab, setDetailTab] = useState<'overview' | 'feedback' | 'updates'>('overview')
+  const [feedbackOpen, setFeedbackOpen] = useState(false)
   const detailTitleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     if (selectedProposal) {
       setDetailTab('overview')
+      setFeedbackOpen(false)
       setTimeout(() => {
         detailTitleRef.current?.focus({ preventScroll: true })
       }, 50)
@@ -292,28 +293,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <button
                     className="primary-button"
                     id="preview-feedback"
-                    onClick={() => onOpenFeedbackPreview(selectedProposal.title)}
+                    onClick={() => { setDetailTab('feedback'); setFeedbackOpen(true) }}
                   >
-                    Preview giving feedback <Icon name="arrow" />
+                    Share your perspective <Icon name="arrow" />
                   </button>
                 </div>
               </>
             )}
 
-            {detailTab === 'feedback' && (
-              <div className="placeholder-content">
-                <Icon name="message" />
-                <h2>Every perspective adds something.</h2>
-                <p>This space will bring together participants’ concerns and conditions. Community feedback isn’t connected in this prototype.</p>
-                <button
-                  className="primary-button"
-                  id="preview-feedback"
-                  onClick={() => onOpenFeedbackPreview(selectedProposal.title)}
-                >
-                  Preview giving feedback <Icon name="arrow" />
-                </button>
-              </div>
-            )}
+            <div hidden={detailTab !== 'feedback'}>
+              <ProposalFeedback key={selectedProposal.id} proposal={selectedProposal}
+                isResponding={feedbackOpen && detailTab === 'feedback'} onRespondingChange={setFeedbackOpen} />
+            </div>
 
             {detailTab === 'updates' && (
               <div className="placeholder-content">
