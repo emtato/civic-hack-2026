@@ -197,10 +197,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
           </div>
 
-          <div className="demo-note">
-            <Icon name="info" />
-            <p>A preview of local participation. Project references are real; statuses, locations and interactions are illustrative.</p>
-          </div>
         </div>
       ) : (
         <div id="proposal-detail">
@@ -212,7 +208,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <i />
               {selectedProposal.status}
             </span>
-            <span className="demo-tag">DEMO STATUS</span>
             <span className="detail-topic">
               <Icon name={topicIcons[selectedProposal.topic]} />
               {selectedProposal.topic}
@@ -282,7 +277,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div className="proposal-overview">
                 <div className="overview-main">
                   <section className="overview-card overview-brief" aria-labelledby="overview-brief-heading">
-                    <span className="eyebrow">THE PROPOSAL</span>
                     <h2 id="overview-brief-heading">At a glance</h2>
                     <p>{selectedProposal.summary}</p>
                     <ul className="overview-changes">
@@ -304,7 +298,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       <p role="status">Loading community sentiment…</p>
                     ) : (
                       <>
-                        <p className="overview-caption">{community.mode === 'demo' ? 'Sample + device responses' : 'Prototype responses'} · Not a representative vote.</p>
+                        <p className="overview-caption">Not a representative vote.</p>
                         <DistributionChart counts={community.aggregate.position_distribution} total={community.aggregate.total_participants} />
                       </>
                     )}
@@ -330,7 +324,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     <div>
                       <h2 id="overview-participate-heading">Your feedback & comments</h2>
                       <p>Share where you stand, leave a comment, or tell us what would make this proposal work for you.</p>
-                      <span className="overview-caption">Prototype only · This is not an official City submission.</span>
                     </div>
                     <button className="primary-button" id="preview-feedback"
                       onClick={() => { setDetailTab('feedback'); setFeedbackOpen(true) }}>
@@ -340,9 +333,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <section className="overview-card overview-comments" aria-labelledby="overview-comments-heading">
                     <div className="overview-card-heading">
                       <h2 id="overview-comments-heading">Comments</h2>
-                      <span>Placeholder comments</span>
                     </div>
-                    <div className="overview-comments-list" role="region" aria-label="Placeholder community comments" tabIndex={0}>
+                    <div className="overview-comments-list" role="region" aria-label="Community comments" tabIndex={0}>
                       {[
                         { author: 'Local resident', text: 'More space to walk and gather would make this a much nicer place to spend time.' },
                         { author: 'Business owner', text: 'Please keep a practical way for deliveries to reach nearby businesses in the morning.' },
@@ -357,7 +349,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         </article>
                       ))}
                     </div>
-                    <p className="overview-caption">Fictional examples · Scroll to read more</p>
+                    <p className="overview-caption">Scroll to read more</p>
                   </section>
                 </div>
               </div>
@@ -378,18 +370,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
           </div>
 
-          <div className="detail-disclaimer">
-            <Icon name="info" />
-            <p>Prototype preview. Summary and highlighted route are illustrative. Check the official project page for boundaries, current plans and participation dates.</p>
-          </div>
 
         </div>
       )}
 
-      <footer className="sidebar-footer">
-        <span>Small contributions. Shared possibilities.</span>
-        <span className="footer-flower">✳</span>
-      </footer>
     </aside>
   )
 }

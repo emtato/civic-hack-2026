@@ -141,13 +141,13 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
         const persisted = saveDemoFeedback(submission)
         setAggregate(current => applyFeedbackToAggregate(current, submission, response))
         setResponse(submission)
-        setReceipt(persisted ? 'Demo response saved on this device. You can return and edit it.' : 'Demo response saved for this visit. Browser storage is unavailable; it will not survive a refresh.')
+        setReceipt(persisted ? 'Your response was saved on this device. You can return and edit it.' : 'Your response was saved for this visit. Browser storage is unavailable; it will not survive a refresh.')
       } else {
         const result = await submitProposalFeedback(submission)
         if (!mountedRef.current) return
         setAggregate(result.community_aggregate)
         setResponse(result.feedback)
-        setReceipt('Your response was saved to the prototype. You can return and edit it.')
+        setReceipt('Your response was saved. You can return and edit it.')
       }
       onRespondingChange(false)
       requestAnimationFrame(() => headingRef.current?.focus())
@@ -162,13 +162,13 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
   const date = new Date(aggregate.last_updated)
   return (
     <section className="proposal-feedback" aria-label="Proposal feedback">
-      <div className="feedback-demo-notice">
+      {mode !== 'server' && <div className="feedback-demo-notice" role="status">
         <Icon name="info" />
-        <div><strong>{mode === 'loading' ? 'Connecting to community feedback…' : mode === 'demo' ? 'Demo mode · sample community feedback' : 'Prototype community feedback'}</strong>
-          <p>{mode === 'demo' ? 'Live feedback is unavailable. Seeded responses are fictional; new demo responses are saved only on this device.' : 'Seeded responses are fictional. This prototype is not an official City consultation.'}</p>
+        <div><strong>{mode === 'loading' ? 'Connecting to community feedback…' : 'Feedback is saved on this device'}</strong>
+          {mode === 'demo' && <p>Live feedback is unavailable. Your responses are saved only on this device.</p>}
           {mode === 'demo' && !isResponding && <button className="feedback-inline-button" onClick={() => { setReceipt(''); setLoadAttempt(n => n + 1) }}>Retry connection</button>}
         </div>
-      </div>
+      </div>}
 
       {receipt && <div className="feedback-receipt" role="status"><Icon name="check" /><p>{receipt}</p></div>}
 
@@ -182,8 +182,8 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
 
       <div hidden={isResponding}>
         <div className="feedback-section-heading feedback-community-heading">
-          <div><span className="eyebrow">THE COMMUNITY PICTURE</span><h2 ref={headingRef} tabIndex={-1}>Different perspectives. Shared place.</h2></div>
-          <span className="feedback-live-label"><i />{mode === 'demo' ? 'SAMPLE + DEVICE RESPONSES' : mode === 'loading' ? 'LOADING' : 'PROTOTYPE RESPONSES'}</span>
+          <div><h2 ref={headingRef} tabIndex={-1}>Different perspectives. Shared place.</h2></div>
+          <span className="feedback-live-label"><i />{mode === 'loading' ? 'LOADING' : 'COMMUNITY RESPONSES'}</span>
         </div>
         <p className="feedback-intro">See where people stand, what matters to them, and what would make this proposal work.</p>
 

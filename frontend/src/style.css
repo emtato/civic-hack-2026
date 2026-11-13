@@ -491,39 +491,6 @@ button {
   height:14px
 }
 
-.demo-note {
-  display:flex;
-  gap:9px;
-  color:#606d54;
-  margin:22px 26px 25px;
-  font-size:12px;
-  line-height:1.75
-}
-
-.demo-note .icon {
-  width:15px;
-  height:15px;
-  margin-top:2px
-}
-
-.sidebar-footer {
-  gap:12px;
-  margin-top:auto;
-  padding:19px 25px;
-  border-top:1px solid var(--line);
-  color:#606d54;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:12px;
-  letter-spacing:.2px
-}
-
-.footer-flower {
-  font-size:25px;
-  color:#a7b78c
-}
-
 .map-shell {
   flex:1;
   min-width:0;
@@ -1529,17 +1496,11 @@ dialog p {
   .sidebar #detail-title {
     font-size:26px
   }
-  .sidebar-footer {
-    font-size:12px
-  }
   dialog {
     padding:30px
   }
   dialog h2 {
     font-size:25px
-  }
-  .demo-note {
-    margin-bottom:20px
   }
 }
 

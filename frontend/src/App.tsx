@@ -291,10 +291,9 @@ export default function App() {
       children: (
         <>
           <p>proviso explores a simple idea: people should be able to explain what would make a municipal proposal work for them, and follow what changes next.</p>
-          <p>This prototype demonstrates proposal discovery and feedback using three real Toronto project references. Seeded community responses are fictional. Descriptions, marker locations, highlighted routes and statuses are illustrative.</p>
           <div className="preview-example">
             <strong>Your browser, your shortlist.</strong>
-            <p>Following is saved only on this device. Feedback uses the prototype server when available; demo mode saves responses only on this device. No accounts or notifications are connected.</p>
+            <p>Following is saved only on this device. Feedback is saved on this device when the server is unavailable. No accounts or notifications are connected.</p>
           </div>
         </>
       ),
