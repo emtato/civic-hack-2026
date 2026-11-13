@@ -210,6 +210,7 @@ class Proposal(Record):
 
     # Enrichment is optional and preserved by repeat imports.
     summary: str | None = None
+    summary_evidence: list[Evidence] = Field(default_factory=list)
     reason: str | None = None
     neighbourhood: str | None = None
     geographic_scope: Literal["unknown", "site", "multiple_sites", "corridor", "area", "citywide"] = "unknown"

@@ -1,0 +1,565 @@
+{
+  "toronto-labatt-river-towers": {
+    "source_sha256": "b0b6cd37304b5395d30af7784b26b83aa081ed1b8b0d37aa4268391361fbdd5e",
+    "summary": "Two 46-storey residential buildings at Labatt Avenue and River Street, with 1,170 homes and a two-storey non-residential building.",
+    "features": [
+      {
+        "label": "Residential towers",
+        "anchor": "two, 46-storey"
+      },
+      {
+        "label": "Non-residential space",
+        "anchor": "1,111 square metres"
+      }
+    ],
+    "details": {
+      "planning_details": {
+        "storeys": [
+          46,
+          46,
+          2
+        ],
+        "dwelling_units": 1170,
+        "proposed_uses": [
+          "residential",
+          "non-residential"
+        ]
+      }
+    }
+  },
+  "toronto-augusta-hotel": {
+    "source_sha256": "583c5adc4b30875dc805655fa869dc600c4629140f25380472e4303db59dc4ae",
+    "summary": "A six-storey hotel with a restaurant at 309–311 Augusta Avenue, containing 2,194 square metres of non-residential floor area.",
+    "features": [
+      {
+        "label": "Hotel building",
+        "anchor": "six-storey hotel"
+      },
+      {
+        "label": "Restaurant component",
+        "anchor": "restaurant component"
+      }
+    ],
+    "details": {
+      "planning_details": {
+        "storeys": [
+          6
+        ],
+        "proposed_uses": [
+          "hotel",
+          "restaurant"
+        ]
+      }
+    }
+  },
+  "toronto-neilson-medical-housing": {
+    "source_sha256": "26aa475b5939f9f5a2a6b355cd016922c908981a77ef831801d959cb00ceb202",
+    "summary": "A six-storey residential building behind the existing three-storey medical building at 1333 Neilson Road; the medical building would remain.",
+    "features": [
+      {
+        "label": "Residential building",
+        "anchor": "six-storey L-shaped residential"
+      },
+      {
+        "label": "Existing medical building",
+        "anchor": "maintaining the existing three-storey medical"
+      }
+    ],
+    "details": {
+      "planning_details": {
+        "storeys": [
+          6
+        ],
+        "proposed_uses": [
+          "residential",
+          "retained medical building"
+        ]
+      }
+    }
+  },
+  "toronto-lawrence-heights-revitalization": {
+    "source_sha256": "f24d9246f87131fb2ed478ff8f6d7c346590d51f9448bc3ef673a7d04f68f6f9",
+    "summary": "Phase 2 of Lawrence Heights revitalization proposes new and reconfigured streets, parks, community uses and housing from 6 to 25 storeys, including replacement social housing, new affordable housing and market homes.",
+    "features": [
+      {
+        "label": "Replacement social housing",
+        "anchor": "replacement of 213 Phase 2"
+      },
+      {
+        "label": "New affordable and market housing",
+        "anchor": "180 new Toronto Community Housing"
+      },
+      {
+        "label": "Streets, parks and community uses",
+        "anchor": "new and reconfigured public streets"
+      }
+    ],
+    "details": {
+      "planning_details": {
+        "storeys": [
+          6,
+          25
+        ],
+        "affordable_units": 180,
+        "proposed_uses": [
+          "residential",
+          "public parks",
+          "community uses",
+          "public streets"
+        ]
+      }
+    }
+  },
+  "toronto-lawrence-heritage-intention": {
+    "source_sha256": "76628197cba788a46431cd4cb48aafddaafc5767454c400954058e31aff567c4",
+    "summary": "Proposed heritage designation of the arena at 2125 Lawrence Avenue West, recognizing its architecture, recreational history and relationship to Weston.",
+    "features": [
+      {
+        "label": "Heritage designation",
+        "anchor": "intends to designate the property"
+      },
+      {
+        "label": "Arena heritage value",
+        "anchor": "ice-skating-arena building type"
+      }
+    ],
+    "details": {
+      "heritage_details": {
+        "action": "proposed designation"
+      }
+    }
+  },
+  "toronto-weston-heritage-demolition": {
+    "source_sha256": "8ddbd1d36baa2a276d37bb2b6cd3e6e060ee74caf7e3fd54d6c1a1b1943dd05c",
+    "summary": "The notice records conditional approval of alterations and removal of a specified heritage attribute at 1151 Weston Road for a 46-storey mixed-use building, subject to a satisfactory relocation and conservation plan.",
+    "features": [
+      {
+        "label": "Alteration approval with conditions",
+        "anchor": "approve the application to alter"
+      },
+      {
+        "label": "Heritage attribute removal",
+        "anchor": "approve the application to remove a specified heritage attribute"
+      },
+      {
+        "label": "Relocation and conservation plan",
+        "anchor": "Relocation and Conservation Plan"
+      }
+    ],
+    "details": {
+      "heritage_details": {
+        "action": "conditional approval of alterations and heritage attribute removal"
+      },
+      "status": "adopted"
+    }
+  },
+  "toronto-stotts-bridge-heritage": {
+    "source_sha256": "138dbd33d04f8b5201e36c241505de07a25a0147803eb39d15e8c86b805663bc",
+    "summary": "The notice records conditional approval to demolish Stotts’ Bridge and construct a temporary bridge pending a permanent truss replacement. Conditions include documentation and consideration of salvage.",
+    "features": [
+      {
+        "label": "Temporary and replacement bridge",
+        "anchor": "temporary bridge until a permanent truss bridge"
+      },
+      {
+        "label": "Documentation and salvage",
+        "anchor": "salvage structural elements"
+      }
+    ],
+    "details": {
+      "heritage_details": {
+        "action": "conditional demolition approval with temporary and permanent replacement"
+      },
+      "status": "adopted"
+    }
+  },
+  "toronto-queen-heritage-amendment": {
+    "source_sha256": "819ea21f3e3f97421419514478448e77310671c28c034fed476d290166acd280",
+    "summary": "Proposed changes to the heritage designation for 339 Queen Street East would expand its historical reasons and recognize its Chicago School architecture and historic timber frame.",
+    "features": [
+      {
+        "label": "Historical association",
+        "anchor": "Cecil B. Tadman"
+      },
+      {
+        "label": "Architectural and structural attributes",
+        "anchor": "historic post and beam timber frame"
+      }
+    ],
+    "details": {
+      "heritage_details": {
+        "action": "proposed designation by-law amendment",
+        "heritage_attributes": [
+          "Chicago School style architecture",
+          "historic post and beam timber frame construction"
+        ]
+      }
+    }
+  },
+  "toronto-lawrence-road-closure": {
+    "source_sha256": "a030806c287d9effdc6955b0ab0fa70eafa89f25a6d27147a000885138fe8636",
+    "summary": "Proposed permanent closure of specified portions of the northerly limit of Lawrence Avenue East beside Ridgewood Road. The exact parcels are identified in the notice and associated plans.",
+    "features": [
+      {
+        "label": "Permanent road closure",
+        "anchor": "permanently close the following"
+      },
+      {
+        "label": "Affected parcels",
+        "anchor": "PART OF PIN 06214-0476"
+      }
+    ],
+    "details": {
+      "transportation_details": {
+        "roads": [
+          "Lawrence Avenue East",
+          "Ridgewood Road"
+        ],
+        "change_type": "permanent closure of specified road portions"
+      }
+    }
+  },
+  "toronto-permit-parking-area-1e": {
+    "source_sha256": "d32d88699ce1b6162eaeb5ab5b21b43dbe25ccecea4b2d0da5ac171f44754a31",
+    "summary": "Proposed realignment of permit-parking area 1E to exclude the development at 3459 and 3461 Dundas Street West.",
+    "features": [
+      {
+        "label": "Permit-parking boundary",
+        "anchor": "realign the boundary"
+      },
+      {
+        "label": "Excluded development",
+        "anchor": "3459 and 3461 Dundas Street West"
+      }
+    ],
+    "details": {
+      "transportation_details": {
+        "roads": [
+          "Dundas Street West"
+        ],
+        "change_type": "permit-parking area boundary realignment"
+      }
+    }
+  },
+  "toronto-aren-levy-lane": {
+    "source_sha256": "25dd72e05ba526e67f898727831c2e3dadd3a2b020b0f5a7d66c1109bb4fdcda",
+    "summary": "Proposed naming of an existing public lane west of Vaughan Road and north of Ellsworth Avenue as Aren Levy Lane.",
+    "features": [
+      {
+        "label": "Proposed lane name",
+        "anchor": "Aren Levy Lane"
+      },
+      {
+        "label": "Lane location",
+        "anchor": "west of Vaughan Road, north of Ellsworth Avenue"
+      }
+    ],
+    "details": {
+      "transportation_details": {
+        "roads": [
+          "Vaughan Road",
+          "Ellsworth Avenue"
+        ],
+        "change_type": "public lane naming"
+      }
+    }
+  },
+  "toronto-six-points-road-closure": {
+    "source_sha256": "1590fa4b35d59a53865ee3dee8685bcc10a7b92c847bc24d01494a9e282b2c28",
+    "summary": "Proposed permanent closure of specified public-highway portions on Dundas Street West, Kipling Avenue and Bloor Street West in the Six Points area.",
+    "features": [
+      {
+        "label": "Road portions to close",
+        "anchor": "permanently close the following"
+      },
+      {
+        "label": "Multiple affected streets",
+        "anchor": "Dundas Street West, Kipling Avenue and Bloor Street West"
+      }
+    ],
+    "details": {
+      "transportation_details": {
+        "roads": [
+          "Dundas Street West",
+          "Kipling Avenue",
+          "Bloor Street West"
+        ],
+        "change_type": "permanent closure of specified highway portions"
+      }
+    }
+  },
+  "toronto-nightclub-definition": {
+    "source_sha256": "c582240491bfe7f24d07cb58c5bea63e2f9a9b0475f508888c2788947a6c9ff8",
+    "summary": "Proposed licensing changes would exclude premises with an occupant load under 151 from the nightclub definition and license them according to their operations. A related direction would examine alignment with zoning.",
+    "features": [
+      {
+        "label": "Occupancy threshold",
+        "anchor": "occupant load of under 151"
+      },
+      {
+        "label": "Licensing and zoning alignment",
+        "anchor": "strengthen alignment of business licensing and zoning"
+      }
+    ],
+    "details": {
+      "licensing_details": {
+        "business_types": [
+          "Entertainment Establishment/Nightclub",
+          "Entertainment Place of Assembly",
+          "Eating or Drinking Establishment"
+        ]
+      }
+    }
+  },
+  "toronto-business-licence-action-plan": {
+    "source_sha256": "4e4fb21d196502a1276052ce8e2b01229f00aab3c34c8a8aba0f6dc34351e208",
+    "summary": "Proposed business-licensing amendments include changes to operating-hour and goods-register requirements, the nightclub definition, and repeal of the videotape-store licensing chapter.",
+    "features": [
+      {
+        "label": "Operating hours and registers",
+        "anchor": "deleting requirements pertaining to hours and days of operation"
+      },
+      {
+        "label": "Videotape-store licensing repeal",
+        "anchor": "repeal Toronto Municipal Code Chapter 832"
+      }
+    ],
+    "details": {
+      "licensing_details": {
+        "proposed_rule_changes": [
+          "Changes to operating-hour and register requirements",
+          "Repeal of videotape-store licensing chapter"
+        ]
+      }
+    }
+  },
+  "toronto-street-vending-rules": {
+    "source_sha256": "5400786bae878dc3b4616512de62dd3ec62a8b47b4204d8ae2b5e0e24a573f3c",
+    "summary": "Proposed street-vending and artists by-law changes include lifting a sidewalk-vending moratorium, extending mobile vending time on the same block from five to twelve hours, and introducing a new permit regime.",
+    "features": [
+      {
+        "label": "Sidewalk vending applications",
+        "anchor": "moratorium on new applications"
+      },
+      {
+        "label": "Mobile vending hours",
+        "anchor": "twelve hours"
+      },
+      {
+        "label": "New permit regime",
+        "anchor": "adopt a new vending permit regime"
+      }
+    ],
+    "details": {
+      "licensing_details": {
+        "business_types": [
+          "street vendors",
+          "artists"
+        ],
+        "proposed_rule_changes": [
+          "Lift specified sidewalk-vending moratorium",
+          "Extend mobile vending from five to twelve hours on the same block",
+          "Adopt a new vending permit regime"
+        ]
+      }
+    }
+  },
+  "toronto-permit-parking-exclusion-process": {
+    "source_sha256": "660c8cb424686148bdbf8e7acfa2185d240ac59b1f751bad3b8e070dce0b779e",
+    "summary": "Proposed procedural amendments would clarify authority over development-related permit-parking exclusions and consolidate excluded addresses into a new schedule.",
+    "features": [
+      {
+        "label": "Decision-making authority",
+        "anchor": "authority delegated to Community Council"
+      },
+      {
+        "label": "Excluded-address schedule",
+        "anchor": "consolidate the excluded addresses"
+      }
+    ],
+    "details": {
+      "licensing_details": {
+        "proposed_rule_changes": [
+          "Clarify delegated authority for permit-parking exclusions",
+          "Consolidate excluded addresses into a new schedule"
+        ]
+      }
+    }
+  },
+  "toronto-rentsafeto-fees": {
+    "source_sha256": "144719fded7e46e70a417fd98b490c06dd4f672ff30b2333d6e8a0ed2fdc3a9b",
+    "summary": "Proposed RentSafeTO fee changes include a variable $42.73–$46.81 fee for reissuing an apartment-building colour-coded sign, specified social-housing exemptions and changes to remedial-work fees.",
+    "features": [
+      {
+        "label": "Sign reissuance fee",
+        "anchor": "Variable: $42.73-$46.81"
+      },
+      {
+        "label": "Social housing exemptions",
+        "anchor": "waive the fee"
+      },
+      {
+        "label": "Remedial-work fees",
+        "anchor": "fees related to undertaking remedial work"
+      }
+    ],
+    "details": {
+      "financial_details": {
+        "fee_or_program": "RentSafeTO",
+        "currency": "CAD",
+        "fee_basis": "Per sign reissuance; variable $42.73–$46.81",
+        "exemptions": [
+          "Toronto Community Housing Corporation",
+          "Non-profit assisted/social housing under a City-administered program",
+          "Provincially funded dedicated supportive housing"
+        ]
+      }
+    }
+  },
+  "toronto-ravine-permit-fees": {
+    "source_sha256": "d4668824109699003e2dba29514b413b405500eca596e167aed494df6f069753",
+    "summary": "Proposed non-refundable ravine permit fees would vary by tree count and application complexity, with a flat fee for standalone grade alterations. Exact rates are in the linked report attachment.",
+    "features": [
+      {
+        "label": "Tree-related application fees",
+        "anchor": "application complexity"
+      },
+      {
+        "label": "Standalone grade alteration fee",
+        "anchor": "flat fee for standalone grade alteration"
+      }
+    ],
+    "details": {
+      "financial_details": {
+        "fee_or_program": "Ravine Bylaw permit application fees",
+        "fee_basis": "Per tree and application complexity; flat fee for standalone grade alteration"
+      }
+    }
+  },
+  "toronto-budget-user-fees-2026": {
+    "source_sha256": "986ccae079a07ab091068998bcf3afaa9841a729e084333d419342e80454ace0",
+    "summary": "The prepared 2026 budget proposed changes to existing user fees and new user fees. Detailed adjustments are in Budget Briefing Note 12, Appendices A and B; Council could adopt different rates.",
+    "features": [
+      {
+        "label": "Existing and new fees",
+        "anchor": "changes to existing user fees and new user fees"
+      },
+      {
+        "label": "Detailed fee schedules",
+        "anchor": "Appendix A and Appendix B"
+      }
+    ],
+    "details": {
+      "financial_details": {
+        "fee_or_program": "Prepared 2026 budget user-fee adjustments"
+      }
+    }
+  },
+  "toronto-development-application-fees": {
+    "source_sha256": "34437a024c52467b64cac1a830f45b41572f1abea596804c4b3ef2adbb00ac63",
+    "summary": "Proposed site-plan application fee changes would update Chapter 441, Appendix C, Schedule 13, reference numbers 80–84.1. The detailed amounts are in the Site Plan Application Fee Review report.",
+    "features": [
+      {
+        "label": "Site-plan application fees",
+        "anchor": "updates to site plan application fees"
+      },
+      {
+        "label": "Detailed fee schedule",
+        "anchor": "reference numbers 80-84.1"
+      }
+    ],
+    "details": {
+      "financial_details": {
+        "fee_or_program": "Site-plan application fees"
+      }
+    }
+  },
+  "toronto-fleet-property-lease": {
+    "source_sha256": "68b51ff69f07765a17644baece4a9c040bf3344953e2185ad47834b400bea877",
+    "summary": "A surplus portion of 701 Fleet Street, approximately 7,081 square metres, was proposed for a long-term lease to Tempo Basketball Club Inc. for a practice facility with community amenities.",
+    "features": [
+      {
+        "label": "Long-term lease",
+        "anchor": "long-term lease to Tempo Basketball Club"
+      },
+      {
+        "label": "Practice facility and amenities",
+        "anchor": "practice facility with community amenities"
+      }
+    ],
+    "details": {
+      "property_details": {
+        "disposition_type": "proposed long-term lease",
+        "area_m2": 7081,
+        "proposed_recipient": "Tempo Basketball Club Inc.",
+        "proposed_use": "High-performance practice facility with community amenities"
+      }
+    }
+  },
+  "toronto-sheppard-surplus-lane": {
+    "source_sha256": "bf2c36ce6cc531240a5d778bffa19df203aad75d3523ceb9b78b4411713fe77e",
+    "summary": "Two surplus lane portions between 145 and 181 Sheppard Avenue East were proposed for purchase by the adjacent owner, conditional on Council approving permanent lane closure.",
+    "features": [
+      {
+        "label": "Proposed purchase by adjacent owner",
+        "anchor": "offer to purchase the lane from the adjacent owner"
+      },
+      {
+        "label": "Closure condition",
+        "anchor": "conditional on City Council approving the permanent closure"
+      }
+    ],
+    "details": {
+      "property_details": {
+        "disposition_type": "proposed sale",
+        "proposed_recipient": "Tilzen Holding Limited",
+        "conditions": [
+          "City Council approval of the permanent lane closure"
+        ]
+      }
+    }
+  },
+  "toronto-van-horne-surplus": {
+    "source_sha256": "2655af5a3b8e3b8c7b329edb21f94fd83daffedc2cddfb7876fbd13697df24c5",
+    "summary": "Approximately 32.6 square metres at 575 Van Horne Avenue were declared surplus to library purposes and proposed for conveyance to the City for municipal purposes.",
+    "features": [
+      {
+        "label": "Surplus library land",
+        "anchor": "surplus to the Toronto Public Library"
+      },
+      {
+        "label": "Municipal conveyance",
+        "anchor": "conveyed to City of Toronto for municipal purposes"
+      }
+    ],
+    "details": {
+      "property_details": {
+        "disposition_type": "proposed conveyance to City",
+        "area_m2": 32.6,
+        "proposed_recipient": "City of Toronto",
+        "proposed_use": "Municipal purposes"
+      }
+    }
+  },
+  "toronto-woodbine-surplus": {
+    "source_sha256": "f7b26dd24590a086e5b93cdcb1e3006d356947b10bdc1609e067c1c60b6e67b1",
+    "summary": "Approximately 213.5 square metres at 996 Woodbine Avenue were declared surplus, with the City proposing an offer to purchase the property from 2-Spirited People of the First Nations.",
+    "features": [
+      {
+        "label": "Surplus land",
+        "anchor": "213.5 m2"
+      },
+      {
+        "label": "Proposed purchaser",
+        "anchor": "2-Spirited People of the First Nations"
+      }
+    ],
+    "details": {
+      "property_details": {
+        "disposition_type": "proposed sale",
+        "area_m2": 213.5,
+        "proposed_recipient": "2-Spirited People of the First Nations"
+      }
+    }
+  }
+}

@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { proposals } from './data/proposals'
-import type { Topic } from './data/proposals'
+import type { Proposal, Topic } from './data/proposals'
+import { fetchProposals } from './api/proposalsApi'
+import { hasMapCoordinates } from './api/catalogue'
 import { Icon, icon } from './components/Icon'
 import { Sidebar } from './components/Sidebar'
 
@@ -28,6 +29,10 @@ interface DialogData {
 }
 
 export default function App() {
+  const [proposals, setProposals] = useState<Proposal[]>([])
+  const [catalogueState, setCatalogueState] = useState<'loading' | 'ready' | 'error'>('loading')
+  const [catalogueError, setCatalogueError] = useState('')
+  const [loadAttempt, setLoadAttempt] = useState(0)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<'explore' | 'saved'>('explore')
   const [topic, setTopic] = useState<string>('All topics')
@@ -42,7 +47,7 @@ export default function App() {
     try {
       const stored: unknown = JSON.parse(localStorage.getItem('proviso-saved') ?? localStorage.getItem('civic-saved') ?? '[]')
       if (Array.isArray(stored)) {
-        return stored.filter((id): id is string => typeof id === 'string' && proposals.some(p => p.id === id))
+        return stored.filter((id): id is string => typeof id === 'string')
       }
     } catch {
       /* Browser storage fallback */
@@ -59,6 +64,28 @@ export default function App() {
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const resizeRafRef = useRef<number | null>(null)
 
+  useEffect(() => {
+    const controller = new AbortController()
+    let active = true
+    setCatalogueState('loading')
+    setCatalogueError('')
+    fetchProposals(controller.signal)
+      .then(items => {
+        if (!active) return
+        setProposals(items)
+        setCatalogueState('ready')
+      })
+      .catch(() => {
+        if (!active) return
+        setCatalogueError('We couldn’t load proposals. Check your connection and try again.')
+        setCatalogueState('error')
+      })
+    return () => { active = false; controller.abort() }
+  }, [loadAttempt])
+
+  const topics = useMemo(() => ['All topics', ...new Set(proposals.map(p => p.topic))], [proposals])
+  const statuses = useMemo(() => [...new Set(proposals.map(p => p.status))], [proposals])
+
   const filteredProposals = useMemo(() => {
     const term = query.trim().toLocaleLowerCase()
     return proposals.filter(p =>
@@ -67,11 +94,11 @@ export default function App() {
       (status === 'all' || p.status === status) &&
       `${p.title} ${p.neighbourhood} ${p.topic}`.toLocaleLowerCase().includes(term)
     )
-  }, [query, activeTab, saved, topic, status])
+  }, [proposals, query, activeTab, saved, topic, status])
 
   const selectedProposal = useMemo(() => {
     return proposals.find(p => p.id === selectedId) || null
-  }, [selectedId])
+  }, [proposals, selectedId])
 
   const showToast = useCallback((message: string) => {
     setToastMessage(message)
@@ -129,8 +156,9 @@ export default function App() {
   const fitResults = useCallback(() => {
     const map = mapRef.current
     if (!map) return
-    if (filteredProposals.length) {
-      map.fitBounds(L.latLngBounds(filteredProposals.map(p => p.coordinates)), {
+    const mapped = filteredProposals.filter(hasMapCoordinates)
+    if (mapped.length) {
+      map.fitBounds(L.latLngBounds(mapped.map(p => p.coordinates)), {
         padding: [70, 95],
         maxZoom: 14,
       })
@@ -147,7 +175,7 @@ export default function App() {
     if (sidebarRef.current) sidebarRef.current.scrollTop = 0
 
     const map = mapRef.current
-    if (map) {
+    if (map && hasMapCoordinates(p)) {
       const targetZoom = window.innerWidth < 1200 ? 14 : 15
       if (!wasOpen) {
         animateMapResize(() => {
@@ -156,8 +184,10 @@ export default function App() {
       } else {
         map.flyTo(p.coordinates, targetZoom, { duration: 0.5 })
       }
+    } else if (map && !wasOpen) {
+      animateMapResize()
     }
-  }, [selectedId, animateMapResize])
+  }, [proposals, selectedId, animateMapResize])
 
   const showExplorer = useCallback(() => {
     const wasOpen = selectedId !== null
@@ -214,19 +244,25 @@ export default function App() {
     const resizeObserver = new ResizeObserver(() => map.invalidateSize())
     resizeObserver.observe(mapContainerRef.current)
 
-    if (proposals.length) {
-      map.fitBounds(L.latLngBounds(proposals.map(p => p.coordinates)), {
-        padding: [70, 95],
-        maxZoom: 14,
-      })
-    }
-
     return () => {
       resizeObserver.disconnect()
       map.remove()
       mapRef.current = null
+      markerLayerRef.current = null
+      projectLayerRef.current = null
+      if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current)
     }
   }, [])
+
+  // Initial data arrives after map creation; fit the fetched catalogue once.
+  useEffect(() => {
+    const mapped = proposals.filter(hasMapCoordinates)
+    if (mapped.length && mapRef.current) {
+      mapRef.current.fitBounds(L.latLngBounds(mapped.map(p => p.coordinates)), {
+        padding: [70, 95], maxZoom: 14,
+      })
+    }
+  }, [proposals])
 
   // Sync map markers
   useEffect(() => {
@@ -234,11 +270,11 @@ export default function App() {
     if (!markerLayer) return
     markerLayer.clearLayers()
 
-    filteredProposals.forEach(p => {
+    filteredProposals.filter(hasMapCoordinates).forEach(p => {
       const marker = L.marker(p.coordinates, {
         icon: L.divIcon({
           className: 'proposal-marker-wrap',
-          html: `<span class="proposal-marker ${statusClass(p.status)} ${selectedId === p.id ? 'selected' : ''}">${icon(topicIcons[p.topic])}</span>`,
+          html: `<span class="proposal-marker ${statusClass(p.status)} ${selectedId === p.id ? 'selected' : ''}">${icon(topicIcons[p.topic] || 'pin')}</span>`,
           iconSize: [46, 54],
           iconAnchor: [23, 50],
         }),
@@ -247,7 +283,9 @@ export default function App() {
         keyboard: true,
       }).addTo(markerLayer)
 
-      marker.bindTooltip(p.title, { direction: 'top', offset: [0, -44], className: 'proposal-tooltip' })
+      const tooltip = document.createElement('span')
+      tooltip.textContent = p.title
+      marker.bindTooltip(tooltip, { direction: 'top', offset: [0, -44], className: 'proposal-tooltip' })
       marker.on('click', () => openProposal(p.id))
     })
   }, [filteredProposals, selectedId, openProposal])
@@ -257,7 +295,7 @@ export default function App() {
     const projectLayer = projectLayerRef.current
     if (!projectLayer) return
     projectLayer.clearLayers()
-    if (selectedProposal) {
+    if (selectedProposal && selectedProposal.shape.length >= 2) {
       const sClass = statusClass(selectedProposal.status)
       const strokeColor = colors[sClass] || colors.review
       L.polyline(selectedProposal.shape, {
@@ -362,6 +400,12 @@ export default function App() {
           sidebarRef={sidebarRef}
           selectedProposal={selectedProposal}
           filteredProposals={filteredProposals}
+          topics={topics}
+          statuses={statuses}
+          catalogueCount={proposals.length}
+          catalogueState={catalogueState}
+          catalogueError={catalogueError}
+          onRetryCatalogue={() => setLoadAttempt(attempt => attempt + 1)}
           activeTab={activeTab}
           saved={saved}
           topic={topic}
@@ -414,12 +458,10 @@ export default function App() {
               </button>
             </div>
 
-            <div className="map-legend" aria-label="Proposal status legend">
+            {statuses.length > 0 && <div className="map-legend" aria-label="Proposal status legend">
               <span className="legend-title">PROPOSAL STATUS</span>
-              <span><i className="legend-dot open" />Open for feedback</span>
-              <span><i className="legend-dot updated" />Updated proposal</span>
-              <span><i className="legend-dot review" />Under review</span>
-            </div>
+              {statuses.map(value => <span key={value}><i className={`legend-dot ${statusClass(value)}`} />{value}</span>)}
+            </div>}
           </div>
 
           {mapError && (
