@@ -39,8 +39,22 @@ For a Render web service, use `backend` as the root directory, install with
 `uvicorn main:app --host 0.0.0.0 --port $PORT`. Set environment variables in
 Render rather than uploading `.env`. Use `/health` as the health check path.
 
-This is the backend foundation. Proposal, feedback, and aggregate routes still
-need their shared data contract and implementation.
+This backend provides the persistence layer communicating with MongoDB for:
+- **Proposals Storage & Retrieval**: Stores the saved set of existing proposals with their attached `community_aggregate` objects. On startup, automatically seeds MongoDB if the collection is empty.
+- **Feedback Storage & Retrieval**: Stores citizen feedback submissions with stance, stakeholder role, element ratings, comments, and structured conditions. Repeat submissions by the same participant update their record without inflating respondent counts.
+- **Live Community Aggregate Updates**: Atomically updates the proposal's attached aggregate in MongoDB whenever feedback is submitted or modified.
+
+### Endpoints
+- `GET /health` - API server status.
+- `GET /health/database` - Database ping check.
+- `GET /api/proposals` - List all proposals (with attached feedback aggregates). Filterable by `topic` and `status`.
+- `GET /api/proposals/{proposal_id}` - Get a single proposal with its attached community feedback aggregate.
+- `POST /api/proposals` - Save/upsert a proposal with its attached aggregate.
+- `POST /api/proposals/seed` - Trigger seeding from `data/seed_proposals.json` (`?force=true` to reseed).
+- `POST /api/proposals/{proposal_id}/feedback` - Submit citizen feedback; stores the submission in MongoDB and atomically updates the proposal's attached aggregate.
+- `GET /api/proposals/{proposal_id}/feedback` - Retrieve all feedback submissions for a proposal.
+- `GET /api/proposals/{proposal_id}/feedback/{participant_id}` - Retrieve a specific participant's feedback.
+- `GET /api/proposals/{proposal_id}/aggregate` - Retrieve just the current community aggregate feedback object.
 
 References: [FastAPI server setup](https://fastapi.tiangolo.com/deployment/manually/)
 and [PyMongo connections](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/connect/).
