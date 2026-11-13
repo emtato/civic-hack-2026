@@ -1,0 +1,2858 @@
+[
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "I use a permit nearby. yes to excluding these addresses, though i doubt it fixes parking on its own",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-002",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "why should someone in the new building get different rules than me? I live nearby and disagree with the exclusion.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-003",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "neutral"
+    },
+    "comment": "no car so not a big issue for me. still want the housing",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-004",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "YES. there cannot be an endless queue of cars for the same bit of curb. support the exclusion",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-005",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "unsure"
+    },
+    "comment": "Looking at places around here... would want to figure out transit and parking before deciding on this one.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-006",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "Have a permit myself, still seems unfair to the new neighbours.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-007",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "I work on Dundas and favour this. Customers parking is a different question tho",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-008",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "unsure"
+    },
+    "comment": "Not sure. I work here but the notice doesnt really tell me what changes day to day.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-009",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "Transit most days for me. Im fine with these buildings being outside the permit area.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-010",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "i take transit too, that doesnt mean nobody needs a car. dont like excluding an entire address",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-011",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "neutral"
+    },
+    "comment": "visiting friends, no real opinion",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-012",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "I would rather have one consistent approach for older and newer buildings. Hard to defend the difference just from the address.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-013",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-014",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-015",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-016",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-017",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-018",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-019",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-020",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-021",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-022",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-023",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-024",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-025",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-026",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-027",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": "notice-7451-d32d88699ce1",
+    "participant_id": "demo-v1-permit-parking-area-1e-028",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-permit-parking-area-1e-feature-exclusion": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-001",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "unsure"
+    },
+    "comment": "I live nearby and honestly cant place parts 1 and 2. need the highlighted map before i have an opinion",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-002",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "support"
+    },
+    "comment": "Fine with closing the listed pieces.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-003",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "oppose"
+    },
+    "comment": "Prefer keeping the road land as it is. I know this isnt the whole of Lawrence closing.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-004",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "neutral"
+    },
+    "comment": "neutral. looks like a boundary thing?",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-005",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "unsure"
+    },
+    "comment": "I go through here regularly. The street names got my attention but I cannot work out whether these two pieces affect my route. A map would help.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-006",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "support"
+    },
+    "comment": "yes for the portions in the notice, not voting to close the street!",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-007",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "oppose"
+    },
+    "comment": "I work nearby. Once road land is closed thats a big commitment to me... not sure if our access is even involved but I lean against it.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-008",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "unsure"
+    },
+    "comment": "only here sometimes, dont know enough",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-009",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "neutral"
+    },
+    "comment": "No strong citywide opinion on two little parcels.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-010",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-011",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-012",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-013",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-014",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-015",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-016",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-017",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-018",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": "notice-7631-a030806c287d",
+    "participant_id": "demo-v1-lawrence-road-closure-019",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-road-closure-feature-closure": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "support"
+    },
+    "comment": "good to have a name for it. Aren Levy Lane works for me",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-002",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "neutral"
+    },
+    "comment": "its a lane. as long as i can explain where it is to someone im good either way",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-003",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "unsure"
+    },
+    "comment": "Who is the name recognising? not against it, just dont know yet.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-004",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "oppose"
+    },
+    "comment": "Could we name it after where it IS instead? I dont want giving directions to turn into a local history exam lol. prefer a location name",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-005",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "support"
+    },
+    "comment": "I work around here, a name would make directions easier.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-006",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "neutral"
+    },
+    "comment": "no preference really",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-007",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "neutral"
+    },
+    "comment": "pass Vaughan often. havent spent much time thinking about the lane name tbh",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-008",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "support"
+    },
+    "comment": "I like named lanes. easier to point to a place than say the little lane behind that other place",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-009",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-010",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-011",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-012",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": "notice-7651-25dd72e05ba5",
+    "participant_id": "demo-v1-aren-levy-lane-013",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-aren-levy-lane-feature-name": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-001",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "Yes please. This building is part of what makes the area feel like Weston to me.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-002",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "The roof is the interesting bit for me, plus the recreation history. support designation",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-003",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "oppose"
+    },
+    "comment": "I want flexibility to change the building later. worried designation makes that harder so its a no from me",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "unsure"
+    },
+    "comment": "what does this mean for normal repairs? genuine question, undecided",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-005",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "neutral"
+    },
+    "comment": "usable recreation space first for me. neutral about the designation itself",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-006",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "I visit for recreation and like that the inside counts too, not just the front of the building.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-007",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "Glad the skating history gets recognised. Not reading this as a promise of new programs or anything.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-008",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "oppose"
+    },
+    "comment": "My priority is being able to improve the facility. I dont want the answer to every new idea being \"but heritage\". against designation",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-009",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "I work in Weston. Keeping a recognisable community building seems worthwhile.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-010",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "unsure"
+    },
+    "comment": "The history is interesting but I have no idea what the obligations would be. unsure",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-011",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "PLEASE keep the timber roof. Toronto does not need to turn every interesting interior into the same white box.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-012",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "neutral"
+    },
+    "comment": "drive past, dont use it. no strong view",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-013",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-014",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-015",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-016",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-017",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-018",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-019",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-020",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-021",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-022",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-023",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-024",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-025",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-026",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-027",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-028",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-029",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-030",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-031",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-032",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-033",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-034",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-035",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": "notice-7760-76628197cba7",
+    "participant_id": "demo-v1-lawrence-heritage-intention-036",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heritage-intention-feature-designation": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "Overall yes to the mixed use building. Removing the heritage bit bothers me more than the alterations do. Definitely keep the conservation plan requirement.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-002",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "46 storeys?? we can add housing without making every building look like it is trying to win a height competition. against this, still want a conservation plan",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-003",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "Yes to the building and the heritage approach in the notice. We need room for more people.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "I cant picture the old and new parts together. happy they need a relocation/conservation plan but undecided on the approval",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-005",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "leave the heritage attribute where it is. A plan is important but it doesnt undo removing the thing in the first place",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-006",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "I work close by. More people and different uses could be good for the area; support the approvals with the conservation planning.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-007",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "unsure"
+    },
+    "comment": "The scale is too much for me and I worry about disruption at work. Havent seen enough of the conservation details to rate those.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-008",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "neutral",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "no overall vote either way yet. dont like the removal, do like having a proper plan",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-009",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "neutral",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "I pass through regularly, more homes sounds good. Neutral on the attribute removal, yes to the conservation plan.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-010",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "i like seeing the older parts of the street when i visit. losing an original piece still feels like a loss, plan or no plan",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-011",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "unsure"
+    },
+    "comment": "need drawings. what stays, what moves? cannot visualise this",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-012",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "Support. New housing and the heritage measures described here seem like a workable combination.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-013",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "Would rather keep the heritage attribute in its setting. Conservation planning matters, I just disagree with this approval.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-014",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "lean yes overall. Not sure about that specific removal - i understand they arent talking about knocking down everything on the property",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-015",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-016",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "neutral",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-017",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-018",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-019",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-020",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-021",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-2": "neutral",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-022",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-023",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-024",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-025",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-026",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "neutral",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-027",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-028",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-029",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-030",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-031",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-032",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-033",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-034",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "neutral",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-035",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-036",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-037",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-038",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-039",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-040",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-041",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-042",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-043",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "support",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-044",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-045",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-046",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-047",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-048",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-049",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "unsure",
+      "toronto-weston-heritage-demolition-feature-2": "unsure",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-050",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-051",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "support",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": "notice-7838-8ddbd1d36baa",
+    "participant_id": "demo-v1-weston-heritage-demolition-052",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-weston-heritage-demolition-feature-1": "oppose",
+      "toronto-weston-heritage-demolition-feature-2": "oppose",
+      "toronto-weston-heritage-demolition-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-001",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "Use this route, support the temporary bridge then the permanent one. Record the old one properly too.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-002",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "replacement makes sense. not enough info for me to say yes or no to demolition",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-003",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "I want the replacement route but im not sold on removing the old bridge. those are different questions to me",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-004",
+    "position": "strongly_support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "Get on with the bridge plan please! support it, including documenting the old structure and looking at salvage.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-005",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "Replacement plus remembering what was here seems a fair balance.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-006",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "I live nearby and would rather keep the old bridge. Still favour the temporary/replacement planning if this goes ahead.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-007",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "how temporary is temporary?? would like to know before picking a side. yes to recording the history",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-008",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "oppose",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "No. I like THIS bridge, not a brand new bridge with a plaque saying there used to be a nice bridge here. Still document it carefully.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-009",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "i visit for walks etc. fine with a replacement and recording the history, no strong demolition opinion",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-010",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "The old bridge is part of why i enjoy coming here. against taking it down, havent decided about the new design",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-011",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "neutral for now... need to see what the replacement would look like. documentation is a good idea",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-012",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "Work takes me this way. support the bridge plan but the timing is still a question for me.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-013",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "A sign is not a bridge! I oppose demolition even though the replacement route could be useful. Please do the recording and salvage review.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-014",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "Support the replacement and commemoration. Would be nice to use old pieces where possible, know that isnt guaranteed.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-015",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-016",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-017",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-018",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-019",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "oppose",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-020",
+    "position": "strongly_support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-021",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-022",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-023",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-024",
+    "position": "strongly_support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-025",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-026",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-027",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-028",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-029",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-030",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-031",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-032",
+    "position": "strongly_support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-033",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-034",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-035",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-036",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-037",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "support",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-038",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-039",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-040",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "unsure",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-041",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-1": "oppose",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-042",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "support",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-043",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "oppose",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": "notice-7886-138dbd33d04f",
+    "participant_id": "demo-v1-stotts-bridge-heritage-044",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-stotts-bridge-heritage-feature-demolition": "neutral",
+      "toronto-stotts-bridge-heritage-feature-1": "unsure",
+      "toronto-stotts-bridge-heritage-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:09:20.267782+00:00"
+  }
+]

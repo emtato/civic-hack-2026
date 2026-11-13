@@ -1,0 +1,422 @@
+{
+  "label": "SYNTHETIC DEMONSTRATION FEEDBACK — entirely fictional, not public opinion",
+  "batch": 3,
+  "generated_at": "2026-11-13T20:19:57.998454+00:00",
+  "seed": 2026111303,
+  "destination_database": "civic_hack",
+  "status": "persisted and storage verified",
+  "records": "submissions.json",
+  "disclosure": "All demo-v1-* participant IDs in this batch are fictional. Counts and voices are illustrative, not representative. Explain synthetic origin in the demo presentation whenever showing these results. Existing feedback is not reclassified as synthetic.",
+  "conditions": "Every generated submission has condition:null. Preserve total_conditions and the entire condition_clusters structure exactly.",
+  "presentation_context": "Ordinary comments display in Overview Comments. Result panels do not themselves label this batch as synthetic; include the disclosure when presenting.",
+  "comment_style": "Mostly serious, varied voices and lengths, fragments and informal spelling, with a small minority of exaggerated objections. Fictional personas are not demographic evidence.",
+  "proposals": [
+    {
+      "proposal_id": "toronto-queen-heritage-amendment",
+      "audience_assumptions": "Small local heritage audience at Queen East and Parliament, with nearby households, commercial workers, passers-by and wider heritage interest. Hundreds of immediate neighbours and workers plus a broader heritage audience is only a fictional planning scale, not a researched population count. This is an amendment to existing designation reasons and attributes, not an assumed demolition or change of use.",
+      "connection_sampling_weights": {
+        "resident": 2.4,
+        "business": 1.4,
+        "commuter": 0.7,
+        "visitor": 1.0,
+        "citywide": 1.8
+      },
+      "synthetic_participants": 27,
+      "ordinary_comments": 12,
+      "features": [
+        {
+          "id": "toronto-queen-heritage-amendment-feature-1",
+          "label": "Historical association",
+          "question": "What concerns or requirements do you have about historical association?"
+        },
+        {
+          "id": "toronto-queen-heritage-amendment-feature-2",
+          "label": "Architectural and structural attributes",
+          "question": "What concerns or requirements do you have about architectural and structural attributes?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-nightclub-definition",
+      "audience_assumptions": "Citywide reach with participation concentrated among small-venue operators and staff, neighbours of entertainment premises, regular visitors and wider cultural-policy interest. No numerical affected-population estimate is useful from this notice. Business and resident connections both receive substantial weight; smaller occupant load does not establish quieter operation or exemption from unrelated rules.",
+      "connection_sampling_weights": {
+        "resident": 2.0,
+        "business": 2.5,
+        "commuter": 0.7,
+        "visitor": 1.6,
+        "citywide": 1.6
+      },
+      "synthetic_participants": 58,
+      "ordinary_comments": 16,
+      "features": [
+        {
+          "id": "toronto-nightclub-definition-feature-1",
+          "label": "Occupancy threshold",
+          "question": "What concerns or requirements do you have about occupancy threshold?"
+        },
+        {
+          "id": "toronto-nightclub-definition-feature-2",
+          "label": "Licensing and zoning alignment",
+          "question": "What concerns or requirements do you have about licensing and zoning alignment?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-business-licence-action-plan",
+      "audience_assumptions": "Citywide administrative policy with a more focused audience of second-hand goods and jewellery workers, entertainment operators, nearby residents and general business-policy interest. Use citywide reach with sector-specific participation, not an invented business or population count. Business connections receive meaningful weight, with distinct views on hours, register formats, the nightclub definition and videotape-store licensing repeal.",
+      "connection_sampling_weights": {
+        "resident": 1.5,
+        "business": 2.8,
+        "commuter": 0.6,
+        "visitor": 0.8,
+        "citywide": 1.8
+      },
+      "synthetic_participants": 46,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-business-licence-action-plan-feature-operating-hours",
+          "label": "Remove specified operating-hour restrictions",
+          "question": "How do you feel about removing the hours-and-days-of-operation requirements in the specified second-hand goods and old gold/jewellery licensing provisions?"
+        },
+        {
+          "id": "toronto-business-licence-action-plan-feature-goods-registers",
+          "label": "Simplify goods-register requirements",
+          "question": "How do you feel about allowing goods registers in an approved format rather than a handwritten book, and removing the specified routine register-information submissions?"
+        },
+        {
+          "id": "toronto-business-licence-action-plan-feature-nightclub-definition",
+          "label": "Revise the nightclub licensing definition",
+          "question": "How do you feel about defining nightclubs by amplified music for dancing or entertainment plus at least three of the four listed operating characteristics?"
+        },
+        {
+          "id": "toronto-business-licence-action-plan-feature-2",
+          "label": "Videotape-store licensing repeal",
+          "question": "What concerns or requirements do you have about videotape-store licensing repeal?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-street-vending-rules",
+      "audience_assumptions": "Citywide street-use policy with concentrated interest from vendors and other storefront workers, nearby residents, regular travellers and people buying food while visiting. Citywide reach is a fictional planning category, not a count of vendors or pedestrians. Include both vendor and storefront perspectives within business, and separate enjoyment of vending and longer hours from views on permits and new on-foot licensing obligations.",
+      "connection_sampling_weights": {
+        "resident": 1.8,
+        "business": 2.2,
+        "commuter": 1.6,
+        "visitor": 1.7,
+        "citywide": 1.3
+      },
+      "synthetic_participants": 67,
+      "ordinary_comments": 16,
+      "features": [
+        {
+          "id": "toronto-street-vending-rules-feature-1",
+          "label": "Sidewalk vending applications",
+          "question": "What concerns or requirements do you have about sidewalk vending applications?"
+        },
+        {
+          "id": "toronto-street-vending-rules-feature-2",
+          "label": "Mobile vending hours",
+          "question": "What concerns or requirements do you have about mobile vending hours?"
+        },
+        {
+          "id": "toronto-street-vending-rules-feature-3",
+          "label": "New permit regime",
+          "question": "What concerns or requirements do you have about new permit regime?"
+        },
+        {
+          "id": "toronto-street-vending-rules-feature-on-foot-licensing",
+          "label": "Licence refreshments vendors selling on foot",
+          "question": "How do you feel about requiring a licence for refreshments vendors selling on foot, including health checks, visible licensing and $1 million liability insurance?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-rentsafeto-fees",
+      "audience_assumptions": "Citywide rental-building policy, with renter/resident voices prominent alongside building workers/operators, social-housing workers and broader housing interest. No building, household or affected-population count is inferred from the notice. Treat the social-housing waiver as an exemption from the sign reissuance fee, not all charges; views on that exemption can differ from views on sign and remedial-work fees.",
+      "connection_sampling_weights": {
+        "resident": 3.0,
+        "business": 1.8,
+        "commuter": 0.5,
+        "visitor": 0.5,
+        "citywide": 1.8
+      },
+      "synthetic_participants": 61,
+      "ordinary_comments": 16,
+      "features": [
+        {
+          "id": "toronto-rentsafeto-fees-feature-1",
+          "label": "Sign reissuance fee",
+          "question": "What concerns or requirements do you have about sign reissuance fee?"
+        },
+        {
+          "id": "toronto-rentsafeto-fees-feature-2",
+          "label": "Social housing exemptions",
+          "question": "What concerns or requirements do you have about social housing exemptions?"
+        },
+        {
+          "id": "toronto-rentsafeto-fees-feature-3",
+          "label": "Remedial-work fees",
+          "question": "What concerns or requirements do you have about remedial-work fees?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-permit-parking-exclusion-process",
+      "audience_assumptions": "Citywide procedural reach, with a narrower engaged audience of permit users, prospective renters, housing/development workers and regular travellers. No number of affected addresses or residents is inferred from the notice. Residents and wider policy interest are prominent, and support for a consolidated schedule can coexist with uncertainty or opposition about decision authority. Do not treat this as a blanket removal of permits.",
+      "connection_sampling_weights": {
+        "resident": 2.5,
+        "business": 1.5,
+        "commuter": 1.5,
+        "visitor": 0.6,
+        "citywide": 1.8
+      },
+      "synthetic_participants": 34,
+      "ordinary_comments": 12,
+      "features": [
+        {
+          "id": "toronto-permit-parking-exclusion-process-feature-1",
+          "label": "Decision-making authority",
+          "question": "What concerns or requirements do you have about decision-making authority?"
+        },
+        {
+          "id": "toronto-permit-parking-exclusion-process-feature-2",
+          "label": "Excluded-address schedule",
+          "question": "What concerns or requirements do you have about excluded-address schedule?"
+        }
+      ]
+    }
+  ],
+  "rerun_behavior": "An identical second run was verified without writes or duplicates. For future changes, compare final submissions against live records first; temporary one-off scripts were removed.",
+  "verification_summary": {
+    "verified_at": "2026-11-13T20:26:44.544090+00:00",
+    "initial_persistence": "One MongoDB transaction inserted only this batch and updated only its six proposal aggregates.",
+    "synthetic_participants": 293,
+    "ordinary_comments": 86,
+    "submission_dto_and_current_feature_ids_validated": true,
+    "position_connection_and_feature_totals_reconciled": true,
+    "all_condition_data_unchanged": true,
+    "condition_comparison": "total_conditions and complete condition_clusters matched baseline effective display values exactly; every new condition is null; all six still have zero conditions.",
+    "existing_feedback_source_features_history_and_status_preserved": true,
+    "baseline": "All six initially had zero feedback and zero conditions. Before-state snapshots were retained until read-back and UI checks passed, then removed under queue cleanup rule 9.",
+    "identical_rerun_verified_without_writes_or_duplicates": true,
+    "fixed_seed_generation_reproduced_saved_records_exactly": true,
+    "proposals": [
+      {
+        "proposal_id": "toronto-queen-heritage-amendment",
+        "added_participants": 27,
+        "added_comments": 12,
+        "existing_participants": 0,
+        "total_participants": 27,
+        "positions": {
+          "strongly_oppose": 2,
+          "oppose": 5,
+          "neutral": 6,
+          "support": 7,
+          "strongly_support": 6,
+          "unsure": 1
+        },
+        "connections": {
+          "resident": 15,
+          "business": 2,
+          "commuter": 1,
+          "visitor": 2,
+          "citywide": 7
+        },
+        "feature_responses": {
+          "toronto-queen-heritage-amendment-feature-1": 25,
+          "toronto-queen-heritage-amendment-feature-2": 25
+        },
+        "conditions_unchanged": true,
+        "source_and_history_unchanged": true,
+        "existing_feedback_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-nightclub-definition",
+        "added_participants": 58,
+        "added_comments": 16,
+        "existing_participants": 0,
+        "total_participants": 58,
+        "positions": {
+          "strongly_oppose": 4,
+          "oppose": 11,
+          "neutral": 11,
+          "support": 11,
+          "strongly_support": 9,
+          "unsure": 12
+        },
+        "connections": {
+          "resident": 18,
+          "business": 21,
+          "commuter": 4,
+          "visitor": 11,
+          "citywide": 4
+        },
+        "feature_responses": {
+          "toronto-nightclub-definition-feature-1": 52,
+          "toronto-nightclub-definition-feature-2": 51
+        },
+        "conditions_unchanged": true,
+        "source_and_history_unchanged": true,
+        "existing_feedback_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-business-licence-action-plan",
+        "added_participants": 46,
+        "added_comments": 14,
+        "existing_participants": 0,
+        "total_participants": 46,
+        "positions": {
+          "strongly_oppose": 2,
+          "oppose": 13,
+          "neutral": 2,
+          "support": 20,
+          "strongly_support": 5,
+          "unsure": 4
+        },
+        "connections": {
+          "resident": 14,
+          "business": 21,
+          "commuter": 1,
+          "visitor": 2,
+          "citywide": 8
+        },
+        "feature_responses": {
+          "toronto-business-licence-action-plan-feature-operating-hours": 43,
+          "toronto-business-licence-action-plan-feature-goods-registers": 42,
+          "toronto-business-licence-action-plan-feature-nightclub-definition": 40,
+          "toronto-business-licence-action-plan-feature-2": 41
+        },
+        "conditions_unchanged": true,
+        "source_and_history_unchanged": true,
+        "existing_feedback_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-street-vending-rules",
+        "added_participants": 67,
+        "added_comments": 16,
+        "existing_participants": 0,
+        "total_participants": 67,
+        "positions": {
+          "strongly_oppose": 6,
+          "oppose": 21,
+          "neutral": 1,
+          "support": 25,
+          "strongly_support": 7,
+          "unsure": 7
+        },
+        "connections": {
+          "resident": 17,
+          "business": 24,
+          "commuter": 11,
+          "visitor": 9,
+          "citywide": 6
+        },
+        "feature_responses": {
+          "toronto-street-vending-rules-feature-1": 59,
+          "toronto-street-vending-rules-feature-2": 60,
+          "toronto-street-vending-rules-feature-3": 58,
+          "toronto-street-vending-rules-feature-on-foot-licensing": 54
+        },
+        "conditions_unchanged": true,
+        "source_and_history_unchanged": true,
+        "existing_feedback_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-rentsafeto-fees",
+        "added_participants": 61,
+        "added_comments": 16,
+        "existing_participants": 0,
+        "total_participants": 61,
+        "positions": {
+          "strongly_oppose": 2,
+          "oppose": 9,
+          "neutral": 4,
+          "support": 27,
+          "strongly_support": 10,
+          "unsure": 9
+        },
+        "connections": {
+          "resident": 40,
+          "business": 10,
+          "commuter": 1,
+          "visitor": 1,
+          "citywide": 9
+        },
+        "feature_responses": {
+          "toronto-rentsafeto-fees-feature-1": 55,
+          "toronto-rentsafeto-fees-feature-2": 52,
+          "toronto-rentsafeto-fees-feature-3": 55
+        },
+        "conditions_unchanged": true,
+        "source_and_history_unchanged": true,
+        "existing_feedback_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-permit-parking-exclusion-process",
+        "added_participants": 34,
+        "added_comments": 12,
+        "existing_participants": 0,
+        "total_participants": 34,
+        "positions": {
+          "strongly_oppose": 3,
+          "oppose": 2,
+          "neutral": 5,
+          "support": 13,
+          "strongly_support": 4,
+          "unsure": 7
+        },
+        "connections": {
+          "resident": 13,
+          "business": 7,
+          "commuter": 7,
+          "visitor": 2,
+          "citywide": 5
+        },
+        "feature_responses": {
+          "toronto-permit-parking-exclusion-process-feature-1": 27,
+          "toronto-permit-parking-exclusion-process-feature-2": 31
+        },
+        "conditions_unchanged": true,
+        "source_and_history_unchanged": true,
+        "existing_feedback_unchanged": true
+      }
+    ],
+    "ui": {
+      "url": "http://localhost:5173/",
+      "all_six_checked": true,
+      "overview_comments_and_counts": [
+        12,
+        16,
+        14,
+        16,
+        16,
+        12
+      ],
+      "community_position_connection_and_feature_distributions_matched": true,
+      "all_conditions_zero": true
+    },
+    "unrelated_activity": {
+      "changed_proposals_since_initial_snapshot": [
+        {
+          "proposal_id": "toronto-labatt-river-towers",
+          "baseline_hash": "dfb614951db202c298595702a708f34410233c7324b18dd4c87b97b7fae9209c",
+          "current_hash": "bd7aecaacc566180df7737daa503134d1bb4e60f7e2395449b50098cceb6dd78"
+        }
+      ],
+      "unrelated_feedback_hash_changed_since_initial_snapshot": true,
+      "unrelated_proposals_and_feedback_unchanged_during_final_verification": true,
+      "handling": "Concurrent Labatt/River and unrelated feedback changes were detected and preserved. No attempt to restore historical state; Batch 3 writes target only its six IDs. Exact unrelated feedback field changes cannot be reconstructed from snapshot hashes."
+    },
+    "prior_batch_2_reverified_without_writes": {
+      "participants": 192,
+      "ordinary_comments": 69,
+      "proposals": 6
+    }
+  },
+  "retained_files": [
+    "manifest.json",
+    "submissions.json"
+  ],
+  "cleanup": "After persistence, read-back, exact condition comparisons, generator reproducibility, duplicate prevention and all six UI checks passed, temporary scripts, baseline and standalone audit/verification reports were deleted. MongoDB records were not removed."
+}

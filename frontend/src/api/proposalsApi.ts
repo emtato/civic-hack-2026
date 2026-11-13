@@ -62,19 +62,16 @@ export async function submitProposalFeedback(
  * Fetch all stored feedback submissions for a proposal.
  */
 export async function fetchProposalFeedback(
-  proposalId: string
+  proposalId: string,
+  signal?: AbortSignal,
 ): Promise<ProposalFeedbackSubmissionDTO[]> {
-  try {
-    const res = await fetch(`${API_BASE}/api/proposals/${proposalId}/feedback`, {
-      headers: { Accept: 'application/json' },
-    })
-    if (res.ok) {
-      return (await res.json()) as ProposalFeedbackSubmissionDTO[]
-    }
-  } catch (err) {
-    console.warn(`Could not fetch feedback for proposal ${proposalId}:`, err)
-  }
-  return []
+  const timeout = AbortSignal.timeout(8000)
+  const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/feedback`, {
+    headers: { Accept: 'application/json' },
+    signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
+  })
+  if (!res.ok) throw new Error('Comments could not be loaded.')
+  return res.json()
 }
 
 /**

@@ -3,6 +3,7 @@ import type { Proposal, Topic } from '../data/proposals'
 import { Icon } from './Icon'
 import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
 import type { CommunitySnapshot } from './ProposalFeedback'
+import { ProposalComments } from './ProposalComments'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -348,28 +349,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       {community?.hasResponse ? 'Edit your feedback' : 'Submit feedback / comment'} <Icon name="arrow" />
                     </button>
                   </section>
-                  <section className="overview-card overview-comments" aria-labelledby="overview-comments-heading">
-                    <div className="overview-card-heading">
-                      <h2 id="overview-comments-heading">Example comments</h2>
-                    </div>
-                    <p className="overview-caption">Illustrative comments; these were not submitted about this proposal.</p>
-                    <div className="overview-comments-list" role="region" aria-label="Example comments" tabIndex={0}>
-                      {[
-                        { author: 'Local resident', text: 'More space to walk and gather would make this a much nicer place to spend time.' },
-                        { author: 'Business owner', text: 'Please keep a practical way for deliveries to reach nearby businesses in the morning.' },
-                        { author: 'Regular visitor', text: 'I’d like to see more seating and shade included in the plans.' },
-                        { author: 'Transit rider', text: 'Clear signs and accessible routes to transit stops would make a big difference.' },
-                        { author: 'Neighbourhood resident', text: 'How will access be maintained while the work is underway?' },
-                        { author: 'Community member', text: 'It would be helpful to see how these changes will work in the winter, too.' },
-                      ].map((comment, index) => (
-                        <article className="overview-comment" key={index}>
-                          <div className="overview-comment-author"><span aria-hidden="true">{comment.author.charAt(0)}</span><h3>{comment.author}</h3></div>
-                          <p>{comment.text}</p>
-                        </article>
-                      ))}
-                    </div>
-                    <p className="overview-caption">Scroll to read more</p>
-                  </section>
+                  <ProposalComments proposalId={selectedProposal.id} refreshKey={community?.aggregate.last_updated} />
                 </div>
               </div>
             )}

@@ -1,0 +1,135 @@
+{
+  "label": "SYNTHETIC DEMONSTRATION FEEDBACK \u2014 entirely fictional, not public opinion",
+  "batch": 2,
+  "generated_at": "2026-11-13T20:09:20.267782+00:00",
+  "seed": 2026111302,
+  "destination_database": "civic_hack",
+  "status": "persisted and storage verified",
+  "records": "submissions.json",
+  "disclosure": "All demo-v1-* participant IDs in this batch are fictional. Counts and voices are illustrative, not representative. Display this disclosure in the demo presentation whenever showing these results. Existing feedback is not reclassified as synthetic.",
+  "conditions": "Every generated record has condition:null. Preserve total_conditions and the entire condition_clusters structure exactly.",
+  "presentation_limit": "Ordinary comments are stored on submissions and displayed in the current Overview Comments panel. The result panels do not themselves disclose synthetic origin; include the synthetic-demo disclosure when presenting.",
+  "proposals": [
+    {
+      "proposal_id": "toronto-permit-parking-area-1e",
+      "audience_assumptions": "Small local parking catchment around two Dundas West addresses, with nearby permit users, workers and prospective residents. Hundreds of nearby people is a fictional planning scale, not a researched population count; the development occupancy and car ownership are unknown. Residents receive most responses, including people without cars and people considering moving here.",
+      "synthetic_participants": 28,
+      "ordinary_comments": 12,
+      "features": [
+        {
+          "id": "toronto-permit-parking-area-1e-feature-exclusion",
+          "label": "Exclude 3459\u20133461 Dundas West from permit-parking area 1E",
+          "question": "How do you feel about changing permit-parking area 1E to exclude the development at 3459 and 3461 Dundas Street West?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-lawrence-road-closure",
+      "audience_assumptions": "Small parcel-specific audience around Lawrence East and Ridgewood, led by nearby households and regular travellers. Use a small local audience rather than a numerical affected-population estimate because the legal parcels do not establish which trips or properties are affected. Include uncertainty without assuming the whole road closes or a redevelopment follows.",
+      "synthetic_participants": 19,
+      "ordinary_comments": 9,
+      "features": [
+        {
+          "id": "toronto-lawrence-road-closure-feature-closure",
+          "label": "Closure of the specified Lawrence/Ridgewood road portions",
+          "question": "How do you feel about permanently closing the specified road portions at the northerly limit of Lawrence Avenue East beside Ridgewood Road? This does not describe closing the whole street."
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-aren-levy-lane",
+      "audience_assumptions": "Very small local naming audience near Vaughan and Ellsworth, primarily nearby households plus a few workers and people visiting. No numerical population claim is useful for an existing lane naming. A modest number of responses and several neutral views fit the limited physical change; no biography or access change is assumed.",
+      "synthetic_participants": 13,
+      "ordinary_comments": 8,
+      "features": [
+        {
+          "id": "toronto-aren-levy-lane-feature-name",
+          "label": "Name the existing lane Aren Levy Lane",
+          "question": "How do you feel about naming the existing public lane west of Vaughan Road and north of Ellsworth Avenue \u201cAren Levy Lane\u201d?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-lawrence-heritage-intention",
+      "audience_assumptions": "Neighbourhood recreation destination at the Weston arena in Lions Park, with nearby households, recreation visitors, workers and wider heritage interest. A neighbourhood-scale audience with visitors from beyond the immediate blocks is a fictional planning assumption, not an attendance or population estimate. Give both local residents and recreation visitors substantial weight without treating designation as a funding commitment.",
+      "synthetic_participants": 36,
+      "ordinary_comments": 12,
+      "features": [
+        {
+          "id": "toronto-lawrence-heritage-intention-feature-designation",
+          "label": "Heritage designation of the Weston arena",
+          "question": "How do you feel about designating the arena at 2125 Lawrence Avenue West as a heritage property?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-weston-heritage-demolition",
+      "audience_assumptions": "Place-based mixed-use development and heritage decision at 1151 Weston Road, with a neighbourhood audience and broader housing and heritage interest. Several thousand people noticing a project of this scale is only a fictional reach assumption, not a population estimate or proposed unit count. Residents and workers have varied views; separate alteration approval, removal of the specified attribute, and the conservation-plan requirement.",
+      "synthetic_participants": 52,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-weston-heritage-demolition-feature-1",
+          "label": "Alteration approval with conditions",
+          "question": "What concerns or requirements do you have about alteration approval with conditions?"
+        },
+        {
+          "id": "toronto-weston-heritage-demolition-feature-2",
+          "label": "Heritage attribute removal",
+          "question": "What concerns or requirements do you have about heritage attribute removal?"
+        },
+        {
+          "id": "toronto-weston-heritage-demolition-feature-3",
+          "label": "Relocation and conservation plan",
+          "question": "What concerns or requirements do you have about relocation and conservation plan?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-stotts-bridge-heritage",
+      "audience_assumptions": "Route and recreation audience around Twyn Rivers Drive, combining regular travellers, nearby households, occasional recreational visitors and citywide heritage interest. A local route catchment plus a wider visitor audience is a fictional planning scale; no traffic volume, engineering conclusion or closure date is assumed. Commuters get substantial weight, while replacement support can coexist with opposition to demolition.",
+      "synthetic_participants": 44,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-stotts-bridge-heritage-feature-demolition",
+          "label": "Demolition of the existing heritage bridge",
+          "question": "How do you feel about demolishing the designated Stotts\u2019 Bridge, subject to the conditions in the notice?"
+        },
+        {
+          "id": "toronto-stotts-bridge-heritage-feature-1",
+          "label": "Temporary and replacement bridge",
+          "question": "What concerns or requirements do you have about temporary and replacement bridge?"
+        },
+        {
+          "id": "toronto-stotts-bridge-heritage-feature-2",
+          "label": "Documentation and salvage",
+          "question": "What concerns or requirements do you have about documentation and salvage?"
+        }
+      ]
+    }
+  ],
+  "comment_style": "Mostly serious, with varied lengths, punctuation, capitalization, vocabulary and formality; occasional typos and a small number of exaggerated or NIMBY-style reactions. Fictional voices, not demographic stereotypes.",
+  "verification_summary": {
+    "verified_at": "2026-11-13T20:11:35.635946+00:00",
+    "synthetic_participants": 192,
+    "ordinary_comments": 69,
+    "submission_dto_and_feature_ids_validated": true,
+    "position_connection_and_feature_totals_reconciled": true,
+    "all_condition_data_unchanged": true,
+    "existing_feedback_source_history_and_status_preserved": true,
+    "identical_rerun_verified_without_writes_or_duplicates": true,
+    "ui": "Six proposal panels checked: participant totals, overall positions, connections, feature ratings and zero conditions matched stored results. Saved ordinary comments were subsequently verified in the UI."
+  },
+  "comment_revision": {
+    "updated_comments": 69,
+    "verified_at": "2026-11-13T20:14:24.364251+00:00",
+    "votes_or_conditions_changed": false,
+    "only_synthetic_comment_text_changed": true
+  },
+  "retained_files": [
+    "manifest.json",
+    "submissions.json"
+  ],
+  "cleanup": "Temporary generation, persistence and revision scripts, baselines, intermediate payloads, extra documentation and standalone reports were deleted after successful persistence and verification. This manifest summarizes the completed checks; final records are retained in submissions.json. MongoDB data was not changed by cleanup."
+}

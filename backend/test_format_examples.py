@@ -20,9 +20,23 @@ class FormattingTests(unittest.TestCase):
         self.assertEqual({p.id for p in self.originals}, {p.id for p in formatted})
         for p in formatted:
             self.assertTrue(p.summary)
-            self.assertGreaterEqual(len(p.features), 2)
+            self.assertGreaterEqual(len(p.features), 1)
+            self.assertEqual(len(p.features), len({f.id for f in p.features}))
             for feature in p.features:
                 self.assertIn(feature.evidence[0].quote, p.source_notices[0].description_text)
+
+    def test_reviewed_questions_keep_explicit_ids_when_topics_are_reordered(self):
+        p = next(p for p in self.originals if p.id == 'toronto-business-licence-action-plan')
+        curated = copy.deepcopy(self.curated[p.id])
+        before = enrich(p, curated)
+        curated['features'].reverse()
+        after = enrich(p, curated)
+        self.assertEqual({f.id: f.question for f in before.features},
+                         {f.id: f.question for f in after.features})
+        self.assertEqual(4, len(after.features))
+        for feature, entry in zip(after.features, curated['features']):
+            if 'question' in entry:
+                self.assertEqual(entry['question'], feature.question)
 
     def test_unknown_rates_and_current_participation_stay_unknown(self):
         p = next(p for p in self.originals if p.id == 'toronto-ravine-permit-fees')

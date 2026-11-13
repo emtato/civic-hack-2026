@@ -8,6 +8,7 @@ import type { ConditionClusterDTO, ProposalCommunityAggregateDTO, ProposalFeedba
 import { getParticipantId, readDemoFeedback, saveDemoFeedback } from '../data/feedbackSession'
 import { fetchParticipantFeedback, fetchProposalAggregate, submitProposalFeedback } from '../api/proposalsApi'
 import { FeedbackForm } from './FeedbackForm'
+import { ProposalComments } from './ProposalComments'
 import { Icon } from './Icon'
 import './ProposalFeedback.css'
 
@@ -241,6 +242,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
             : <p className="feedback-empty">No conditions recorded yet. Individual and less common needs will stay visible here.</p>}
           <p className="feedback-help feedback-count-note">Percentages use recorded conditions, not participants. Groups may include the same person. Results describe participants, not a representative vote of the neighbourhood.</p>
         </section>
+        <ProposalComments proposalId={proposal.id} refreshKey={aggregate.last_updated} layout="grid" />
       </div>
     </section>
   )

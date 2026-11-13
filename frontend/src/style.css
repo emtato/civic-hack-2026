@@ -1188,7 +1188,8 @@ button {
   font-weight:600
 }
 
-.overview-comment h3 {
+.overview-comment h3,
+.overview-comment h4 {
   font-size:13px;
   line-height:1.5
 }
@@ -1226,6 +1227,34 @@ button {
   .overview-comments {
     contain:none;
     height:380px
+  }
+}
+
+.community-comments {
+  contain:none;
+  height:auto;
+  margin-top:16px
+}
+
+.community-comments .overview-comments-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  overflow:visible;
+  padding:0
+}
+
+.community-comments .overview-comment {
+  min-width:0;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fbfcf7
+}
+
+@container proposal-detail (max-width:520px) {
+  .community-comments .overview-comments-list {
+    grid-template-columns:minmax(0,1fr)
   }
 }
 

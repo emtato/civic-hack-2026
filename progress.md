@@ -53,6 +53,13 @@ Next review should inspect an actual fetched record and its normalized equivalen
 
 ## Checkpoint log
 
+### November 13 — saved voting topics reviewed across all 24 proposals
+
+- **Reviewed:** every saved notice and its proposed feature questions; no fixed question-count target. Retained 11 topic sets unchanged and adjusted 13 to remove duplicate/context-only questions or expose distinct substantive choices. Current catalogue has 50 topics, with one to four per proposal.
+- **Saved and verified:** updated only current `features` on the 13 affected MongoDB records and read back all 24. Source text, historical version snapshots, all other proposal fields and participant feedback were preserved. There were no existing aggregates or saved feature answers on the affected records. Updated the local enrichment and formatted seed data to match.
+- **Evidence:** [per-proposal review](backend/data/feature-topic-review.md) records the reason for every change or decision to retain a set. Every revised topic has a literal source quotation. Sparse fee notices retain a broad question with an explicit information limit.
+- **Validation:** all 33 backend tests pass; formatter supports explicit stable IDs and custom rating questions. Normal enrichment still preserves existing nonempty features. No live AI or municipal revision was introduced.
+
 ### November 13 — service conversion and catalogue collection switched
 
 - **Implemented:** rich-to-display conversion in the service, raw-record persistence reads from `imported_proposals`, matching feedback aggregate writes, nullable coordinates and feature questions derived from stable imported feature IDs.

@@ -1,0 +1,159 @@
+{
+  "label": "SYNTHETIC DEMONSTRATION FEEDBACK \u2014 entirely fictional, not public opinion",
+  "batch": 1,
+  "generated_at": "2026-11-13T20:02:35.463814+00:00",
+  "seed": 2026111301,
+  "destination_database": "civic_hack",
+  "status": "persisted; storage and six UI panels verified",
+  "records": "submissions.json",
+  "disclosure": "All demo-v1-* participant IDs in this batch are fictional. Counts are illustrative, not representative. Present this disclosure whenever showing these results. Existing feedback was preserved and is not reclassified as synthetic.",
+  "conditions": "Every generated record has condition:null. Preserve protected condition fields exactly.",
+  "presentation_limit": "Overview Comments now displays stored nonempty submission comments. Explain sample/illustrative data in the presentation as a whole; no repetitive per-comment labels.",
+  "proposals": [
+    {
+      "proposal_id": "toronto-labatt-river-towers",
+      "audience_assumptions": "Neighbourhood scale with broader city housing interest. For demo planning only, assume several thousand people could notice a project of this scale, including nearby households, workers and regular travellers. This is not a population estimate or a count of present residents in the proposed homes.",
+      "synthetic_participants": 62,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-labatt-river-towers-feature-1",
+          "label": "Residential towers",
+          "question": "What concerns or requirements do you have about residential towers?"
+        },
+        {
+          "id": "toronto-labatt-river-towers-feature-2",
+          "label": "Non-residential space",
+          "question": "What concerns or requirements do you have about non-residential space?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-augusta-hotel",
+      "audience_assumptions": "Commercial-street / market scenario, with a local audience of nearby households and businesses plus occasional visitors. Assume hundreds of immediate neighbours and workers and a wider visitor audience, solely as a fictional planning scale. Give residents and workers most responses without assuming they agree about tourism.",
+      "synthetic_participants": 31,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-augusta-hotel-feature-1",
+          "label": "Hotel building",
+          "question": "What concerns or requirements do you have about hotel building?"
+        },
+        {
+          "id": "toronto-augusta-hotel-feature-2",
+          "label": "Restaurant component",
+          "question": "What concerns or requirements do you have about restaurant component?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-neilson-medical-housing",
+      "audience_assumptions": "Neighbourhood and destination-service scale in a suburban setting. A fictional reach of a few thousand nearby households, patients, workers and travellers is sufficient for planning, not a researched population count. Patients are visitors here; retaining the medical building should attract support separately from views on new housing.",
+      "synthetic_participants": 43,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-neilson-medical-housing-feature-1",
+          "label": "Residential building",
+          "question": "What concerns or requirements do you have about residential building?"
+        },
+        {
+          "id": "toronto-neilson-medical-housing-feature-2",
+          "label": "Existing medical building",
+          "question": "What concerns or requirements do you have about existing medical building?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-lawrence-heights-revitalization",
+      "audience_assumptions": "Multi-block neighbourhood scale with wider housing interest; several thousand affected people is a fictional scale assumption, not a measured count. Give nearby residents a clear majority, with differing views about replacement housing, affordability, market homes and public space. Do not assume any particular relocation or construction outcome.",
+      "synthetic_participants": 76,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-lawrence-heights-revitalization-feature-1",
+          "label": "Replacement social housing",
+          "question": "What concerns or requirements do you have about replacement social housing?"
+        },
+        {
+          "id": "toronto-lawrence-heights-revitalization-feature-affordable-housing",
+          "label": "180 new affordable homes",
+          "question": "How do you feel about adding 180 new Toronto Community Housing Corporation affordable homes?"
+        },
+        {
+          "id": "toronto-lawrence-heights-revitalization-feature-market-housing",
+          "label": "1,079 market homes",
+          "question": "How do you feel about adding 1,079 market homes as part of Phase 2?"
+        },
+        {
+          "id": "toronto-lawrence-heights-revitalization-feature-3",
+          "label": "Streets, parks and community uses",
+          "question": "What concerns or requirements do you have about streets, parks and community uses?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-fleet-property-lease",
+      "audience_assumptions": "Neighbourhood recreation destination with citywide sports interest. Assume a few thousand nearby residents and workers plus a broader pool of recreation visitors for this demo, not an estimated attendance or population. Keep the lease decision distinct from interest in a practice facility and unspecified community amenities.",
+      "synthetic_participants": 48,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-fleet-property-lease-feature-1",
+          "label": "Long-term lease",
+          "question": "What concerns or requirements do you have about long-term lease?"
+        },
+        {
+          "id": "toronto-fleet-property-lease-feature-2",
+          "label": "Practice facility and amenities",
+          "question": "What concerns or requirements do you have about practice facility and amenities?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-six-points-road-closure",
+      "audience_assumptions": "Transport-node scenario with a neighbourhood audience and a wider stream of regular travellers. Several thousand people may use the surrounding area in this fictional planning scenario, without implying those people use the particular parcels. Commuters and residents dominate; uncertainty about legal parcel descriptions is common and does not imply entire streets close.",
+      "synthetic_participants": 39,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-six-points-road-closure-feature-dundas-closure",
+          "label": "Closure of specified Dundas Street West portions",
+          "question": "How do you feel about permanently closing the specified Dundas Street West highway portions in Six Points? Only the parcels listed in the notice are included."
+        },
+        {
+          "id": "toronto-six-points-road-closure-feature-kipling-closure",
+          "label": "Closure of specified Kipling Avenue portion",
+          "question": "How do you feel about permanently closing the specified Kipling Avenue highway portion in Six Points? Only the parcel listed in the notice is included."
+        },
+        {
+          "id": "toronto-six-points-road-closure-feature-bloor-closure",
+          "label": "Closure of specified Bloor Street West portion",
+          "question": "How do you feel about permanently closing the specified Bloor Street West highway portion in Six Points? Only the parcel listed in the notice is included."
+        }
+      ]
+    }
+  ],
+  "comment_revision_1": {
+    "updated_comments": 84,
+    "verified_at": "2026-11-13T20:12:13.284013+00:00",
+    "votes_or_conditions_changed": false,
+    "only_synthetic_comment_text_changed": true
+  },
+  "verification_summary": {
+    "verified_at": "2026-11-13T20:04:47.405566+00:00",
+    "synthetic_participants": 299,
+    "ordinary_comments": 84,
+    "submission_dto_and_feature_ids_validated": true,
+    "position_connection_and_feature_totals_reconciled": true,
+    "all_condition_data_unchanged": true,
+    "existing_feedback_source_history_and_status_preserved": true,
+    "identical_rerun_verified_without_writes_or_duplicates": true,
+    "ui": "Six proposal panels checked: participant totals, overall positions, connections, feature ratings and zero conditions matched stored results. Saved ordinary comments were subsequently verified in the UI."
+  },
+  "retained_files": [
+    "manifest.json",
+    "submissions.json"
+  ],
+  "cleanup": "Temporary generation, persistence and revision scripts, baselines, intermediate payloads, extra documentation and standalone reports were deleted after successful persistence and verification. This manifest summarizes the completed checks; final records are retained in submissions.json. MongoDB data was not changed by cleanup."
+}

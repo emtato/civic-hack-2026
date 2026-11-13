@@ -1,0 +1,4602 @@
+[
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "more homes here makes sense. 46 floors twice over is a lot though, still trying to picture it",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-002",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "Fine with the smaller building for shops or whatever ends up there. The towers? no thanks. I didn't move here to live beside two giant filing cabinets.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-003",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "1170 homes. yes please",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "unsure",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "I live nearby and I'm undecided. A street-level drawing would be more useful to me than the storey count on its own. Hard to understand how the separate building sits between everything.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-005",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "46 STOREYS?? Both of them?? Put them somewhere else, this is already a neighbourhood.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-006",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "work round here, more customers would be welcome tbh. depends what goes in that smaller building but the idea is good",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-007",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "Deliveries are already the thing I have to plan my working day around. I'm worried about construction access, not saying it can't be managed. Just not convinced by what's here so far.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-008",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "pass through most weekdays. happy to see homes added, no real opinion on the other bit",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-009",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "unsure",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "need a site plan. cant rate a building I cant picture",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-010",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "neutral",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "The smaller building sounds interesting. Only here now and then so not taking a strong position on the whole thing",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-011",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "Yes. This is the scale of housing we need to be considering. I'd like to see the application progress rather than spend years arguing over whether homes should go here at all.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-012",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "More housing is good, these particular towers aren't for me. Too tall.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-013",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "Generally in favour. What would the wind be like at ground level? Not assuming it'll be bad, I just want to know before pretending I understand the design.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-014",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "looks promising :) no idea what the non-residential space is going to be so skipped a confident answer there",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-015",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-016",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-017",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-018",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-019",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-020",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-021",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-022",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-023",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-024",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-025",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-026",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-027",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-028",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-029",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-030",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-031",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-032",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "unsure",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-033",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-034",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-035",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-036",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "unsure",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-037",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-038",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-039",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-040",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "unsure",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-041",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-042",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-043",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-044",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-045",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-046",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-047",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-048",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-049",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-050",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "neutral",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-051",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-052",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-053",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-054",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-055",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-056",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "unsure",
+      "toronto-labatt-river-towers-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-057",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-058",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-059",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-060",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "oppose",
+      "toronto-labatt-river-towers-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-061",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": "notice-8002-b0b6cd37304b",
+    "participant_id": "demo-v1-labatt-river-towers-062",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-labatt-river-towers-feature-1": "support",
+      "toronto-labatt-river-towers-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-001",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "restaurant yes, hotel no. six storeys feels like a lot on this street",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-002",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "I'm nearby and I actually like it. A hotel on a commercial street isn't a strange idea to me. Would be good to see how they handle deliveries and arrivals.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-003",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "oppose"
+    },
+    "comment": "Nope. I like visiting hotels when I'M on holiday, doesn't mean I want one beside me!! Housing instead please.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "Where do deliveries go / where do taxis stop? genuine question, couldn't tell from this",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-005",
+    "position": "strongly_support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "I work nearby. Visitors staying overnight could be good for shops here, not just the restaurant in the building. I'm for it",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-006",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "The restaurant sounds fine. Hotel activity is what bothers me... late arrivals, bags, cars etc. I don't know how much there would be but I'm not sold.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-007",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "more people staying local = potentially more business. no strong feelings about the restaurant bit",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-008",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "would stay here! I visit the area anyway",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-009",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "neutral",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "Another place to eat, sure. Can't say much about the hotel itself from a visit once in a while",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-010",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "unsure"
+    },
+    "comment": "i commute through, not enough info for a useful opinion sorry",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-011",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "I'd rather see apartments. That's why I'm opposed, not because a restaurant is some terrible thing.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-012",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "neutral",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "still weighing it up. like the dining part",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-013",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "Restaurant gets a yes from me. Need to understand the hotel operation a bit more before deciding on that half",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-014",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "I like this street how it is. Maybe selfish but that's my answer. Not convinced the hotel improves it",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-015",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-016",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-017",
+    "position": "strongly_support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-018",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-019",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-020",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "neutral",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-021",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-022",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-023",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-024",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-025",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-026",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-027",
+    "position": "strongly_support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-028",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "oppose",
+      "toronto-augusta-hotel-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-029",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "support",
+      "toronto-augusta-hotel-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-030",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": "notice-8004-583c5adc4b30",
+    "participant_id": "demo-v1-augusta-hotel-031",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-augusta-hotel-feature-1": "unsure",
+      "toronto-augusta-hotel-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "6 storeys behind the medical building seems reasonable to me. glad they're keeping the front building",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-002",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "Keep the medical building, absolutely. Not keen on adding this much at the rear though, would like to see the actual layout",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-003",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "homes + medical building staying. good",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "I'm nearby but haven't decided. How do you get between the buildings? I need a plan I can actually read, not just the description.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-005",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "I work in the medical building. Happy it's staying. My main question is how people coming for appointments would get in while construction happens; that needs a proper explanation.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-006",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "Two uses on one site could get complicated for servicing. Keeping the medical space is good but I don't support the residential part as described",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-007",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "come here for appointments. pleased the medical building stays! housing behind it sounds fine",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-008",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "Medical building stays, thats the important part for me. Can't really judge the rear building yet",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-009",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "neutral"
+    },
+    "comment": "on Neilson a lot, more homes seems fine. dont use the medical building so neutral there",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-010",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "I worry about cars going in and out. I haven't seen a traffic study, just giving my concern as someone who travels past.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-011",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "This is the sort of thing I like seeing: add housing without removing the medical building. Strongly in favour",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-012",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "No more buildings in the back please. I enjoy looking at less building. Yes I know that's not much of a planning argument.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-013",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "neutral",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "neutral about the housing. keeping the medical building gets my vote",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-014",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "unsure on both, need more than this to go on",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-015",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-016",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-017",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-018",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-019",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "neutral",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-020",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-021",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-022",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-023",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-024",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-025",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "neutral",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-026",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-027",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-028",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-029",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-030",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-031",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-032",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-033",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-034",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-035",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-036",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-037",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-038",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-039",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-040",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-041",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "unsure",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-042",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "oppose",
+      "toronto-neilson-medical-housing-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": "notice-7962-26aa475b5939",
+    "participant_id": "demo-v1-neilson-medical-housing-043",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-neilson-medical-housing-feature-1": "support",
+      "toronto-neilson-medical-housing-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "replacement homes and new affordable ones are what matter most to me. Market part I'm pretty neutral on",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-002",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "yes to the homes AND the parks. would like this to go ahead",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-003",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "I'm for replacing the social housing and adding affordable homes. Still against the overall plan at this scale. Those aren't contradictory things to me",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "What happens first? I'm trying to understand what the work would mean for people living here now, and the notice doesn't really get into the sequence. Not assuming an outcome either way. Just need something clearer before I pick support or oppose.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-005",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "Looks promising overall. Living around a long building project won't be fun but that doesn't automatically make the plan a bad idea",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-006",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "6 to 25 storeys... can we just have ONE thing that doesn't turn into a giant redevelopment? Not in favour. Don't fully understand the replacement part yet either",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-007",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "good on the social / affordable homes. undecided on the package",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-008",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "Affordable homes, replacement homes, parks = yes. Wish the mix wasn't so heavy on market housing though",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-009",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "I work nearby and think more housing plus community space could be good. It's a big proposal, but there are things here worth supporting.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-010",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "not against affordable homes. I just worry the disruption will go on forever, and that leaves me against this plan overall",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-011",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "like the streets and parks idea. don't know enough about the housing arrangements to rate them all",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-012",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "I visit family here. Replacement homes matter a lot to me; more useful public space would be welcome too.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-013",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "Replacement social housing AND new affordable homes. Strong yes from me. The market homes can be part of it too",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-014",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "support the affordable bits. not convinced by this overall mix, feels like the wrong balance to me",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-015",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-016",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-017",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-018",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-019",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-020",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-021",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-022",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-023",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-024",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-025",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-026",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-027",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-028",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-029",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-030",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-031",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-032",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-033",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-034",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-035",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-036",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-037",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-038",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-039",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-040",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-041",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-042",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-043",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-044",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-045",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-046",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-047",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-048",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-049",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-050",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-051",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-052",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-053",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-054",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-055",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-056",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-057",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-058",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-059",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-060",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-061",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-062",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-063",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-064",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-065",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-066",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-067",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-068",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-069",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-3": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-070",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-071",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-072",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-073",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "unsure",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "oppose",
+      "toronto-lawrence-heights-revitalization-feature-3": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-074",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-075",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": "notice-6978-f24d9246f871",
+    "participant_id": "demo-v1-lawrence-heights-revitalization-076",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-lawrence-heights-revitalization-feature-1": "support",
+      "toronto-lawrence-heights-revitalization-feature-affordable-housing": "support",
+      "toronto-lawrence-heights-revitalization-feature-market-housing": "neutral",
+      "toronto-lawrence-heights-revitalization-feature-3": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "facility sounds good. no firm opinion on a lease when I haven't seen the terms",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-002",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "Community amenities? interested. A long lease on city land? much less enthusiastic. Those are different decisions in my head",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-003",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "yes please!! basketball facility nearby would be great",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-004",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "What does 'community amenities' actually mean here. Who gets in? when? Not seeing enough to decide",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-005",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "oppose"
+    },
+    "comment": "I'd prefer something else on this land. I don't even like basketball. A very large quiet patch of nothing would suit me fine thanks.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-006",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "work nearby, would welcome it. know we haven't been told the access details yet",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-007",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "Not sold on tying up the land for a long time. Can't really judge the amenities without knowing what they are",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-008",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "pass Fleet regularly. like the recreation idea, no strong view overall",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-009",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "As a basketball fan: YES. pretty excited about this one",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-010",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "The amenities part sounds good, but I don't know whether I'd ever actually be able to use them. Not assuming public hours or anything from that wording.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-011",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "Seems a worthwhile use of the property. I'm in favour of the facility and the lease as proposed",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-012",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "Could be a useful facility. Still uneasy about a long commitment of public land, so I'm against the proposal overall",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-013",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "need more detail on the amenities. neutral for now",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-014",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "neutral"
+    },
+    "comment": "I visit for recreation. Would rather the City keep its options open on the land, even if a practice facility is a perfectly fine idea elsewhere",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-015",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-016",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-017",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-018",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-019",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-020",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-021",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-022",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-023",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-024",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-025",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-026",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-027",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-028",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-029",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-030",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-031",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-032",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-033",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-034",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-035",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-036",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-037",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "neutral",
+      "toronto-fleet-property-lease-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-038",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-039",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-040",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-041",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-042",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-043",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-044",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-045",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-046",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "support",
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-047",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-1": "oppose",
+      "toronto-fleet-property-lease-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": "notice-7810-68b51ff69f07",
+    "participant_id": "demo-v1-fleet-property-lease-048",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-fleet-property-lease-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-001",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "I go through Six Points all the time and still can't tell where these bits are from the legal description. map please",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-002",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "Support the specified closures overall. Neutral about the Kipling parcel",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-003",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "not comfortable with the Dundas parts. haven't made my mind up on the others",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-004",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "neutral",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "These are bits of road land, not the whole streets. Understood that much! Still can't picture the Bloor piece so unsure on that one",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-005",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "I'm nearby and support the listed closures. Not reading this as shutting down entire streets",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-006",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "oppose"
+    },
+    "comment": "Dundas parts seem OK to me. Don't favour the Kipling or Bloor ones",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-007",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "PART OF PIN this, PART OF LOT that... I just want to know which bit of pavement we're talking about lol. undecided",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-008",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "I work round here and worry about access. To be fair, I can't tell whether my concern even applies to these particular parcels. That's why the plan matters",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-009",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "neutral"
+    },
+    "comment": "yes for the Dundas and Kipling portions. no strong view on the Bloor piece",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-010",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "only visit occasionally, need the plan not just street names",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-011",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "seems pretty local / parcel specific. don't have a strong view from elsewhere in the city",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-012",
+    "position": "strongly_oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "oppose"
+    },
+    "comment": "NO to permanent closures. I might want that bit of road one day. Don't ask me which bit, that's what the map is for!!",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-013",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "Support these particular parcel closures. fine with all three",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-014",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "neutral",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "generally for it, particularly the Kipling and Bloor bits. neutral on Dundas",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-015",
+    "position": "strongly_oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-016",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-017",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-018",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-019",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-020",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-021",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-022",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-023",
+    "position": "strongly_oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-024",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-025",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-026",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-027",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-028",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "neutral",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-029",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-030",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "neutral",
+      "toronto-six-points-road-closure-feature-kipling-closure": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-031",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-032",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-033",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-034",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "neutral",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-035",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "neutral",
+      "toronto-six-points-road-closure-feature-kipling-closure": "support",
+      "toronto-six-points-road-closure-feature-bloor-closure": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-036",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-037",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "unsure",
+      "toronto-six-points-road-closure-feature-kipling-closure": "unsure",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-038",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "support",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": "notice-7615-1590fa4b35d5",
+    "participant_id": "demo-v1-six-points-road-closure-039",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-six-points-road-closure-feature-dundas-closure": "oppose",
+      "toronto-six-points-road-closure-feature-kipling-closure": "oppose",
+      "toronto-six-points-road-closure-feature-bloor-closure": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T20:02:35.463814+00:00"
+  }
+]
