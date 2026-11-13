@@ -12,7 +12,7 @@ from typing import List, Optional, Tuple
 from pymongo.database import Database
 
 try:
-    from models import (
+    from proposals_DTO import (
         ConditionClusterDTO,
         ConditionItemDTO,
         Proposal,
@@ -20,7 +20,7 @@ try:
         ProposalFeedbackSubmissionDTO,
     )
 except ImportError:
-    from backend.models import (
+    from backend.proposals_DTO import (
         ConditionClusterDTO,
         ConditionItemDTO,
         Proposal,
@@ -142,77 +142,46 @@ def apply_feedback_to_aggregate(
                 elem.distribution[rating] = elem.distribution.get(rating, 0) + 1
                 elem.total_responses += 1
 
-    # Condition & comment handling
-    has_condition = submission.condition is not None
-    has_comment = bool(submission.comment and submission.comment.strip())
+    # Replace the participant's previous condition evidence on every edit.
+    if previous_submission is not None:
+        for cluster in agg.condition_clusters:
+            remaining = [item for item in cluster.items if item.participant_id != submission.participant_id]
+            removed = len(cluster.items) - len(remaining)
+            cluster.items = remaining
+            cluster.count = max(0, cluster.count - removed)
+            agg.total_conditions = max(0, agg.total_conditions - removed)
 
-    if has_condition or has_comment:
+    # General comments are preserved on the submission, not interpreted as
+    # support promises. Only a participant-confirmed requirement counts here.
+    if submission.condition and submission.condition.requirement.strip():
+        condition = submission.condition
         agg.total_conditions += 1
-
-        cond_item_id = f"cond-{uuid.uuid4().hex[:8]}"
-        req_text = ""
-        is_cond = submission.position in ("support", "strongly_support")
-        time_win = None
-        loc_label = None
-        feature_id = None
-
-        if submission.condition:
-            req_text = submission.condition.requirement or submission.comment.strip()
-            is_cond = submission.condition.is_conditional_support
-            time_win = submission.condition.time_window
-            loc_label = submission.condition.location_label
-            feature_id = submission.condition.feature_id
-        else:
-            req_text = submission.comment.strip()
-
         condition_item = ConditionItemDTO(
-            id=cond_item_id,
+            id=f"cond-{uuid.uuid4().hex[:8]}",
             participant_id=submission.participant_id,
             verbatim_quote=submission.comment.strip(),
-            extracted_requirement=req_text,
-            is_conditional_support=is_cond,
-            time_window=time_win,
-            location_label=loc_label,
+            extracted_requirement=condition.requirement.strip(),
+            is_conditional_support=condition.is_conditional_support,
+            time_window=condition.time_window,
+            location_label=condition.location_label,
             concern_coordinates=submission.concern_coordinates,
             submitted_at=now_iso,
         )
 
-        # Match cluster by feature_id, category, or fallback to ungrouped
-        target_cluster: Optional[ConditionClusterDTO] = None
-        if feature_id:
-            for cluster in agg.condition_clusters:
-                if feature_id in cluster.id or (cluster.category and feature_id in cluster.category):
-                    target_cluster = cluster
-                    break
-
-        if target_cluster is None:
-            # Look for ungrouped cluster
-            for cluster in agg.condition_clusters:
-                if cluster.is_ungrouped:
-                    target_cluster = cluster
-                    break
-
-        if target_cluster is None and agg.condition_clusters:
-            target_cluster = agg.condition_clusters[-1]
-
-        if target_cluster is None:
-            target_cluster = ConditionClusterDTO(
-                id="cluster-ungrouped",
-                label="Ungrouped / Unique Access Conditions",
-                icon="help",
-                count=0,
-                is_ungrouped=True,
-                items=[],
+        # A shared topic is not proof of equivalent requirements. Keep new
+        # conditions ungrouped until the actual request has been reviewed.
+        target = next((cluster for cluster in agg.condition_clusters if cluster.is_ungrouped), None)
+        if target is None:
+            target = ConditionClusterDTO(
+                id="cluster-ungrouped", label="Ungrouped / individual requirements",
+                icon="message", count=0, is_ungrouped=True, items=[],
             )
-            agg.condition_clusters.append(target_cluster)
+            agg.condition_clusters.append(target)
+        target.count += 1
+        target.items.insert(0, condition_item)
 
-        target_cluster.count += 1
-        target_cluster.items.insert(0, condition_item)
-
-        # Recalculate percentages across clusters
-        if agg.total_conditions > 0:
-            for cluster in agg.condition_clusters:
-                cluster.percentage = round((cluster.count / agg.total_conditions) * 100)
+    for cluster in agg.condition_clusters:
+        cluster.percentage = round(cluster.count / agg.total_conditions * 100) if agg.total_conditions else 0
 
     return agg
 

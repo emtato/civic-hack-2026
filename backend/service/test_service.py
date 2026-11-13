@@ -3,7 +3,7 @@
 import unittest
 
 try:
-    from models import (
+    from proposals_DTO import (
         FeedbackConditionDTO,
         Proposal,
         ProposalFeedbackSubmissionDTO,
@@ -15,7 +15,7 @@ try:
         create_empty_aggregate,
     )
 except ImportError:
-    from backend.models import (
+    from backend.proposals_DTO import (
         FeedbackConditionDTO,
         Proposal,
         ProposalFeedbackSubmissionDTO,

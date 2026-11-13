@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pymongo.errors import PyMongoError
 
 from database.database import ensure_indexes, get_database, get_mongo_client
-from models import (
+from proposals_DTO import (
     Proposal,
     ProposalCommunityAggregateDTO,
     ProposalFeedbackSubmissionDTO,

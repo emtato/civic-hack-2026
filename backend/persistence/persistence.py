@@ -15,9 +15,9 @@ from pymongo import ASCENDING
 from pymongo.database import Database
 
 try:
-    from models import Proposal, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO
+    from proposals_DTO import Proposal, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO
 except ImportError:
-    from backend.models import Proposal, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO
+    from backend.proposals_DTO import Proposal, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO
 
 try:
     from database.database import get_database

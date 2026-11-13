@@ -6,10 +6,10 @@ from pathlib import Path
 from types import SimpleNamespace
 
 try:
-    from models import Proposal, ProposalFeedbackSubmissionDTO
+    from proposals_DTO import Proposal, ProposalFeedbackSubmissionDTO
     from persistence.persistence import FeedbackRepository, ProposalRepository
 except ImportError:
-    from backend.models import Proposal, ProposalFeedbackSubmissionDTO
+    from backend.proposals_DTO import Proposal, ProposalFeedbackSubmissionDTO
     from backend.persistence.persistence import FeedbackRepository, ProposalRepository
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
