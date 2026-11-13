@@ -1,6 +1,6 @@
 # CIVIC implementation progress
 
-Last reviewed: November 13, 2026, approximately 11 a.m. Eastern.
+Last reviewed: November 13, 2026, approximately 1:10 p.m. Eastern.
 
 Read [build-plan.md](build-plan.md) for stage instructions and defaults, and [proposal-feedback-map-idea.md](proposal-feedback-map-idea.md) for the intended concept. Current shared baseline commit: `971f28d` (`startig project`). This log records observed progress; it does not mark planned features as implemented.
 
@@ -13,14 +13,14 @@ Read [build-plan.md](build-plan.md) for stage instructions and defaults, and [pr
 | Vite + TypeScript starter | Verified: production build | Starter exists in `frontend/`. The assistant's build passed, and the user supplied a second successful build. |
 | Local development server | Awaiting user run | `npm run dev` is defined in `frontend/package.json`. The supplied output was a production build, which correctly exited. No running localhost session has been verified. |
 | Initial repository commit | Verified | `971f28d` exists. |
-| Selected multi-proposal catalogue | Acquisition verified; selection/import pending | User target is at least 20 relevant, varied proposals. The verified notices response contains 648 records; see [source assessment](sources/import-source-assessment.md). No importer has been implemented. |
+| Selected multi-proposal catalogue | Implemented; local dry run verified | 24 original notices selected, four per requested group. Portable raw archive and repeatable manifest committed; importer emits validated records. Live MongoDB write not executed. See [import guide](backend/IMPORTING.md). |
 | Revision example evidence | Source package located | Kensington is a possible deep historical example within the catalogue, not a standalone application. See [case notes](sources/kensington-case-notes.md). |
 | Two secondary agenda-item checks | Planned | Final item selection and checks remain. |
-| Shared proposal/response fixture | Planned | Record structure and recommended field meanings are in stage A; a fixture file is not yet present. |
-| FastAPI foundation | Implemented; not runtime-verified in this review | `backend/main.py` now has application/database health routes, a shared PyMongo client and CORS configuration. Proposal/response routes and the shared contract remain. |
+| Rich import contract and examples | Implemented and locally verified | `backend/imported_data_dto.py` has nullable optional interpretation, participation, category details and revision fields. Import preview contains 24 records; 16 have unverified source coordinates, eight lack source addresses. |
+| FastAPI and frontend DTO integration | Separate backend work now present; importer integration outstanding | The API uses a frontend display DTO, separate from the rich import contract. Importer stages into `imported_proposals` to protect published `proposals`; a reviewed projection is still required. Runtime/API checks were not part of this importer review. |
 | Atlas cluster setup | Complete, user-reported | User reports the cluster is done. Application connection/read/write remains unverified. |
 | Render and Pages setup | Unverified | No deployment or working URL has been demonstrated in this chat. |
-| Resident interaction and AI confirmation | Planned | Frontend remains the starter. |
+| Resident interaction and AI confirmation | Shared frontend work observed; not reviewed in this task | Frontend has evolved beyond the starter. This task did not edit or verify it. |
 | Staff aggregation and drill-down | Planned | Await saved responses and grouping/count implementation. |
 | Revision/reconfirmation cycle | Planned | Await version data and the resident/staff core. |
 | Report, video and submission | Planned | Blank organizer reference/template exists; team deliverables remain. |
@@ -36,9 +36,9 @@ Read [build-plan.md](build-plan.md) for stage instructions and defaults, and [pr
 
 ## Next actions
 
-1. **Source owner, with assistant support:** select at least 20 distinct relevant proposals with topic/geographic variety from the verified notices source and any necessary selected agenda pages. Do not import every notice as a separate proposal.
-2. **Both developers, with assistant support:** agree on the common proposal/response format and map source fields into it; build the reusable selected-batch import and generic UI against this same contract.
-3. **Backend owner:** connect FastAPI to the completed Atlas cluster and verify read/write. The integrated outcome is browsing imported records and saving/retrieving synthetic feedback.
+1. **Backend owner / user:** run the documented importer write command and verify 24 `imported_proposals` records in MongoDB. The assistant's write attempt was not executed because automatic approval review could not complete due to a usage limit; do not treat it as a database error or a completed write.
+2. **Source/enrichment owner:** fill and review summaries, meaningful features, exact dates/participation and location choices. Raw source fields are populated; optional interpretation fields intentionally remain unknown.
+3. **Backend/frontend owners:** project reviewed imported records into the app's display DTO and publish them to the user-facing catalogue. The richer source model and current frontend DTO are distinct contracts; do not blindly put source-stage records into the published collection.
 
 Next review should inspect an actual fetched record and its normalized equivalent, source coverage, database connectivity, and the shared API contract. Import, persistence and UI work can proceed together where their shared contract permits.
 
@@ -52,6 +52,15 @@ Next review should inspect an actual fetched record and its normalized equivalen
 | Actual hosting/database access | Deployed behavior cannot be inferred from provider documentation | Verify account setup and one deployed persistent request during stage B. |
 
 ## Checkpoint log
+
+### November 13, approximately 1:10 p.m. — importer and expanded optional shape implemented
+
+- **Implemented:** reusable fetch/file-input importer, explicit category/identity selection manifest, rich optional import model, source snapshots and repeatable MongoDB updates with editorial preservation.
+- **Selected:** four each of planning, heritage, transportation, licensing, financial and City property dispositions, using 2025 and 2026 notices. Financial examples differ in substance; property dispositions include a proposed lease. Original source topics remain available alongside curated categories.
+- **Verified:** 24-record dry run and eight regression checks, including repeat imports, changed-source review, unknown dates, coordinate order and preservation of published records/feedback. Sixteen records contain source coordinates; no primary pins or current procedural states were invented.
+- **Repository coordination:** source model was renamed to `imported_data_dto.py` during ongoing backend work. Importer now uses that module and the shared TLS-aware database client, and stages into `imported_proposals` rather than the frontend's published collection.
+- **Blocked action:** live MongoDB import was not executed because automatic approval review failed due to a usage limit. This was a review failure, not a determination that writing the selected records was unsafe.
+- **Remaining:** actual write/read check, enrichment/review and projection into the frontend DTO. Existing backend routes and UI were not modified as part of this import task.
 
 ### November 13, approximately 11 a.m. — API response verified; minimum catalogue size raised
 

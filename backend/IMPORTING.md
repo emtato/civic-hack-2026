@@ -1,0 +1,143 @@
+# Selected proposal import
+
+The importer is implemented in `importer.py`; the rich internal contract is
+`imported_data_dto.py`. The selection manifest is `data/example-selection.json`.
+Run commands below from `backend/` using the project's virtual environment.
+
+## What was downloaded
+
+Two unmodified Toronto Public Notices JSON responses were fetched for research:
+
+| Publication-date window | Records | Temporary raw download |
+| --- | ---: | --- |
+| January 1–November 13, 2026 | 648 | `/private/tmp/civic-toronto-notices-2026.json` |
+| January 1–December 31, 2025 | 644 | `/private/tmp/civic-toronto-notices-2025.json` |
+
+The original 2026 response is approximately 5.1 MB. These are public notices,
+including descriptions, official contacts, address coordinates and source links;
+they are not 648 ready-to-display proposals and were not written to MongoDB.
+
+A portable archive of only the **24 selected original records** is committed as
+`sources/imports/toronto-notices-examples.raw.json`. It includes both source-feed
+URLs and their file hashes. The temporary downloads are not required to run the
+default import. Original descriptions contain HTML; the importer derives plain
+text and stores the raw records separately for provenance.
+
+## First batch
+
+Four examples in each group:
+
+| Group | Selected examples |
+| --- | --- |
+| Planning | Labatt/River towers; Augusta hotel; Neilson housing/medical site; Lawrence Heights revitalization |
+| Heritage | Lawrence designation intention; Weston demolition decision; Stotts' Bridge alteration; Queen Street designation amendment |
+| Transportation | Lawrence road closure; permit-parking area 1E; Aren Levy Lane renaming; Six Points road closures |
+| Licensing | Nightclub definition; business licence action plan; street vending rules; permit-parking exclusion procedure |
+| Financial | RentSafeTO sign fee; ravine permit fees; budget-wide user fees; site-plan application fees |
+| City property dispositions | Fleet Street proposed lease; Sheppard lane portions; Van Horne property; Woodbine property |
+
+These are explicitly selected examples, not a representative public sample.
+The manifest records a stable proposal key and selection reason for each notice.
+The financial group deliberately includes fee proposals that the source tags as
+Licensing, or leaves untagged. Original topics remain alongside our category.
+The City property category includes a proposed lease; it is not all outright
+sales. The 2025 archive supplies two additional distinct property matters.
+
+Sixteen selected records have source coordinates; eight have no source address.
+Coordinates are retained as unverified address points. A primary `map_point`
+remains unset until checked, particularly for matters involving several sites.
+The importer does not place citywide policies at the City Hall contact address.
+
+## Run and inspect
+
+```sh
+.venv/bin/python importer.py
+```
+
+This is a dry run: it validates the full selected batch and writes the rich
+normalized records to `data/proposals.preview.json`, without contacting MongoDB.
+That preview is ignored by Git and can be regenerated from the committed archive.
+
+To save the selected records using the private backend `.env` configuration:
+
+```sh
+.venv/bin/python importer.py --write
+```
+
+Writes go to **`imported_proposals`** and **`source_notices`**, not the published
+frontend `proposals` collection or participant feedback collections. Stable
+proposal keys become MongoDB `_id` values. Raw notice snapshots use IDs composed
+of notice ID and content hash, preserving older source content.
+
+Re-import refreshes imported facts and adds source snapshot references. It
+preserves summaries, features, versions, review notes and other editorial fields.
+Changed source content marks an existing reviewed import as needing review.
+Writes are repeatable but the entire multi-document batch is not transactional:
+if the network fails halfway through, fix the connection and rerun it.
+
+Fetch a newer complete source response, then use the same selection manifest:
+
+```sh
+.venv/bin/python importer.py --fetch data/notices.download.json --from-date 2025-01-01 --to-date 2026-11-13
+```
+
+The fetch mode has a request timeout and response-size limit. Alternatively,
+pass `--input /path/to/download.json`; repeat `--input` to combine date windows.
+All selected IDs must exist in the combined input. Duplicate IDs with conflicting
+contents cause an error rather than silently choosing a snapshot. Several source
+records are grouped only when their manifest entries share an explicit proposal
+key; titles alone never merge records.
+
+## Rich optional fields
+
+| Group | Fields |
+| --- | --- |
+| Identity/classification | Stable ID, title, main/additional categories, original topics, municipality |
+| Provenance | Source notice IDs/URLs, publication timestamps, original plain text, subheading, decision body, signer, content hash, snapshot history |
+| Geography | Multiple addresses, GeoJSON address points, neighbourhood, geographic scope and reviewed primary map point |
+| Procedure/evidence | Application numbers, agenda-item IDs, municipal-code chapters, ward labels, linked documents and public staff contacts |
+| Interpretation | Summary, reason, benefits, concerns, trade-offs, affected groups and unresolved questions |
+| Participation | Official route, methods/instructions, separate speaker/comment deadlines, accessibility instructions and verification time |
+| Dates | Typed meeting, decision, effective-date and appeal-deadline records, each with evidence and verification state |
+| Feedback/revisions | Feature IDs/questions, proposed changes, version snapshots, source-linked changes, current version ID |
+| Category detail | Planning uses/units/heights; heritage actions/attributes; transport modes/access/hours; financial amounts/exemptions; licensing rules/business types; property disposition/use/area/conditions |
+| Review | Review state, specific issues, review date and reviewer notes |
+
+In enrichment fields, `null` means not established or not extracted. An empty
+list should mean someone established that there are no entries. Importer-owned
+lists describe only what the source supplied; absence is not proof that the
+real-world fact does not exist. Date publication is not a meeting or deadline.
+Source notice kind is not the current procedural status. Optional scalar fields
+are nullable; extra unrecognized enrichment fields are rejected to catch typos.
+
+The import does **not** invent summaries, infer personal effects, assume an
+adopted decision is still open, infer deadlines from meetings, or treat repeated
+source notices as confirmed participant responses. All 24 initially need review.
+The raw API's event arrays were empty even for notices containing meeting dates
+in their HTML descriptions, so dates and participation remain unpopulated.
+
+The current frontend API uses the separate `proposals_DTO.py` display contract.
+It needs a reviewed projection/publishing step before these rich imports appear
+in `/api/proposals`. This importer intentionally does not replace that contract
+or publish unreviewed records into its collection.
+
+## Verification
+
+```sh
+.venv/bin/python -m unittest test_importer -v
+```
+
+Checks cover 24 unique examples/four per group, missing event/location handling,
+GeoJSON order, explicit grouping versus equal titles, missing selected IDs,
+plain-text extraction, repeat-import preservation and changed-source review.
+They use an in-memory collection double and require no live database.
+
+Last verified: local dry run and all eight regression checks passed. The live
+MongoDB write was not executed because automatic approval review could not
+complete due to a usage limit. A real database write/read check and live fetch
+through the Python importer remain outstanding; the archived source download
+itself was verified separately using HTTP.
+
+Sources: [Toronto API documentation](https://secure.toronto.ca/nm/opendata.do),
+[selected 2026 feed](https://secure.toronto.ca/nm/notices.json?noticeDateFrom=2026-01-01&noticeDateTo=2026-11-13&locationId=1),
+[selected 2025 feed](https://secure.toronto.ca/nm/notices.json?noticeDateFrom=2025-01-01&noticeDateTo=2025-12-31&locationId=1).

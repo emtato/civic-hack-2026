@@ -24,6 +24,11 @@ class MemoryCollection:
         return copy.deepcopy(self.documents.get(query["_id"]))
 
     def update_one(self, query, update, upsert=False):
+        paths = [path for operator in update.values() for path in operator]
+        for i, path in enumerate(paths):
+            for other in paths[i + 1:]:
+                if path == other or path.startswith(other + ".") or other.startswith(path + "."):
+                    raise AssertionError(f"Conflicting MongoDB update paths: {path}, {other}")
         key = query["_id"]
         inserted = key not in self.documents
         doc = self.documents.setdefault(key, {"_id": key})
@@ -108,15 +113,16 @@ class ImportTests(unittest.TestCase):
 
     def test_repeat_import_preserves_editorial_and_feedback(self):
         proposals, raw = self.build()
-        db = SimpleNamespace(proposals=MemoryCollection(), source_notices=MemoryCollection(), responses={"keep": 1})
+        staged = MemoryCollection()
+        db = SimpleNamespace(imported_proposals=staged, source_notices=MemoryCollection(), responses={"keep": 1}, proposals={"published": "keep"})
         write_proposals(db, proposals, raw, NOW)
-        first = db.proposals.documents[proposals[0].id]
+        first = staged.documents[proposals[0].id]
         first["summary"] = "Reviewed summary"
         first["versions"] = [{"id": "reviewed-v1"}]
         first["review"]["state"] = "reviewed"
         result = write_proposals(db, proposals, raw, NOW)
         self.assertEqual(24, result["matched_existing"])
-        self.assertEqual(24, len(db.proposals.documents))
+        self.assertEqual(24, len(staged.documents))
         self.assertEqual(24, len(db.source_notices.documents))
         self.assertEqual("Reviewed summary", first["summary"])
         self.assertEqual([{"id": "reviewed-v1"}], first["versions"])
@@ -129,6 +135,7 @@ class ImportTests(unittest.TestCase):
         self.assertEqual("Reviewed summary", first["summary"])
         self.assertEqual(25, len(db.source_notices.documents))
         self.assertEqual({"keep": 1}, db.responses)
+        self.assertEqual({"published": "keep"}, db.proposals)
 
 
 if __name__ == "__main__":

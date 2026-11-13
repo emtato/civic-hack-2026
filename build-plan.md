@@ -6,6 +6,8 @@ This plan follows [the current proposal-feedback concept](proposal-feedback-map-
 
 Use this file for the agreed scope, implementation defaults, and stage instructions. Use [progress.md](progress.md) for current evidence, unfinished work, blockers, and the next handoff. Read the current stage rather than the entire roadmap before each work session.
 
+Current importer handoff: [backend/IMPORTING.md](backend/IMPORTING.md). The expanded rich model is in `backend/imported_data_dto.py`; the selected batch has four examples per requested category (24 total). Imports stage into `imported_proposals`, separate from the frontend's published proposal DTO, until enrichment and projection are ready.
+
 The decisions below are recommended hackathon defaults. They make the next steps concrete; they do not claim that these details were already agreed in the original idea discussion. Change a default when the selected source, actual implementation, or user instruction gives a reason, and record that change in the progress log.
 
 ## 1. The result to demonstrate

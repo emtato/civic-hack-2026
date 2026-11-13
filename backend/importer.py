@@ -15,9 +15,9 @@ from urllib.request import Request, urlopen
 
 from dotenv import load_dotenv
 from pydantic import ValidationError
-from pymongo import MongoClient
+from database.database import get_mongo_client
 
-from proposal_models import (
+from imported_data_dto import (
     Address, Category, Contact, IMPORTED_FIELDS, Point, Proposal, Reference, Review,
     SourceNotice,
 )
@@ -235,9 +235,10 @@ def update_for(proposal):
 
 
 def write_proposals(database, proposals, raw_records, now):
-    """Only touches proposals and immutable source snapshots, never responses."""
-    database.proposals.create_index("category")
-    database.proposals.create_index("source_notices.notice_id")
+    """Stage imported records separately from the frontend's published proposals."""
+    collection = database.imported_proposals
+    collection.create_index("category")
+    collection.create_index("source_notices.notice_id")
     counts = Counter()
     for proposal in proposals:
         for source in proposal.source_notices:
@@ -247,13 +248,16 @@ def write_proposals(database, proposals, raw_records, now):
                 "raw_sha256": source.raw_sha256, "record": raw_records[source.notice_id],
             }}, upsert=True)
         update = update_for(proposal)
-        previous = database.proposals.find_one({"_id": proposal.id}, {"source_notices.raw_sha256": 1})
+        previous = collection.find_one({"_id": proposal.id}, {"source_notices.raw_sha256": 1})
         if previous is not None:
             old_hashes = {source["raw_sha256"] for source in previous.get("source_notices", [])}
             if old_hashes != {source.raw_sha256 for source in proposal.source_notices}:
+                # MongoDB rejects parent/child updates across operators even if
+                # $setOnInsert would not run for this existing document.
+                update["$setOnInsert"].pop("review", None)
                 update["$set"]["review.state"] = "needs_review"
                 update["$addToSet"]["review.issues"] = "Imported source changed; recheck existing editorial interpretation."
-        result = database.proposals.update_one({"_id": proposal.id}, update, upsert=True)
+        result = collection.update_one({"_id": proposal.id}, update, upsert=True)
         counts["inserted" if result.upserted_id is not None else "matched_existing"] += 1
         counts["modified"] += result.modified_count
     return dict(counts)
@@ -284,7 +288,7 @@ def main():
                   "count": len(proposals), "proposals": [p.model_dump(mode="json") for p in proposals]}
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n")
-        report = {"mode": "write" if args.write else "dry_run", "proposals": len(proposals),
+        report = {"mode": "write" if args.write else "dry_run", "collection": "imported_proposals", "proposals": len(proposals),
                   "by_category": dict(Counter(p.category for p in proposals)),
                   "with_source_coordinates": sum(any(a.point for a in p.addresses) for p in proposals),
                   "review_required": sum(p.review.state == "needs_review" for p in proposals),
@@ -294,7 +298,10 @@ def main():
             uri = os.getenv("MONGODB_URI", "").strip()
             if not uri:
                 raise ValueError("MONGODB_URI is not configured")
-            with MongoClient(uri, serverSelectionTimeoutMS=10000, connectTimeoutMS=10000, socketTimeoutMS=10000) as client:
+            client = get_mongo_client(uri)
+            if client is None:
+                raise ValueError("MongoDB client could not be configured")
+            with client:
                 report["database_result"] = write_proposals(
                     client[os.getenv("MONGODB_DATABASE", "civic_hack")], proposals, raw_records, now)
         print(json.dumps(report, indent=2))

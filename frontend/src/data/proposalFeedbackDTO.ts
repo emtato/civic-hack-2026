@@ -295,12 +295,13 @@ export function formatPercentage(count: number, total: number): string {
  */
 export function applyFeedbackToAggregate(
   aggregate: ProposalCommunityAggregateDTO,
-  submission: ProposalFeedbackSubmissionDTO
+  submission: ProposalFeedbackSubmissionDTO,
+  previousSubmission?: ProposalFeedbackSubmissionDTO | null,
 ): ProposalCommunityAggregateDTO {
   // 1. Clone deep structure
   const next: ProposalCommunityAggregateDTO = {
     ...aggregate,
-    total_participants: aggregate.total_participants + 1,
+    total_participants: aggregate.total_participants + (previousSubmission ? 0 : 1),
     last_updated: submission.submitted_at || new Date().toISOString(),
     position_distribution: { ...aggregate.position_distribution },
     stakeholder_distribution: { ...aggregate.stakeholder_distribution },
@@ -312,6 +313,26 @@ export function applyFeedbackToAggregate(
       ...cluster,
       items: [...cluster.items],
     })),
+  }
+
+  // An edit replaces this participant's contribution rather than adding a vote.
+  if (previousSubmission) {
+    next.position_distribution[previousSubmission.position] = Math.max(0, (next.position_distribution[previousSubmission.position] || 0) - 1)
+    next.stakeholder_distribution[previousSubmission.stakeholder_role] = Math.max(0, (next.stakeholder_distribution[previousSubmission.stakeholder_role] || 0) - 1)
+    for (const row of next.proposal_specific) {
+      const rating = previousSubmission.element_ratings[row.id]
+      if (rating) {
+        row.distribution[rating] = Math.max(0, (row.distribution[rating] || 0) - 1)
+        row.total_responses = Math.max(0, row.total_responses - 1)
+      }
+    }
+    for (const cluster of next.condition_clusters) {
+      const remaining = cluster.items.filter(item => item.participant_id !== submission.participant_id)
+      const removed = cluster.items.length - remaining.length
+      cluster.items = remaining
+      cluster.count = Math.max(0, cluster.count - removed)
+      next.total_conditions = Math.max(0, next.total_conditions - removed)
+    }
   }
 
   // 2. Increment position stance count
@@ -335,41 +356,38 @@ export function applyFeedbackToAggregate(
     }
   }
 
-  // 5. If user supplied an explicit condition or comment, add to condition clusters
-  if (submission.condition || submission.comment.trim()) {
+  // Only an explicitly confirmed requirement is counted as a condition.
+  if (submission.condition?.requirement.trim()) {
     next.total_conditions += 1
 
     const newConditionItem: ConditionItemDTO = {
       id: `cond-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
       participant_id: submission.participant_id,
       verbatim_quote: submission.comment.trim(),
-      extracted_requirement:
-        submission.condition?.requirement || submission.comment.trim(),
-      is_conditional_support:
-        submission.condition?.is_conditional_support ??
-        (submission.position === 'support' || submission.position === 'strongly_support'),
+      extracted_requirement: submission.condition.requirement.trim(),
+      is_conditional_support: submission.condition.is_conditional_support,
       time_window: submission.condition?.time_window,
       location_label: submission.condition?.location_label,
       concern_coordinates: submission.concern_coordinates,
       submitted_at: submission.submitted_at,
     }
 
-    // Try matching to a cluster by feature_id or keyword, else add to ungrouped cluster
-    let targetCluster = next.condition_clusters.find(
-      c => submission.condition?.feature_id && c.id.includes(submission.condition.feature_id)
-    )
-
+    // A shared feature does not establish equivalent requests. Keep new needs
+    // inspectable in ungrouped until their meaning has actually been reviewed.
+    let targetCluster = next.condition_clusters.find(c => c.is_ungrouped)
     if (!targetCluster) {
-      // Default to ungrouped cluster or first cluster
-      targetCluster =
-        next.condition_clusters.find(c => c.is_ungrouped) ||
-        next.condition_clusters[next.condition_clusters.length - 1]
+      targetCluster = { id: 'cluster-ungrouped', label: 'Ungrouped / individual requirements', icon: 'message', count: 0, is_ungrouped: true, items: [] }
+      next.condition_clusters.push(targetCluster)
     }
 
     if (targetCluster) {
       targetCluster.count += 1
       targetCluster.items.unshift(newConditionItem)
     }
+  }
+
+  for (const cluster of next.condition_clusters) {
+    cluster.percentage = getPercentage(cluster.count, next.total_conditions)
   }
 
   return next

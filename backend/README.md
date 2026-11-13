@@ -1,5 +1,9 @@
 # FastAPI backend
 
+For the selected 24-example public-notice importer and richer optional source
+schema, see [IMPORTING.md](IMPORTING.md). Imported records are staged separately
+from the frontend's published proposal DTOs.
+
 Requires Python 3.10 or newer. From the repository root:
 
 ```sh
