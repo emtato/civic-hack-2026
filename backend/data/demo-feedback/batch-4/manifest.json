@@ -1,0 +1,365 @@
+{
+  "label": "SYNTHETIC DEMONSTRATION FEEDBACK — entirely fictional, not public opinion",
+  "batch": 4,
+  "generated_at": "2026-11-13T21:06:39.301864+00:00",
+  "seed": 2026111304,
+  "destination_database": "civic_hack",
+  "status": "persisted, storage and UI verified",
+  "records": "submissions.json",
+  "disclosure": "All demo-v1-* participant IDs in this batch are fictional. Counts and voices are illustrative, not representative, verified residents or official consultation. Explain synthetic origin in the overall presentation whenever showing results. Existing feedback is not reclassified.",
+  "conditions": "Every new submission has condition:null. Preserve total_conditions and the entire condition_clusters structure exactly.",
+  "comment_style": "Mostly serious, varied lengths, punctuation, formality and fragments; a small minority of exaggerated property/fee objections. Roles do not determine positions.",
+  "proposals": [
+    {
+      "proposal_id": "toronto-ravine-permit-fees",
+      "audience_assumptions": "Citywide policy with concentrated interest from ravine-adjacent households and tree/landscape workers, plus ravine visitors and wider environmental interest. No affected-population count is inferred. Different views on per-tree complexity pricing and flat grade-alteration fees are plausible; fees do not by themselves guarantee environmental protection.",
+      "connection_sampling_weights": {
+        "resident": 3,
+        "business": 2,
+        "commuter": 0.5,
+        "visitor": 1.3,
+        "citywide": 2.5
+      },
+      "synthetic_participants": 41,
+      "ordinary_comments": 14,
+      "features": [
+        {
+          "id": "toronto-ravine-permit-fees-feature-1",
+          "label": "Tree-related application fees",
+          "question": "What concerns or requirements do you have about tree-related application fees?"
+        },
+        {
+          "id": "toronto-ravine-permit-fees-feature-2",
+          "label": "Standalone grade alteration fee",
+          "question": "What concerns or requirements do you have about standalone grade alteration fee?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-budget-user-fees-2026",
+      "audience_assumptions": "Citywide reach across residents, service users, workers, commuters and visitors, with meaningful general fiscal interest. A broad fictional audience category is more useful than an invented population estimate. Participants can value service funding while questioning affordability; the saved notice defers individual rates to appendices and does not establish final Council decisions.",
+      "connection_sampling_weights": {
+        "resident": 2.7,
+        "business": 1.6,
+        "commuter": 1.4,
+        "visitor": 1.1,
+        "citywide": 3.3
+      },
+      "synthetic_participants": 63,
+      "ordinary_comments": 16,
+      "features": [
+        {
+          "id": "toronto-budget-user-fees-2026-feature-fee-package",
+          "label": "Proposed 2026 user-fee changes",
+          "question": "How do you feel about the prepared 2026 budget’s package of changes to existing user fees and new fees? The saved notice does not list individual rates; the linked budget appendices contain the details."
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-development-application-fees",
+      "audience_assumptions": "Citywide procedure with a narrower directly engaged audience of site-plan applicants and development-related workers, residents and broader housing/fiscal interest. No affected-person or application count is inferred. The notice names reference numbers but supplies neither amounts nor direction of change, so voices must not presume an increase, reduction or housing-price outcome.",
+      "connection_sampling_weights": {
+        "resident": 2.1,
+        "business": 3,
+        "commuter": 0.5,
+        "visitor": 0.4,
+        "citywide": 2.8
+      },
+      "synthetic_participants": 35,
+      "ordinary_comments": 12,
+      "features": [
+        {
+          "id": "toronto-development-application-fees-feature-site-plan-fees",
+          "label": "Update site-plan application fees",
+          "question": "How do you feel about updating the site-plan application fees listed under reference numbers 80–84.1? The saved notice does not state the amounts; these are in the linked Site Plan Application Fee Review."
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-sheppard-surplus-lane",
+      "audience_assumptions": "Small local parcel decision between two Sheppard East addresses, drawing nearby households, adjacent commercial workers and regular area users, plus some municipal-property interest. Think hundreds of potentially interested neighbours and workers as a fictional scale only. Sale to the adjacent owner and the Council permanent-closure prerequisite deserve distinct ratings; no shortcut, buyer project or price is assumed.",
+      "connection_sampling_weights": {
+        "resident": 3,
+        "business": 2.3,
+        "commuter": 1.3,
+        "visitor": 0.5,
+        "citywide": 1
+      },
+      "synthetic_participants": 23,
+      "ordinary_comments": 11,
+      "features": [
+        {
+          "id": "toronto-sheppard-surplus-lane-feature-1",
+          "label": "Proposed purchase by adjacent owner",
+          "question": "What concerns or requirements do you have about proposed purchase by adjacent owner?"
+        },
+        {
+          "id": "toronto-sheppard-surplus-lane-feature-2",
+          "label": "Closure condition",
+          "question": "What concerns or requirements do you have about closure condition?"
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-van-horne-surplus",
+      "audience_assumptions": "Very small local municipal-property matter at a library address, with nearby residents and library visitors prominent and some general city-property interest. Use a small local audience rather than a fabricated population number. This is a 32.6 square metre transfer from library purposes to municipal purposes; no library closure, service loss or private sale is inferred.",
+      "connection_sampling_weights": {
+        "resident": 3.3,
+        "business": 0.8,
+        "commuter": 0.4,
+        "visitor": 2.6,
+        "citywide": 1.2
+      },
+      "synthetic_participants": 14,
+      "ordinary_comments": 8,
+      "features": [
+        {
+          "id": "toronto-van-horne-surplus-feature-conveyance",
+          "label": "Transfer the surplus library parcel to the City",
+          "question": "How do you feel about conveying the approximately 32.6 m² surplus library parcel at 575 Van Horne Avenue to the City for municipal purposes? The notice does not specify the future municipal use."
+        }
+      ]
+    },
+    {
+      "proposal_id": "toronto-woodbine-surplus",
+      "audience_assumptions": "Small site-specific Woodbine Avenue disposition with nearby households and workers, regular passers-by and wider municipal-property interest. Hundreds of immediate neighbours/workers plus broader interest is a fictional planning scale, not a researched count. Opinions concern the actual sale to the named organisation; do not infer the purchaser's future use, price, conditions or any community's collective position.",
+      "connection_sampling_weights": {
+        "resident": 3,
+        "business": 1.7,
+        "commuter": 0.9,
+        "visitor": 0.6,
+        "citywide": 2.4
+      },
+      "synthetic_participants": 26,
+      "ordinary_comments": 12,
+      "features": [
+        {
+          "id": "toronto-woodbine-surplus-feature-sale",
+          "label": "Proposed sale to 2-Spirited People of the First Nations",
+          "question": "How do you feel about the proposed disposal of the approximately 213.5 m² surplus parcel at 996 Woodbine Avenue through an offer to purchase from 2-Spirited People of the First Nations? The notice does not specify a future use or sale price."
+        }
+      ]
+    }
+  ],
+  "retained_files": [
+    "submissions.json",
+    "manifest.json"
+  ],
+  "verification_summary": {
+    "verified_at": "2026-11-13T21:11:44.232090+00:00",
+    "synthetic_participants": 202,
+    "ordinary_comments": 73,
+    "submission_dto_and_current_feature_ids_validated": true,
+    "position_connection_and_feature_totals_reconciled": true,
+    "all_condition_data_unchanged": true,
+    "condition_comparison": "total_conditions and complete condition_clusters match the baseline effective display values exactly; raw stored condition data was preserved where present. All six had no stored aggregate and retain zero conditions with their original empty display structure.",
+    "existing_feedback_source_features_history_and_status_preserved": true,
+    "unrelated_proposals_and_feedback_equal_to_baseline": false,
+    "baseline": "All six initially had zero existing participants, no stored aggregate and zero effective conditions.",
+    "proposals": [
+      {
+        "proposal_id": "toronto-ravine-permit-fees",
+        "added_participants": 41,
+        "ordinary_comments": 14,
+        "existing_participants": 0,
+        "total_participants": 41,
+        "positions": {
+          "strongly_oppose": 1,
+          "oppose": 6,
+          "neutral": 3,
+          "support": 9,
+          "strongly_support": 8,
+          "unsure": 14
+        },
+        "connections": {
+          "resident": 11,
+          "business": 9,
+          "commuter": 4,
+          "visitor": 6,
+          "citywide": 11
+        },
+        "feature_responses": {
+          "toronto-ravine-permit-fees-feature-1": 38,
+          "toronto-ravine-permit-fees-feature-2": 39
+        },
+        "conditions_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-budget-user-fees-2026",
+        "added_participants": 63,
+        "ordinary_comments": 16,
+        "existing_participants": 0,
+        "total_participants": 63,
+        "positions": {
+          "strongly_oppose": 3,
+          "oppose": 15,
+          "neutral": 6,
+          "support": 13,
+          "strongly_support": 3,
+          "unsure": 23
+        },
+        "connections": {
+          "resident": 17,
+          "business": 8,
+          "commuter": 11,
+          "visitor": 8,
+          "citywide": 19
+        },
+        "feature_responses": {
+          "toronto-budget-user-fees-2026-feature-fee-package": 59
+        },
+        "conditions_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-development-application-fees",
+        "added_participants": 35,
+        "ordinary_comments": 12,
+        "existing_participants": 0,
+        "total_participants": 35,
+        "positions": {
+          "strongly_oppose": 1,
+          "oppose": 5,
+          "neutral": 10,
+          "support": 7,
+          "strongly_support": 2,
+          "unsure": 10
+        },
+        "connections": {
+          "resident": 8,
+          "business": 11,
+          "commuter": 3,
+          "visitor": 1,
+          "citywide": 12
+        },
+        "feature_responses": {
+          "toronto-development-application-fees-feature-site-plan-fees": 31
+        },
+        "conditions_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-sheppard-surplus-lane",
+        "added_participants": 23,
+        "ordinary_comments": 11,
+        "existing_participants": 0,
+        "total_participants": 23,
+        "positions": {
+          "strongly_oppose": 1,
+          "oppose": 6,
+          "neutral": 6,
+          "support": 5,
+          "strongly_support": 0,
+          "unsure": 5
+        },
+        "connections": {
+          "resident": 8,
+          "business": 8,
+          "commuter": 4,
+          "visitor": 1,
+          "citywide": 2
+        },
+        "feature_responses": {
+          "toronto-sheppard-surplus-lane-feature-1": 21,
+          "toronto-sheppard-surplus-lane-feature-2": 22
+        },
+        "conditions_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-van-horne-surplus",
+        "added_participants": 14,
+        "ordinary_comments": 8,
+        "existing_participants": 0,
+        "total_participants": 14,
+        "positions": {
+          "strongly_oppose": 0,
+          "oppose": 1,
+          "neutral": 3,
+          "support": 3,
+          "strongly_support": 2,
+          "unsure": 5
+        },
+        "connections": {
+          "resident": 5,
+          "business": 2,
+          "commuter": 1,
+          "visitor": 5,
+          "citywide": 1
+        },
+        "feature_responses": {
+          "toronto-van-horne-surplus-feature-conveyance": 14
+        },
+        "conditions_unchanged": true
+      },
+      {
+        "proposal_id": "toronto-woodbine-surplus",
+        "added_participants": 26,
+        "ordinary_comments": 12,
+        "existing_participants": 0,
+        "total_participants": 26,
+        "positions": {
+          "strongly_oppose": 1,
+          "oppose": 3,
+          "neutral": 3,
+          "support": 11,
+          "strongly_support": 3,
+          "unsure": 5
+        },
+        "connections": {
+          "resident": 11,
+          "business": 5,
+          "commuter": 3,
+          "visitor": 1,
+          "citywide": 6
+        },
+        "feature_responses": {
+          "toronto-woodbine-surplus-feature-sale": 25
+        },
+        "conditions_unchanged": true
+      }
+    ],
+    "baseline_proposals_sha256": "bab84a9ac00a9281914a20517a5a0020987e4bc73d23860a7ede92ed78e50c74",
+    "baseline_feedback_sha256": "5643519bb6e6936753c26cca93c876a6ca46e63e5d8566e33db250a5afbbe766",
+    "initial_persistence": "One MongoDB transaction inserted 202 synthetic records and updated only the six target community_aggregate fields.",
+    "unrelated_activity": {
+      "changed_proposals_since_baseline": [
+        "toronto-labatt-river-towers",
+        "toronto-augusta-hotel"
+      ],
+      "added_unrelated_feedback_since_baseline": 2,
+      "added_feedback_proposal_ids": [
+        "toronto-augusta-hotel",
+        "toronto-labatt-river-towers"
+      ],
+      "changed_existing_unrelated_feedback_since_baseline": 0,
+      "handling": "Only the six Batch 4 targets were written. Concurrent unrelated activity is preserved; no historical data was restored."
+    },
+    "identical_rerun_verified_without_writes_or_duplicates": true,
+    "ui": {
+      "url": "http://localhost:5173/",
+      "verified_at": "2026-11-13T21:13:53.408390+00:00",
+      "all_six_checked": true,
+      "overview_and_community_comment_counts": [
+        14,
+        16,
+        12,
+        11,
+        8,
+        12
+      ],
+      "community_participant_totals": [
+        41,
+        63,
+        35,
+        23,
+        14,
+        26
+      ],
+      "position_connection_and_every_feature_distribution_matched": true,
+      "all_conditions_zero": true,
+      "notes": "Budget Overview comments initially showed a retryable load error; the built-in Try again loaded all 16 comments successfully. Van Horne Community comments loaded after the initial asynchronous wait. All six final panels passed."
+    },
+    "issues_resolved": "Initial sandbox database access required authorized network escalation. One verification read timed out; retry with a longer timeout succeeded. Two concurrent submissions on Labatt/River and Augusta changed their unrelated aggregates; these were preserved. The first post-write read-back had matched the global baseline; later verification records concurrent activity without restoring old state."
+  },
+  "presentation_context": "Explain synthetic origin in the overall demo presentation. Ordinary comments are stored and displayed separately from structured conditions; no repetitive per-comment labels added.",
+  "rerun_behavior": "An identical read-only rerun matched all 202 saved records and six aggregates with no writes or duplicate participants. Stable IDs remain in submissions.json.",
+  "cleanup": "After MongoDB persistence, DTO validation, read-back reconciliation, exact protected-condition comparisons, duplicate verification and all six UI checks passed, temporary scripts and the baseline were removed. Only final submissions.json and manifest.json remain; no MongoDB records deleted."
+}

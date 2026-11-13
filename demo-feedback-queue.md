@@ -4,15 +4,13 @@ Created November 13, 2026. This file is the handoff for populating **synthetic d
 
 ## Current checkpoint
 
-- **Completed: 18 / 24 proposals.** Batches 1–3 persisted and verified; 784 synthetic responses, including 239 ordinary comments.
-- **Next: Batch 4, items 19–24.** Start only on a new request.
+- **Completed: 24 / 24 proposals.** Batches 1–4 persisted and verified; 986 synthetic responses, including 312 ordinary comments.
+- **Next: none.** The ordered queue is complete. Do not regenerate completed batches.
 - Work on **at most six proposals per request**, in the order below. Stop after that batch and update this file. Do not automatically start the next batch.
 - Status here tracks this task, not whether a proposal already has other feedback. Inspect existing data before writing anything.
 - On resumption, read this file first, recheck the current proposal records and feature IDs, and continue from the first unfinished item. Do not regenerate completed items.
 
-Suggested future request:
-
-> Continue `demo-feedback-queue.md`. Populate the next six unfinished proposals with synthetic comments and votes, following the instructions in that file. Leave “What would make a difference” and all its condition data unchanged. Update the queue with what was actually saved and verified, then stop.
+All four batches are complete. The logs and retained artifacts below record what was saved; any further feedback population requires a new scoped request.
 
 ## User instructions to retain
 
@@ -84,12 +82,12 @@ The audience notes below are **fictional scenario prompts**, not findings about 
 
 | # | Done | Proposal ID | Saved location / subject | Persona and rating guidance |
 | --- | --- | --- | --- | --- |
-| 19 | [ ] | `toronto-ravine-permit-fees` | Citywide; tree-related applications and standalone grade alterations | Consider residents with property concerns, relevant business workers, ravine visitors and citywide environmental interest. Differentiate the two fee types; do not invent rates or assert that fees alone prevent environmental damage. |
-| 20 | [ ] | `toronto-budget-user-fees-2026` | Citywide; 2026 user-fee package | Use a broad mix with meaningful citywide interest. Some people can support service funding and still question affordability; uncertainty is credible because the saved notice defers detailed rates to another document. Do not invent service-specific fee questions or amounts. |
-| 21 | [ ] | `toronto-development-application-fees` | Citywide; site-plan application fees | Include development-related workers, residents and wider housing/fiscal interest. The saved notice does not establish the amounts or even a direction of change; comments and votes must not assume an increase or reduction. |
-| 22 | [ ] | `toronto-sheppard-surplus-lane` | Lane portions between 145 and 181 Sheppard Avenue East | Consider nearby residents, adjacent businesses and regular users of the area. Separate sale to the adjacent owner from the permanent-closure condition. Do not invent a guaranteed public shortcut, buyer's development plan or sale price. |
-| 23 | [ ] | `toronto-van-horne-surplus` | 32.6 m² at 575 Van Horne Avenue; transfer from library purposes to the City | A small local/property-administration audience and some neutrality are plausible. Include nearby residents and library visitors without implying the library is closing or losing a specified service. This is a municipal transfer, not a sale to a private developer. |
-| 24 | [ ] | `toronto-woodbine-surplus` | 213.5 m² at 996 Woodbine Avenue; proposed sale to 2-Spirited People of the First Nations | Consider nearby residents/workers and broader municipal-property interest. Do not invent the purchaser's future use, price, sale conditions or a particular community's views. Rate the actual proposed sale. |
+| 19 | [x] | `toronto-ravine-permit-fees` | Citywide; tree-related applications and standalone grade alterations | Consider residents with property concerns, relevant business workers, ravine visitors and citywide environmental interest. Differentiate the two fee types; do not invent rates or assert that fees alone prevent environmental damage. |
+| 20 | [x] | `toronto-budget-user-fees-2026` | Citywide; 2026 user-fee package | Use a broad mix with meaningful citywide interest. Some people can support service funding and still question affordability; uncertainty is credible because the saved notice defers detailed rates to another document. Do not invent service-specific fee questions or amounts. |
+| 21 | [x] | `toronto-development-application-fees` | Citywide; site-plan application fees | Include development-related workers, residents and wider housing/fiscal interest. The saved notice does not establish the amounts or even a direction of change; comments and votes must not assume an increase or reduction. |
+| 22 | [x] | `toronto-sheppard-surplus-lane` | Lane portions between 145 and 181 Sheppard Avenue East | Consider nearby residents, adjacent businesses and regular users of the area. Separate sale to the adjacent owner from the permanent-closure condition. Do not invent a guaranteed public shortcut, buyer's development plan or sale price. |
+| 23 | [x] | `toronto-van-horne-surplus` | 32.6 m² at 575 Van Horne Avenue; transfer from library purposes to the City | A small local/property-administration audience and some neutrality are plausible. Include nearby residents and library visitors without implying the library is closing or losing a specified service. This is a municipal transfer, not a sale to a private developer. |
+| 24 | [x] | `toronto-woodbine-surplus` | 213.5 m² at 996 Woodbine Avenue; proposed sale to 2-Spirited People of the First Nations | Consider nearby residents/workers and broader municipal-property interest. Do not invent the purchaser's future use, price, sale conditions or a particular community's views. Rate the actual proposed sale. |
 
 ## Tips for convincing synthetic feedback
 
@@ -243,3 +241,26 @@ These are observations from queue preparation, not instructions to change applic
 - Concurrent activity: the initial global hash check detected unrelated changes to `toronto-labatt-river-towers` and other feedback after the snapshot. This batch left them untouched and did not restore historical data. Unrelated proposal and feedback hashes remained stable during the final read-back verification. Exact unrelated feedback field differences cannot be inferred from the original hashes; the manifest records this limitation. Batch 3's six targets and condition comparisons all passed.
 - Queue reconciliation: Batch 2 artifacts already reported completion when this request began; its 192 final records, 69 comments, totals, distributions and zero conditions were independently rechecked without writes. No completed batch was regenerated.
 - **Stopped after Batch 3. Next unfinished: Batch 4, item 19 (`toronto-ravine-permit-fees`).** No prepared-but-unpersisted Batch 3 proposals remain.
+
+
+### Batch 4 — November 13, 2026 — completed
+
+- **Synthetic demonstration feedback only:** saved **202 fictional participants and 73 ordinary comments** to configured MongoDB database `civic_hack`, collections `feedback` and `imported_proposals`. Stable fictional IDs use `demo-v1-`; all new submissions have `condition: null`. These are illustrative voices, not real public opinion, a representative poll or an official consultation. Explain synthetic origin in the presentation as a whole.
+
+| Proposal completed | Audience planning assumption (not researched) | New synthetic participants | Ordinary comments | Verified total |
+| --- | --- | ---: | ---: | ---: |
+| `toronto-ravine-permit-fees` | Citywide policy with concentrated ravine-adjacent household and tree/landscape-worker interest, plus visitors and environmental interest | 41 | 14 | 41 |
+| `toronto-budget-user-fees-2026` | Broad citywide service-user and fiscal interest; residents, workers, commuters and visitors, with uncertainty about detailed rates | 63 | 16 | 63 |
+| `toronto-development-application-fees` | Citywide procedure, concentrated among site-plan applicants/workers and wider housing/fiscal interest; no assumed direction of fee change | 35 | 12 | 35 |
+| `toronto-sheppard-surplus-lane` | Small local parcel decision; nearby households, commercial workers and regular area users; no assumed shortcut, project or price | 23 | 11 | 23 |
+| `toronto-van-horne-surplus` | Very small local municipal-property audience, with nearby residents and library visitors; no assumed closure or service loss | 14 | 8 | 14 |
+| `toronto-woodbine-surplus` | Small site-specific disposal with nearby households/workers and broader property interest; no assumed purchaser use or price | 26 | 12 | 26 |
+
+- Retained artifacts: [`manifest.json`](backend/data/demo-feedback/batch-4/manifest.json) and [`submissions.json`](backend/data/demo-feedback/batch-4/submissions.json). The manifest retains synthetic-origin disclosure, audience assumptions, actual live feature IDs/questions, per-proposal counts and verification. Temporary generation/snapshot/persistence scripts and baseline were removed after verification under cleanup rule 9. No MongoDB records were deleted.
+- Baseline: all six had zero existing feedback, no stored aggregate and zero effective conditions. Read their live summaries, addresses, saved source notice text and current feature questions before generation. Comments use varied voices, lengths, punctuation and formality, mostly serious with a small minority of exaggerated objections. Unspecified rates, sale terms, future uses and outcomes were not invented.
+- Persistence: one MongoDB transaction inserted only these 202 participant-level records and updated only the six target `community_aggregate` fields. Current DTO validation and feature-ID checks passed. Saved records matched the final payload exactly; position and connection counts sum to each participant total, and all feature distributions reconcile to participant ratings and their own response totals. Skipped feature ratings do not inflate feature totals.
+- Protected data: `total_conditions` and the entire `condition_clusters` structure match the baseline effective display values exactly. The originally unstored empty display structure was saved alongside votes; all six still have **zero conditions**, with no new evidence or grouping. Source records, features, history, status and existing feedback were preserved. All ordinary concerns remain submission comments with `condition: null`.
+- An identical second-run check matched all 202 submissions and six aggregates **without writes or duplicate participants**. The initial post-write global comparison passed. Later verification detected two concurrent new submissions on `toronto-labatt-river-towers` and `toronto-augusta-hotel`, with corresponding unrelated aggregate changes; these were preserved. Existing unrelated feedback records still matched the baseline. Batch 4 did not restore or rewrite unrelated data.
+- UI verification at `http://localhost:5173/`: all six Overview and Community comment panels displayed saved counts **14, 16, 12, 11, 8, 12**. Community totals **41, 63, 35, 23, 14, 26**, overall positions, connections and every feature distribution matched saved data; condition sections remained zero. Budget comments initially showed a retryable loading error; the built-in retry succeeded. Van Horne Community comments finished loading after the first wait. No application code changed.
+- Issues resolved: sandboxed database access required authorized network escalation; a later verification read timed out and succeeded with a longer timeout. No prepared-but-unpersisted items remain.
+- **Stopped after Batch 4. All 24 / 24 proposals are complete: 986 synthetic participants and 312 ordinary comments across the four retained batches. No next unfinished item.**

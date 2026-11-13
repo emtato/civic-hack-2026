@@ -1,0 +1,2867 @@
+[
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "Charging for reviewing tree work seems reasonable. I'm less clear why every standalone grading application would have one flat fee.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-002",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "oppose",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "I do landscape work. Non-refundable at the application stage worries me when a homeowner is still trying to find out what can be permitted. Need to see the actual schedule.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-003",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "Ravines are something I come to enjoy, even though I don't own land beside one. I'm comfortable with applicants contributing to the cost of reviewing work there.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-004",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "fee structure yes, maybe. voting on the price without seeing it? cant really do that",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-005",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "oppose",
+      "toronto-ravine-permit-fees-feature-2": "neutral"
+    },
+    "comment": "Per tree could add up for someone with several trees to deal with. That is my concern, rather than treating grading as the same thing.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-006",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "Complex jobs and simple jobs shouldn't automatically have the same application charge. The complexity part makes sense from a quoting perspective, provided people can work out which category applies.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-007",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "neutral"
+    },
+    "comment": "The tree part has a rationale. Neither for nor against the flat grading fee from this summary.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-008",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "oppose",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "My yard already feels like paperwork with a fence around it. I don't want another application fee.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-009",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "A fee for reviewing changes in a ravine area seems fair. Please don't present payment as permission to damage whatever you like.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-010",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "neutral"
+    },
+    "comment": "Is the tree count the number in the application? Would like a worked example before deciding.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-011",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "neutral",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "I pass ravine areas regularly but have no experience applying for this. Leaving the grading question open.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-012",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "Flat fee is easy to explain to a client. Whether it's fair is a different question and I haven't got the figures.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-013",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "Fine with application review having a cost. A clear invoice matters more to me than another long explanation of the bylaw.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-014",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "oppose",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "I'd rather more of this review be funded generally. Ravines have a public value too; the applicant isn't the only person with a stake in how they're managed.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-015",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-016",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-017",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-018",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-019",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-020",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-021",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-022",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "oppose",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-023",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-024",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-025",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-026",
+    "position": "strongly_support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-027",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-028",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "oppose",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-029",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-030",
+    "position": "strongly_support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-031",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-032",
+    "position": "strongly_support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-033",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "neutral",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-034",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-035",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-036",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-037",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-038",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-039",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "support",
+      "toronto-ravine-permit-fees-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-040",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "unsure",
+      "toronto-ravine-permit-fees-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": "notice-7128-d46688241096",
+    "participant_id": "demo-v1-ravine-permit-fees-041",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-ravine-permit-fees-feature-1": "neutral",
+      "toronto-ravine-permit-fees-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-001",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "Which fees, and how much? I can see the reference to the appendices but the notice alone isn't enough for my vote.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-002",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "Services need funding. I lean toward the proposed package on that basis, though I'd still want to go through the rates before treating this as final approval.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-003",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "I work in a small business and need predictable costs. I'm against approving a whole bundle of charges together when I can't assess them individually here.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-004",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "neutral"
+    },
+    "comment": "not a yes or a no from me. A package this broad could contain things I'd vote differently on",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-005",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "Hard to connect this notice to what I actually use when visiting. The appendix is doing a lot of work.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-006",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "Another fee discussion. My patience for paying at every turn has run out.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-007",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "I favour using user fees as part of service funding, so I'm supportive of considering this package. That doesn't tell me every proposed rate is right; those still deserve scrutiny.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-008",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "Would need to sit down with A and B and check what's relevant to our work. No idea yet what the net effect would be.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-009",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "Affordability is my sticking point. I don't favour the package as presented without a clearer explanation of who would have difficulty paying.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-010",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "Keeping services running matters to me. Tentative yes to the package, with the rates needing a proper explanation.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-011",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "Proposed, not final. Are people reading this as the actual adopted budget? I haven't seen enough here to choose a side.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-012",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "neutral"
+    },
+    "comment": "Too broad for a strong view.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-013",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "I don't expect every service to be free. A published fee schedule is useful, and overall I'm open to this approach.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-014",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "A short before-and-after table would help. I dislike being asked to approve the principle first and chase down what it costs later.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-015",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "neutral"
+    },
+    "comment": "Funding and access both count. I can't weigh them for this particular package from the notice text.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-016",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "I started looking for one amount and realised this is an entire package. Parking my opinion until I've read the details.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-017",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-018",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-019",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-020",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-021",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-022",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-023",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-024",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-025",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-026",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-027",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-028",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-029",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-030",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-031",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-032",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-033",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-034",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-035",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-036",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-037",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-038",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-039",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-040",
+    "position": "strongly_oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-041",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-042",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-043",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-044",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-045",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-046",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-047",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-048",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-049",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-050",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-051",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-052",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-053",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-054",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-055",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-056",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-057",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-058",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-059",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-060",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-061",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-062",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": "notice-6984-986ccae079a0",
+    "participant_id": "demo-v1-budget-user-fees-2026-063",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-budget-user-fees-2026-feature-fee-package": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-001",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "I help prepare site-plan applications. The reference numbers tell me where to look, but not what I'd quote a client. Need the actual fee review.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-002",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "Reviewing the application schedule seems sensible. My support is for updating it appropriately, rather than an assumption that any particular amount is going up or down.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-003",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "I care about new housing, but the notice doesn't show what the fee change actually is. Neutral on this one.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-004",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "oppose"
+    },
+    "comment": "Not comfortable endorsing an update without the amounts alongside it. We need to be able to plan application costs.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-005",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "is this more, less, or just organised differently? cant tell from what's here",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-006",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "Yes to maintaining a considered site-plan fee schedule. Review costs deserve attention alongside the rest of the development process.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-007",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "Working with applications, I'd welcome a schedule that's kept under review. No claim here that it makes my next job cheaper.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-008",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "Outside my experience. I would need a plain-language explanation of 80 to 84.1.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-009",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "oppose"
+    },
+    "comment": "The proposal is too hard to evaluate from this notice. I'd prefer the comparison with current charges to be front and centre.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-010",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "oppose"
+    },
+    "comment": "My vote is against signing off on an unspecified fee update. Reference numbers aren't an explanation.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-011",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "An updated schedule isn't automatically good or bad for an applicant. Depends what's in it.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-012",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "Wondering how the review balances processing costs and encouraging applications. The summary doesn't settle that for me, and I don't want to guess the direction of the change.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-013",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-014",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-015",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-016",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-017",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-018",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-019",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-020",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-021",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-022",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-023",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-024",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-025",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-026",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-027",
+    "position": "strongly_support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-028",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-029",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-030",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-031",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-032",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-033",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-034",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": "notice-7682-34437a024c52",
+    "participant_id": "demo-v1-development-application-fees-035",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-development-application-fees-feature-site-plan-fees": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-001",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "unsure",
+      "toronto-sheppard-surplus-lane-feature-2": "unsure"
+    },
+    "comment": "I live around Sheppard and would need the parcel drawing to place these two pieces. The street numbers alone don't tell me whether this affects anything I use.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-002",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "Selling small lane pieces to an adjacent owner sounds practical. Agree that Council should deal with permanent closure first.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-003",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "unsure",
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "I use the area regularly and am wary of permanently closing lane land. I'm unsure about the sale on its own until I understand the footprint.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-004",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "neutral",
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "Having closure approval as a prerequisite makes sense. I don't have a view on inviting this particular purchase.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-005",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "oppose",
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "I'd prefer the City to retain the land. If a sale is considered, requiring Council to approve closure is at least the right order.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-006",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "unsure",
+      "toronto-sheppard-surplus-lane-feature-2": "neutral"
+    },
+    "comment": "What happens to any servicing access? I'm asking, not saying this lane is used for deliveries.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-007",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "oppose",
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "Every tiny bit of city land apparently needs a buyer. I'd keep these pieces too.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-008",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "neutral",
+      "toronto-sheppard-surplus-lane-feature-2": "unsure"
+    },
+    "comment": "Couldn't identify the lane bits from the addresses. No strong view on who buys them.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-009",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "Two small portions, rather than all of Sheppard. On that understanding I'm comfortable with this going through the closure and sale process.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-010",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "unsure"
+    },
+    "comment": "An adjacent owner is a logical person to invite an offer from. Less sure about the closure question because I don't know the current access arrangement.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-011",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "Seems a reasonable way to handle surplus pieces. Would like the plan easy to find so neighbours can see exactly what is involved, without guessing at a future building.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-012",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "unsure",
+      "toronto-sheppard-surplus-lane-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-013",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "neutral",
+      "toronto-sheppard-surplus-lane-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-014",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "unsure",
+      "toronto-sheppard-surplus-lane-feature-2": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-015",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-016",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-017",
+    "position": "oppose",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "oppose",
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-018",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-019",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-020",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-021",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "neutral",
+      "toronto-sheppard-surplus-lane-feature-2": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-022",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "oppose",
+      "toronto-sheppard-surplus-lane-feature-2": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": "notice-7473-bf2c36ce6cc5",
+    "participant_id": "demo-v1-sheppard-surplus-lane-023",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-sheppard-surplus-lane-feature-1": "support",
+      "toronto-sheppard-surplus-lane-feature-2": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-001",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "support"
+    },
+    "comment": "I visit the library. A small transfer to the City seems fine to me; this notice doesn't say the library is closing.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-002",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "neutral"
+    },
+    "comment": "32.6 square metres, staying with the City. Mostly sounds administrative.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-003",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "unsure"
+    },
+    "comment": "Municipal purposes is quite open-ended. I'd like to know what use is intended before forming a view.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-004",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "oppose"
+    },
+    "comment": "I'd rather leave the parcel with the library for now. Small bits of land can still be useful, even though I can't point to a particular use for this one.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-005",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "support"
+    },
+    "comment": "No objection to moving a surplus parcel between municipal bodies. Doesn't sound like something that needs to be more complicated.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-006",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "unsure"
+    },
+    "comment": "where is the little piece on the library site? Hard to picture 350 square feet from the address",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-007",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "support"
+    },
+    "comment": "Yes, let the City make use of land the library has declared surplus. Happy with a municipal transfer in principle.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-008",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "neutral"
+    },
+    "comment": "Nothing here changes my view of visiting the library. I'll leave the property details to people who know the parcel.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-009",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-010",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-011",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-012",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-013",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "neutral"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": "notice-6141-2655af5a3b8e",
+    "participant_id": "demo-v1-van-horne-surplus-014",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-van-horne-surplus-feature-conveyance": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-001",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "I'm nearby and comfortable with the proposed sale to 2-Spirited People of the First Nations. I don't know what their plans are, so I'm not treating a particular use as promised.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-002",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "unsure"
+    },
+    "comment": "Would like to see how the sale is being evaluated, including the terms. Naming a buyer isn't the whole decision for me.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-003",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "I work along Woodbine. No objection to the named purchaser buying the surplus piece; any later use would need its own explanation.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-004",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "oppose"
+    },
+    "comment": "Generally prefer the City to hold onto land. That's why I'm against this disposal, regardless of who the purchaser is.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-005",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "neutral"
+    },
+    "comment": "Pass this area but don't know the property well enough to have much to add.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-006",
+    "position": "strongly_support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "Glad to see this organisation considered as a purchaser. Support the sale in principle, while leaving space for proper review of whatever terms are proposed.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-007",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "unsure"
+    },
+    "comment": "213.5 m2 is more than a sliver. A parcel plan and explanation would help me work out what I'm looking at.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-008",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "oppose"
+    },
+    "comment": "Not ready to back disposal with no price in the notice. I ask the same question about any buyer of city land.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-009",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "Sounds reasonable. No specific future use mentioned, so I'll keep my vote to the sale that's actually proposed.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-010",
+    "position": "strongly_oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "oppose"
+    },
+    "comment": "I'd hoard every scrap of public land if it were up to me. Once sold, it's sold.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-011",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "neutral"
+    },
+    "comment": "Could see arguments either way. Surplus status alone doesn't explain the trade-off, but the notice also gives me no basis to claim a bad deal.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-012",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "Fine with inviting the offer. Please keep the eventual decision easy for neighbours to follow; there is a lot people can imagine from one short property notice.",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-013",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-014",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-015",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-016",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-017",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "oppose"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-018",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-019",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "unsure"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-020",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-021",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-022",
+    "position": "support",
+    "stakeholder_role": "commuter",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-023",
+    "position": "strongly_support",
+    "stakeholder_role": "resident",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-024",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-025",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": "notice-5957-f7b26dd24590",
+    "participant_id": "demo-v1-woodbine-surplus-026",
+    "position": "strongly_support",
+    "stakeholder_role": "business",
+    "element_ratings": {
+      "toronto-woodbine-surplus-feature-sale": "support"
+    },
+    "comment": "",
+    "condition": null,
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-13T21:06:39.301864+00:00"
+  }
+]
