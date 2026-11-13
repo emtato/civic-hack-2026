@@ -21,6 +21,21 @@ from proposals_DTO import (
     ProposalFeedbackSubmissionDTO,
 )
 from service.service import FeedbackService
+from auth import (
+    create_access_token,
+    get_current_user,
+    get_user_repository,
+    hash_password,
+    verify_password,
+)
+from users_DTO import (
+    TokenDTO,
+    UserLoginDTO,
+    UserPublicDTO,
+    UserRecordDTO,
+    UserRegisterDTO,
+)
+from persistence.persistence import UserRepository
 
 # Load environment variables from backend/.env
 HERE = Path(__file__).resolve().parent
@@ -107,6 +122,84 @@ def database_health(request: Request):
             detail="MongoDB is unavailable.",
         ) from None
     return {"status": "ok", "database": "connected"}
+
+
+# ============================================================================
+# Auth Endpoints (Controller)
+# ============================================================================
+
+@app.post(
+    "/api/auth/register",
+    response_model=TokenDTO,
+    status_code=status.HTTP_201_CREATED,
+    tags=["Auth"],
+)
+def register(
+    body: UserRegisterDTO,
+    users: UserRepository = Depends(get_user_repository),
+):
+    """Create a username/password account and return a signed token.
+
+    Reading proposals and feedback needs no account; an account is only
+    required to submit feedback.
+    """
+    from datetime import datetime, timezone
+
+    record = UserRecordDTO(
+        username=body.username,
+        password_hash=hash_password(body.password),
+        created_at=datetime.now(timezone.utc).isoformat(),
+    )
+    try:
+        created = users.create(record)
+    except PyMongoError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Database error creating account.",
+        ) from exc
+
+    if not created:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"Username '{body.username}' is already taken.",
+        )
+
+    token = create_access_token(record.username)
+    return TokenDTO(access_token=token, username=record.username)
+
+
+@app.post("/api/auth/login", response_model=TokenDTO, tags=["Auth"])
+def login(
+    body: UserLoginDTO,
+    users: UserRepository = Depends(get_user_repository),
+):
+    """Verify credentials and return a signed token.
+
+    Returns 401 for both unknown username and wrong password so the
+    response does not reveal whether a username exists.
+    """
+    try:
+        record = users.get_by_username(body.username)
+    except PyMongoError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Database error during login.",
+        ) from exc
+
+    if record is None or not verify_password(body.password, record.password_hash):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid username or password.",
+        )
+
+    token = create_access_token(record.username)
+    return TokenDTO(access_token=token, username=record.username)
+
+
+@app.get("/api/auth/me", response_model=UserPublicDTO, tags=["Auth"])
+def read_current_user(current_user: UserPublicDTO = Depends(get_current_user)):
+    """Return the currently authenticated user (used by the frontend)."""
+    return current_user
 
 
 # ============================================================================
@@ -203,14 +296,22 @@ def submit_feedback(
     proposal_id: str,
     submission: ProposalFeedbackSubmissionDTO,
     service: FeedbackService = Depends(get_service),
+    current_user: UserPublicDTO = Depends(get_current_user),
 ):
-    """Store citizen feedback in MongoDB and atomically update the proposal's attached aggregate."""
+    """Store citizen feedback in MongoDB and atomically update the proposal's attached aggregate.
+
+    Requires authentication. The participant is taken from the verified
+    token, not the request body, so a logged-in user can only submit as
+    themselves.
+    """
     if submission.proposal_id and submission.proposal_id != proposal_id:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Path proposal_id '{proposal_id}' does not match body proposal_id '{submission.proposal_id}'.",
         )
     submission.proposal_id = proposal_id
+    # Identity comes from the token, overriding any client-supplied value.
+    submission.participant_id = current_user.username
 
     try:
         saved_sub, updated_agg = service.submit_feedback(submission)

@@ -5,10 +5,14 @@ from fastapi.testclient import TestClient
 
 try:
     from main import app, get_service
+    from auth import get_current_user
+    from users_DTO import UserPublicDTO
     from persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from service.service import FeedbackService
 except ImportError:
     from backend.main import app, get_service
+    from backend.auth import get_current_user
+    from backend.users_DTO import UserPublicDTO
     from backend.persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from backend.service.service import FeedbackService
 
@@ -20,6 +24,10 @@ class ApiIntegrationTests(unittest.TestCase):
         self.service.proposals.seed_if_empty(SEED_FILE)
 
         app.dependency_overrides[get_service] = lambda: self.service
+        # Simulate an authenticated user for write endpoints.
+        app.dependency_overrides[get_current_user] = lambda: UserPublicDTO(
+            username="api-tester-1", created_at="2026-11-13T00:00:00+00:00"
+        )
         self.client = TestClient(app)
 
     def tearDown(self):
@@ -105,6 +113,76 @@ class ApiIntegrationTests(unittest.TestCase):
         self.assertEqual(list_res.status_code, 200)
         feedbacks = list_res.json()
         self.assertEqual(len(feedbacks), 1)
+
+
+class AuthApiTests(unittest.TestCase):
+    """Auth flow tests using the real auth dependency (no override)."""
+
+    def setUp(self):
+        self.mock_db = MockMongoDatabase()
+        self.service = FeedbackService(self.mock_db)
+        self.service.proposals.seed_if_empty(SEED_FILE)
+        app.dependency_overrides[get_service] = lambda: self.service
+        # Point the user repository at the same in-memory db.
+        try:
+            from auth import get_user_repository
+            from persistence.persistence import UserRepository
+        except ImportError:
+            from backend.auth import get_user_repository
+            from backend.persistence.persistence import UserRepository
+        app.dependency_overrides[get_user_repository] = lambda: UserRepository(self.mock_db)
+        self.client = TestClient(app)
+
+    def tearDown(self):
+        app.dependency_overrides.clear()
+
+    def test_reading_proposals_needs_no_account(self):
+        self.assertEqual(self.client.get("/api/proposals").status_code, 200)
+        self.assertEqual(self.client.get("/api/proposals/kensington").status_code, 200)
+        self.assertEqual(self.client.get("/api/proposals/kensington/aggregate").status_code, 200)
+
+    def test_submitting_feedback_without_token_is_rejected(self):
+        res = self.client.post("/api/proposals/kensington/feedback", json={
+            "proposal_id": "kensington", "participant_id": "nobody",
+            "position": "support", "stakeholder_role": "resident",
+        })
+        self.assertEqual(res.status_code, 401)
+        # Unauthenticated write must not change the aggregate.
+        self.assertEqual(self.service.get_aggregate("kensington").total_participants, 45)
+
+    def test_register_login_and_authenticated_submit(self):
+        reg = self.client.post("/api/auth/register", json={"username": "alice", "password": "secret123"})
+        self.assertEqual(reg.status_code, 201)
+        token = reg.json()["access_token"]
+        self.assertTrue(token)
+
+        headers = {"Authorization": f"Bearer {token}"}
+        me = self.client.get("/api/auth/me", headers=headers)
+        self.assertEqual(me.status_code, 200)
+        self.assertEqual(me.json()["username"], "alice")
+
+        # participant_id in body is ignored; identity comes from the token.
+        res = self.client.post("/api/proposals/kensington/feedback", headers=headers, json={
+            "proposal_id": "kensington", "participant_id": "someone-else",
+            "position": "support", "stakeholder_role": "resident",
+        })
+        self.assertEqual(res.status_code, 201)
+        self.assertEqual(res.json()["feedback"]["participant_id"], "alice")
+
+    def test_duplicate_username_is_rejected(self):
+        first = self.client.post("/api/auth/register", json={"username": "bob", "password": "secret123"})
+        self.assertEqual(first.status_code, 201)
+        dup = self.client.post("/api/auth/register", json={"username": "bob", "password": "other123"})
+        self.assertEqual(dup.status_code, 409)
+
+    def test_login_with_wrong_password_is_rejected(self):
+        self.client.post("/api/auth/register", json={"username": "carol", "password": "secret123"})
+        ok = self.client.post("/api/auth/login", json={"username": "carol", "password": "secret123"})
+        self.assertEqual(ok.status_code, 200)
+        bad = self.client.post("/api/auth/login", json={"username": "carol", "password": "nope"})
+        self.assertEqual(bad.status_code, 401)
+        unknown = self.client.post("/api/auth/login", json={"username": "ghost", "password": "whatever"})
+        self.assertEqual(unknown.status_code, 401)
 
 
 if __name__ == "__main__":

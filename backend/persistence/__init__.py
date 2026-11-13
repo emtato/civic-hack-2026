@@ -1,5 +1,5 @@
 """Persistence package."""
 
-from .persistence import FeedbackRepository, ProposalRepository
+from .persistence import FeedbackRepository, ProposalRepository, UserRepository
 
-__all__ = ["ProposalRepository", "FeedbackRepository"]
+__all__ = ["ProposalRepository", "FeedbackRepository", "UserRepository"]

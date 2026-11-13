@@ -175,3 +175,46 @@ class FeedbackRepository:
     def count_by_proposal(self, proposal_id: str) -> int:
         """Count total feedback submissions for a proposal."""
         return self.collection.count_documents({"proposal_id": proposal_id})
+
+
+class UserRepository:
+    """Concrete persistence operations for user accounts in MongoDB.
+
+    Uses the username as the MongoDB ``_id`` so that account creation is
+    naturally unique even without relying on a separately-created unique
+    index (useful in the in-memory test double, which does not enforce
+    indexes).
+    """
+
+    def __init__(self, db: Optional[Database] = None):
+        self.db = db if db is not None else get_database()
+        if self.db is None:
+            raise ValueError("MongoDB database handle is required for UserRepository.")
+        self.collection = self.db["users"]
+
+    def get_by_username(self, username: str):
+        """Return the stored user record for a username, or None."""
+        try:
+            from users_DTO import UserRecordDTO
+        except ImportError:
+            from backend.users_DTO import UserRecordDTO
+
+        doc = self.collection.find_one({"_id": username})
+        if doc is None:
+            doc = self.collection.find_one({"username": username})
+        if doc is None:
+            return None
+        doc.pop("_id", None)
+        return UserRecordDTO.model_validate(doc)
+
+    def create(self, record) -> bool:
+        """Insert a new user. Returns False if the username already exists."""
+        if self.collection.find_one({"_id": record.username}) is not None:
+            return False
+        if self.collection.find_one({"username": record.username}) is not None:
+            return False
+
+        data = record.model_dump(mode="python")
+        data["_id"] = record.username
+        self.collection.replace_one({"_id": record.username}, data, upsert=True)
+        return True

@@ -5,8 +5,9 @@ import {
   applyFeedbackToAggregate, createEmptyAggregate, formatPercentage,
 } from '../data/proposalFeedbackDTO'
 import type { ConditionClusterDTO, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
-import { getParticipantId, readDemoFeedback, saveDemoFeedback } from '../data/feedbackSession'
+import { readDemoFeedback, saveDemoFeedback } from '../data/feedbackSession'
 import { fetchParticipantFeedback, fetchProposalAggregate, submitProposalFeedback } from '../api/proposalsApi'
+import type { AuthUser } from '../data/auth'
 import { FeedbackForm } from './FeedbackForm'
 import { ProposalComments } from './ProposalComments'
 import { Icon } from './Icon'
@@ -24,6 +25,7 @@ interface Props {
   isResponding: boolean
   onRespondingChange: (open: boolean) => void
   onCommunityChange?: (snapshot: CommunitySnapshot) => void
+  currentUser: AuthUser | null
 }
 
 export const ELEMENT_POSITIONS = ['oppose', 'neutral', 'support', 'unsure'] as const
@@ -90,7 +92,7 @@ function ConditionGroup({ cluster, total }: { cluster: ConditionClusterDTO; tota
   )
 }
 
-export function ProposalFeedback({ proposal, isResponding, onRespondingChange, onCommunityChange }: Props) {
+export function ProposalFeedback({ proposal, isResponding, onRespondingChange, onCommunityChange, currentUser }: Props) {
   const [aggregate, setAggregate] = useState(() => proposal.community_aggregate || createEmptyAggregate())
   const [mode, setMode] = useState<'loading' | 'server' | 'demo'>('loading')
   const [response, setResponse] = useState<ProposalFeedbackSubmissionDTO | null>(null)
@@ -114,7 +116,14 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
   useEffect(() => {
     let active = true
     setMode('loading')
-    Promise.all([fetchProposalAggregate(proposal.id), fetchParticipantFeedback(proposal.id, getParticipantId())])
+    // In server mode a logged-in user is identified by their username; only
+    // then can we look up a response they already submitted. Anonymous
+    // visitors still load the live aggregate (read is public).
+    const lookupId = currentUser?.username
+    const existingLookup = lookupId
+      ? fetchParticipantFeedback(proposal.id, lookupId)
+      : Promise.resolve(null)
+    Promise.all([fetchProposalAggregate(proposal.id), existingLookup])
       .then(([live, existing]) => {
         if (!active) return
         setAggregate(live || proposal.community_aggregate || createEmptyAggregate())
@@ -130,10 +139,16 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
         setMode('demo')
       })
     return () => { active = false }
-  }, [proposal.id, loadAttempt])
+  }, [proposal.id, loadAttempt, currentUser?.username])
 
   async function save(submission: ProposalFeedbackSubmissionDTO) {
     if (savingRef.current) return
+    // Defense in depth: never attempt a server write without a logged-in user.
+    // The backend also enforces this; this keeps the UI honest.
+    if (mode === 'server' && !currentUser) {
+      setError('Please log in to submit feedback. Your answers are still here.')
+      return
+    }
     savingRef.current = true
     setSaving(true)
     setError('')
@@ -144,7 +159,12 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
         setResponse(submission)
         setReceipt(persisted ? 'Your response was saved on this device. You can return and edit it.' : 'Your response was saved for this visit. Browser storage is unavailable; it will not survive a refresh.')
       } else {
-        const result = await submitProposalFeedback(submission)
+        // The backend sets participant_id from the verified token; we also
+        // send the username so the optimistic client state matches.
+        const serverSubmission: ProposalFeedbackSubmissionDTO = currentUser
+          ? { ...submission, participant_id: currentUser.username }
+          : submission
+        const result = await submitProposalFeedback(serverSubmission)
         if (!mountedRef.current) return
         setAggregate(result.community_aggregate)
         setResponse(result.feedback)
@@ -174,10 +194,20 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
       {receipt && <div className="feedback-receipt" role="status"><Icon name="check" /><p>{receipt}</p></div>}
 
       <div hidden={!isResponding}>
-        {mode === 'loading' ? <p className="feedback-help" role="status">Loading your saved response before opening the form…</p> : (
-          <FeedbackForm key={`${proposal.id}-${mode}`} proposal={proposal} elements={aggregate.proposal_specific}
-            existing={response} demo={mode === 'demo'} saving={saving} error={error} active={isResponding}
-            onSave={save} onCancel={() => { setError(''); onRespondingChange(false) }} />
+        {mode === 'loading' ? <p className="feedback-help" role="status">Loading your saved response before opening the form…</p>
+          : (mode === 'server' && !currentUser) ? (
+            <div className="feedback-login-gate" role="status">
+              <span className="feedback-invitation-icon"><Icon name="user" /></span>
+              <h3>Log in to share your feedback</h3>
+              <p>Browsing proposals and community feedback is open to everyone. To submit your own response, log in using the button in the top bar.</p>
+              <button className="feedback-secondary-button" type="button" onClick={() => onRespondingChange(false)}>
+                <Icon name="back" />Back to community
+              </button>
+            </div>
+          ) : (
+            <FeedbackForm key={`${proposal.id}-${mode}`} proposal={proposal} elements={aggregate.proposal_specific}
+              existing={response} demo={mode === 'demo'} saving={saving} error={error} active={isResponding && !(mode === 'server' && !currentUser)}
+              onSave={save} onCancel={() => { setError(''); onRespondingChange(false) }} />
         )}
       </div>
 
@@ -194,13 +224,28 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
           <div className="feedback-stat-updated"><Icon name="clock" /><span>Updated<br />{Number.isNaN(date.getTime()) ? 'Not available' : date.toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}</span></div>
         </div>
 
-        <div className="feedback-invitation">
-          <span className="feedback-invitation-icon"><Icon name="message" /></span>
-          <div><h3>{response ? 'Your perspective is part of this.' : 'What would make it work for you?'}</h3><p>{response ? `${POSITION_CONFIG[response.position].label} · Your response can change as your needs do.` : 'Share your position, the details that matter, and any requirements.'}</p></div>
-          <button className="feedback-action" disabled={mode === 'loading'} onClick={() => { setReceipt(''); setError(''); onRespondingChange(true) }}>
-            {response ? 'Edit your response' : 'Share your perspective'}<Icon name="arrow" />
-          </button>
-        </div>
+        {(() => {
+          // Server mode requires an account to submit. Demo mode (no server)
+          // stays open so the device-only prototype still works offline.
+          const needsLogin = mode === 'server' && !currentUser
+          return (
+            <div className="feedback-invitation">
+              <span className="feedback-invitation-icon"><Icon name="message" /></span>
+              <div>
+                <h3>{response ? 'Your perspective is part of this.' : 'What would make it work for you?'}</h3>
+                <p>{needsLogin
+                  ? 'Browsing is open to everyone. Log in using the button in the top bar to submit your feedback.'
+                  : response
+                    ? `${POSITION_CONFIG[response.position].label} · Your response can change as your needs do.`
+                    : 'Share your position, the details that matter, and any requirements.'}</p>
+              </div>
+              <button className="feedback-action" disabled={mode === 'loading' || needsLogin}
+                onClick={() => { setReceipt(''); setError(''); onRespondingChange(true) }}>
+                {needsLogin ? 'Log in to respond' : response ? 'Edit your response' : 'Share your perspective'}<Icon name="arrow" />
+              </button>
+            </div>
+          )
+        })()}
 
         <section className="feedback-card" aria-labelledby="position-heading">
           <div className="feedback-section-heading"><h3 id="position-heading">Overall position</h3><span>{aggregate.total_participants} responses</span></div>
