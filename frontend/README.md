@@ -1,4 +1,4 @@
-# Civic frontend
+# proviso frontend
 
 A Vite + React + TypeScript prototype for discovering proposals and recording feedback. The labelled demo mode works without a backend or API key.
 

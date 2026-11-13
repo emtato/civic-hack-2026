@@ -33,7 +33,7 @@ try:
 except ImportError:
     from backend.persistence.persistence import FeedbackRepository, ProposalRepository
 
-logger = logging.getLogger("civic.service")
+logger = logging.getLogger("proviso.service")
 
 
 # ============================================================================

@@ -40,7 +40,7 @@ export default function App() {
 
   const [saved, setSaved] = useState<string[]>(() => {
     try {
-      const stored: unknown = JSON.parse(localStorage.getItem('civic-saved') ?? '[]')
+      const stored: unknown = JSON.parse(localStorage.getItem('proviso-saved') ?? localStorage.getItem('civic-saved') ?? '[]')
       if (Array.isArray(stored)) {
         return stored.filter((id): id is string => typeof id === 'string' && proposals.some(p => p.id === id))
       }
@@ -86,7 +86,7 @@ export default function App() {
       const next = prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
       let persisted = true
       try {
-        localStorage.setItem('civic-saved', JSON.stringify(next))
+        localStorage.setItem('proviso-saved', JSON.stringify(next))
       } catch {
         persisted = false
       }
@@ -290,7 +290,7 @@ export default function App() {
       title: 'The city is a shared project.',
       children: (
         <>
-          <p>Civic explores a simple idea: people should be able to explain what would make a municipal proposal work for them, and follow what changes next.</p>
+          <p>proviso explores a simple idea: people should be able to explain what would make a municipal proposal work for them, and follow what changes next.</p>
           <p>This prototype demonstrates proposal discovery and feedback using three real Toronto project references. Seeded community responses are fictional. Descriptions, marker locations, highlighted routes and statuses are illustrative.</p>
           <div className="preview-example">
             <strong>Your browser, your shortlist.</strong>
@@ -308,7 +308,7 @@ export default function App() {
         <a
           className="brand"
           href="#"
-          aria-label="Civic home"
+          aria-label="proviso home"
           onClick={e => {
             e.preventDefault()
             setActiveTab('explore')
@@ -317,7 +317,7 @@ export default function App() {
           }}
         >
           <span className="brand-mark"><Icon name="layers" /></span>
-          civic<span className="brand-dot">.</span>
+          proviso<span className="brand-dot">.</span>
         </a>
 
         <nav className="main-nav" aria-label="Main navigation">

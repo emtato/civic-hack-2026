@@ -1,6 +1,12 @@
-# CIVIC Hack 2026 context
+# proviso
 
-**Current state: Challenge 1 selected; problem discovery; no project chosen or implementation authorized.** This record captures the event and the conversation through November 12, 2026, Eastern time. Retrieval timestamps and file hashes are in the [source manifest](sources/manifest.json).
+A municipal proposal explorer and feedback prototype built for CIVIC Hack 2026. See the [frontend guide](frontend/README.md) and [API guide](backend/README.md) for setup.
+
+The existing `civic_hack` MongoDB database name is retained for data compatibility; `MONGODB_DATABASE` selects a different database if needed. Browser storage uses the `proviso` prefix and reads legacy `civic` keys to preserve saved proposals and responses.
+
+## Event context archive
+
+**Historical planning snapshot:** Challenge 1 selected; problem discovery; no project chosen at the time. This record captures the event and the conversation through November 12, 2026, Eastern time. Retrieval timestamps and file hashes are in the [source manifest](sources/manifest.json).
 
 Start future CIVIC chats with [the event instructions and handoff](civic-hack-main-prompt-instructions.md), then read the relevant references below. The most recent user preference is to start from consequential real user problems and participation barriers. Earlier recommendations centered on information explainers were shelved.
 

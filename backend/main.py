@@ -53,7 +53,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Civic Hack API",
+    title="proviso API",
     description="Municipal proposal feedback and community aggregate persistence API.",
     version="1.0.0",
     lifespan=lifespan,

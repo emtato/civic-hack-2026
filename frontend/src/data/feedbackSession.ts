@@ -7,17 +7,17 @@ let sessionId: string | undefined
 export function getParticipantId(): string {
   if (sessionId) return sessionId
   try {
-    const stored = localStorage.getItem('civic-participant')
+    const stored = localStorage.getItem('proviso-participant') ?? localStorage.getItem('civic-participant')
     if (stored) return (sessionId = stored)
   } catch { /* Keep an identity for this visit if storage is blocked. */ }
   sessionId = crypto.randomUUID()
-  try { localStorage.setItem('civic-participant', sessionId) } catch { /* Visit only. */ }
+  try { localStorage.setItem('proviso-participant', sessionId) } catch { /* Visit only. */ }
   return sessionId
 }
 
 export function readDemoFeedback(proposalId: string): ProposalFeedbackSubmissionDTO | null {
   try {
-    const value = JSON.parse(localStorage.getItem(`civic-demo-feedback:${proposalId}`) || 'null')
+    const value = JSON.parse(localStorage.getItem(`proviso-demo-feedback:${proposalId}`) ?? localStorage.getItem(`civic-demo-feedback:${proposalId}`) ?? 'null')
     if (value?.proposal_id === proposalId && value.participant_id === getParticipantId()
       && ORDERED_POSITIONS.includes(value.position) && ORDERED_STAKEHOLDERS.includes(value.stakeholder_role)
       && value.element_ratings && typeof value.comment === 'string'
@@ -29,7 +29,7 @@ export function readDemoFeedback(proposalId: string): ProposalFeedbackSubmission
 
 export function saveDemoFeedback(submission: ProposalFeedbackSubmissionDTO): boolean {
   try {
-    localStorage.setItem(`civic-demo-feedback:${submission.proposal_id}`, JSON.stringify(submission))
+    localStorage.setItem(`proviso-demo-feedback:${submission.proposal_id}`, JSON.stringify(submission))
     return true
   } catch {
     return false

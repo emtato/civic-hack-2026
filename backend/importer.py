@@ -87,7 +87,7 @@ def fetch_feed(date_from, date_to, destination):
     if date_from > date_to:
         raise ValueError("--from-date must be before --to-date")
     url = API_URL + "?" + urlencode({"noticeDateFrom": date_from, "noticeDateTo": date_to, "locationId": 1})
-    request = Request(url, headers={"Accept": "application/json", "User-Agent": "CIVIC-Hack-Importer/1.0"})
+    request = Request(url, headers={"Accept": "application/json", "User-Agent": "proviso-Importer/1.0"})
     with urlopen(request, timeout=90) as response:
         payload = response.read(30_000_001)
     if len(payload) > 30_000_000:

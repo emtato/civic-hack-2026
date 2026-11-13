@@ -24,7 +24,7 @@ try:
 except ImportError:
     from backend.database.database import get_database
 
-logger = logging.getLogger("civic.persistence")
+logger = logging.getLogger("proviso.persistence")
 
 # Default seed data path
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"

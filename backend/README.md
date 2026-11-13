@@ -1,4 +1,4 @@
-# FastAPI backend
+# proviso API
 
 For the selected 24-example public-notice importer and richer optional source
 schema, see [IMPORTING.md](IMPORTING.md). Imported records are staged separately
