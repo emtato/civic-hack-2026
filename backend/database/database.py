@@ -48,8 +48,8 @@ def ensure_indexes(db: Database) -> None:
     """Ensure essential indexes exist for proposals and feedback collections."""
     try:
         # Proposals collection
-        db.proposals.create_index([("topic", ASCENDING)])
-        db.proposals.create_index([("status", ASCENDING)])
+        db.imported_proposals.create_index([("category", ASCENDING)])
+        db.imported_proposals.create_index([("status", ASCENDING)])
 
         # Feedback collection: unique per proposal + participant
         db.feedback.create_index(

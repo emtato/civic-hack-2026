@@ -28,7 +28,7 @@ logger = logging.getLogger("proviso.persistence")
 
 # Default seed data path
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-DEFAULT_SEED_FILE = DATA_DIR / "seed_proposals.json"
+DEFAULT_SEED_FILE = DATA_DIR / "proposals.formatted.json"
 
 
 class ProposalRepository:
@@ -38,38 +38,29 @@ class ProposalRepository:
         self.db = db if db is not None else get_database()
         if self.db is None:
             raise ValueError("MongoDB database handle is required for ProposalRepository.")
-        self.collection = self.db["proposals"]
+        self.collection = self.db["imported_proposals"]
 
-    def get_all(self) -> List[Proposal]:
-        """Retrieve all proposals from MongoDB."""
-        cursor = self.collection.find({})
-        proposals: List[Proposal] = []
-        for doc in cursor:
-            if "id" not in doc and "_id" in doc:
-                doc["id"] = str(doc["_id"])
-            doc.pop("_id", None)
-            proposals.append(Proposal.model_validate(doc))
-        return proposals
+    def get_all(self) -> list[dict]:
+        """Return stored source records; the service owns display conversion."""
+        return list(self.collection.find({}))
 
-    def get_by_id(self, proposal_id: str) -> Optional[Proposal]:
+    def get_by_id(self, proposal_id: str) -> Optional[dict]:
         """Retrieve a single proposal by its ID."""
         doc = self.collection.find_one({"_id": proposal_id})
         if doc is None:
             doc = self.collection.find_one({"id": proposal_id})
         if doc is None:
             return None
-        if "id" not in doc and "_id" in doc:
-            doc["id"] = str(doc["_id"])
-        doc.pop("_id", None)
-        return Proposal.model_validate(doc)
+        return doc
 
-    def save(self, proposal: Proposal) -> Proposal:
-        """Upsert a proposal into MongoDB."""
-        data = proposal.model_dump(mode="python")
-        proposal_id = proposal.id
-        data["_id"] = proposal_id
-        self.collection.replace_one({"_id": proposal_id}, data, upsert=True)
-        return proposal
+    def save(self, record: dict) -> dict:
+        """Update supplied fields without replacing source/history/aggregate data."""
+        data = dict(record)
+        proposal_id = data.get("id") or str(data["_id"])
+        data.pop("_id", None)
+        data["id"] = proposal_id
+        self.collection.update_one({"_id": proposal_id}, {"$set": data}, upsert=True)
+        return self.get_by_id(proposal_id)
 
     def update_aggregate(
         self, proposal_id: str, aggregate: ProposalCommunityAggregateDTO
@@ -104,10 +95,10 @@ class ProposalRepository:
         with open(target_file, "r", encoding="utf-8") as f:
             raw_data = json.load(f)
 
+        rows = raw_data["proposals"] if isinstance(raw_data, dict) else raw_data
         seeded = 0
-        for item in raw_data:
-            proposal = Proposal.model_validate(item)
-            self.save(proposal)
+        for item in rows:
+            self.save(item)
             seeded += 1
 
         logger.info("Successfully seeded %d proposals into MongoDB.", seeded)

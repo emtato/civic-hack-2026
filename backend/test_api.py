@@ -5,11 +5,11 @@ from fastapi.testclient import TestClient
 
 try:
     from main import app, get_service
-    from persistence.test_persistence import MockMongoDatabase
+    from persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from service.service import FeedbackService
 except ImportError:
     from backend.main import app, get_service
-    from backend.persistence.test_persistence import MockMongoDatabase
+    from backend.persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from backend.service.service import FeedbackService
 
 
@@ -17,7 +17,7 @@ class ApiIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.mock_db = MockMongoDatabase()
         self.service = FeedbackService(self.mock_db)
-        self.service.seed_initial_proposals()
+        self.service.proposals.seed_if_empty(SEED_FILE)
 
         app.dependency_overrides[get_service] = lambda: self.service
         self.client = TestClient(app)

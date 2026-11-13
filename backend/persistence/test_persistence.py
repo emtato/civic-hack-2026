@@ -75,6 +75,10 @@ class MockMongoCollection:
                 else:
                     doc[k] = copy.deepcopy(v)
             return SimpleNamespace(matched_count=1, modified_count=1, upserted_id=None)
+        if upsert:
+            doc_id = query["_id"]
+            self.documents[doc_id] = {"_id": doc_id, **copy.deepcopy(update.get("$set", {}))}
+            return SimpleNamespace(matched_count=0, modified_count=0, upserted_id=doc_id)
         return SimpleNamespace(matched_count=0, modified_count=0, upserted_id=None)
 
     def _filter(self, query):
@@ -111,7 +115,7 @@ class PersistenceTests(unittest.TestCase):
 
     def test_seed_proposals_if_empty(self):
         self.assertEqual(self.proposals_repo.get_all(), [])
-        count = self.proposals_repo.seed_if_empty()
+        count = self.proposals_repo.seed_if_empty(SEED_FILE)
         self.assertEqual(count, 3)
 
         all_props = self.proposals_repo.get_all()
@@ -119,8 +123,8 @@ class PersistenceTests(unittest.TestCase):
 
         kensington = self.proposals_repo.get_by_id("kensington")
         self.assertIsNotNone(kensington)
-        self.assertEqual(kensington.id, "kensington")
-        self.assertEqual(kensington.title, "A new chapter for Kensington Market")
+        self.assertEqual(kensington["id"], "kensington")
+        self.assertEqual(kensington["title"], "A new chapter for Kensington Market")
 
     def test_save_and_retrieve_proposal(self):
         proposal = Proposal(
@@ -135,12 +139,12 @@ class PersistenceTests(unittest.TestCase):
             source="https://toronto.ca/test",
             shape=[[43.65, -79.38]],
         )
-        self.proposals_repo.save(proposal)
+        self.proposals_repo.save(proposal.model_dump())
 
         retrieved = self.proposals_repo.get_by_id("park-redesign")
         self.assertIsNotNone(retrieved)
-        self.assertEqual(retrieved.id, "park-redesign")
-        self.assertEqual(retrieved.changes, ["New benches"])
+        self.assertEqual(retrieved["id"], "park-redesign")
+        self.assertEqual(retrieved["changes"], ["New benches"])
 
     def test_save_and_retrieve_feedback(self):
         sub = ProposalFeedbackSubmissionDTO(

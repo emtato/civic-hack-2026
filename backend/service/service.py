@@ -18,6 +18,7 @@ try:
         Proposal,
         ProposalCommunityAggregateDTO,
         ProposalFeedbackSubmissionDTO,
+        ProposalSpecificElementDTO,
     )
 except ImportError:
     from backend.proposals_DTO import (
@@ -26,6 +27,7 @@ except ImportError:
         Proposal,
         ProposalCommunityAggregateDTO,
         ProposalFeedbackSubmissionDTO,
+        ProposalSpecificElementDTO,
     )
 
 try:
@@ -34,6 +36,65 @@ except ImportError:
     from backend.persistence.persistence import FeedbackRepository, ProposalRepository
 
 logger = logging.getLogger("proviso.service")
+
+try:
+    from imported_data_dto import Proposal as ImportedProposal
+except ImportError:
+    from backend.imported_data_dto import Proposal as ImportedProposal
+
+
+TOPIC_LABELS = {
+    "planning": "Planning", "heritage": "Heritage", "transportation": "Transportation",
+    "licensing": "Licensing", "financial": "Financial", "property_sales": "City property",
+}
+
+
+def to_display_proposal(record: dict) -> Proposal:
+    """Project a rich stored record into the public frontend DTO, without writes."""
+    if "source_notices" not in record:
+        # Explicitly saved display DTOs/test fixtures remain readable. They are
+        # never an automatic fallback to the old MongoDB collection.
+        data = {**record, **record.get("display_overrides", {})}
+        data.setdefault("id", str(record.get("_id", "")))
+        return Proposal.model_validate(data)
+    imported = ImportedProposal.model_validate({
+        key: value for key, value in record.items() if key in ImportedProposal.model_fields
+    })
+    latest = imported.source_notices[-1] if imported.source_notices else None
+    point = imported.map_point
+    coordinates = [point.coordinates[1], point.coordinates[0]] if point else None
+    aggregate = (ProposalCommunityAggregateDTO.model_validate(record["community_aggregate"])
+                 if record.get("community_aggregate") else create_empty_aggregate())
+    known_elements = {element.id for element in aggregate.proposal_specific}
+    for feature in imported.features or []:
+        if feature.id not in known_elements:
+            aggregate.proposal_specific.append(ProposalSpecificElementDTO(
+                id=feature.id, title=feature.label,
+                prompt=feature.question or f"How do you feel about {feature.label.lower()}?",
+                category=imported.category,
+                distribution={"oppose": 0, "neutral": 0, "support": 0, "unsure": 0},
+            ))
+    neighbourhood = imported.neighbourhood
+    if not neighbourhood:
+        neighbourhood = ("Toronto-wide" if imported.geographic_scope == "citywide"
+                         else next(iter(imported.ward_labels), None)
+                         or next((a.street_address for a in imported.addresses if a.street_address), None)
+                         or "Location not specified")
+    status = imported.status.replace("_", " ").capitalize()
+    if imported.review.state != "reviewed":
+        status = f"{status} (archived notice)"
+    data = {
+        "id": imported.id, "title": imported.title, "neighbourhood": neighbourhood,
+        "topic": TOPIC_LABELS[imported.category], "status": status,
+        "coordinates": coordinates, "summary": imported.summary or "Summary not available yet.",
+        "changes": [f.proposed_change or f.description or f.label for f in imported.features or []],
+        "source": latest.url if latest else "", "shape": [],
+        "community_aggregate": aggregate,
+    }
+    # Display edits have their own namespace and cannot overwrite source facts.
+    data.update(record.get("display_overrides", {}))
+    data["community_aggregate"] = aggregate
+    return Proposal.model_validate(data)
 
 
 # ============================================================================
@@ -208,15 +269,21 @@ class FeedbackService:
 
     def get_proposals(self) -> List[Proposal]:
         """Fetch all proposals from persistence."""
-        return self.proposals.get_all()
+        return [to_display_proposal(record) for record in self.proposals.get_all()]
 
     def get_proposal(self, proposal_id: str) -> Optional[Proposal]:
         """Fetch a single proposal from persistence."""
-        return self.proposals.get_by_id(proposal_id)
+        record = self.proposals.get_by_id(proposal_id)
+        return to_display_proposal(record) if record is not None else None
 
     def save_proposal(self, proposal: Proposal) -> Proposal:
         """Save a proposal to persistence."""
-        return self.proposals.save(proposal)
+        data = proposal.model_dump(mode="python")
+        aggregate = data.pop("community_aggregate", None)
+        record = {"id": proposal.id, "display_overrides": data}
+        if aggregate is not None:
+            record["community_aggregate"] = aggregate
+        return to_display_proposal(self.proposals.save(record))
 
     def seed_initial_proposals(self, force: bool = False) -> int:
         """Seed initial proposal dataset via persistence."""
@@ -226,7 +293,7 @@ class FeedbackService:
         self, submission: ProposalFeedbackSubmissionDTO
     ) -> Tuple[ProposalFeedbackSubmissionDTO, ProposalCommunityAggregateDTO]:
         """Business workflow: validate, persist submission, calculate aggregate, and persist updated aggregate."""
-        proposal = self.proposals.get_by_id(submission.proposal_id)
+        proposal = self.get_proposal(submission.proposal_id)
         if proposal is None:
             raise ValueError(f"Proposal '{submission.proposal_id}' not found.")
 
@@ -262,7 +329,7 @@ class FeedbackService:
         self, proposal_id: str
     ) -> Optional[ProposalCommunityAggregateDTO]:
         """Fetch proposal aggregate from persistence."""
-        proposal = self.proposals.get_by_id(proposal_id)
+        proposal = self.get_proposal(proposal_id)
         if proposal is None:
             return None
         return proposal.community_aggregate

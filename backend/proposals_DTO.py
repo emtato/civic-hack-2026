@@ -105,7 +105,7 @@ class Proposal(DTOModel):
     neighbourhood: str
     topic: str
     status: str
-    coordinates: list[float]
+    coordinates: Optional[list[float]] = None
     summary: str
     changes: list[str] = Field(default_factory=list)
     source: str

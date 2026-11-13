@@ -35,9 +35,9 @@ def enrich(proposal, curated):
             raise ValueError(f"Evidence missing for {p.id}: {anchor}")
         quote = next(line for line in text.splitlines() if anchor in line)
         evidence = Evidence(source_url=source.url, notice_id=source.notice_id, quote=quote)
-        features.append(Feature(id=f"{p.id}-feature-{index}", label=entry["label"],
+        features.append(Feature(id=entry.get("id", f"{p.id}-feature-{index}"), label=entry["label"],
                                 description=quote, proposed_change=quote,
-                                question=f"What concerns or requirements do you have about {entry['label'].lower()}?",
+                                question=entry.get("question", f"What concerns or requirements do you have about {entry['label'].lower()}?"),
                                 evidence=[evidence]))
     if not p.summary:
         p.summary = curated["summary"]

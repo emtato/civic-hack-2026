@@ -17,7 +17,7 @@ Read [build-plan.md](build-plan.md) for stage instructions and defaults, and [pr
 | Revision example evidence | Source package located | Kensington is a possible deep historical example within the catalogue, not a standalone application. See [case notes](sources/kensington-case-notes.md). |
 | Two secondary agenda-item checks | Planned | Final item selection and checks remain. |
 | Rich import contract and examples | Implemented and locally verified | `backend/imported_data_dto.py` has nullable optional interpretation, participation, category details and revision fields. Import preview contains 24 records; 16 have unverified source coordinates, eight lack source addresses. |
-| FastAPI and frontend DTO integration | Separate backend work now present; importer integration outstanding | The API uses a frontend display DTO, separate from the rich import contract. Importer stages into `imported_proposals` to protect published `proposals`; a reviewed projection is still required. Runtime/API checks were not part of this importer review. |
+| FastAPI and frontend DTO integration | Connected and live verified | Service converts `imported_proposals` into display DTOs; the running localhost endpoint returns all 24, with 16 map points and eight list-only records. Detail and aggregate routes use the same imported IDs. Legacy `proposals` is untouched. |
 | Atlas cluster setup | Complete, user-reported | User reports the cluster is done. Application connection/read/write remains unverified. |
 | Render and Pages setup | Unverified | No deployment or working URL has been demonstrated in this chat. |
 | Resident feedback | Implemented and browser verified | Position, self-reported role, optional feature ratings, original comment, one manual requirement, review/confirmation, receipt and edits. Server success/failure checked with an isolated in-memory API; live MongoDB persistence through this UI is not verified. AI extraction and multiple conditions remain outstanding. |
@@ -52,6 +52,13 @@ Next review should inspect an actual fetched record and its normalized equivalen
 | Actual hosting/database access | Deployed behavior cannot be inferred from provider documentation | Verify account setup and one deployed persistent request during stage B. |
 
 ## Checkpoint log
+
+### November 13 — service conversion and catalogue collection switched
+
+- **Implemented:** rich-to-display conversion in the service, raw-record persistence reads from `imported_proposals`, matching feedback aggregate writes, nullable coordinates and feature questions derived from stable imported feature IDs.
+- **Preserved:** original source data, historical snapshots, existing aggregate counts and the legacy collection. Display edits use a separate override namespace instead of replacing rich records. Default empty-database seeding uses the formatted 24-record dataset.
+- **Verified:** all 32 backend tests pass. Read-only live-MongoDB route checks returned 24 records across six topics, 16 map locations/eight unmapped records, and working detail/aggregate responses. The existing running localhost:8000 endpoint also returned 24 without needing a restart.
+- **Next:** refresh the frontend to load the new catalogue; continue the independent review of current municipal status/participation and the planned revision workflow.
 
 ### November 13 — frontend catalogue connected
 

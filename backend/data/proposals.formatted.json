@@ -211,32 +211,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-aren-levy-lane-feature-1",
-          "label": "Proposed lane name",
+          "id": "toronto-aren-levy-lane-feature-name",
+          "label": "Name the existing lane Aren Levy Lane",
           "description": "To consider a proposal to name an existing Public Lane located west of Vaughan Road, north of Ellsworth Avenue, “Aren Levy Lane”.",
           "proposed_change": "To consider a proposal to name an existing Public Lane located west of Vaughan Road, north of Ellsworth Avenue, “Aren Levy Lane”.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about proposed lane name?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7651.do",
-              "notice_id": 7651,
-              "page": null,
-              "section": null,
-              "quote": "To consider a proposal to name an existing Public Lane located west of Vaughan Road, north of Ellsworth Avenue, “Aren Levy Lane”."
-            }
-          ]
-        },
-        {
-          "id": "toronto-aren-levy-lane-feature-2",
-          "label": "Lane location",
-          "description": "To consider a proposal to name an existing Public Lane located west of Vaughan Road, north of Ellsworth Avenue, “Aren Levy Lane”.",
-          "proposed_change": "To consider a proposal to name an existing Public Lane located west of Vaughan Road, north of Ellsworth Avenue, “Aren Levy Lane”.",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about lane location?",
+          "question": "How do you feel about naming the existing public lane west of Vaughan Road and north of Ellsworth Avenue “Aren Levy Lane”?",
           "essential_conditions": null,
           "evidence": [
             {
@@ -861,13 +842,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-budget-user-fees-2026-feature-1",
-          "label": "Existing and new fees",
+          "id": "toronto-budget-user-fees-2026-feature-fee-package",
+          "label": "Proposed 2026 user-fee changes",
           "description": "Toronto City Council will be considering recommendations to pass by-laws to amend the City of Toronto Municipal Code Chapter 441, Fees and Charges, so as to adopt changes to existing user fees and new user fees. Changes to existing user fees and new user fees are proposed in the Prepared 2026 Rate and Tax-Supported Budget. The Mayor's proposed 2026 Rate and Tax-Supported Budget will be considered by City Council on February 10, 2026.",
           "proposed_change": "Toronto City Council will be considering recommendations to pass by-laws to amend the City of Toronto Municipal Code Chapter 441, Fees and Charges, so as to adopt changes to existing user fees and new user fees. Changes to existing user fees and new user fees are proposed in the Prepared 2026 Rate and Tax-Supported Budget. The Mayor's proposed 2026 Rate and Tax-Supported Budget will be considered by City Council on February 10, 2026.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about existing and new fees?",
+          "question": "How do you feel about the prepared 2026 budget’s package of changes to existing user fees and new fees? The saved notice does not list individual rates; the linked budget appendices contain the details.",
           "essential_conditions": null,
           "evidence": [
             {
@@ -876,25 +857,6 @@
               "page": null,
               "section": null,
               "quote": "Toronto City Council will be considering recommendations to pass by-laws to amend the City of Toronto Municipal Code Chapter 441, Fees and Charges, so as to adopt changes to existing user fees and new user fees. Changes to existing user fees and new user fees are proposed in the Prepared 2026 Rate and Tax-Supported Budget. The Mayor's proposed 2026 Rate and Tax-Supported Budget will be considered by City Council on February 10, 2026."
-            }
-          ]
-        },
-        {
-          "id": "toronto-budget-user-fees-2026-feature-2",
-          "label": "Detailed fee schedules",
-          "description": "The changes to existing user fees and new user fees that are proposed in the Prepared 2026 Rate and Tax-Supported Operating Budget are noted in Appendix A and Appendix B in 2026 Budget Briefing Note 12 – Summary of User Fee Adjustments in the Prepared Budget attached as background documents to Item BU11.1 Capital and Operating Budgets: https://secure.toronto.ca/council/#/committees/2562/27153",
-          "proposed_change": "The changes to existing user fees and new user fees that are proposed in the Prepared 2026 Rate and Tax-Supported Operating Budget are noted in Appendix A and Appendix B in 2026 Budget Briefing Note 12 – Summary of User Fee Adjustments in the Prepared Budget attached as background documents to Item BU11.1 Capital and Operating Budgets: https://secure.toronto.ca/council/#/committees/2562/27153",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about detailed fee schedules?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/6984.do",
-              "notice_id": 6984,
-              "page": null,
-              "section": null,
-              "quote": "The changes to existing user fees and new user fees that are proposed in the Prepared 2026 Rate and Tax-Supported Operating Budget are noted in Appendix A and Appendix B in 2026 Budget Briefing Note 12 – Summary of User Fee Adjustments in the Prepared Budget attached as background documents to Item BU11.1 Capital and Operating Budgets: https://secure.toronto.ca/council/#/committees/2562/27153"
             }
           ]
         }
@@ -1272,13 +1234,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-business-licence-action-plan-feature-1",
-          "label": "Operating hours and registers",
+          "id": "toronto-business-licence-action-plan-feature-operating-hours",
+          "label": "Remove specified operating-hour restrictions",
           "description": "a. Amend Article XXIII, 545-282 and Article XXIV, 545-291 by deleting requirements pertaining to hours and days of operation.",
           "proposed_change": "a. Amend Article XXIII, 545-282 and Article XXIV, 545-291 by deleting requirements pertaining to hours and days of operation.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about operating hours and registers?",
+          "question": "How do you feel about removing the hours-and-days-of-operation requirements in the specified second-hand goods and old gold/jewellery licensing provisions?",
           "essential_conditions": null,
           "evidence": [
             {
@@ -1287,6 +1249,44 @@
               "page": null,
               "section": null,
               "quote": "a. Amend Article XXIII, 545-282 and Article XXIV, 545-291 by deleting requirements pertaining to hours and days of operation."
+            }
+          ]
+        },
+        {
+          "id": "toronto-business-licence-action-plan-feature-goods-registers",
+          "label": "Simplify goods-register requirements",
+          "description": "A. Deleting the requirement that the register of goods received be kept in the form of a book, and written in ink in a plain, legible hand; and",
+          "proposed_change": "A. Deleting the requirement that the register of goods received be kept in the form of a book, and written in ink in a plain, legible hand; and",
+          "location_label": null,
+          "point": null,
+          "question": "How do you feel about allowing goods registers in an approved format rather than a handwritten book, and removing the specified routine register-information submissions?",
+          "essential_conditions": null,
+          "evidence": [
+            {
+              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7266.do",
+              "notice_id": 7266,
+              "page": null,
+              "section": null,
+              "quote": "A. Deleting the requirement that the register of goods received be kept in the form of a book, and written in ink in a plain, legible hand; and"
+            }
+          ]
+        },
+        {
+          "id": "toronto-business-licence-action-plan-feature-nightclub-definition",
+          "label": "Revise the nightclub licensing definition",
+          "description": "A. Premises used to provide amplified music for dancing or patron entertainment, and where the premises meets three or more of the following criteria:",
+          "proposed_change": "A. Premises used to provide amplified music for dancing or patron entertainment, and where the premises meets three or more of the following criteria:",
+          "location_label": null,
+          "point": null,
+          "question": "How do you feel about defining nightclubs by amplified music for dancing or entertainment plus at least three of the four listed operating characteristics?",
+          "essential_conditions": null,
+          "evidence": [
+            {
+              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7266.do",
+              "notice_id": 7266,
+              "page": null,
+              "section": null,
+              "quote": "A. Premises used to provide amplified music for dancing or patron entertainment, and where the premises meets three or more of the following criteria:"
             }
           ]
         },
@@ -1625,32 +1625,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-development-application-fees-feature-1",
-          "label": "Site-plan application fees",
+          "id": "toronto-development-application-fees-feature-site-plan-fees",
+          "label": "Update site-plan application fees",
           "description": "1. Amend Toronto Municipal Code Chapter 441, Fees and Charges, Appendix C – Schedule 13 to reflect updates to site plan application fees (reference numbers 80-84.1).",
           "proposed_change": "1. Amend Toronto Municipal Code Chapter 441, Fees and Charges, Appendix C – Schedule 13 to reflect updates to site plan application fees (reference numbers 80-84.1).",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about site-plan application fees?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7682.do",
-              "notice_id": 7682,
-              "page": null,
-              "section": null,
-              "quote": "1. Amend Toronto Municipal Code Chapter 441, Fees and Charges, Appendix C – Schedule 13 to reflect updates to site plan application fees (reference numbers 80-84.1)."
-            }
-          ]
-        },
-        {
-          "id": "toronto-development-application-fees-feature-2",
-          "label": "Detailed fee schedule",
-          "description": "1. Amend Toronto Municipal Code Chapter 441, Fees and Charges, Appendix C – Schedule 13 to reflect updates to site plan application fees (reference numbers 80-84.1).",
-          "proposed_change": "1. Amend Toronto Municipal Code Chapter 441, Fees and Charges, Appendix C – Schedule 13 to reflect updates to site plan application fees (reference numbers 80-84.1).",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about detailed fee schedule?",
+          "question": "How do you feel about updating the site-plan application fees listed under reference numbers 80–84.1? The saved notice does not state the amounts; these are in the linked Site Plan Application Fee Review.",
           "essential_conditions": null,
           "evidence": [
             {
@@ -2617,13 +2598,32 @@
           ]
         },
         {
-          "id": "toronto-lawrence-heights-revitalization-feature-2",
-          "label": "New affordable and market housing",
+          "id": "toronto-lawrence-heights-revitalization-feature-affordable-housing",
+          "label": "180 new affordable homes",
           "description": "Application to Amend the Official Plan and Zoning By-law to permit Phase 2 of the Toronto Community Housing Corporation Lawrence Heights revitalization, including new and reconfigured public streets, public parks and community uses, and residential development ranging from 6 to 25 storeys in height. Phase 2 includes the replacement of 213 Phase 2 social housing units, 64 replacement units from Phase 4, and the creation of 180 new Toronto Community Housing Corporation affordable units and 1,079 market units.",
           "proposed_change": "Application to Amend the Official Plan and Zoning By-law to permit Phase 2 of the Toronto Community Housing Corporation Lawrence Heights revitalization, including new and reconfigured public streets, public parks and community uses, and residential development ranging from 6 to 25 storeys in height. Phase 2 includes the replacement of 213 Phase 2 social housing units, 64 replacement units from Phase 4, and the creation of 180 new Toronto Community Housing Corporation affordable units and 1,079 market units.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about new affordable and market housing?",
+          "question": "How do you feel about adding 180 new Toronto Community Housing Corporation affordable homes?",
+          "essential_conditions": null,
+          "evidence": [
+            {
+              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/6978.do",
+              "notice_id": 6978,
+              "page": null,
+              "section": null,
+              "quote": "Application to Amend the Official Plan and Zoning By-law to permit Phase 2 of the Toronto Community Housing Corporation Lawrence Heights revitalization, including new and reconfigured public streets, public parks and community uses, and residential development ranging from 6 to 25 storeys in height. Phase 2 includes the replacement of 213 Phase 2 social housing units, 64 replacement units from Phase 4, and the creation of 180 new Toronto Community Housing Corporation affordable units and 1,079 market units."
+            }
+          ]
+        },
+        {
+          "id": "toronto-lawrence-heights-revitalization-feature-market-housing",
+          "label": "1,079 market homes",
+          "description": "Application to Amend the Official Plan and Zoning By-law to permit Phase 2 of the Toronto Community Housing Corporation Lawrence Heights revitalization, including new and reconfigured public streets, public parks and community uses, and residential development ranging from 6 to 25 storeys in height. Phase 2 includes the replacement of 213 Phase 2 social housing units, 64 replacement units from Phase 4, and the creation of 180 new Toronto Community Housing Corporation affordable units and 1,079 market units.",
+          "proposed_change": "Application to Amend the Official Plan and Zoning By-law to permit Phase 2 of the Toronto Community Housing Corporation Lawrence Heights revitalization, including new and reconfigured public streets, public parks and community uses, and residential development ranging from 6 to 25 storeys in height. Phase 2 includes the replacement of 213 Phase 2 social housing units, 64 replacement units from Phase 4, and the creation of 180 new Toronto Community Housing Corporation affordable units and 1,079 market units.",
+          "location_label": null,
+          "point": null,
+          "question": "How do you feel about adding 1,079 market homes as part of Phase 2?",
           "essential_conditions": null,
           "evidence": [
             {
@@ -2968,13 +2968,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-lawrence-heritage-intention-feature-1",
-          "label": "Heritage designation",
+          "id": "toronto-lawrence-heritage-intention-feature-designation",
+          "label": "Heritage designation of the Weston arena",
           "description": "TAKE NOTICE that Council for the City of Toronto intends to designate the property, including the lands, buildings and structures thereon known municipally as 2125 Lawrence Avenue West under Part IV, Section 29 of the Ontario Heritage Act, R.S.O. 1990, c.O.18, as amended, as a property of cultural heritage value or interest.",
           "proposed_change": "TAKE NOTICE that Council for the City of Toronto intends to designate the property, including the lands, buildings and structures thereon known municipally as 2125 Lawrence Avenue West under Part IV, Section 29 of the Ontario Heritage Act, R.S.O. 1990, c.O.18, as amended, as a property of cultural heritage value or interest.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about heritage designation?",
+          "question": "How do you feel about designating the arena at 2125 Lawrence Avenue West as a heritage property?",
           "essential_conditions": null,
           "evidence": [
             {
@@ -2983,25 +2983,6 @@
               "page": null,
               "section": null,
               "quote": "TAKE NOTICE that Council for the City of Toronto intends to designate the property, including the lands, buildings and structures thereon known municipally as 2125 Lawrence Avenue West under Part IV, Section 29 of the Ontario Heritage Act, R.S.O. 1990, c.O.18, as amended, as a property of cultural heritage value or interest."
-            }
-          ]
-        },
-        {
-          "id": "toronto-lawrence-heritage-intention-feature-2",
-          "label": "Arena heritage value",
-          "description": "The property has design and physical value for being representative of a 1940s-era ice-skating-arena building type. The building is plainly finished being primarily constructed of concrete block with a rugged-brick and simulated stone main façade.",
-          "proposed_change": "The property has design and physical value for being representative of a 1940s-era ice-skating-arena building type. The building is plainly finished being primarily constructed of concrete block with a rugged-brick and simulated stone main façade.",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about arena heritage value?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7760.do",
-              "notice_id": 7760,
-              "page": null,
-              "section": null,
-              "quote": "The property has design and physical value for being representative of a 1940s-era ice-skating-arena building type. The building is plainly finished being primarily constructed of concrete block with a rugged-brick and simulated stone main façade."
             }
           ]
         }
@@ -3321,13 +3302,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-lawrence-road-closure-feature-1",
-          "label": "Permanent road closure",
+          "id": "toronto-lawrence-road-closure-feature-closure",
+          "label": "Closure of the specified Lawrence/Ridgewood road portions",
           "description": "The Council of the City of Toronto proposes to pass a by-law to permanently close the following:",
           "proposed_change": "The Council of the City of Toronto proposes to pass a by-law to permanently close the following:",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about permanent road closure?",
+          "question": "How do you feel about permanently closing the specified road portions at the northerly limit of Lawrence Avenue East beside Ridgewood Road? This does not describe closing the whole street.",
           "essential_conditions": null,
           "evidence": [
             {
@@ -3336,25 +3317,6 @@
               "page": null,
               "section": null,
               "quote": "The Council of the City of Toronto proposes to pass a by-law to permanently close the following:"
-            }
-          ]
-        },
-        {
-          "id": "toronto-lawrence-road-closure-feature-2",
-          "label": "Affected parcels",
-          "description": "PART OF PIN 06214-0476 (LT)",
-          "proposed_change": "PART OF PIN 06214-0476 (LT)",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about affected parcels?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7631.do",
-              "notice_id": 7631,
-              "page": null,
-              "section": null,
-              "quote": "PART OF PIN 06214-0476 (LT)"
             }
           ]
         }
@@ -4336,32 +4298,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-permit-parking-area-1e-feature-1",
-          "label": "Permit-parking boundary",
+          "id": "toronto-permit-parking-area-1e-feature-exclusion",
+          "label": "Exclude 3459–3461 Dundas West from permit-parking area 1E",
           "description": "Notice is hereby given that Toronto and East York Community Council proposes to pass a by-law to realign the boundary of Permit Parking area 1E to exclude development at 3459 and 3461 Dundas Street West.",
           "proposed_change": "Notice is hereby given that Toronto and East York Community Council proposes to pass a by-law to realign the boundary of Permit Parking area 1E to exclude development at 3459 and 3461 Dundas Street West.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about permit-parking boundary?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7451.do",
-              "notice_id": 7451,
-              "page": null,
-              "section": null,
-              "quote": "Notice is hereby given that Toronto and East York Community Council proposes to pass a by-law to realign the boundary of Permit Parking area 1E to exclude development at 3459 and 3461 Dundas Street West."
-            }
-          ]
-        },
-        {
-          "id": "toronto-permit-parking-area-1e-feature-2",
-          "label": "Excluded development",
-          "description": "Notice is hereby given that Toronto and East York Community Council proposes to pass a by-law to realign the boundary of Permit Parking area 1E to exclude development at 3459 and 3461 Dundas Street West.",
-          "proposed_change": "Notice is hereby given that Toronto and East York Community Council proposes to pass a by-law to realign the boundary of Permit Parking area 1E to exclude development at 3459 and 3461 Dundas Street West.",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about excluded development?",
+          "question": "How do you feel about changing permit-parking area 1E to exclude the development at 3459 and 3461 Dundas Street West?",
           "essential_conditions": null,
           "evidence": [
             {
@@ -6415,13 +6358,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-six-points-road-closure-feature-1",
-          "label": "Road portions to close",
-          "description": "The Council of the City of Toronto proposes to pass a by-law to permanently close the following:",
-          "proposed_change": "The Council of the City of Toronto proposes to pass a by-law to permanently close the following:",
+          "id": "toronto-six-points-road-closure-feature-dundas-closure",
+          "label": "Closure of specified Dundas Street West portions",
+          "description": "1. Part of the public highway known as Dundas Street West, legally described as",
+          "proposed_change": "1. Part of the public highway known as Dundas Street West, legally described as",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about road portions to close?",
+          "question": "How do you feel about permanently closing the specified Dundas Street West highway portions in Six Points? Only the parcels listed in the notice are included.",
           "essential_conditions": null,
           "evidence": [
             {
@@ -6429,18 +6372,18 @@
               "notice_id": 7615,
               "page": null,
               "section": null,
-              "quote": "The Council of the City of Toronto proposes to pass a by-law to permanently close the following:"
+              "quote": "1. Part of the public highway known as Dundas Street West, legally described as"
             }
           ]
         },
         {
-          "id": "toronto-six-points-road-closure-feature-2",
-          "label": "Multiple affected streets",
-          "description": "Parts of the public highway on portions of Dundas Street West, Kipling Avenue and Bloor Street West, in the Six Points area, legally described as follows:",
-          "proposed_change": "Parts of the public highway on portions of Dundas Street West, Kipling Avenue and Bloor Street West, in the Six Points area, legally described as follows:",
+          "id": "toronto-six-points-road-closure-feature-kipling-closure",
+          "label": "Closure of specified Kipling Avenue portion",
+          "description": "2. Part of the public highway known as Kipling Avenue, legally described as follows:",
+          "proposed_change": "2. Part of the public highway known as Kipling Avenue, legally described as follows:",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about multiple affected streets?",
+          "question": "How do you feel about permanently closing the specified Kipling Avenue highway portion in Six Points? Only the parcel listed in the notice is included.",
           "essential_conditions": null,
           "evidence": [
             {
@@ -6448,7 +6391,26 @@
               "notice_id": 7615,
               "page": null,
               "section": null,
-              "quote": "Parts of the public highway on portions of Dundas Street West, Kipling Avenue and Bloor Street West, in the Six Points area, legally described as follows:"
+              "quote": "2. Part of the public highway known as Kipling Avenue, legally described as follows:"
+            }
+          ]
+        },
+        {
+          "id": "toronto-six-points-road-closure-feature-bloor-closure",
+          "label": "Closure of specified Bloor Street West portion",
+          "description": "3. Part of the public highway known as Bloor Street West, legally described as follows:",
+          "proposed_change": "3. Part of the public highway known as Bloor Street West, legally described as follows:",
+          "location_label": null,
+          "point": null,
+          "question": "How do you feel about permanently closing the specified Bloor Street West highway portion in Six Points? Only the parcel listed in the notice is included.",
+          "essential_conditions": null,
+          "evidence": [
+            {
+              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7615.do",
+              "notice_id": 7615,
+              "page": null,
+              "section": null,
+              "quote": "3. Part of the public highway known as Bloor Street West, legally described as follows:"
             }
           ]
         }
@@ -6750,6 +6712,25 @@
       },
       "impact": null,
       "features": [
+        {
+          "id": "toronto-stotts-bridge-heritage-feature-demolition",
+          "label": "Demolition of the existing heritage bridge",
+          "description": "1. City Council approve the application to demolish Stotts’ Bridge on Twyn Rivers Drive (Structure ID 803), a Part-IV designated structure with conditions, under Part IV, Section 34(1)2 of the Ontario Heritage Act to allow for the construction of a temporary bridge until a permanent truss bridge is constructed, with such bridge to be substantially in accordance with the Preliminary General Arrangement drawing dated May 2026, prepared by Dillon Consulting (Attachment 5) and the Heritage Impact Assessment prepared by Archaeological Services Inc. dated June 17, 2026, both on file with the Senior Manager, Heritage Planning.",
+          "proposed_change": "1. City Council approve the application to demolish Stotts’ Bridge on Twyn Rivers Drive (Structure ID 803), a Part-IV designated structure with conditions, under Part IV, Section 34(1)2 of the Ontario Heritage Act to allow for the construction of a temporary bridge until a permanent truss bridge is constructed, with such bridge to be substantially in accordance with the Preliminary General Arrangement drawing dated May 2026, prepared by Dillon Consulting (Attachment 5) and the Heritage Impact Assessment prepared by Archaeological Services Inc. dated June 17, 2026, both on file with the Senior Manager, Heritage Planning.",
+          "location_label": null,
+          "point": null,
+          "question": "How do you feel about demolishing the designated Stotts’ Bridge, subject to the conditions in the notice?",
+          "essential_conditions": null,
+          "evidence": [
+            {
+              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7886.do",
+              "notice_id": 7886,
+              "page": null,
+              "section": null,
+              "quote": "1. City Council approve the application to demolish Stotts’ Bridge on Twyn Rivers Drive (Structure ID 803), a Part-IV designated structure with conditions, under Part IV, Section 34(1)2 of the Ontario Heritage Act to allow for the construction of a temporary bridge until a permanent truss bridge is constructed, with such bridge to be substantially in accordance with the Preliminary General Arrangement drawing dated May 2026, prepared by Dillon Consulting (Attachment 5) and the Heritage Impact Assessment prepared by Archaeological Services Inc. dated June 17, 2026, both on file with the Senior Manager, Heritage Planning."
+            }
+          ]
+        },
         {
           "id": "toronto-stotts-bridge-heritage-feature-1",
           "label": "Temporary and replacement bridge",
@@ -7228,6 +7209,25 @@
               "quote": "4. City Council adopt a new vending permit regime and amend City of Toronto Municipal Code Chapter 740, Street Vending and Artists, as follows:"
             }
           ]
+        },
+        {
+          "id": "toronto-street-vending-rules-feature-on-foot-licensing",
+          "label": "Licence refreshments vendors selling on foot",
+          "description": "8. City Council amend Toronto Municipal Code, Chapter 545, to add a new licence requirement for any owner or operator carrying on business as a Refreshment Vendor on Foot and a corresponding Article that contains the following requirements:",
+          "proposed_change": "8. City Council amend Toronto Municipal Code, Chapter 545, to add a new licence requirement for any owner or operator carrying on business as a Refreshment Vendor on Foot and a corresponding Article that contains the following requirements:",
+          "location_label": null,
+          "point": null,
+          "question": "How do you feel about requiring a licence for refreshments vendors selling on foot, including health checks, visible licensing and $1 million liability insurance?",
+          "essential_conditions": null,
+          "evidence": [
+            {
+              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/7267.do",
+              "notice_id": 7267,
+              "page": null,
+              "section": null,
+              "quote": "8. City Council amend Toronto Municipal Code, Chapter 545, to add a new licence requirement for any owner or operator carrying on business as a Refreshment Vendor on Foot and a corresponding Article that contains the following requirements:"
+            }
+          ]
         }
       ],
       "versions": [
@@ -7552,32 +7552,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-van-horne-surplus-feature-1",
-          "label": "Surplus library land",
+          "id": "toronto-van-horne-surplus-feature-conveyance",
+          "label": "Transfer the surplus library parcel to the City",
           "description": "NOTICE is hereby given that City Council, at its meeting held on February 5, 2025, declared surplus to the Toronto Public Library Board’s purposes, part of the property municipally known as 575 Van Horne Avenue, legally described as Part of Block D, Plan M-1269, designated as Part 1 on Plan 66R-34190, being part of PIN 10045-0042 (LT). Part 1 on Plan 66R-34190 has a total area of approximately 32.6 m2 (350.90 ft2). It is proposed that Part 1 on Plan 66R-34190 be conveyed to City of Toronto for municipal purposes.",
           "proposed_change": "NOTICE is hereby given that City Council, at its meeting held on February 5, 2025, declared surplus to the Toronto Public Library Board’s purposes, part of the property municipally known as 575 Van Horne Avenue, legally described as Part of Block D, Plan M-1269, designated as Part 1 on Plan 66R-34190, being part of PIN 10045-0042 (LT). Part 1 on Plan 66R-34190 has a total area of approximately 32.6 m2 (350.90 ft2). It is proposed that Part 1 on Plan 66R-34190 be conveyed to City of Toronto for municipal purposes.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about surplus library land?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/6141.do",
-              "notice_id": 6141,
-              "page": null,
-              "section": null,
-              "quote": "NOTICE is hereby given that City Council, at its meeting held on February 5, 2025, declared surplus to the Toronto Public Library Board’s purposes, part of the property municipally known as 575 Van Horne Avenue, legally described as Part of Block D, Plan M-1269, designated as Part 1 on Plan 66R-34190, being part of PIN 10045-0042 (LT). Part 1 on Plan 66R-34190 has a total area of approximately 32.6 m2 (350.90 ft2). It is proposed that Part 1 on Plan 66R-34190 be conveyed to City of Toronto for municipal purposes."
-            }
-          ]
-        },
-        {
-          "id": "toronto-van-horne-surplus-feature-2",
-          "label": "Municipal conveyance",
-          "description": "NOTICE is hereby given that City Council, at its meeting held on February 5, 2025, declared surplus to the Toronto Public Library Board’s purposes, part of the property municipally known as 575 Van Horne Avenue, legally described as Part of Block D, Plan M-1269, designated as Part 1 on Plan 66R-34190, being part of PIN 10045-0042 (LT). Part 1 on Plan 66R-34190 has a total area of approximately 32.6 m2 (350.90 ft2). It is proposed that Part 1 on Plan 66R-34190 be conveyed to City of Toronto for municipal purposes.",
-          "proposed_change": "NOTICE is hereby given that City Council, at its meeting held on February 5, 2025, declared surplus to the Toronto Public Library Board’s purposes, part of the property municipally known as 575 Van Horne Avenue, legally described as Part of Block D, Plan M-1269, designated as Part 1 on Plan 66R-34190, being part of PIN 10045-0042 (LT). Part 1 on Plan 66R-34190 has a total area of approximately 32.6 m2 (350.90 ft2). It is proposed that Part 1 on Plan 66R-34190 be conveyed to City of Toronto for municipal purposes.",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about municipal conveyance?",
+          "question": "How do you feel about conveying the approximately 32.6 m² surplus library parcel at 575 Van Horne Avenue to the City for municipal purposes? The notice does not specify the future municipal use.",
           "essential_conditions": null,
           "evidence": [
             {
@@ -8247,32 +8228,13 @@
       "impact": null,
       "features": [
         {
-          "id": "toronto-woodbine-surplus-feature-1",
-          "label": "Surplus land",
-          "description": "NOTICE is hereby given that in accordance with the City of Toronto’s real estate disposal By-law, on February 3, 2025, portion of the property municipally known as 996 Woodbine Avenue, being Part of Lot 29 on Plan 550E, City of Toronto, being part of PIN 10423-0232 (LT), and generally shown as Parts 1 and 2 on Sketch No. PS-2018-096, was declared surplus. The surplus portion has a total area of approximately 213.5 m2 (2290 ft2).",
-          "proposed_change": "NOTICE is hereby given that in accordance with the City of Toronto’s real estate disposal By-law, on February 3, 2025, portion of the property municipally known as 996 Woodbine Avenue, being Part of Lot 29 on Plan 550E, City of Toronto, being part of PIN 10423-0232 (LT), and generally shown as Parts 1 and 2 on Sketch No. PS-2018-096, was declared surplus. The surplus portion has a total area of approximately 213.5 m2 (2290 ft2).",
-          "location_label": null,
-          "point": null,
-          "question": "What concerns or requirements do you have about surplus land?",
-          "essential_conditions": null,
-          "evidence": [
-            {
-              "source_url": "https://secure.toronto.ca/nm/api/individual/notice/5957.do",
-              "notice_id": 5957,
-              "page": null,
-              "section": null,
-              "quote": "NOTICE is hereby given that in accordance with the City of Toronto’s real estate disposal By-law, on February 3, 2025, portion of the property municipally known as 996 Woodbine Avenue, being Part of Lot 29 on Plan 550E, City of Toronto, being part of PIN 10423-0232 (LT), and generally shown as Parts 1 and 2 on Sketch No. PS-2018-096, was declared surplus. The surplus portion has a total area of approximately 213.5 m2 (2290 ft2)."
-            }
-          ]
-        },
-        {
-          "id": "toronto-woodbine-surplus-feature-2",
-          "label": "Proposed purchaser",
+          "id": "toronto-woodbine-surplus-feature-sale",
+          "label": "Proposed sale to 2-Spirited People of the First Nations",
           "description": "The City proposes that the intended manner of disposal to be by way of an offer to purchase the subject property from 2-Spirited People of the First Nations.",
           "proposed_change": "The City proposes that the intended manner of disposal to be by way of an offer to purchase the subject property from 2-Spirited People of the First Nations.",
           "location_label": null,
           "point": null,
-          "question": "What concerns or requirements do you have about proposed purchaser?",
+          "question": "How do you feel about the proposed disposal of the approximately 213.5 m² surplus parcel at 996 Woodbine Avenue through an offer to purchase from 2-Spirited People of the First Nations? The notice does not specify a future use or sale price.",
           "essential_conditions": null,
           "evidence": [
             {

@@ -94,8 +94,8 @@ To save the selected records using the private backend `.env` configuration:
 .venv/bin/python importer.py --write
 ```
 
-Writes go to **`imported_proposals`** and **`source_notices`**, not the published
-frontend `proposals` collection or participant feedback collections. Stable
+Writes go to **`imported_proposals`** and **`source_notices`**, not the legacy
+`proposals` collection or participant feedback collections. Stable
 proposal keys become MongoDB `_id` values. Raw notice snapshots use IDs composed
 of notice ID and content hash, preserving older source content.
 
@@ -148,10 +148,14 @@ in their HTML descriptions. The raw-import step leaves these unknown; the
 example formatter subsequently extracts date mentions and available archived
 participation instructions while retaining their context and review flags.
 
-The current frontend API uses the separate `proposals_DTO.py` display contract.
-It needs a reviewed projection/publishing step before these rich imports appear
-in `/api/proposals`. This importer intentionally does not replace that contract
-or publish unreviewed records into its collection.
+The frontend API uses the separate `proposals_DTO.py` display contract.
+`service/service.py:to_display_proposal` now converts records from
+`imported_proposals` on read. `/api/proposals` serves the 24 imported examples
+without copying them into the old collection. Feature questions use imported
+feature IDs, and feedback aggregates are attached to these same imported
+records. Null coordinates remain list-only, and archived source statuses stay
+explicitly labelled. Source/current-participation review remains separate from
+this mechanical conversion.
 
 ## Verification
 

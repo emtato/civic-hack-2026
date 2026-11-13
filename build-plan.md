@@ -124,6 +124,21 @@ Use one LLM call to suggest structured conditions from free text. Preserve the o
 
 Keep the first AI output small: feature/topic, requested arrangement, and relevant place/time. An ordinary concern is not automatically a promise to support the proposal if resolved.
 
+#### How the two proposal-specific sections fit together
+
+Clarified November 13: the intended direction is AI-assisted preparation and interpretation of proposal-specific content. The two sections answer different questions and use different inputs:
+
+| Section | Where its topics come from | What its numbers mean |
+| --- | --- | --- |
+| **The details matter** | Features of the proposal itself, prepared before residents respond. Target: AI extracts source-supported features and drafts questions from the proposal documents, with review before publication. | Residents explicitly rate each feature: oppose, neutral, support or unsure. Ordinary code counts those answers. |
+| **What would make a difference** | Residents' comments and confirmed requirements. Target: AI extracts requirements for contributor review and groups equivalent requests while preserving originals and minority needs. | Counts of confirmed requirements in each group, not votes for that group or inferred support. Ordinary code computes counts and percentages. |
+
+For example, the proposal can offer **loading from 7–10 AM** in the top section while residents request **loading from 7–9 AM** in the bottom section. These are different arrangements, so their labels and counts should differ. A parking requirement can appear below even when parking has no predefined question above; a proposal feature can appear above without anyone raising a requirement about it below.
+
+**Current implementation:** the screenshot's feature questions, group labels and initial counts are synthetic fixtures in `frontend/src/data/proposals.ts` and `backend/data/seed_proposals.json`. The imported catalogue instead gets feature questions from saved `features`, currently prepared through the selected-example enrichment file and formatter; the backend converts these into `proposal_specific` rows. This is data-driven per proposal, but no runtime AI generates these questions. The feedback form saves direct ratings in `element_ratings`; a separate, manually entered and confirmed `condition` contributes to the bottom section. New conditions stay ungrouped. Live AI extraction and semantic grouping are still outstanding; a plain comment alone currently creates no counted requirement.
+
+There is **no popularity threshold or automatic promotion from a condition group into a feature question**. The top section is not currently a City/admin question-authoring workflow either. Promoting an emerging request into a new question is a possible later extension, not implemented or required for this build. If added, retain its origin and exact wording and collect fresh explicit answers rather than treating earlier mentions as votes.
+
 **Implementation decisions for this stage:**
 
 - Use a proposal map/list, one proposal-detail panel, and a feedback/review panel. A staff-view tab can follow in stage D. Avoid a separate page and routing dependency for every step.

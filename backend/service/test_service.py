@@ -8,7 +8,7 @@ try:
         Proposal,
         ProposalFeedbackSubmissionDTO,
     )
-    from persistence.test_persistence import MockMongoDatabase
+    from persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from service.service import (
         FeedbackService,
         apply_feedback_to_aggregate,
@@ -20,7 +20,7 @@ except ImportError:
         Proposal,
         ProposalFeedbackSubmissionDTO,
     )
-    from backend.persistence.test_persistence import MockMongoDatabase
+    from backend.persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from backend.service.service import (
         FeedbackService,
         apply_feedback_to_aggregate,
@@ -32,7 +32,7 @@ class ServiceLogicTests(unittest.TestCase):
     def setUp(self):
         self.db = MockMongoDatabase()
         self.service = FeedbackService(self.db)
-        self.service.seed_initial_proposals()
+        self.service.proposals.seed_if_empty(SEED_FILE)
 
     def test_apply_feedback_to_aggregate_logic(self):
         agg = create_empty_aggregate()

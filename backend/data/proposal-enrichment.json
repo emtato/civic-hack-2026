@@ -83,15 +83,25 @@
     "features": [
       {
         "label": "Replacement social housing",
-        "anchor": "replacement of 213 Phase 2"
+        "anchor": "replacement of 213 Phase 2",
+        "id": "toronto-lawrence-heights-revitalization-feature-1"
       },
       {
-        "label": "New affordable and market housing",
-        "anchor": "180 new Toronto Community Housing"
+        "id": "toronto-lawrence-heights-revitalization-feature-affordable-housing",
+        "label": "180 new affordable homes",
+        "anchor": "180 new Toronto Community Housing",
+        "question": "How do you feel about adding 180 new Toronto Community Housing Corporation affordable homes?"
+      },
+      {
+        "id": "toronto-lawrence-heights-revitalization-feature-market-housing",
+        "label": "1,079 market homes",
+        "anchor": "1,079 market units",
+        "question": "How do you feel about adding 1,079 market homes as part of Phase 2?"
       },
       {
         "label": "Streets, parks and community uses",
-        "anchor": "new and reconfigured public streets"
+        "anchor": "new and reconfigured public streets",
+        "id": "toronto-lawrence-heights-revitalization-feature-3"
       }
     ],
     "details": {
@@ -115,12 +125,10 @@
     "summary": "Proposed heritage designation of the arena at 2125 Lawrence Avenue West, recognizing its architecture, recreational history and relationship to Weston.",
     "features": [
       {
-        "label": "Heritage designation",
-        "anchor": "intends to designate the property"
-      },
-      {
-        "label": "Arena heritage value",
-        "anchor": "ice-skating-arena building type"
+        "id": "toronto-lawrence-heritage-intention-feature-designation",
+        "label": "Heritage designation of the Weston arena",
+        "anchor": "intends to designate the property",
+        "question": "How do you feel about designating the arena at 2125 Lawrence Avenue West as a heritage property?"
       }
     ],
     "details": {
@@ -158,12 +166,20 @@
     "summary": "The notice records conditional approval to demolish Stotts’ Bridge and construct a temporary bridge pending a permanent truss replacement. Conditions include documentation and consideration of salvage.",
     "features": [
       {
+        "id": "toronto-stotts-bridge-heritage-feature-demolition",
+        "label": "Demolition of the existing heritage bridge",
+        "anchor": "approve the application to demolish",
+        "question": "How do you feel about demolishing the designated Stotts’ Bridge, subject to the conditions in the notice?"
+      },
+      {
         "label": "Temporary and replacement bridge",
-        "anchor": "temporary bridge until a permanent truss bridge"
+        "anchor": "temporary bridge until a permanent truss bridge",
+        "id": "toronto-stotts-bridge-heritage-feature-1"
       },
       {
         "label": "Documentation and salvage",
-        "anchor": "salvage structural elements"
+        "anchor": "salvage structural elements",
+        "id": "toronto-stotts-bridge-heritage-feature-2"
       }
     ],
     "details": {
@@ -201,12 +217,10 @@
     "summary": "Proposed permanent closure of specified portions of the northerly limit of Lawrence Avenue East beside Ridgewood Road. The exact parcels are identified in the notice and associated plans.",
     "features": [
       {
-        "label": "Permanent road closure",
-        "anchor": "permanently close the following"
-      },
-      {
-        "label": "Affected parcels",
-        "anchor": "PART OF PIN 06214-0476"
+        "id": "toronto-lawrence-road-closure-feature-closure",
+        "label": "Closure of the specified Lawrence/Ridgewood road portions",
+        "anchor": "permanently close the following",
+        "question": "How do you feel about permanently closing the specified road portions at the northerly limit of Lawrence Avenue East beside Ridgewood Road? This does not describe closing the whole street."
       }
     ],
     "details": {
@@ -224,12 +238,10 @@
     "summary": "Proposed realignment of permit-parking area 1E to exclude the development at 3459 and 3461 Dundas Street West.",
     "features": [
       {
-        "label": "Permit-parking boundary",
-        "anchor": "realign the boundary"
-      },
-      {
-        "label": "Excluded development",
-        "anchor": "3459 and 3461 Dundas Street West"
+        "id": "toronto-permit-parking-area-1e-feature-exclusion",
+        "label": "Exclude 3459–3461 Dundas West from permit-parking area 1E",
+        "anchor": "realign the boundary",
+        "question": "How do you feel about changing permit-parking area 1E to exclude the development at 3459 and 3461 Dundas Street West?"
       }
     ],
     "details": {
@@ -246,12 +258,10 @@
     "summary": "Proposed naming of an existing public lane west of Vaughan Road and north of Ellsworth Avenue as Aren Levy Lane.",
     "features": [
       {
-        "label": "Proposed lane name",
-        "anchor": "Aren Levy Lane"
-      },
-      {
-        "label": "Lane location",
-        "anchor": "west of Vaughan Road, north of Ellsworth Avenue"
+        "id": "toronto-aren-levy-lane-feature-name",
+        "label": "Name the existing lane Aren Levy Lane",
+        "anchor": "Aren Levy Lane",
+        "question": "How do you feel about naming the existing public lane west of Vaughan Road and north of Ellsworth Avenue “Aren Levy Lane”?"
       }
     ],
     "details": {
@@ -269,12 +279,22 @@
     "summary": "Proposed permanent closure of specified public-highway portions on Dundas Street West, Kipling Avenue and Bloor Street West in the Six Points area.",
     "features": [
       {
-        "label": "Road portions to close",
-        "anchor": "permanently close the following"
+        "id": "toronto-six-points-road-closure-feature-dundas-closure",
+        "label": "Closure of specified Dundas Street West portions",
+        "anchor": "1. Part of the public highway known as Dundas Street West",
+        "question": "How do you feel about permanently closing the specified Dundas Street West highway portions in Six Points? Only the parcels listed in the notice are included."
       },
       {
-        "label": "Multiple affected streets",
-        "anchor": "Dundas Street West, Kipling Avenue and Bloor Street West"
+        "id": "toronto-six-points-road-closure-feature-kipling-closure",
+        "label": "Closure of specified Kipling Avenue portion",
+        "anchor": "2. Part of the public highway known as Kipling Avenue",
+        "question": "How do you feel about permanently closing the specified Kipling Avenue highway portion in Six Points? Only the parcel listed in the notice is included."
+      },
+      {
+        "id": "toronto-six-points-road-closure-feature-bloor-closure",
+        "label": "Closure of specified Bloor Street West portion",
+        "anchor": "3. Part of the public highway known as Bloor Street West",
+        "question": "How do you feel about permanently closing the specified Bloor Street West highway portion in Six Points? Only the parcel listed in the notice is included."
       }
     ],
     "details": {
@@ -316,12 +336,27 @@
     "summary": "Proposed business-licensing amendments include changes to operating-hour and goods-register requirements, the nightclub definition, and repeal of the videotape-store licensing chapter.",
     "features": [
       {
-        "label": "Operating hours and registers",
-        "anchor": "deleting requirements pertaining to hours and days of operation"
+        "id": "toronto-business-licence-action-plan-feature-operating-hours",
+        "label": "Remove specified operating-hour restrictions",
+        "anchor": "deleting requirements pertaining to hours and days of operation",
+        "question": "How do you feel about removing the hours-and-days-of-operation requirements in the specified second-hand goods and old gold/jewellery licensing provisions?"
+      },
+      {
+        "id": "toronto-business-licence-action-plan-feature-goods-registers",
+        "label": "Simplify goods-register requirements",
+        "anchor": "Deleting the requirement that the register of goods received",
+        "question": "How do you feel about allowing goods registers in an approved format rather than a handwritten book, and removing the specified routine register-information submissions?"
+      },
+      {
+        "id": "toronto-business-licence-action-plan-feature-nightclub-definition",
+        "label": "Revise the nightclub licensing definition",
+        "anchor": "where the premises meets three or more",
+        "question": "How do you feel about defining nightclubs by amplified music for dancing or entertainment plus at least three of the four listed operating characteristics?"
       },
       {
         "label": "Videotape-store licensing repeal",
-        "anchor": "repeal Toronto Municipal Code Chapter 832"
+        "anchor": "repeal Toronto Municipal Code Chapter 832",
+        "id": "toronto-business-licence-action-plan-feature-2"
       }
     ],
     "details": {
@@ -339,15 +374,24 @@
     "features": [
       {
         "label": "Sidewalk vending applications",
-        "anchor": "moratorium on new applications"
+        "anchor": "moratorium on new applications",
+        "id": "toronto-street-vending-rules-feature-1"
       },
       {
         "label": "Mobile vending hours",
-        "anchor": "twelve hours"
+        "anchor": "twelve hours",
+        "id": "toronto-street-vending-rules-feature-2"
       },
       {
         "label": "New permit regime",
-        "anchor": "adopt a new vending permit regime"
+        "anchor": "adopt a new vending permit regime",
+        "id": "toronto-street-vending-rules-feature-3"
+      },
+      {
+        "id": "toronto-street-vending-rules-feature-on-foot-licensing",
+        "label": "Licence refreshments vendors selling on foot",
+        "anchor": "add a new licence requirement",
+        "question": "How do you feel about requiring a licence for refreshments vendors selling on foot, including health checks, visible licensing and $1 million liability insurance?"
       }
     ],
     "details": {
@@ -441,12 +485,10 @@
     "summary": "The prepared 2026 budget proposed changes to existing user fees and new user fees. Detailed adjustments are in Budget Briefing Note 12, Appendices A and B; Council could adopt different rates.",
     "features": [
       {
-        "label": "Existing and new fees",
-        "anchor": "changes to existing user fees and new user fees"
-      },
-      {
-        "label": "Detailed fee schedules",
-        "anchor": "Appendix A and Appendix B"
+        "id": "toronto-budget-user-fees-2026-feature-fee-package",
+        "label": "Proposed 2026 user-fee changes",
+        "anchor": "changes to existing user fees and new user fees",
+        "question": "How do you feel about the prepared 2026 budget’s package of changes to existing user fees and new fees? The saved notice does not list individual rates; the linked budget appendices contain the details."
       }
     ],
     "details": {
@@ -460,12 +502,10 @@
     "summary": "Proposed site-plan application fee changes would update Chapter 441, Appendix C, Schedule 13, reference numbers 80–84.1. The detailed amounts are in the Site Plan Application Fee Review report.",
     "features": [
       {
-        "label": "Site-plan application fees",
-        "anchor": "updates to site plan application fees"
-      },
-      {
-        "label": "Detailed fee schedule",
-        "anchor": "reference numbers 80-84.1"
+        "id": "toronto-development-application-fees-feature-site-plan-fees",
+        "label": "Update site-plan application fees",
+        "anchor": "updates to site plan application fees",
+        "question": "How do you feel about updating the site-plan application fees listed under reference numbers 80–84.1? The saved notice does not state the amounts; these are in the linked Site Plan Application Fee Review."
       }
     ],
     "details": {
@@ -524,12 +564,10 @@
     "summary": "Approximately 32.6 square metres at 575 Van Horne Avenue were declared surplus to library purposes and proposed for conveyance to the City for municipal purposes.",
     "features": [
       {
-        "label": "Surplus library land",
-        "anchor": "surplus to the Toronto Public Library"
-      },
-      {
-        "label": "Municipal conveyance",
-        "anchor": "conveyed to City of Toronto for municipal purposes"
+        "id": "toronto-van-horne-surplus-feature-conveyance",
+        "label": "Transfer the surplus library parcel to the City",
+        "anchor": "conveyed to City of Toronto for municipal purposes",
+        "question": "How do you feel about conveying the approximately 32.6 m² surplus library parcel at 575 Van Horne Avenue to the City for municipal purposes? The notice does not specify the future municipal use."
       }
     ],
     "details": {
@@ -546,12 +584,10 @@
     "summary": "Approximately 213.5 square metres at 996 Woodbine Avenue were declared surplus, with the City proposing an offer to purchase the property from 2-Spirited People of the First Nations.",
     "features": [
       {
-        "label": "Surplus land",
-        "anchor": "213.5 m2"
-      },
-      {
-        "label": "Proposed purchaser",
-        "anchor": "2-Spirited People of the First Nations"
+        "id": "toronto-woodbine-surplus-feature-sale",
+        "label": "Proposed sale to 2-Spirited People of the First Nations",
+        "anchor": "offer to purchase the subject property from 2-Spirited People",
+        "question": "How do you feel about the proposed disposal of the approximately 213.5 m² surplus parcel at 996 Woodbine Avenue through an offer to purchase from 2-Spirited People of the First Nations? The notice does not specify a future use or sale price."
       }
     ],
     "details": {
