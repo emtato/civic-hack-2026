@@ -8,6 +8,7 @@ import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import List, Optional
+from urllib.error import URLError
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query, Request, status
@@ -21,6 +22,8 @@ from proposals_DTO import (
     ProposalFeedbackSubmissionDTO,
 )
 from service.service import FeedbackService
+from service.proposal_snapshots import ProposalSnapshotService, ProposalNotFoundError, SnapshotCursorError
+from proposal_snapshots_DTO import SnapshotPollRequestDTO, SnapshotPollResponseDTO, SnapshotViewDTO
 from auth import (
     create_access_token,
     get_current_user,
@@ -93,6 +96,13 @@ def get_service(request: Request) -> FeedbackService:
             detail="MongoDB is not configured or unavailable.",
         )
     return FeedbackService(db)
+
+
+def get_snapshot_service(request: Request) -> ProposalSnapshotService:
+    db = request.app.state.database
+    if db is None:
+        raise HTTPException(status_code=503, detail="MongoDB is not configured or unavailable.")
+    return ProposalSnapshotService(db)
 
 
 # ============================================================================
@@ -285,6 +295,47 @@ def get_proposal(
 # ============================================================================
 # Feedback Endpoints (Controller)
 # ============================================================================
+
+@app.get(
+    "/api/proposals/{proposal_id}/snapshots/{snapshot_id}",
+    response_model=SnapshotViewDTO,
+    tags=["Proposal updates"],
+)
+def get_proposal_snapshot(
+    proposal_id: str,
+    snapshot_id: str,
+    service: ProposalSnapshotService = Depends(get_snapshot_service),
+):
+    """Read a captured notice for comparison, scoped to its proposal."""
+    try:
+        return service.get_proposal_snapshot(proposal_id, snapshot_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail="Saved proposal version was not found.") from exc
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Saved proposal versions are unavailable.") from exc
+
+
+@app.post(
+    "/api/proposals/{proposal_id}/updates/check",
+    response_model=SnapshotPollResponseDTO,
+    tags=["Proposal updates"],
+)
+def check_proposal_updates(
+    proposal_id: str,
+    poll: SnapshotPollRequestDTO,
+    service: ProposalSnapshotService = Depends(get_snapshot_service),
+):
+    """Public source check; captures evidence without publishing proposal edits."""
+    try:
+        return service.check_proposal_updates(proposal_id, poll.after_sequence)
+    except ProposalNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except SnapshotCursorError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Proposal update history is unavailable.") from exc
+    except (URLError, OSError, ValueError) as exc:
+        raise HTTPException(status_code=502, detail="Official proposal sources could not be checked.") from exc
 
 @app.post(
     "/api/proposals/{proposal_id}/feedback",

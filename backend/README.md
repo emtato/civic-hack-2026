@@ -71,3 +71,64 @@ collection is left untouched.
 
 References: [FastAPI server setup](https://fastapi.tiangolo.com/deployment/manually/)
 and [PyMongo connections](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/connect/).
+
+## Internal source snapshots and comparisons
+
+`service/proposal_snapshots.py` exposes two methods on
+`ProposalSnapshotService(db)`, where `db` is the existing PyMongo database handle:
+
+- `refresh_proposal_snapshot(proposal_id)` fetches the proposal's linked Toronto
+  notices through the official JSON API. The first call saves a baseline;
+  subsequent calls append only when normalized content differs from the latest
+  snapshot. It returns `SnapshotRefreshDTO` with `created` and `snapshot`.
+- `compare_proposal_snapshots(proposal_id, before_snapshot_id, after_snapshot_id)`
+  reads two saved snapshots and persists a `SnapshotDiffDTO` containing added,
+  removed and changed fields, before/after values, and unified diffs for text.
+  Repeating the same ordered comparison returns the same stored result.
+
+DTOs live in `proposal_snapshots_DTO.py`. MongoDB collections are
+`proposal_snapshots` and `proposal_snapshot_diffs`; snapshots retain raw source
+records, readable normalized content, source URLs, capture times, hashes and
+previous-snapshot IDs. A unique proposal/sequence index guards concurrent appends.
+Reverting to older content still creates a new observation in the history.
+
+`POST /api/proposals/{proposal_id}/updates/check` now orchestrates these methods
+for frontend polling. Send `{"after_sequence": 0}` on the first request, then
+the last successfully received `snapshot_sequence` on subsequent requests.
+The public endpoint returns `proposal_id`, `checked_at`, `snapshot_id`,
+`snapshot_sequence`, `snapshot_created`, and all unseen `diffs` (including full
+before/after values and text diffs). The initial snapshot establishes a baseline
+without a diff. Even when refresh finds no new content, the endpoint returns
+unseen historical transitions detected by other visitors. Missing comparisons
+are generated from saved snapshots, so an interrupted earlier request can recover.
+
+`GET /api/proposals/{proposal_id}/snapshots/{snapshot_id}` returns `SnapshotViewDTO`
+for the comparison viewer: ID, proposal ID, sequence, capture time, source URLs
+and complete normalized content. It performs no source refresh or database write.
+Unknown IDs and IDs belonging to another proposal return 404; database failures
+return 503. Raw duplicate records and internal hashes are excluded from this view.
+
+Unknown proposals return 404, invalid/ahead cursors 422/409, source failures 502,
+and database failures 503. There are no startup hooks or backend scheduled jobs;
+checks run when requested by an open frontend. They do not modify imported
+proposals, published versions, aggregates or feedback. No live database capture
+is performed as part of the tests.
+
+Formatting attributes, whitespace, array ordering and generated map-image URLs
+are excluded from change detection. Description text, link targets, contact
+details and other source fields are compared. Fetch failures, incomplete
+responses and missing linked notices raise errors rather than saving an apparent
+deletion or partial proposal. Source publication dates select narrow API windows;
+if a notice moves outside those windows, the refresh fails without a write.
+Official HTTPS requests use the installed `certifi` CA bundle with certificate
+and hostname verification enabled, matching the MongoDB TLS configuration.
+
+The [Toronto API field guide](https://secure.toronto.ca/nm/opendata.do) does not
+document an amendment-versus-editorial-edit flag. Diffs therefore remain
+`unclassified`, with `review_required` when changes exist. New notice IDs are not
+automatically discovered, and linked webpages/PDF contents are not downloaded;
+only changes to their references are detected. Source observations are not
+automatically published municipal revisions.
+
+Run the isolated checks from `backend/` with
+`.venv/bin/python -m unittest service.test_proposal_snapshots`.

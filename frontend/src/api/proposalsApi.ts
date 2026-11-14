@@ -10,8 +10,46 @@ import type {
 } from '../data/proposals'
 import { getToken } from '../data/auth'
 import { parseProposalCatalogue } from './catalogue'
+import type { ProposalUpdateCheck, ProposalSnapshot } from '../data/proposalUpdates'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+
+/** Retrieve a complete saved source for the side-by-side comparison. No refresh. */
+export async function fetchProposalSnapshot(
+  proposalId: string, snapshotId: string, signal?: AbortSignal,
+): Promise<ProposalSnapshot> {
+  const timeout = AbortSignal.timeout(20000)
+  const res = await fetch(
+    `${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/snapshots/${encodeURIComponent(snapshotId)}`,
+    { headers: { Accept: 'application/json' }, signal: signal ? AbortSignal.any([signal, timeout]) : timeout },
+  )
+  if (!res.ok) throw new Error('Saved versions could not be loaded. You can still read the changed fields below.')
+  const snapshot: ProposalSnapshot = await res.json()
+  if (snapshot.id !== snapshotId || snapshot.proposal_id !== proposalId
+      || !snapshot.content || typeof snapshot.content !== 'object' || Array.isArray(snapshot.content)
+      || !Array.isArray(snapshot.source_urls) || !snapshot.source_urls.every(url => typeof url === 'string')
+      || typeof snapshot.captured_at !== 'string' || !Number.isInteger(snapshot.sequence)) {
+    throw new Error('The saved version response was invalid.')
+  }
+  return snapshot
+}
+
+/** Refresh official sources and retrieve every diff since this browser's cursor. */
+export async function checkProposalUpdates(
+  proposalId: string,
+  afterSequence: number,
+  signal?: AbortSignal,
+): Promise<ProposalUpdateCheck> {
+  const timeout = AbortSignal.timeout(120000)
+  const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/updates/check`, {
+    method: 'POST',
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ after_sequence: afterSequence }),
+    signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
+  })
+  if (!res.ok) throw new Error('Proposal updates could not be checked. They will be retried next hour.')
+  return res.json()
+}
 
 /**
  * Fetch the published proposal catalogue. An empty array is a valid result.

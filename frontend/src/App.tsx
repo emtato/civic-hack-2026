@@ -9,6 +9,7 @@ import { Icon, icon } from './components/Icon'
 import { Sidebar } from './components/Sidebar'
 import { AuthBar } from './components/AuthBar'
 import { fetchCurrentUser, getStoredUser, logout, type AuthUser } from './data/auth'
+import { ProposalUpdatesProvider } from './data/ProposalUpdatesContext'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -370,6 +371,7 @@ export default function App() {
   }
 
   return (
+    <ProposalUpdatesProvider proposals={proposals}>
     <div id="app">
       {/* Top Bar / App Header */}
       <header className="app-header">
@@ -569,5 +571,6 @@ export default function App() {
         {toastMessage}
       </div>
     </div>
+    </ProposalUpdatesProvider>
   )
 }

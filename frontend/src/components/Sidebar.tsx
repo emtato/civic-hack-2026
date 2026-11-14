@@ -7,6 +7,8 @@ import { FilterDropdown } from './FilterDropdown'
 import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
 import type { CommunitySnapshot } from './ProposalFeedback'
 import { ProposalComments } from './ProposalComments'
+import { ProposalUpdates } from './ProposalUpdates'
+import { useProposalUpdates } from '../data/ProposalUpdatesContext'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -69,6 +71,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const community = communitySnapshot?.proposalId === selectedProposal?.id ? communitySnapshot : null
   const selectedPresentation = selectedProposal ? getProposalPresentation(selectedProposal) : null
   const detailTitleRef = useRef<HTMLHeadingElement>(null)
+  const proposalUpdates = useProposalUpdates()
+  const updateState = selectedProposal ? proposalUpdates[selectedProposal.id] : undefined
+  const updateCount = updateState?.diffs.length ?? 0
 
   useEffect(() => {
     if (selectedProposal) {
@@ -307,8 +312,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <section className="overview-card overview-update" aria-labelledby="overview-update-heading">
                     <span className="overview-section-icon"><Icon name="clock" /></span>
                     <h2 id="overview-update-heading">Latest update</h2>
-                    <h3>No updates posted yet</h3>
-                    <p>Proposal revisions and project news will appear here when available.</p>
+                    <h3>{updateCount ? `${updateCount} ${updateCount === 1 ? 'change' : 'changes'} detected` : updateState?.status === 'error' ? 'Update check unavailable' : updateState?.status === 'ready' ? 'No changes detected yet' : 'Checking for changes'}</h3>
+                    <p>{updateCount ? 'Compare the earlier and later notices to see what changed.' : updateState?.status === 'error' ? 'The next check will retry automatically.' : 'Changes to the official notice will appear here after they are detected.'}</p>
                     <button className="overview-link" onClick={() => { setDetailTab('updates'); document.getElementById('tab-updates')?.focus() }}>
                       View updates <Icon name="arrow" />
                     </button>
@@ -339,11 +344,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
 
             {detailTab === 'updates' && (
-              <div className="placeholder-content">
-                <Icon name="layers" />
-                <h2>Follow the next chapter.</h2>
-                <p>Proposal revisions and changes will appear here. No revision history or notifications are connected yet.</p>
-              </div>
+              <ProposalUpdates key={selectedProposal.id} proposalId={selectedProposal.id} />
             )}
           </div>
 
