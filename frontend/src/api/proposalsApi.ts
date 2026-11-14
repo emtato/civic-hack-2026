@@ -10,6 +10,7 @@ import type {
 } from '../data/proposals'
 import { getToken } from '../data/auth'
 import { parseProposalCatalogue } from './catalogue'
+import type { ProposalUpdateCheck, ProposalSnapshot } from '../data/proposalUpdates'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
@@ -29,6 +30,41 @@ export async function updateConditionGroups(
     throw new Error(typeof body?.detail === 'string' ? body.detail : 'Could not update condition groups.')
   }
   return response.json()
+}
+
+/** Retrieve a complete saved source for the side-by-side comparison. No refresh. */
+export async function fetchProposalSnapshot(
+  proposalId: string, snapshotId: string, signal?: AbortSignal,
+): Promise<ProposalSnapshot> {
+  const timeout = AbortSignal.timeout(20000)
+  const res = await fetch(
+    `${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/snapshots/${encodeURIComponent(snapshotId)}`,
+    { headers: { Accept: 'application/json' }, signal: signal ? AbortSignal.any([signal, timeout]) : timeout },
+  )
+  if (!res.ok) throw new Error('Saved versions could not be loaded. You can still read the changed fields below.')
+  const snapshot: ProposalSnapshot = await res.json()
+  if (snapshot.id !== snapshotId || snapshot.proposal_id !== proposalId
+      || !snapshot.content || typeof snapshot.content !== 'object' || Array.isArray(snapshot.content)
+      || !Array.isArray(snapshot.source_urls) || !snapshot.source_urls.every(url => typeof url === 'string')
+      || typeof snapshot.captured_at !== 'string' || !Number.isInteger(snapshot.sequence)) {
+    throw new Error('The saved version response was invalid.')
+  }
+  return snapshot
+}
+
+/** Read results from the backend's hourly source checker. Never trigger a refresh. */
+export async function fetchProposalUpdates(
+  proposalId: string,
+  afterSequence: number,
+  signal?: AbortSignal,
+): Promise<ProposalUpdateCheck> {
+  const timeout = AbortSignal.timeout(20000)
+  const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/updates?after_sequence=${afterSequence}`, {
+    headers: { Accept: 'application/json' },
+    signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
+  })
+  if (!res.ok) throw new Error('Saved proposal updates could not be loaded. We’ll retry shortly.')
+  return res.json()
 }
 
 /**

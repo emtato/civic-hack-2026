@@ -7,6 +7,8 @@ import { FilterDropdown } from './FilterDropdown'
 import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
 import type { CommunitySnapshot } from './ProposalFeedback'
 import { ProposalComments } from './ProposalComments'
+import { ProposalUpdates } from './ProposalUpdates'
+import { useProposalUpdates } from '../data/ProposalUpdatesContext'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -37,6 +39,7 @@ export interface SidebarProps {
   onToggleFollow: (id: string) => void
   sidebarRef?: React.RefObject<HTMLElement | null>
   currentUser: AuthUser | null
+  notificationTarget?: { proposalId: string; diffId: string; request: number } | null
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -62,6 +65,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onToggleFollow,
   sidebarRef,
   currentUser,
+  notificationTarget,
 }) => {
   const [detailTab, setDetailTab] = useState<'overview' | 'feedback' | 'updates'>('overview')
   const [feedbackOpen, setFeedbackOpen] = useState(false)
@@ -69,6 +73,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const community = communitySnapshot?.proposalId === selectedProposal?.id ? communitySnapshot : null
   const selectedPresentation = selectedProposal ? getProposalPresentation(selectedProposal) : null
   const detailTitleRef = useRef<HTMLHeadingElement>(null)
+  const proposalUpdates = useProposalUpdates()
+  const updateState = selectedProposal ? proposalUpdates[selectedProposal.id] : undefined
+  const updateCount = updateState?.diffs.length ?? 0
+  const onlyDemoUpdates = updateCount > 0 && updateState?.diffs.every(diff => diff.is_demo)
 
   useEffect(() => {
     if (selectedProposal) {
@@ -79,6 +87,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       }, 50)
     }
   }, [selectedProposal?.id])
+
+  useEffect(() => {
+    if (notificationTarget?.proposalId === selectedProposal?.id && selectedProposal) {
+      setDetailTab('updates')
+      setFeedbackOpen(false)
+    }
+  }, [notificationTarget, selectedProposal?.id])
 
   const handleDetailTabKeyDown = (e: React.KeyboardEvent, index: number) => {
     const tabs: Array<'overview' | 'feedback' | 'updates'> = ['overview', 'feedback', 'updates']
@@ -307,8 +322,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <section className="overview-card overview-update" aria-labelledby="overview-update-heading">
                     <span className="overview-section-icon"><Icon name="clock" /></span>
                     <h2 id="overview-update-heading">Latest update</h2>
-                    <h3>No updates posted yet</h3>
-                    <p>Proposal revisions and project news will appear here when available.</p>
+                    <h3>{onlyDemoUpdates ? 'Demo comparison available' : updateCount ? `${updateCount} ${updateCount === 1 ? 'change' : 'changes'} detected` : updateState?.status === 'error' ? 'Update check unavailable' : updateState?.status === 'ready' ? 'No changes detected yet' : 'Checking for changes'}</h3>
+                    <p>{onlyDemoUpdates ? 'See fictional earlier wording beside the actual saved notice.' : updateCount ? 'Compare the earlier and later notices to see what changed.' : updateState?.status === 'error' ? 'Checks will retry automatically.' : 'The backend checks official notices hourly, even while this page is closed.'}</p>
                     <button className="overview-link" onClick={() => { setDetailTab('updates'); document.getElementById('tab-updates')?.focus() }}>
                       View updates <Icon name="arrow" />
                     </button>
@@ -339,11 +354,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
 
             {detailTab === 'updates' && (
-              <div className="placeholder-content">
-                <Icon name="layers" />
-                <h2>Follow the next chapter.</h2>
-                <p>Proposal revisions and changes will appear here. No revision history or notifications are connected yet.</p>
-              </div>
+              <ProposalUpdates key={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.request : selectedProposal.id}
+                proposalId={selectedProposal.id} initialDiffId={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.diffId : undefined} />
             )}
           </div>
 

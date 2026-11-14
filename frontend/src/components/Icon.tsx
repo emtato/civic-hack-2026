@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const iconPaths: Record<string, string> = {
+  bell: '<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>',
   arrow: '<path d="M5 12h14m-6-6 6 6-6 6"/>',
   back: '<path d="m14 6-6 6 6 6"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/>',

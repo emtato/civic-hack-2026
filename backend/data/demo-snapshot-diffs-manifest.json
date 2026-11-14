@@ -1,0 +1,213 @@
+{
+  "generated_at": "2026-11-14T03:57:33.106340+00:00",
+  "write": true,
+  "database": "civic_hack",
+  "proposal_count": 24,
+  "demo_label": "Synthetic previous version for demonstration; not a municipal record.",
+  "comparisons": [
+    {
+      "proposal_id": "toronto-labatt-river-towers",
+      "before_snapshot_id": "demo-previous-v1:toronto-labatt-river-towers",
+      "after_snapshot_id": "5b0416ef-72d2-412e-ae2b-8177c6dae7bb",
+      "after_content_sha256": "13b064b3cdf1451d9326c2e95f055f56e292d014cc74bec3358af69b5e9640d6",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-augusta-hotel",
+      "before_snapshot_id": "demo-previous-v1:toronto-augusta-hotel",
+      "after_snapshot_id": "c9b88094-7be2-47fe-9606-ab094985b962",
+      "after_content_sha256": "0bc7710092b4ce0a60a5f753404f377be101a373dc69f893239b8c0869880ee8",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-neilson-medical-housing",
+      "before_snapshot_id": "demo-previous-v1:toronto-neilson-medical-housing",
+      "after_snapshot_id": "a8ecc9dd-4c7d-42e1-b541-9538c8e03fdb",
+      "after_content_sha256": "22df53951f3bbaa0f2e31f8554eb47adeed652b3d92d96fc92d43d8b1a6c1040",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-lawrence-heights-revitalization",
+      "before_snapshot_id": "demo-previous-v1:toronto-lawrence-heights-revitalization",
+      "after_snapshot_id": "b0599560-99ec-47a3-a298-bba88fec1f89",
+      "after_content_sha256": "b59570716b790e1d75db1531c7720ac32d736bc27dee6402c228efc08c9b2cbe",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-lawrence-heritage-intention",
+      "before_snapshot_id": "demo-previous-v1:toronto-lawrence-heritage-intention",
+      "after_snapshot_id": "f79dabc4-bf60-4b6f-b489-feac0d2280b9",
+      "after_content_sha256": "b1add3868cbcc4d5ffc2b23e123d477b9e0def87491baf9aa09ab7d77d78256d",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-weston-heritage-demolition",
+      "before_snapshot_id": "demo-previous-v1:toronto-weston-heritage-demolition",
+      "after_snapshot_id": "341b8b3d-650b-4948-8c87-0235634eb2fc",
+      "after_content_sha256": "481aeb2be36244a2e835b4972a6366c86d4144d21728b37fd0382a6a2c2eed1c",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-stotts-bridge-heritage",
+      "before_snapshot_id": "demo-previous-v1:toronto-stotts-bridge-heritage",
+      "after_snapshot_id": "e2c0c6fd-99ae-4a81-9c64-97008aebcbb9",
+      "after_content_sha256": "3c97726c4e2e3152c9d1c1c8f547a165557ffa7f9e9977be270333bdb77d7111",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-queen-heritage-amendment",
+      "before_snapshot_id": "demo-previous-v1:toronto-queen-heritage-amendment",
+      "after_snapshot_id": "75db64dd-b6ad-49e7-888a-9fc82404d512",
+      "after_content_sha256": "107ed5e5fb4beaa8b19612a54eec7018bdf760d39abed064845c4f6d304b8f8e",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-lawrence-road-closure",
+      "before_snapshot_id": "demo-previous-v1:toronto-lawrence-road-closure",
+      "after_snapshot_id": "8b8a4783-6ebe-4c0b-9b6d-610fb3972c79",
+      "after_content_sha256": "5cd18c0fbcc024c9fd1cd3731ea0185e9a4cee8fe6cd990e5bffefcc1cce8574",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-permit-parking-area-1e",
+      "before_snapshot_id": "demo-previous-v1:toronto-permit-parking-area-1e",
+      "after_snapshot_id": "f77c3c9b-3e0d-4d24-921d-cf10120a8bb0",
+      "after_content_sha256": "56bae63e4c537faa8274549e8e31efc40c8e992951f0c3c0d12893024748c813",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-aren-levy-lane",
+      "before_snapshot_id": "demo-previous-v1:toronto-aren-levy-lane",
+      "after_snapshot_id": "df7b3d4c-ea2f-48b5-8a49-4f228254ac0b",
+      "after_content_sha256": "50560f199aaee9d5a93fa60c61aeeb9cea074235a5b860090abfcfeae42ca22d",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-six-points-road-closure",
+      "before_snapshot_id": "demo-previous-v1:toronto-six-points-road-closure",
+      "after_snapshot_id": "e9d6a9ad-d02c-4dfa-a187-6df64b8a3f0e",
+      "after_content_sha256": "3163f0908ace3e2923d38c4ba45625baec88cb6aee69f232a1ccf10081f06be6",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-nightclub-definition",
+      "before_snapshot_id": "demo-previous-v1:toronto-nightclub-definition",
+      "after_snapshot_id": "d7a5def1-cfa1-4696-8ec3-5d35abc0ffb0",
+      "after_content_sha256": "1224434cb8b2dfaa33ed319e0e1cb71b51ac6ee1996bdd8863073d8563dc3328",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-business-licence-action-plan",
+      "before_snapshot_id": "demo-previous-v1:toronto-business-licence-action-plan",
+      "after_snapshot_id": "43fe00d4-bc63-4bc1-b19c-859d1263cc2f",
+      "after_content_sha256": "ad2c6c1b316a682ff9711c0b9f3817fe73aa9dd7426b0de4065189fa47ee03ce",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-street-vending-rules",
+      "before_snapshot_id": "demo-previous-v1:toronto-street-vending-rules",
+      "after_snapshot_id": "505d1702-ff58-4429-90a3-a302b1bfc040",
+      "after_content_sha256": "9f8b9a9ecfc998200676a13662e060c0eeb904568af59902b5c6a76c16562dad",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-permit-parking-exclusion-process",
+      "before_snapshot_id": "demo-previous-v1:toronto-permit-parking-exclusion-process",
+      "after_snapshot_id": "3bce081c-f7c3-4b69-b62a-3c6e81d1f359",
+      "after_content_sha256": "e60d73962c5169b748aef268ad71a961b43d381f18283648614150667c91c63a",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-rentsafeto-fees",
+      "before_snapshot_id": "demo-previous-v1:toronto-rentsafeto-fees",
+      "after_snapshot_id": "ce7743eb-f59f-4ccb-932a-ca99c3ad980c",
+      "after_content_sha256": "346d3ff782061590c42358dde749695b96505d4d1fc1099f9fafbfc915c3dc61",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-ravine-permit-fees",
+      "before_snapshot_id": "demo-previous-v1:toronto-ravine-permit-fees",
+      "after_snapshot_id": "445b3fcb-a16a-4a80-bd44-275a36559cfd",
+      "after_content_sha256": "19dcc078400b0018ea7aff74036a1151ed1519da52fbb3d3c0d5e18471388512",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-budget-user-fees-2026",
+      "before_snapshot_id": "demo-previous-v1:toronto-budget-user-fees-2026",
+      "after_snapshot_id": "d7126e0b-f2a6-428c-815a-168e32216479",
+      "after_content_sha256": "ecc91843a39ac75513a4ef114689352fd1b87115da7f8df04b900d9b05b309d5",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-development-application-fees",
+      "before_snapshot_id": "demo-previous-v1:toronto-development-application-fees",
+      "after_snapshot_id": "7232cf08-2cce-4351-9831-d9098ecc56ff",
+      "after_content_sha256": "ebea56ef560eb2a080ebe15cdf1ada5fd1f8d0907d4010c5dad08b447e5a7d43",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-fleet-property-lease",
+      "before_snapshot_id": "demo-previous-v1:toronto-fleet-property-lease",
+      "after_snapshot_id": "d58fd83f-4b77-4c18-befb-55d62468b7f6",
+      "after_content_sha256": "145c8cef9c4ea8e9505f6f9b9610aa11f4817e253328ce3fa11684c08cfadb90",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-sheppard-surplus-lane",
+      "before_snapshot_id": "demo-previous-v1:toronto-sheppard-surplus-lane",
+      "after_snapshot_id": "35d307f3-9b0f-4189-9b08-4c9473d4298b",
+      "after_content_sha256": "f2f60d90f65f7947af391f4778ee1948b0147fe043023579aaf7a1c3428fdc8b",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-van-horne-surplus",
+      "before_snapshot_id": "demo-previous-v1:toronto-van-horne-surplus",
+      "after_snapshot_id": "2d456602-0d5c-4cab-868e-0e39c3da4c5c",
+      "after_content_sha256": "6fce3675727f1840aeacb8b6a4d5a3b8cdda4c7fab6337c85b9456dfc0f9ee0b",
+      "synthetic": true,
+      "status": "inserted"
+    },
+    {
+      "proposal_id": "toronto-woodbine-surplus",
+      "before_snapshot_id": "demo-previous-v1:toronto-woodbine-surplus",
+      "after_snapshot_id": "d436da57-16e9-4fe6-9c43-ae22e1e69068",
+      "after_content_sha256": "705b952849333fb148356ee270cb6cae724adf7eee95fe464bd175d0ef57ba71",
+      "synthetic": true,
+      "status": "inserted"
+    }
+  ],
+  "verification": {
+    "pairs_verified": 24,
+    "changes_per_pair": 2,
+    "real_snapshots_preserved": 24,
+    "collections_unchanged": {
+      "imported_proposals": true,
+      "feedback": true,
+      "source_notices": true
+    },
+    "snapshot_count": 48,
+    "demo_diff_count": 24
+  }
+}

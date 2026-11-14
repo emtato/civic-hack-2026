@@ -14,11 +14,11 @@ npm run dev
 - Leaflet map centred on Toronto, with clickable proposal markers, zoom controls and reset-to-results.
 - Proposal search, topic filters and status filters shared by the map and list.
 - Proposal detail panel with an illustrative project route and Overview, Community and Updates tabs.
-- Following shortlist saved in this browser's local storage. It does not send notifications.
+- Following saved to the signed-in account in MongoDB; following and submitting feedback both subscribe the user to proposal updates.
 - Community dashboard with overall and element distributions, self-reported connections, and expandable condition evidence.
 - Feedback form with a review step, explicit requirement confirmation, save receipt, and editing without duplicate participants.
 - Server-backed feedback when FastAPI is available; explicitly labelled browser-local demo responses otherwise. Failed server writes retain the form and show an error.
-- About dialog with keyboard dismissal.
+- Header notification bell with a red dot for new updates. Opening the inbox marks the entire queue as seen without deleting history; clicking an alert opens its source comparison in Updates.
 - Responsive map/list toggle for small screens and keyboard-accessible controls.
 
 ## Files to build on
@@ -70,9 +70,54 @@ Project references are real, but summaries, statuses, locations, feature questio
 
 Only explicitly confirmed requirements contribute to condition counts. General comments remain on the response, and support is never inferred from them. New requirements remain inspectable in the ungrouped section until someone actually reviews grouping equivalence. Existing fixture groups supply example quotes, not a complete respondent-level dataset.
 
-The current contract supports one manual requirement per response. AI extraction, multiple requirements, map concern pins, version-specific revision rounds and notifications remain separate work.
+The current contract supports one manual requirement per response. AI extraction, multiple requirements, map concern pins and version-specific reconfirmation rounds remain separate work. Source change detection/comparison and account notifications are implemented.
+
+## Notifications and following
+
+The existing hourly backend source checker saves a notification for each registered participant/follower when a non-demo source change is detected. The bell reads saved notifications on sign-in and every minute, without triggering extra source checks. Baseline captures, unchanged sources and synthetic demo comparisons do not generate alerts. Repeated checks do not duplicate alerts or mark old alerts new again.
+
+Following now requires sign-in and is stored per account rather than per browser. Existing anonymous local bookmarks are not automatically attached to an account. Unfollowing stops follow-only alerts; feedback participation remains a subscription. Notifications and seen state persist across browser refreshes and devices.
 
 Run `npm test` for aggregate regression checks (Node 22.18+), and `npm run build` for TypeScript plus a production bundle. Backend API/service/persistence checks run from `backend/` with `.venv/bin/python -m unittest service.test_service persistence.test_persistence test_api`.
+
+## Proposal update polling and comparison
+
+`ProposalUpdatesProvider` wraps the application and reads saved updates for every
+loaded catalogue proposal immediately, then once a minute. Requests run
+serially without overlapping passes. Unmounting or changing the catalogue IDs
+aborts the old polling session and clears its timer. Browser suspension can delay
+timers; these reads do not control the backend's independent hourly source schedule.
+
+`fetchProposalUpdates` sends the last received snapshot sequence to
+`GET /api/proposals/{id}/updates?after_sequence=...`. It only reads stored results.
+The backend checks official sources at the start of each hour, saves changed
+snapshots and comparisons even with no browsers open. Initial capture is a
+baseline, not a reported amendment. This requires the backend host to stay awake.
+
+UI components read `useProposalUpdates()[proposalId]` from
+`src/data/ProposalUpdatesContext.tsx`. Each entry has `status`, `snapshot_id`,
+`snapshot_sequence`, `checked_at`, accumulated/deduplicated `diffs`, and `error`.
+An unchanged response retains previous diffs. A failed request retains both data
+and cursor, continues with other proposals, and retries the next minute. State is held
+in memory; reloading retrieves history again from sequence zero. Detected changes
+remain unclassified.
+
+`checked_at` is the last successful source check, not when the browser last read
+the data. Pending initial captures and failed source checks are represented
+separately; stored comparisons remain available after a source failure.
+
+The Updates tab displays earlier/later fields with word-level removal/addition
+highlights, a change selector, capture dates and official source links. It fetches
+both saved notices through `GET /api/proposals/{id}/snapshots/{snapshot_id}`.
+The viewer shows changed fields only. On narrow screens the earlier/later cells
+stack with explicit labels.
+If full-source reads fail, changed fields remain visible and a retry is available.
+No-change, source-check failure and loading states are explicit. The Overview card
+also reflects the current detected-change count.
+
+Verified with an isolated in-memory HTTP fixture: desktop layout, 390px width,
+older-change selection, full source content, saved-version failure/retry and an
+initial capture with no changes. This does not establish live source/Atlas behavior.
 
 ## Basemap
 

@@ -154,8 +154,11 @@ class FeedbackRepository:
         doc_data = submission.model_dump(mode="python")
         doc_data["_id"] = doc_id
         doc_data["updated_at"] = datetime.now(timezone.utc)
-        if is_new:
-            doc_data["created_at"] = doc_data["updated_at"]
+        # Preserve first participation across edits for change notifications.
+        doc_data["created_at"] = (
+            (existing.get("created_at") or existing.get("submitted_at"))
+            if existing is not None else doc_data["updated_at"]
+        )
 
         self.collection.replace_one({"_id": doc_id}, doc_data, upsert=True)
         return submission, is_new, previous_sub

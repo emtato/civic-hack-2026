@@ -65,6 +65,9 @@ def ensure_indexes(db: Database) -> None:
         # Comment votes: look up tallies by proposal, and a voter's own votes
         db.comment_votes.create_index([("proposal_id", ASCENDING), ("comment_owner", ASCENDING)])
         db.comment_votes.create_index([("proposal_id", ASCENDING), ("voter", ASCENDING)])
+
+        db.notifications.create_index([("username", ASCENDING), ("created_at", ASCENDING)])
+        db.proposal_follows.create_index([("participant_id", ASCENDING), ("proposal_id", ASCENDING)])
     except Exception:
         # Indexes may fail if offline or permissions are read-only; allow gracefully
         pass

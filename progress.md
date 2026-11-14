@@ -53,6 +53,17 @@ Next review should inspect an actual fetched record and its normalized equivalen
 
 ## Checkpoint log
 
+### November 13 — account notifications and following implemented
+
+- **User-reported completion:** authentication, frontend/backend deployment, and frontend/backend communication are working. This checkpoint did not revalidate production deployment.
+- **Implemented:** bell replaces the location/About controls; a red dot indicates new alerts. Opening the bell marks the entire account queue seen while retaining history. Selecting an alert opens its matching source comparison in Updates.
+- **Delivery:** existing hourly source-check/comparison service creates persistent alerts for registered feedback participants and followers. Baseline, unchanged and demo captures are quiet. Recipient/change IDs deduplicate retries and preserve seen state; interrupted delivery is repaired on retry.
+- **Following:** now authenticated and stored in `proposal_follows`, across devices. Unfollowing stops follow-only alerts; feedback participation still qualifies. Existing anonymous browser bookmarks are not automatically assigned to an account.
+- **Storage:** `notifications` stores recipient/change records; `users` is unchanged. Feedback edits retain first participation time so later edits do not remove eligibility.
+- **Verified:** seven new isolated backend checks cover delivery, retry recovery, account isolation, follow/unfollow and retained history. Browser checks against an isolated API confirmed new-alert indication, clearing on open, history retention, matching comparison navigation, follow/unfollow and persistence after refresh. No live MongoDB write was used for these checks.
+- **Remaining:** deploy the updated frontend/backend and verify the same flow on hosting. AI comment interpretation/grouping remains separate work. This adds source-change notifications; it does not automatically change a participant's saved position.
+
+
 ### November 13 — saved voting topics reviewed across all 24 proposals
 
 - **Reviewed:** every saved notice and its proposed feature questions; no fixed question-count target. Retained 11 topic sets unchanged and adjusted 13 to remove duplicate/context-only questions or expose distinct substantive choices. Current catalogue has 50 topics, with one to four per proposal.
