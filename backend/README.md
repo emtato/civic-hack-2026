@@ -98,8 +98,8 @@ With the app running, open **7 Labatt Avenue and 77 River Street** from the
 list or map, or go to `/#labatt-demo`. Use **Proposal version** above the tabs
 to switch the whole sidebar between rounds. On **Overview**, choose **Trace
 feedback to changes** for the side-by-side comparison or **Try the resident
-review** to revisit an earlier response. **View imported proposal** opens the
-original record and source-check history.
+review** to revisit an earlier response. Official notice links remain available
+inside the version-history view.
 
 Resident review uses the visitor's demo session without account sign-in.
 `POST /api/demos/labatt/feedback/preview` returns unsaved AI suggestions using

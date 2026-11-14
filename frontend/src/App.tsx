@@ -215,11 +215,11 @@ export default function App() {
     }
   }, [])
 
-  const openProposal = useCallback((id: string, showReference = false) => {
+  const openProposal = useCallback((id: string) => {
     const p = proposals.find(item => item.id === id)
     if (!p) return
     setNotificationTarget(null)
-    showDemoRoute(id === LABATT_PROPOSAL_ID && !showReference)
+    showDemoRoute(id === LABATT_PROPOSAL_ID)
     const wasOpen = selectedId !== null
     setSelectedId(id)
     setMobileShowMap(false)
@@ -436,7 +436,6 @@ export default function App() {
           fullDemo={fullDemo && selectedProposal?.id === LABATT_PROPOSAL_ID}
           demoAvailable={proposals.some(proposal => proposal.id === LABATT_PROPOSAL_ID)}
           onViewVersions={() => openProposal(LABATT_PROPOSAL_ID)}
-          onViewReference={() => openProposal(LABATT_PROPOSAL_ID, true)}
           filteredProposals={filteredProposals}
           topics={topics}
           statuses={statuses}

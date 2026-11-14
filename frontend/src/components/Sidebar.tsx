@@ -23,7 +23,6 @@ export interface SidebarProps {
   fullDemo: boolean
   demoAvailable: boolean
   onViewVersions: () => void
-  onViewReference: () => void
   filteredProposals: Proposal[]
   topics: string[]
   statuses: string[]
@@ -53,7 +52,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   fullDemo,
   demoAvailable,
   onViewVersions,
-  onViewReference,
   filteredProposals,
   topics,
   statuses,
@@ -240,9 +238,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button className="back-button" id="back-to-list" onClick={onBackToExplorer}>
               <Icon name="back" /> Back to proposals
             </button>
-            {selectedProposal.id === LABATT_PROPOSAL_ID && !fullDemo
-              ? <button className="text-button labatt-reference-return" onClick={onViewVersions}>View proposal versions</button>
-              : <label className="labatt-version">
+            <label className="labatt-version">
                 <span>Proposal version</span>
                 <select value={demoVersion?.id ?? ''} disabled={!demoVersion || demoBusy}
                   onChange={event => setDemoVersionId(event.target.value)}>
@@ -250,7 +246,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     <option key={version.id} value={version.id}>{demoVersionLabel(version)}</option>
                   ) : <option value="">{fullDemo ? 'Versions' : 'Imported proposal'}</option>}
                 </select>
-              </label>}
+              </label>
           </div>
           <div className="detail-kicker">
             {!fullDemo && <span className={`status-badge ${selectedPresentation?.badgeClass}`} title={selectedProposal.status}>
@@ -273,10 +269,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           {fullDemo ? <>
             <p className="labatt-disclosure">This example uses fictional revisions and feedback. Responses here are not sent to the City.</p>
-            <div className="labatt-toolbar">
-              <button className="text-button" onClick={onViewReference}>View imported proposal</button>
-              {historical && <span className="labatt-historical">Historical · Read only</span>}
-            </div>
+            {historical && <div className="labatt-toolbar">
+              <span className="labatt-historical">Historical · Read only</span>
+            </div>}
           </> : null}
 
           <div className="detail-toolbar">
