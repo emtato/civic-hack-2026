@@ -254,6 +254,13 @@ export interface ProposalCommunityAggregateDTO {
 /**
  * Citizen submission payload sent when a participant submits their position & conditions.
  */
+export interface ConfirmedCommentRequestDTO {
+  requirement: string
+  quote: string
+  time_window?: string | null
+  location_label?: string | null
+}
+
 export interface ProposalFeedbackSubmissionDTO {
   proposal_id: string
   version_id?: string
@@ -265,6 +272,7 @@ export interface ProposalFeedbackSubmissionDTO {
    */
   element_ratings: Record<string, ElementRatingKey>
   comment: string
+  confirmed_requests?: ConfirmedCommentRequestDTO[] | null
   condition?: {
     feature_id?: string
     requirement: string
@@ -330,6 +338,7 @@ export function applyFeedbackToAggregate(
   // An edit replaces this participant's contribution rather than adding a vote.
   const sameRequests = !!previousSubmission
     && previousSubmission.comment.trim() === submission.comment.trim()
+    && JSON.stringify(previousSubmission.confirmed_requests ?? []) === JSON.stringify(submission.confirmed_requests ?? [])
     && previousSubmission.condition?.requirement === submission.condition?.requirement
     && previousSubmission.condition?.feature_id === submission.condition?.feature_id
     && previousSubmission.condition?.time_window === submission.condition?.time_window
@@ -375,19 +384,37 @@ export function applyFeedbackToAggregate(
     }
   }
 
-  // Only an explicitly confirmed requirement is counted as a condition.
-  if (!sameRequests && submission.condition?.requirement.trim()) {
-    next.total_conditions += 1
-
-    const newConditionItem: ConditionItemDTO = {
-      id: `cond-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-      participant_id: submission.participant_id,
+  const requests: Omit<ConditionItemDTO, 'id' | 'participant_id' | 'submitted_at'>[] = []
+  if (submission.condition?.requirement.trim()) {
+    requests.push({
+      source: 'requirement',
       verbatim_quote: submission.comment.trim(),
       extracted_requirement: submission.condition.requirement.trim(),
       is_conditional_support: submission.condition.is_conditional_support,
-      time_window: submission.condition?.time_window,
-      location_label: submission.condition?.location_label,
+      time_window: submission.condition.time_window,
+      location_label: submission.condition.location_label,
       concern_coordinates: submission.concern_coordinates,
+    })
+  }
+  for (const request of submission.confirmed_requests ?? []) {
+    requests.push({
+      source: 'comment', verbatim_quote: request.quote,
+      extracted_requirement: request.requirement.trim(), is_conditional_support: false,
+      time_window: request.time_window ?? undefined, location_label: request.location_label ?? undefined,
+      concern_coordinates: submission.concern_coordinates,
+    })
+  }
+  const seen = new Set<string>()
+  for (const request of sameRequests ? [] : requests) {
+    const key = JSON.stringify([request.extracted_requirement, request.time_window ?? '', request.location_label ?? ''].map(value => value.trim().toLowerCase()))
+    if (seen.has(key)) continue
+    seen.add(key)
+    next.total_conditions += 1
+
+    const newConditionItem: ConditionItemDTO = {
+      ...request,
+      id: `cond-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      participant_id: submission.participant_id,
       submitted_at: submission.submitted_at,
     }
 

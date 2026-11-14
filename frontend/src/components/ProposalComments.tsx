@@ -65,7 +65,7 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
     fetchProposalFeedback(proposalId, controller.signal)
       .then(feedback => {
         if (controller.signal.aborted) return
-        const comments = withSampleVotes(feedback.filter(row => row.comment.trim()))
+        const comments = feedback.filter(row => row.comment.trim())
         setResult({ proposalId, state: 'ready', comments })
       })
       .catch(() => {

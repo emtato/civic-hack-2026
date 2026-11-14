@@ -35,12 +35,23 @@ backfill of existing feedback, then checks for new/edited feedback every ten
 seconds, even when no browser is open. `GROUPING_SCHEDULER_ENABLED=false` disables
 it. The backend must remain running for this in-process worker to make progress.
 
-Analysis extracts specific requests from original comments, requires an exact
-supporting quote, and groups these with explicit requirements using their time
+`POST /api/proposals/{id}/feedback/preview` takes a draft comment and optional
+manual condition, requires sign-in, and returns editable request suggestions with
+exact supporting quotes. It writes no feedback, analysis cache or aggregates.
+The resident reviews the suggestions before final submission. New HTTP saves
+store `confirmed_requests` (an empty list opts out); they count immediately and
+background processing only groups those confirmed requests. Missing lists on old
+HTTP clients become empty lists. Previously stored legacy records with no list
+retain the original background extraction path.
+
+Analysis groups requests with explicit requirements using their time
 and place. General opinions do not become requests, and extracted requests never
 imply conditional support. Equivalent requests from one author count once within
 a suggested group. Unique requests and residents' grouping opt-outs stay visible.
 Existing fixture counts without original feedback records are preserved.
+GPT-OSS models use Groq's strict JSON Schema response mode to prevent malformed
+response structures; other model overrides retain JSON object mode. Local schema,
+quote, coverage and membership validation still runs before saving any analysis.
 
 Comment analyses are cached by content and analysis version in
 `feedback_request_analysis`. Completed proposals are skipped until their relevant
@@ -168,7 +179,9 @@ Reverting to older content still creates a new observation in the history.
 of the backend's hourly checker. On subsequent requests, use the last received
 `snapshot_sequence`. It returns `proposal_id`, `checked_at` (last successful source
 check), `snapshot_id`, `snapshot_sequence`, `snapshot_created: false`, `source_status`,
-`source_error`, and all unseen `diffs` including before/after values and text diffs.
+`source_error`, and all saved `diffs` including before/after values and text diffs.
+Comparisons may be saved after their snapshot was polled, so every read replays
+saved comparison history regardless of the cursor. Clients deduplicate by diff ID.
 Before the first capture, status is `pending`, sequence is zero, and snapshot/time
 are null. Source failures retain saved comparisons and the last successful check.
 The old `POST .../updates/check` remains as a deprecated read-only compatibility

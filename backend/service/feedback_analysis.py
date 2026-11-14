@@ -17,11 +17,15 @@ def digest(value):
 
 
 def submission_content(submission):
-    return {
+    content = {
         "participant_id": submission.participant_id,
         "comment": submission.comment.strip(),
         "condition": submission.condition.model_dump() if submission.condition else None,
     }
+    # Preserve legacy cache keys instead of reprocessing the existing catalogue.
+    if submission.confirmed_requests is not None:
+        content["confirmed_requests"] = [r.model_dump() for r in submission.confirmed_requests]
+    return content
 
 
 def input_hash(submissions, aggregate):
@@ -56,6 +60,10 @@ def collect_evidence(submissions, aggregate, cache, heartbeat=lambda: None):
     analysed = {}
     pending = []
     for submission in submissions:
+        if submission.confirmed_requests is not None:
+            # Already reviewed by the resident; never extract new requests later.
+            analysed[submission.participant_id] = submission.confirmed_requests
+            continue
         if not submission.comment.strip():
             analysed[submission.participant_id] = []
             continue

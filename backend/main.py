@@ -17,6 +17,8 @@ from pymongo.errors import PyMongoError
 from labatt_demo_api import router as labatt_demo_router
 from database.database import ensure_indexes, get_database, get_mongo_client
 from proposals_DTO import (
+    ConfirmedCommentRequestDTO,
+    FeedbackPreviewDTO,
     CommentVoteRequestDTO,
     Proposal,
     ProposalCommunityAggregateDTO,
@@ -479,6 +481,28 @@ def reject_condition_group(
 
 
 @app.post(
+    "/api/proposals/{proposal_id}/feedback/preview",
+    response_model=list[ConfirmedCommentRequestDTO],
+    tags=["Feedback"],
+    dependencies=[Depends(get_current_user)],
+)
+def preview_feedback(
+    proposal_id: str,
+    preview: FeedbackPreviewDTO,
+    service: FeedbackService = Depends(get_service),
+):
+    """Return editable suggestions. No feedback, cache or aggregate is saved."""
+    try:
+        return service.preview_feedback_requests(proposal_id, preview)
+    except GroupingUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Could not load the proposal.") from exc
+
+
+@app.post(
     "/api/proposals/{proposal_id}/feedback",
     response_model=dict,
     status_code=status.HTTP_201_CREATED,
@@ -504,6 +528,10 @@ def submit_feedback(
     submission.proposal_id = proposal_id
     # Identity comes from the token, overriding any client-supplied value.
     submission.participant_id = current_user.username
+    # Older clients may omit the list, but new saves must never trigger
+    # unconfirmed background extraction. Legacy stored records remain readable.
+    if submission.confirmed_requests is None:
+        submission.confirmed_requests = []
 
     try:
         saved_sub, updated_agg = service.submit_feedback(submission)

@@ -11,7 +11,7 @@ from typing import List, Optional, Tuple
 
 from pymongo.database import Database
 from .condition_grouping import GroupingUnavailable, SuggestedGroup, suggest_groups
-from .feedback_analysis import collect_evidence, digest, input_hash
+from .feedback_analysis import collect_evidence, digest, extract_bounded, input_hash
 
 try:
     from proposals_DTO import (
@@ -58,6 +58,7 @@ def to_display_proposal(record: dict) -> Proposal:
         # never an automatic fallback to the old MongoDB collection.
         data = {**record, **record.get("display_overrides", {})}
         data.setdefault("id", str(record.get("_id", "")))
+        data["changes"] = list(dict.fromkeys(data.get("changes", [])))
         return Proposal.model_validate(data)
     imported = ImportedProposal.model_validate({
         key: value for key, value in record.items() if key in ImportedProposal.model_fields
@@ -98,6 +99,9 @@ def to_display_proposal(record: dict) -> Proposal:
     # Display edits have their own namespace and cannot overwrite source facts.
     data.update(record.get("display_overrides", {}))
     data["community_aggregate"] = aggregate
+    # Distinct feedback features can quote the same source sentence. Show it
+    # once in the overview, preserving source wording and first-seen order.
+    data["changes"] = list(dict.fromkeys(data["changes"]))
     return Proposal.model_validate(data)
 
 
@@ -210,6 +214,7 @@ def apply_feedback_to_aggregate(
     same_requests = previous_submission is not None and (
         previous_submission.condition == submission.condition
         and previous_submission.comment.strip() == submission.comment.strip()
+        and previous_submission.confirmed_requests == submission.confirmed_requests
     )
     if same_requests:
         for cluster in agg.condition_clusters:
@@ -222,7 +227,7 @@ def apply_feedback_to_aggregate(
     agg.grouping_error = None
     agg.grouping_retry_after = None
 
-    # Replace changed evidence; background analysis will add comment requests.
+    # Replace changed evidence using only requests confirmed before submission.
     retained_requirement = False
     same_requirement = previous_submission is not None and previous_submission.condition and submission.condition and (
         previous_submission.condition.requirement == submission.condition.requirement
@@ -268,6 +273,29 @@ def apply_feedback_to_aggregate(
         target = ungrouped_cluster(agg)
         target.count += 1
         target.items.insert(0, condition_item)
+
+    seen = set()
+    if submission.condition:
+        c = submission.condition
+        seen.add((c.requirement.strip().casefold(), (c.time_window or "").strip().casefold(),
+                  (c.location_label or "").strip().casefold()))
+    for request in submission.confirmed_requests or []:
+        key = (request.requirement.strip().casefold(), (request.time_window or "").strip().casefold(),
+               (request.location_label or "").strip().casefold())
+        if key in seen:
+            continue
+        seen.add(key)
+        target = ungrouped_cluster(agg)
+        target.items.append(ConditionItemDTO(
+            id="request-" + digest([submission.proposal_id, submission.participant_id, "comment", key])[:24],
+            participant_id=submission.participant_id, source="comment",
+            verbatim_quote=request.quote, extracted_requirement=request.requirement,
+            is_conditional_support=False, time_window=request.time_window,
+            location_label=request.location_label, concern_coordinates=submission.concern_coordinates,
+            submitted_at=now_iso,
+        ))
+        target.count += 1
+        agg.total_conditions += 1
 
     for cluster in list(agg.condition_clusters):
         if cluster.is_suggested and cluster.count < 2:
@@ -349,6 +377,22 @@ class FeedbackService:
     def seed_initial_proposals(self, force: bool = False) -> int:
         """Seed initial proposal dataset via persistence."""
         return self.proposals.seed_if_empty(force=force)
+
+    def preview_feedback_requests(self, proposal_id, preview):
+        """Interpret an unsaved comment without storing feedback, cache or counts."""
+        if self.proposals.get_by_id(proposal_id) is None:
+            raise ValueError("Proposal was not found.")
+        if not preview.comment.strip():
+            return []
+        results = extract_bounded([{
+            "number": 0, "comment": preview.comment.strip(),
+            "explicit_requirement": preview.condition.requirement if preview.condition else None,
+        }], lambda: None)
+        if len(results) != 1 or results[0].number != 0:
+            raise GroupingUnavailable("AI comment analysis did not cover your comment.")
+        if any(r.quote not in preview.comment or not r.quote.strip() for r in results[0].requests):
+            raise GroupingUnavailable("AI comment analysis returned unsupported evidence.")
+        return results[0].requests
 
     def submit_feedback(
         self, submission: ProposalFeedbackSubmissionDTO

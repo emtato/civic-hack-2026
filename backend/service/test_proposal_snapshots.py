@@ -310,6 +310,22 @@ class SnapshotTests(unittest.TestCase):
         self.assertFalse(recovered.snapshot_created)
         self.assertEqual("Changed title", recovered.diffs[0].changes[0].after)
 
+    def test_read_poll_recovers_comparison_saved_after_cursor_advanced(self):
+        first = self.capture().snapshot
+        self.raw["title"] = "Changed title"
+        second = self.capture().snapshot
+
+        early = self.service.read_proposal_updates("example", first.sequence)
+        self.assertEqual(second.sequence, early.snapshot_sequence)
+        self.assertEqual([], early.diffs)
+
+        saved = self.service.compare_proposal_snapshots("example", first.id, second.id)
+        with patch.object(self.service, "fetch_notices", side_effect=AssertionError("Poll must remain read-only")):
+            recovered = self.service.read_proposal_updates("example", early.snapshot_sequence)
+            repeated = self.service.read_proposal_updates("example", recovered.snapshot_sequence)
+        self.assertEqual([saved.id], [diff.id for diff in recovered.diffs])
+        self.assertEqual([saved.id], [diff.id for diff in repeated.diffs])
+
     def test_poll_endpoint_transfers_diff_json_and_maps_failures(self):
         from fastapi.testclient import TestClient
         from main import app, get_snapshot_service
