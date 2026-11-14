@@ -25,11 +25,13 @@ try:
     from imported_data_dto import SourceNotice
     from persistence.persistence import ProposalRepository
     from persistence.proposal_snapshots import ProposalSnapshotRepository
+    from persistence.notifications import NotificationRepository
     from proposal_snapshots_DTO import SnapshotChangeDTO, SnapshotDiffDTO, SnapshotDTO, SnapshotRefreshDTO, SnapshotPollResponseDTO, SnapshotViewDTO
 except ImportError:
     from backend.imported_data_dto import SourceNotice
     from backend.persistence.persistence import ProposalRepository
     from backend.persistence.proposal_snapshots import ProposalSnapshotRepository
+    from backend.persistence.notifications import NotificationRepository
     from backend.proposal_snapshots_DTO import SnapshotChangeDTO, SnapshotDiffDTO, SnapshotDTO, SnapshotRefreshDTO, SnapshotPollResponseDTO, SnapshotViewDTO
 
 
@@ -179,6 +181,7 @@ class ProposalSnapshotService:
     def __init__(self, db: Database, *, fetch_notices: Callable | None = None):
         self.proposals = ProposalRepository(db)
         self.history = ProposalSnapshotRepository(db)
+        self.notifications = NotificationRepository(db)
         self.statuses = db["proposal_snapshot_status"]
         self.fetch_notices = fetch_notices or _fetch_notices
 
@@ -243,7 +246,11 @@ class ProposalSnapshotService:
             is_demo=before.is_demo or after.is_demo,
             demo_label=before.demo_label if before.is_demo else after.demo_label if after.is_demo else None,
         )
-        return self.history.save_diff(diff)
+        saved = self.history.save_diff(diff)
+        # Run on repeat comparisons too: a scheduler retry repairs an interrupted
+        # notification fan-out, while stable recipient/change IDs prevent spam.
+        self.notifications.notify_participants(saved, after)
+        return saved
 
     def get_proposal_snapshot(self, proposal_id: str, snapshot_id: str) -> SnapshotViewDTO:
         """Read a saved source without fetching, refreshing or writing anything."""

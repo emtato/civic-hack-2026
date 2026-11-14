@@ -84,9 +84,9 @@ function SnapshotComparison({ diff }: { diff: ProposalSnapshotDiff }) {
   </>
 }
 
-export function ProposalUpdates({ proposalId }: { proposalId: string }) {
+export function ProposalUpdates({ proposalId, initialDiffId }: { proposalId: string; initialDiffId?: string }) {
   const state = useProposalUpdates()[proposalId]
-  const [selectedId, setSelectedId] = useState('')
+  const [selectedId, setSelectedId] = useState(initialDiffId ?? '')
   const diffs = state?.diffs ?? []
   const selected = diffs.find(diff => diff.id === selectedId) ?? diffs[diffs.length - 1]
   return <section className="proposal-updates" aria-labelledby="proposal-updates-heading">

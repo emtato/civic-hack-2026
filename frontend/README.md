@@ -14,11 +14,11 @@ npm run dev
 - Leaflet map centred on Toronto, with clickable proposal markers, zoom controls and reset-to-results.
 - Proposal search, topic filters and status filters shared by the map and list.
 - Proposal detail panel with an illustrative project route and Overview, Community and Updates tabs.
-- Following shortlist saved in this browser's local storage. It does not send notifications.
+- Following saved to the signed-in account in MongoDB; following and submitting feedback both subscribe the user to proposal updates.
 - Community dashboard with overall and element distributions, self-reported connections, and expandable condition evidence.
 - Feedback form with a review step, explicit requirement confirmation, save receipt, and editing without duplicate participants.
 - Server-backed feedback when FastAPI is available; explicitly labelled browser-local demo responses otherwise. Failed server writes retain the form and show an error.
-- About dialog with keyboard dismissal.
+- Header notification bell with a red dot for new updates. Opening the inbox marks the entire queue as seen without deleting history; clicking an alert opens its source comparison in Updates.
 - Responsive map/list toggle for small screens and keyboard-accessible controls.
 
 ## Files to build on
@@ -70,7 +70,13 @@ Project references are real, but summaries, statuses, locations, feature questio
 
 Only explicitly confirmed requirements contribute to condition counts. General comments remain on the response, and support is never inferred from them. New requirements remain inspectable in the ungrouped section until someone actually reviews grouping equivalence. Existing fixture groups supply example quotes, not a complete respondent-level dataset.
 
-The current contract supports one manual requirement per response. AI extraction, multiple requirements, map concern pins, version-specific revision rounds and notifications remain separate work.
+The current contract supports one manual requirement per response. AI extraction, multiple requirements, map concern pins and version-specific reconfirmation rounds remain separate work. Source change detection/comparison and account notifications are implemented.
+
+## Notifications and following
+
+The existing hourly backend source checker saves a notification for each registered participant/follower when a non-demo source change is detected. The bell reads saved notifications on sign-in and every minute, without triggering extra source checks. Baseline captures, unchanged sources and synthetic demo comparisons do not generate alerts. Repeated checks do not duplicate alerts or mark old alerts new again.
+
+Following now requires sign-in and is stored per account rather than per browser. Existing anonymous local bookmarks are not automatically attached to an account. Unfollowing stops follow-only alerts; feedback participation remains a subscription. Notifications and seen state persist across browser refreshes and devices.
 
 Run `npm test` for aggregate regression checks (Node 22.18+), and `npm run build` for TypeScript plus a production bundle. Backend API/service/persistence checks run from `backend/` with `.venv/bin/python -m unittest service.test_service persistence.test_persistence test_api`.
 

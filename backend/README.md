@@ -49,6 +49,11 @@ This backend provides the persistence layer communicating with MongoDB for:
 - **Live Community Aggregate Updates**: Atomically updates the proposal's attached aggregate in MongoDB whenever feedback is submitted or modified.
 
 ### Endpoints
+- `GET /api/following` - Authenticated account's followed proposal IDs.
+- `PUT /api/proposals/{proposal_id}/follow` - Follow a proposal and subscribe to source-change notifications.
+- `DELETE /api/proposals/{proposal_id}/follow` - Remove the follow; existing feedback still qualifies for notifications.
+- `GET /api/notifications` - Authenticated account's notification history and new count.
+- `POST /api/notifications/read` - Mark the account's entire current queue seen and return retained history.
 - `GET /health` - API server status.
 - `GET /health/database` - Database ping check.
 - `GET /api/proposals` - List all proposals (with attached feedback aggregates). Filterable by `topic` and `status`.
@@ -68,6 +73,21 @@ feature questions from imported features, and preserves saved aggregate counts.
 Archived, unreviewed statuses are labelled as archived notices; no current input
 window or project boundary is invented. The existing legacy `proposals`
 collection is left untouched.
+
+### Persistent update notifications
+
+`proposal_follows` stores account/proposal follow records and first-follow time.
+Existing `feedback` records identify participants; edits preserve first participation
+time. `notifications` stores one document per recipient/source diff, with a stable
+ID, proposal/title, diff ID, detected time and nullable `read_at`. No notification
+array or duplicated password/user record is added to `users`.
+
+After the hourly checker persists a real nonempty comparison, it notifies registered
+users who followed or participated before that change was captured. Baselines,
+unchanged sources, demo comparisons and synthetic personas do not create alerts.
+Scheduler retries repair interrupted delivery using insert-only upserts, preserving
+seen state and preventing duplicate alerts. The frontend reads this inbox once a
+minute; all inbox/follow routes derive identity from the authenticated token.
 
 References: [FastAPI server setup](https://fastapi.tiangolo.com/deployment/manually/)
 and [PyMongo connections](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/connect/).

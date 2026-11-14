@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import type { Proposal, Topic } from './data/proposals'
@@ -8,6 +8,8 @@ import { getProposalPresentation } from './data/proposalPresentation'
 import { Icon, icon } from './components/Icon'
 import { Sidebar } from './components/Sidebar'
 import { AuthBar } from './components/AuthBar'
+import { Notifications } from './components/Notifications'
+import { fetchFollowing, setProposalFollow, type ProposalNotification } from './api/notificationsApi'
 import { fetchCurrentUser, getStoredUser, logout, type AuthUser } from './data/auth'
 import { ProposalUpdatesProvider } from './data/ProposalUpdatesContext'
 
@@ -29,12 +31,6 @@ const colors: Record<string, string> = {
 // Approximate bounds covering Toronto, including Etobicoke and Scarborough.
 const TORONTO_BOUNDS: L.LatLngBoundsExpression = [[43.58, -79.64], [43.86, -79.11]]
 
-interface DialogData {
-  eyebrow?: string
-  title: string
-  children: React.ReactNode
-}
-
 export default function App() {
   const [proposals, setProposals] = useState<Proposal[]>([])
   const [catalogueState, setCatalogueState] = useState<'loading' | 'ready' | 'error'>('loading')
@@ -48,27 +44,34 @@ export default function App() {
   const [mobileShowMap, setMobileShowMap] = useState<boolean>(false)
   const [mapError, setMapError] = useState<boolean>(false)
   const [toastMessage, setToastMessage] = useState<string | null>(null)
-  const [dialogData, setDialogData] = useState<DialogData | null>(null)
+  const [notificationTarget, setNotificationTarget] = useState<{ proposalId: string; diffId: string; request: number } | null>(null)
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(() => getStoredUser())
 
-  const [saved, setSaved] = useState<string[]>(() => {
-    try {
-      const stored: unknown = JSON.parse(localStorage.getItem('proviso-saved') ?? localStorage.getItem('civic-saved') ?? '[]')
-      if (Array.isArray(stored)) {
-        return stored.filter((id): id is string => typeof id === 'string')
-      }
-    } catch {
-      /* Browser storage fallback */
+  const [saved, setSaved] = useState<string[]>([])
+  const [followingReady, setFollowingReady] = useState(false)
+  const followingRequests = useRef(new Set<string>())
+  const signedInUsername = useRef(currentUser?.username)
+  signedInUsername.current = currentUser?.username
+
+  useEffect(() => {
+    const controller = new AbortController()
+    setSaved([])
+    setFollowingReady(false)
+    if (currentUser) {
+      fetchFollowing(controller.signal).then(ids => {
+        if (!controller.signal.aborted) { setSaved(ids); setFollowingReady(true) }
+      }).catch(() => {
+        if (!controller.signal.aborted) setToastMessage('Following couldn’t load. Refresh to try again.')
+      })
     }
-    return []
-  })
+    return () => controller.abort()
+  }, [currentUser?.username])
 
   const mapContainerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<L.Map | null>(null)
   const markerLayerRef = useRef<L.LayerGroup | null>(null)
   const projectLayerRef = useRef<L.LayerGroup | null>(null)
   const sidebarRef = useRef<HTMLElement>(null)
-  const dialogRef = useRef<HTMLDialogElement>(null)
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const resizeRafRef = useRef<number | null>(null)
 
@@ -140,25 +143,27 @@ export default function App() {
     showToast('Logged out. You can still browse all proposals and feedback.')
   }, [showToast])
 
-  const toggleFollow = useCallback((id: string) => {
-    setSaved(prev => {
-      const next = prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
-      let persisted = true
-      try {
-        localStorage.setItem('proviso-saved', JSON.stringify(next))
-      } catch {
-        persisted = false
-      }
-      showToast(
-        persisted
-          ? next.includes(id)
-            ? 'Added to Following on this device. No notifications are sent.'
-            : 'Removed from Following.'
-          : 'Updated for this visit. Browser storage is unavailable.'
-      )
-      return next
-    })
-  }, [showToast])
+  const toggleFollow = useCallback(async (id: string) => {
+    if (!currentUser) {
+      showToast('Please sign in to follow proposals and receive updates.')
+      return
+    }
+    if (!followingReady) { showToast('Following is still loading. Please try again shortly.'); return }
+    if (followingRequests.current.has(id)) return
+    followingRequests.current.add(id)
+    const following = !saved.includes(id)
+    const username = currentUser.username
+    try {
+      await setProposalFollow(id, following)
+      if (signedInUsername.current !== username) return
+      setSaved(previous => following ? [...new Set([...previous, id])] : previous.filter(item => item !== id))
+      showToast(following ? 'Following this proposal. You’ll receive updates here.' : 'Removed from Following.')
+    } catch (error) {
+      if (signedInUsername.current === username) showToast(error instanceof Error ? error.message : 'Following couldn’t be updated.')
+    } finally {
+      followingRequests.current.delete(id)
+    }
+  }, [currentUser, saved, followingReady, showToast])
 
   const animateMapResize = useCallback((onComplete?: () => void, targetCoords?: [number, number]) => {
     const map = mapRef.current
@@ -204,6 +209,7 @@ export default function App() {
   const openProposal = useCallback((id: string) => {
     const p = proposals.find(item => item.id === id)
     if (!p) return
+    setNotificationTarget(null)
     const wasOpen = selectedId !== null
     setSelectedId(id)
     setMobileShowMap(false)
@@ -345,29 +351,13 @@ export default function App() {
     }
   }, [selectedProposal])
 
-  // Dialog handling
-  useEffect(() => {
-    if (dialogData) {
-      dialogRef.current?.showModal()
-    } else {
-      dialogRef.current?.close()
+  const openNotification = (notification: ProposalNotification) => {
+    if (!proposals.some(proposal => proposal.id === notification.proposal_id)) {
+      showToast('This proposal is not in the current catalogue. Try refreshing the catalogue.')
+      return
     }
-  }, [dialogData])
-
-  const handleOpenAbout = () => {
-    setDialogData({
-      eyebrow: 'BUILT FOR CIVIC HACK 2026',
-      title: 'The city is a shared project.',
-      children: (
-        <>
-          <p>proviso explores a simple idea: people should be able to explain what would make a municipal proposal work for them, and follow what changes next.</p>
-          <div className="preview-example">
-            <strong>Your browser, your shortlist.</strong>
-            <p>Following is saved only on this device. Feedback is saved on this device when the server is unavailable. No accounts or notifications are connected.</p>
-          </div>
-        </>
-      ),
-    })
+    openProposal(notification.proposal_id)
+    setNotificationTarget({ proposalId: notification.proposal_id, diffId: notification.diff_id, request: Date.now() })
   }
 
   return (
@@ -400,7 +390,7 @@ export default function App() {
               setMobileShowMap(false)
             }}
           >
-            Explore proposals
+            <span className="nav-explore-desktop">Explore proposals</span><span className="nav-explore-mobile">Explore</span>
           </button>
           <button
             className={`nav-item ${activeTab === 'saved' ? 'active' : ''}`}
@@ -417,13 +407,7 @@ export default function App() {
           </button>
         </nav>
 
-        <span className="header-location">
-          <Icon name="pin" /> Toronto, Ontario
-        </span>
-
-        <button className="about-button" id="about-button" onClick={handleOpenAbout}>
-          About this project <Icon name="external" />
-        </button>
+        <Notifications key={currentUser?.username ?? 'signed-out'} user={currentUser} proposals={proposals} onSelect={openNotification} />
 
         <AuthBar
           currentUser={currentUser}
@@ -458,6 +442,7 @@ export default function App() {
           onClearFilters={clearFilters}
           onToggleFollow={toggleFollow}
           currentUser={currentUser}
+          notificationTarget={notificationTarget}
         />
 
         {/* Map Shell & Outer Map Controls */}
@@ -528,43 +513,6 @@ export default function App() {
           <Icon name={mobileShowMap ? 'list' : 'pin'} /> {mobileShowMap ? 'Show proposals' : 'Show map'}
         </button>
       </main>
-
-      {/* Modal Dialog */}
-      <dialog
-        id="info-dialog"
-        ref={dialogRef}
-        aria-labelledby="dialog-title"
-        onClick={e => {
-          if (e.target === dialogRef.current) {
-            const rect = dialogRef.current.getBoundingClientRect()
-            if (
-              e.clientX < rect.left ||
-              e.clientX > rect.right ||
-              e.clientY < rect.top ||
-              e.clientY > rect.bottom
-            ) {
-              setDialogData(null)
-            }
-          }
-        }}
-      >
-        <div id="dialog-content">
-          {dialogData && (
-            <>
-              {dialogData.eyebrow && <span className="eyebrow">{dialogData.eyebrow}</span>}
-              <h2 id="dialog-title">{dialogData.title}</h2>
-              {dialogData.children}
-            </>
-          )}
-        </div>
-        <button
-          className="dialog-close icon-button"
-          aria-label="Close dialog"
-          onClick={() => setDialogData(null)}
-        >
-          <Icon name="close" />
-        </button>
-      </dialog>
 
       {/* Floating Notification Toast */}
       <div id="toast" role="status" className="toast" hidden={!toastMessage}>

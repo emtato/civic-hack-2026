@@ -39,6 +39,8 @@ from users_DTO import (
     UserRegisterDTO,
 )
 from persistence.persistence import UserRepository
+from persistence.notifications import NotificationRepository
+from notifications_DTO import NotificationInboxDTO
 
 # Load environment variables from backend/.env
 HERE = Path(__file__).resolve().parent
@@ -105,6 +107,73 @@ def get_service(request: Request) -> FeedbackService:
             detail="MongoDB is not configured or unavailable.",
         )
     return FeedbackService(db)
+
+
+def get_notification_repository(request: Request) -> NotificationRepository:
+    db = request.app.state.database
+    if db is None:
+        raise HTTPException(status_code=503, detail="Notifications are unavailable.")
+    return NotificationRepository(db)
+
+
+@app.get("/api/following", response_model=list[str], tags=["Notifications"])
+def get_following(
+    current_user: UserPublicDTO = Depends(get_current_user),
+    notifications: NotificationRepository = Depends(get_notification_repository),
+):
+    try:
+        return notifications.following(current_user.username)
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Following could not be loaded.") from exc
+
+
+@app.put("/api/proposals/{proposal_id}/follow", tags=["Notifications"])
+def follow_proposal(
+    proposal_id: str,
+    current_user: UserPublicDTO = Depends(get_current_user),
+    notifications: NotificationRepository = Depends(get_notification_repository),
+):
+    try:
+        if not notifications.follow(current_user.username, proposal_id):
+            raise HTTPException(status_code=404, detail="Proposal was not found.")
+        return {"status": "ok"}
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Proposal could not be followed.") from exc
+
+
+@app.delete("/api/proposals/{proposal_id}/follow", tags=["Notifications"])
+def unfollow_proposal(
+    proposal_id: str,
+    current_user: UserPublicDTO = Depends(get_current_user),
+    notifications: NotificationRepository = Depends(get_notification_repository),
+):
+    try:
+        notifications.unfollow(current_user.username, proposal_id)
+        return {"status": "ok"}
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Proposal could not be unfollowed.") from exc
+
+
+@app.get("/api/notifications", response_model=NotificationInboxDTO, tags=["Notifications"])
+def get_notifications(
+    current_user: UserPublicDTO = Depends(get_current_user),
+    notifications: NotificationRepository = Depends(get_notification_repository),
+):
+    try:
+        return notifications.inbox(current_user.username)
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Notifications could not be loaded.") from exc
+
+
+@app.post("/api/notifications/read", response_model=NotificationInboxDTO, tags=["Notifications"])
+def read_notifications(
+    current_user: UserPublicDTO = Depends(get_current_user),
+    notifications: NotificationRepository = Depends(get_notification_repository),
+):
+    try:
+        return notifications.mark_all_read(current_user.username)
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Notifications could not be marked as seen.") from exc
 
 
 def get_snapshot_service(request: Request) -> ProposalSnapshotService:

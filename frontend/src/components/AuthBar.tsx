@@ -14,7 +14,7 @@ type Mode = 'login' | 'register'
  * Header control for authentication. When logged out it opens a small
  * login / register popover; when logged in it shows the username and a
  * log-out button. Reading the site never requires any of this — only
- * submitting feedback does.
+ * submitting feedback and following proposals do.
  */
 export function AuthBar({ currentUser, onAuthenticated, onLogout }: Props) {
   const [open, setOpen] = useState(false)
@@ -144,7 +144,7 @@ export function AuthBar({ currentUser, onAuthenticated, onLogout }: Props) {
             <button type="submit" className="auth-submit" disabled={busy}>
               {busy ? 'Working…' : mode === 'login' ? 'Log in' : 'Create account'}
             </button>
-            <p className="auth-note">An account is only needed to submit feedback. Browsing stays open to everyone.</p>
+            <p className="auth-note">Sign in to submit feedback, follow proposals and receive updates. Browsing stays open to everyone.</p>
           </form>
         </div>
       )}

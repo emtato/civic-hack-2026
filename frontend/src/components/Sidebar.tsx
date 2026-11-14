@@ -39,6 +39,7 @@ export interface SidebarProps {
   onToggleFollow: (id: string) => void
   sidebarRef?: React.RefObject<HTMLElement | null>
   currentUser: AuthUser | null
+  notificationTarget?: { proposalId: string; diffId: string; request: number } | null
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -64,6 +65,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onToggleFollow,
   sidebarRef,
   currentUser,
+  notificationTarget,
 }) => {
   const [detailTab, setDetailTab] = useState<'overview' | 'feedback' | 'updates'>('overview')
   const [feedbackOpen, setFeedbackOpen] = useState(false)
@@ -85,6 +87,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       }, 50)
     }
   }, [selectedProposal?.id])
+
+  useEffect(() => {
+    if (notificationTarget?.proposalId === selectedProposal?.id && selectedProposal) {
+      setDetailTab('updates')
+      setFeedbackOpen(false)
+    }
+  }, [notificationTarget, selectedProposal?.id])
 
   const handleDetailTabKeyDown = (e: React.KeyboardEvent, index: number) => {
     const tabs: Array<'overview' | 'feedback' | 'updates'> = ['overview', 'feedback', 'updates']
@@ -345,7 +354,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
 
             {detailTab === 'updates' && (
-              <ProposalUpdates key={selectedProposal.id} proposalId={selectedProposal.id} />
+              <ProposalUpdates key={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.request : selectedProposal.id}
+                proposalId={selectedProposal.id} initialDiffId={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.diffId : undefined} />
             )}
           </div>
 
