@@ -3,9 +3,10 @@ from array import array
 from pathlib import Path
 import math
 import wave
+import sys
 
 rate = 22050
-duration = 152
+duration = int(sys.argv[1]) if len(sys.argv) > 1 else 152
 chords = [(130.8128,164.8138,195.9977,246.9417), (110,130.8128,164.8138,195.9977), (87.3071,130.8128,164.8138,220), (97.9989,146.8324,195.9977,220)]
 result = array('h')
 beat = 60 / 96
@@ -25,7 +26,7 @@ for i in range(rate * duration):
     fade = min(1, t / 3, (duration - t) / 4)
     sample = (pad + pluck + kick) * max(0, fade)
     result.append(round(max(-1, min(1, sample)) * 32767))
-output = Path(__file__).resolve().parents[1] / 'public/audio/draft-bed.wav'
+output = Path(__file__).resolve().parents[1] / (sys.argv[2] if len(sys.argv) > 2 else 'public/audio/draft-bed.wav')
 output.parent.mkdir(parents=True, exist_ok=True)
 with wave.open(str(output), 'wb') as f:
     f.setnchannels(1)

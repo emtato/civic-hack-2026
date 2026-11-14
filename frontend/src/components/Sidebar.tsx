@@ -190,7 +190,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         <i aria-hidden="true" />
                         {presentation.badgeLabel}
                       </span>
-                      {p.id === LABATT_PROPOSAL_ID && <span className="labatt-demo-tag">Version history example</span>}
                       <span className="card-category">
                         <Icon name={topicIcons[p.topic] || 'pin'} />
                       </span>
@@ -202,10 +201,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     </p>
                     <p className="card-summary">{p.summary}</p>
                     {!p.coordinates && <p className="card-neighbourhood">Location not mapped</p>}
+                    {p.id === LABATT_PROPOSAL_ID && <div className="card-demo-note">
+                      <span className="labatt-demo-tag">Full demo</span>
+                      <span className="card-demo-description">Complete sample data for feedback, revisions and resident review.</span>
+                    </div>}
                     <div className="card-footer">
                       <span>{p.topic}</span>
                       <span className="card-cta">
-                        Explore proposal <Icon name="arrow" />
+                        {p.id === LABATT_PROPOSAL_ID ? 'Try full demo' : 'Explore proposal'} <Icon name="arrow" />
                       </span>
                     </div>
                   </button>
@@ -253,7 +256,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <i aria-hidden="true" />
               {selectedPresentation?.badgeLabel}
             </span>}
-            {fullDemo && <span className="labatt-demo-tag">Version history example</span>}
+            {fullDemo && <span className="labatt-demo-tag">Full demo</span>}
             <span className="detail-topic">
               <Icon name={topicIcons[selectedProposal.topic] || 'pin'} />
               {selectedProposal.topic}

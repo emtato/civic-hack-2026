@@ -1,7 +1,17 @@
+import { ProvisoStoryV2 } from "./v2/Story";
 import { Composition, Folder } from "remotion";
 import { ProvisoDraft, Problem, Intro, Response, Updates } from "./Composition";
 export const RemotionRoot = () => (
   <>
+    <Composition
+      id="Proviso-Story-v2"
+      component={ProvisoStoryV2}
+      durationInFrames={5100}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{ guideCaptions: true, music: true }}
+    />
     <Composition
       id="Proviso-Draft"
       component={ProvisoDraft}

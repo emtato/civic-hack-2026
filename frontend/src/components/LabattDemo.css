@@ -11,6 +11,24 @@
   line-height: 1.5;
 }
 
+.card-demo-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 14px;
+  padding: 11px 12px;
+  border-radius: 7px;
+  background: #f3f6ed;
+}
+
+.card-demo-description {
+  flex: 1 1 180px;
+  color: #58654f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .proposal-version-header, .labatt-entry, .labatt-toolbar, .labatt-actions {
   display: flex;
   align-items: center;

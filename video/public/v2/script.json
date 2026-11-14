@@ -1,0 +1,79 @@
+[
+  {
+    "start": 0,
+    "end": 14,
+    "title": "Establish that voices can influence decisions",
+    "narration": "In Kensington Market, public feedback helped change Toronto\u2019s recommended street design, making more room for pedestrians while keeping the streets accessible to local vehicles and businesses",
+    "visual": "Show the earlier street design beside the revised recommendation. Highlight the City\u2019s statement linking the changes to consultation feedback. Label \u201cKensington Market, Toronto \u00b7 2023\u201d and cite the City\u2019s design-change presentation.\nThe two bullets should act as chapter markers. We select 1 before introducing the example, then stay with that same example when we move to 2."
+  },
+  {
+    "start": 14,
+    "end": 33,
+    "title": "Introduce the two approaches",
+    "narration": "Proviso helps residents make their needs understood and stay involved as proposals change. We do this in two ways: first, make community feedback easier to understand; second, connect that feedback to later revisions.",
+    "visual": "Show Proviso over the app, followed by:\n1. Understand community needs\n2. Follow what changes\nAs the narration says \u201cfirst,\u201d emphasize 1. At the end, enlarge that first label and transition into the app\u2019s map. It becomes a small, persistent chapter label: \u201c1. Understand community needs.\u201d Save the actual grouping animation for when we demonstrate it."
+  },
+  {
+    "start": 33,
+    "end": 47,
+    "title": "Introduce the example within approach one",
+    "narration": "Let\u2019s start with community needs. Here\u2019s a real development application from Toronto\u2019s public notices. We\u2019ll use simulated feedback and revisions to show how Proviso brings different perspectives together.",
+    "visual": "With the 1 chapter label still visible, select 7 Labatt Avenue and 77 River Street. Briefly show its summary and source link, then open the Earlier version.\nIntroduce the disclosure \u201cDemonstration: simulated feedback and revisions.\u201d Keep it visible throughout the example."
+  },
+  {
+    "start": 47,
+    "end": 62,
+    "title": "Start with one person\u2019s experience",
+    "narration": "The earlier plan allows deliveries from six in the morning, beside a resident\u2019s bedroom. They request a nine o\u2019clock start, explaining exactly how the proposal could affect their daily life.",
+    "visual": "Highlight \u201cDeliveries from 6 a.m.\u201d A brief illustration shows the loading entrance beside a bedroom window.\nMove to the resident\u2019s comment, then highlight their recorded request: \u201cStart routine deliveries at 9 a.m. or later.\u201d Establish this one concern clearly before showing more responses."
+  },
+  {
+    "start": 62,
+    "end": 78,
+    "title": "Show how individual concerns become a shared need",
+    "narration": "Other residents describe the same problem in different words. Proviso brings those related requests together, showing how many respondents share the need. Open the group, and you can still read each original comment.",
+    "visual": "Start with the comment we just read. Bring two other delivery-noise comments beside it, highlighting their shared request for a later start.\nTransition into the app\u2019s corresponding request group and reveal its count. Expand it to show the original comments underneath. The 1 chapter label remains in place; this is the demonstration of that first approach."
+  },
+  {
+    "start": 78,
+    "end": 94,
+    "title": "Show why that community picture matters",
+    "narration": "But the bakery needs supplies before the morning rush. Seeing both requests together helps residents understand other perspectives and helps staff identify the trade-off. Overall positions and feature ratings add context to those specific needs.",
+    "visual": "Place the bakery\u2019s 7:30 a.m. delivery request beside the residents\u2019 9 a.m. or later request.\nPull back to show where both sit in the community view. Briefly highlight overall positions and delivery-specific ratings. Keep the smaller request visible alongside the larger group.\nEnd with both needs on screen, setting up the question: \u201cWhat happens when the proposal changes?\u201d"
+  },
+  {
+    "start": 94,
+    "end": 112,
+    "title": "Move to approach two using the same example",
+    "narration": "That brings us to our second approach: following what changes. In this simulated revision, deliveries move to nine. Proviso connects the new wording to the earlier requests, helping residents check which needs it addresses.",
+    "visual": "Briefly return to the two chapter labels. 1 recedes and 2. Follow what changes enlarges, using the same transition as before.\nReturn directly to the same proposal and switch from Earlier to Current. Show 6 a.m. \u2192 9\u201311 a.m., with the resident\u2019s earlier request beside it and the \u201cPotentially addressed\u201d assessment visible.\nKeep the bakery\u2019s request nearby, ready for the next segment about what remains unresolved."
+  },
+  {
+    "start": 112,
+    "end": 124,
+    "title": "Keep unresolved needs in the story",
+    "narration": "That responds to the resident\u2019s concern, but overlooks the bakery\u2019s need for early deliveries. Proviso keeps this unresolved issue visible, so future discussions can focus on what still needs to be addressed.",
+    "visual": "Reveal the bakery\u2019s earlier request beside its current comment explaining why the new window still does not work. Show Unresolved clearly. Keep both perspectives visible for a moment."
+  },
+  {
+    "start": 124,
+    "end": 141,
+    "title": "Let the resident decide what the revision means",
+    "narration": "The resident reviews the change and decides whether to keep or update their response. After checking their answers, they confirm a response for this version. Their earlier comment and ratings remain in the earlier round.",
+    "visual": "Open the returning-resident review. Show the previous response and relevant amendment together.\nChoose Review and change, update the delivery rating, and let the resident choose their overall position separately. Add a short explanation, review, and confirm. Update the current results after saving."
+  },
+  {
+    "start": 141,
+    "end": 153,
+    "title": "Show continuity across the discussion",
+    "narration": "Residents can revisit what they said. Staff can compare the same respondents across versions, see how views changed, and distinguish reviewed responses from people still awaiting review.",
+    "visual": "Switch briefly between versions to show that each retains its own comments and ratings. Then show the matched-respondent comparison with consistent colours, scales, and visible counts.\nKeep disagreement and uncertainty visible. Highlight Awaiting review, Reconfirmed, and Revised."
+  },
+  {
+    "start": 153,
+    "end": 170,
+    "title": "Connect the value to a practical municipal future",
+    "narration": "Kensington shows why this connection matters. A municipal pilot would add verified participation windows, staff responses, and assisted access for residents offline. Our aim is more meaningful input, clearer follow-through, and residents who can stay involved.",
+    "visual": "Briefly recall the documented Kensington precedent, then resolve Proviso\u2019s two approaches into one continuous sequence:\nIndividual voices \u2192 Shared and competing needs \u2192 Revised proposal \u2192 Reviewed responses\nShow the pilot needs beneath it, with \u201cPrototype feedback is not submitted to the City.\u201d\nClose on Proviso and:\n\u201cMake your needs understood. Stay connected as decisions evolve.\u201d"
+  }
+]

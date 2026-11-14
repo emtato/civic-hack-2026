@@ -1,0 +1,841 @@
+{
+  "grouping_origin": "prepared",
+  "versions": [
+    {
+      "id": "labatt-demo-2026-11-12",
+      "label": "Earlier",
+      "date": "2026-11-12",
+      "summary": "Two 46-storey residential towers and a two-storey non-residential building are proposed at Labatt Avenue and River Street. Pickup ends at 6 p.m., deliveries can start at 6 a.m., and the pedestrian route crosses the loading access.",
+      "arrangements": [
+        "Accessible passenger pickup at the main entrance is available until 6 p.m.",
+        "Routine commercial deliveries can begin at 6 a.m.",
+        "The proposed pedestrian route crosses the loading access.",
+        "The proposal includes two 46-storey residential towers and a two-storey non-residential building."
+      ],
+      "features": [
+        {
+          "id": "accessible_pickup",
+          "title": "Accessible pickup",
+          "prompt": "How do you feel about the main entrance pickup bay closing at 6 p.m.?"
+        },
+        {
+          "id": "commercial_loading",
+          "title": "Delivery hours",
+          "prompt": "How do you feel about routine commercial deliveries starting at 6 a.m.?"
+        },
+        {
+          "id": "pedestrian_access",
+          "title": "Pedestrian access",
+          "prompt": "How do you feel about the pedestrian route crossing the loading access?"
+        },
+        {
+          "id": "building_scale",
+          "title": "Building height and scale",
+          "prompt": "How do you feel about the proposed 46-storey towers?"
+        }
+      ],
+      "responses": [
+        {
+          "participant_id": "film-pickup-resident",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "unsure"
+          },
+          "comment": "My Wheel-Trans ride often arrives after dinner. I can wait inside the main entrance until it comes. I\u2019d support the plan if I could still get picked up there at 8 p.m.",
+          "condition": {
+            "feature_id": "accessible_pickup",
+            "requirement": "Keep accessible pickup available at the main entrance until at least 8 p.m.",
+            "is_conditional_support": true,
+            "location_label": "Main entrance",
+            "time_window": "Until at least 8 p.m."
+          },
+          "group": "evening-pickup",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The 9 p.m. closing time covers the requested 8 p.m. pickup at the main entrance."
+          },
+          "upvotes": 4
+        },
+        {
+          "participant_id": "demo-resident",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "neutral"
+          },
+          "comment": "My bedroom faces the loading entrance. I already hear trucks backing up from the other side of the block. Six is too early.",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Start routine commercial deliveries at 9 a.m. or later so nearby residents can sleep.",
+            "location_label": "Loading entrance",
+            "time_window": "9 a.m. or later"
+          },
+          "group": "later-deliveries",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The routine delivery window now begins at 9 a.m."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p03",
+          "position": "oppose",
+          "stakeholder_role": "commuter",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "pedestrian_access": "oppose"
+          },
+          "comment": "I pass through with a stroller most mornings. I don\u2019t want to stop in a truck driveway while a driver is checking both mirrors.",
+          "condition": {
+            "feature_id": "pedestrian_access",
+            "requirement": "Provide a step-free pedestrian route that bypasses the loading driveway.",
+            "location_label": "Pedestrian route by loading access"
+          },
+          "group": "separate-route",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The separate step-free route bypasses the loading access."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p04",
+          "position": "neutral",
+          "stakeholder_role": "business",
+          "element_ratings": {
+            "commercial_loading": "support",
+            "building_scale": "neutral"
+          },
+          "comment": "We get a bakery order at 7:30 before the first rush. The driver serves three other shops on the same run. Please keep the early slot available.",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Allow bakery deliveries around 7:30 a.m.",
+            "location_label": "Commercial loading area",
+            "time_window": "Around 7:30 a.m."
+          },
+          "assessment": {
+            "status": "unresolved",
+            "explanation": "The new routine delivery window starts after the bakery\u2019s requested slot."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p05",
+          "position": "strongly_oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "oppose"
+          },
+          "comment": "A better driveway wouldn\u2019t make two 46-storey towers feel right here. I\u2019d like to see shorter buildings.",
+          "condition": {
+            "feature_id": "building_scale",
+            "requirement": "Reduce the height of both residential towers."
+          },
+          "group": "building-scale",
+          "assessment": {
+            "status": "unresolved",
+            "explanation": "Both towers remain 46 storeys."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p06",
+          "position": "support",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "pedestrian_access": "neutral",
+            "building_scale": "support"
+          },
+          "comment": "I support adding homes here."
+        },
+        {
+          "participant_id": "labatt-demo-p07",
+          "position": "neutral",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "unsure",
+            "pedestrian_access": "unsure",
+            "building_scale": "neutral"
+          },
+          "comment": "My visits are usually midday. I\u2019d like to see a proper site plan before I decide."
+        },
+        {
+          "participant_id": "labatt-demo-p08",
+          "position": "strongly_oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "neutral"
+          },
+          "comment": "Six in the morning? Please move that later. I work evenings and I\u2019m barely asleep by two.",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Keep routine loading quiet until at least 9 a.m. for neighbours who work late.",
+            "location_label": "Commercial loading area",
+            "time_window": "Before 9 a.m."
+          },
+          "group": "later-deliveries",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The routine delivery window starts at 9 a.m."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p09",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "building_scale": "oppose"
+          },
+          "comment": "My dad comes for dinner on Thursdays. His ride home usually comes around quarter to eight. Please keep pickup by the lobby open that late.",
+          "condition": {
+            "feature_id": "accessible_pickup",
+            "requirement": "Keep the main entrance pickup bay available around 7:45 p.m. for evening visitors who need accessible rides.",
+            "location_label": "Main entrance",
+            "time_window": "Around 7:45 p.m."
+          },
+          "group": "evening-pickup",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The revised pickup hours cover 7:45 p.m. at the main entrance."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p10",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "oppose"
+          },
+          "comment": "I could support it if the kids had a way to walk past without crossing the truck entrance.",
+          "condition": {
+            "feature_id": "pedestrian_access",
+            "requirement": "Give children walking past the site a pedestrian route clear of loading traffic.",
+            "is_conditional_support": true,
+            "location_label": "Walkway past the loading entrance"
+          },
+          "group": "separate-route",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The separate pedestrian route avoids the loading access."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p11",
+          "position": "oppose",
+          "stakeholder_role": "business",
+          "element_ratings": {
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "neutral"
+          },
+          "comment": "Happy to have more people nearby, less happy about delivery trucks starting up while we\u2019re still setting up."
+        },
+        {
+          "participant_id": "labatt-demo-p12",
+          "position": "oppose",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "pedestrian_access": "unsure",
+            "building_scale": "oppose"
+          },
+          "comment": "The bay closing at six is the part that sticks out. Evening pickup would be useful.",
+          "condition": {
+            "feature_id": "accessible_pickup",
+            "requirement": "Keep accessible pickup available into the evening.",
+            "location_label": "Main entrance"
+          },
+          "group": "evening-pickup",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The main entrance pickup now runs until 9 p.m."
+          },
+          "upvotes": 2
+        },
+        {
+          "participant_id": "labatt-demo-p13",
+          "position": "strongly_oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "building_scale": "oppose"
+          },
+          "comment": "Forty-six floors is too much at this corner. Bring both buildings down.",
+          "condition": {
+            "feature_id": "building_scale",
+            "requirement": "Lower both residential towers."
+          },
+          "group": "building-scale",
+          "assessment": {
+            "status": "unresolved",
+            "explanation": "The tower heights stay at 46 storeys."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p14",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "unsure"
+          },
+          "comment": "A lift after my physio appointment can take ages. I need a place near the door, even if it\u2019s raining and my ride is late.",
+          "condition": {
+            "feature_id": "accessible_pickup",
+            "requirement": "Provide covered waiting beside the main entrance pickup bay.",
+            "location_label": "Main entrance"
+          },
+          "assessment": {
+            "status": "uncertain",
+            "explanation": "The revised hours give more time to wait. The passage leaves shelter unspecified."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p15",
+          "position": "oppose",
+          "stakeholder_role": "commuter",
+          "element_ratings": {
+            "pedestrian_access": "oppose",
+            "building_scale": "neutral"
+          },
+          "comment": "A truck crossing there is awkward enough on a normal day. When the sidewalk is iced over you can\u2019t exactly step aside quickly.",
+          "condition": {
+            "feature_id": "pedestrian_access",
+            "requirement": "Route pedestrians away from the loading driveway.",
+            "location_label": "Loading access"
+          },
+          "group": "separate-route",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "The pedestrian route is now separate from the loading access."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p16",
+          "position": "neutral",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "commercial_loading": "unsure",
+            "building_scale": "support"
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p17",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "pedestrian_access": "oppose",
+            "building_scale": "support"
+          },
+          "comment": "More homes are welcome. The early trucks and the shared crossing are what would make it hard for me to live with."
+        },
+        {
+          "participant_id": "labatt-demo-p18",
+          "position": "support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "commercial_loading": "oppose",
+            "pedestrian_access": "neutral",
+            "building_scale": "support"
+          },
+          "comment": "I\u2019m for the new homes. I would still move the truck start to nine.",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Start routine commercial deliveries at 9 a.m. or later.",
+            "location_label": "Commercial loading area",
+            "time_window": "9 a.m. or later"
+          },
+          "group": "later-deliveries",
+          "assessment": {
+            "status": "potentially addressed",
+            "explanation": "Routine commercial deliveries now start at 9 a.m."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p19",
+          "position": "strongly_support",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "pedestrian_access": "unsure",
+            "building_scale": "support"
+          },
+          "comment": "Good spot for more apartments."
+        },
+        {
+          "participant_id": "labatt-demo-p20",
+          "position": "support",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "pedestrian_access": "oppose",
+            "building_scale": "support"
+          },
+          "comment": "I\u2019m fine with the height. That driveway crossing looks fiddly."
+        },
+        {
+          "participant_id": "labatt-demo-p21",
+          "position": "unsure",
+          "stakeholder_role": "business",
+          "element_ratings": {
+            "commercial_loading": "unsure"
+          },
+          "comment": "Is that delivery start time for our suppliers too, or just the new businesses?"
+        },
+        {
+          "participant_id": "labatt-demo-p22",
+          "position": "strongly_oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "oppose",
+            "commercial_loading": "oppose",
+            "building_scale": "oppose"
+          },
+          "comment": "Can we see a shadow study for the houses along River before going any further?",
+          "condition": {
+            "feature_id": "building_scale",
+            "requirement": "Publish a shadow study for homes along River Street.",
+            "location_label": "Homes along River Street"
+          },
+          "assessment": {
+            "status": "unresolved",
+            "explanation": "The height passage describes the same towers and leaves shadow impacts open."
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p23",
+          "position": "neutral",
+          "stakeholder_role": "commuter",
+          "element_ratings": {
+            "pedestrian_access": "oppose",
+            "building_scale": "unsure"
+          },
+          "comment": "I only cut through here once a week. The crossing seems like something to fix."
+        },
+        {
+          "participant_id": "labatt-demo-p24",
+          "position": "unsure",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "unsure",
+            "pedestrian_access": "unsure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "labatt-demo-2026-11-13",
+      "label": "Current",
+      "date": "2026-11-13",
+      "summary": "The revision keeps both 46-storey towers and the two-storey building. It extends accessible pickup, delays routine deliveries, and provides a separate step-free pedestrian route.",
+      "arrangements": [
+        "Accessible passenger pickup at the main entrance is available until 9 p.m.",
+        "Routine commercial deliveries are scheduled from 9 to 11 a.m.",
+        "A separate step-free pedestrian route avoids the loading access.",
+        "The proposal includes two 46-storey residential towers and a two-storey non-residential building."
+      ],
+      "features": [
+        {
+          "id": "accessible_pickup",
+          "title": "Accessible pickup",
+          "prompt": "How do you feel about the main entrance pickup bay staying open until 9 p.m.?"
+        },
+        {
+          "id": "commercial_loading",
+          "title": "Delivery hours",
+          "prompt": "How do you feel about the 9\u201311 a.m. window for routine commercial deliveries?"
+        },
+        {
+          "id": "pedestrian_access",
+          "title": "Pedestrian access",
+          "prompt": "How do you feel about the separate step-free route that avoids loading access?"
+        },
+        {
+          "id": "building_scale",
+          "title": "Building height and scale",
+          "prompt": "How do you feel about the proposed 46-storey towers?"
+        }
+      ],
+      "changes": [
+        {
+          "feature_id": "accessible_pickup",
+          "title": "Pickup at the main entrance",
+          "summary": "Accessible pickup at the main entrance extends from 6 p.m. to 9 p.m.",
+          "before": "Accessible passenger pickup at the main entrance is available until 6 p.m.",
+          "after": "Accessible passenger pickup at the main entrance is available until 9 p.m."
+        },
+        {
+          "feature_id": "commercial_loading",
+          "title": "Commercial delivery hours",
+          "summary": "Routine commercial deliveries move to a 9\u201311 a.m. window.",
+          "before": "Routine commercial deliveries can begin at 6 a.m.",
+          "after": "Routine commercial deliveries are scheduled from 9 to 11 a.m."
+        },
+        {
+          "feature_id": "pedestrian_access",
+          "title": "Pedestrian route",
+          "summary": "A separate step-free route avoids the loading access.",
+          "before": "The proposed pedestrian route crosses the loading access.",
+          "after": "A separate step-free pedestrian route avoids the loading access."
+        },
+        {
+          "feature_id": "building_scale",
+          "title": "Building height and scale",
+          "summary": "Both residential towers remain 46 storeys.",
+          "before": "The proposal includes two 46-storey residential towers and a two-storey non-residential building.",
+          "after": "The proposal includes two 46-storey residential towers and a two-storey non-residential building."
+        }
+      ],
+      "responses": [
+        {
+          "participant_id": "labatt-demo-p03",
+          "position": "support",
+          "stakeholder_role": "commuter",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "pedestrian_access": "support"
+          },
+          "comment": "The separate path makes a big difference with the stroller. Will it get cleared after a snowfall?",
+          "condition": {
+            "feature_id": "pedestrian_access",
+            "requirement": "Clear snow from the separate step-free route so it stays passable with strollers.",
+            "location_label": "Separate step-free route",
+            "time_window": "After snowfall"
+          },
+          "group": "step-free-route-details",
+          "upvotes": 3
+        },
+        {
+          "participant_id": "labatt-demo-p04",
+          "position": "oppose",
+          "stakeholder_role": "business",
+          "element_ratings": {
+            "commercial_loading": "oppose",
+            "building_scale": "neutral"
+          },
+          "comment": "Nine to eleven misses our bakery drop and overlaps with the lunch prep. Could we book one earlier slot?",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Allow a bookable 7:30 a.m. bakery delivery slot.",
+            "location_label": "Commercial loading area",
+            "time_window": "Around 7:30 a.m."
+          },
+          "upvotes": 2
+        },
+        {
+          "participant_id": "labatt-demo-p05",
+          "position": "strongly_oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "oppose"
+          },
+          "comment": "The access changes are good. I\u2019m still against the scale. Two towers at 46 storeys is too high here.",
+          "condition": {
+            "feature_id": "building_scale",
+            "requirement": "Reduce the height of both residential towers."
+          },
+          "group": "building-scale",
+          "upvotes": 3
+        },
+        {
+          "participant_id": "labatt-demo-p06",
+          "position": "support",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "pedestrian_access": "neutral",
+            "building_scale": "support"
+          },
+          "comment": "I support adding homes here."
+        },
+        {
+          "participant_id": "labatt-demo-p07",
+          "position": "neutral",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "unsure",
+            "pedestrian_access": "unsure",
+            "building_scale": "neutral"
+          },
+          "comment": "My visits are usually midday. I\u2019d like to see a proper site plan before I decide."
+        },
+        {
+          "participant_id": "labatt-demo-p08",
+          "position": "support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "neutral"
+          },
+          "comment": "Much better. Nine gives me a few more hours of quiet. Do the same hours apply Saturday?",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Confirm that the 9 a.m. delivery start applies on weekends.",
+            "location_label": "Commercial loading area",
+            "time_window": "Weekend mornings"
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p09",
+          "position": "strongly_support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "building_scale": "oppose"
+          },
+          "comment": "That covers Dad\u2019s ride home. I\u2019m glad pickup is still right by the lobby."
+        },
+        {
+          "participant_id": "labatt-demo-p10",
+          "position": "support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "oppose"
+          },
+          "comment": "I\u2019m happy with the separate path. That\u2019s the bit I was waiting to see."
+        },
+        {
+          "participant_id": "labatt-demo-p11",
+          "position": "neutral",
+          "stakeholder_role": "business",
+          "element_ratings": {
+            "commercial_loading": "neutral",
+            "pedestrian_access": "support",
+            "building_scale": "neutral"
+          },
+          "comment": "We can work with the hours if drivers know where to wait. Please post the hours by the bay.",
+          "condition": {
+            "feature_id": "commercial_loading",
+            "requirement": "Post delivery hours where drivers can read them from the loading bay.",
+            "location_label": "Loading bay"
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p12",
+          "position": "support",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "pedestrian_access": "support",
+            "building_scale": "oppose"
+          },
+          "comment": "Nine works much better for dinner visits. I still find the towers a bit much."
+        },
+        {
+          "participant_id": "labatt-demo-p13",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "building_scale": "oppose"
+          },
+          "comment": "Later trucks are a relief. I still want both towers brought down.",
+          "condition": {
+            "feature_id": "building_scale",
+            "requirement": "Lower both residential towers."
+          },
+          "group": "building-scale"
+        },
+        {
+          "participant_id": "labatt-demo-p14",
+          "position": "support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "unsure"
+          },
+          "comment": "That would cover my ride after physio. I\u2019d still like a dry place to wait by the door.",
+          "condition": {
+            "feature_id": "accessible_pickup",
+            "requirement": "Provide covered waiting beside the main entrance pickup bay.",
+            "location_label": "Main entrance"
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p15",
+          "position": "strongly_support",
+          "stakeholder_role": "commuter",
+          "element_ratings": {
+            "pedestrian_access": "support",
+            "building_scale": "neutral"
+          },
+          "comment": "I\u2019m on board now that the path skips the driveway. Please keep it clear all winter.",
+          "condition": {
+            "feature_id": "pedestrian_access",
+            "requirement": "Maintain a clear step-free path through winter.",
+            "location_label": "Separate step-free route",
+            "time_window": "Winter"
+          },
+          "group": "step-free-route-details"
+        },
+        {
+          "participant_id": "labatt-demo-p16",
+          "position": "neutral",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "commercial_loading": "unsure",
+            "building_scale": "support"
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p17",
+          "position": "strongly_support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "support"
+          },
+          "comment": "The later start and the path were the two things I worried about. This version works for me."
+        },
+        {
+          "participant_id": "labatt-demo-p18",
+          "position": "support",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "neutral",
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "support"
+          },
+          "comment": "Yes to the homes, and yes to the later start."
+        },
+        {
+          "participant_id": "labatt-demo-p19",
+          "position": "strongly_support",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "pedestrian_access": "unsure",
+            "building_scale": "support"
+          },
+          "comment": "Good spot for more apartments. Staying until nine for pickup helps, too."
+        },
+        {
+          "participant_id": "labatt-demo-p20",
+          "position": "strongly_support",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "pedestrian_access": "support",
+            "building_scale": "support"
+          },
+          "comment": "The path fixes my main sticking point."
+        },
+        {
+          "participant_id": "labatt-demo-p21",
+          "position": "unsure",
+          "stakeholder_role": "business",
+          "element_ratings": {
+            "commercial_loading": "unsure"
+          },
+          "comment": "Still working out whether our suppliers can fit their runs into that window."
+        },
+        {
+          "participant_id": "labatt-demo-p25",
+          "position": "oppose",
+          "stakeholder_role": "resident",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "pedestrian_access": "support",
+            "building_scale": "oppose"
+          },
+          "comment": "I like the access changes. I\u2019d support the plan if the two towers were shorter.",
+          "condition": {
+            "feature_id": "building_scale",
+            "requirement": "Reduce the proposed height of both towers.",
+            "is_conditional_support": true
+          },
+          "group": "building-scale"
+        },
+        {
+          "participant_id": "labatt-demo-p26",
+          "position": "support",
+          "stakeholder_role": "visitor",
+          "element_ratings": {
+            "accessible_pickup": "support",
+            "commercial_loading": "support",
+            "pedestrian_access": "unsure"
+          },
+          "comment": "I can visit my sister after work and still book a ride from the main doors."
+        },
+        {
+          "participant_id": "labatt-demo-p27",
+          "position": "support",
+          "stakeholder_role": "commuter",
+          "element_ratings": {
+            "pedestrian_access": "support",
+            "building_scale": "neutral"
+          }
+        },
+        {
+          "participant_id": "labatt-demo-p28",
+          "position": "unsure",
+          "stakeholder_role": "citywide",
+          "element_ratings": {
+            "accessible_pickup": "unsure",
+            "pedestrian_access": "unsure",
+            "building_scale": "oppose"
+          },
+          "comment": "Where does the step-free path meet the public sidewalk? It\u2019s hard to tell from this description.",
+          "condition": {
+            "feature_id": "pedestrian_access",
+            "requirement": "Show where the step-free route connects to the public sidewalk.",
+            "location_label": "Connection to the public sidewalk"
+          }
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "evening-pickup": {
+      "label": "Evening accessible pickup",
+      "icon": "access"
+    },
+    "later-deliveries": {
+      "label": "Later delivery starts",
+      "icon": "clock"
+    },
+    "separate-route": {
+      "label": "Separate pedestrians from loading",
+      "icon": "access"
+    },
+    "building-scale": {
+      "label": "Reduce the height of the towers",
+      "icon": "layers"
+    },
+    "step-free-route-details": {
+      "label": "Keep the step-free route usable in winter",
+      "icon": "access"
+    }
+  }
+}

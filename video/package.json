@@ -28,10 +28,13 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "render": "remotion render Proviso-Draft out/proviso-draft-v1.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --concurrency=2 --is-production=false",
-    "render:opening": "remotion render Proviso-Draft out/proviso-opening.mp4 --frames=0-599 --codec=h264 --crf=20 --concurrency=2 --is-production=false",
+    "render": "remotion render Proviso-Story-v2 out/proviso-story-v2.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --concurrency=3 --is-production=false",
+    "render:opening": "remotion render Proviso-Story-v2 out/proviso-opening-v2.mp4 --frames=0-419 --codec=h264 --crf=20 --concurrency=3 --is-production=false",
     "music": "python3 scripts/make-music.py",
-    "capture:api": "node scripts/fixture-server.mjs"
+    "capture:api": "../backend/.venv/bin/python scripts/film-api.py",
+    "render:v1": "remotion render Proviso-Draft out/proviso-draft-v1.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --concurrency=2 --is-production=false",
+    "render:clean": "remotion render Proviso-Story-v2 out/proviso-story-v2-clean.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --concurrency=3 --is-production=false --props=./clean-props.json",
+    "capture:api:v1": "node scripts/fixture-server.mjs"
   },
   "allowScripts": {
     "esbuild": false
