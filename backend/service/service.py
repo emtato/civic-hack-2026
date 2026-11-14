@@ -105,12 +105,7 @@ def to_display_proposal(record: dict) -> Proposal:
     return Proposal.model_validate(data)
 
 
-# ============================================================================
-# Pure Domain & Aggregation Logic
-# ============================================================================
-
 def create_empty_aggregate() -> ProposalCommunityAggregateDTO:
-    """Create an empty aggregate DTO template for a new proposal."""
     return ProposalCommunityAggregateDTO(
         total_participants=0,
         total_conditions=0,
@@ -164,39 +159,29 @@ def apply_feedback_to_aggregate(
     submission: ProposalFeedbackSubmissionDTO,
     previous_submission: Optional[ProposalFeedbackSubmissionDTO] = None,
 ) -> ProposalCommunityAggregateDTO:
-    """Business logic: applies a feedback submission to an existing aggregate.
-
-    Handles both brand-new submissions and updates to an existing participant's submission.
-    """
     agg = copy.deepcopy(aggregate)
     now_iso = submission.submitted_at or datetime.now(timezone.utc).isoformat()
     agg.last_updated = now_iso
 
-    # If updating an existing submission from the same participant:
     if previous_submission is not None:
-        # Decrement previous position
         old_pos = previous_submission.position
         if old_pos in agg.position_distribution:
             agg.position_distribution[old_pos] = max(
                 0, agg.position_distribution[old_pos] - 1
             )
-        # Increment new position
         new_pos = submission.position
         agg.position_distribution[new_pos] = agg.position_distribution.get(new_pos, 0) + 1
 
-        # Decrement previous stakeholder role
         old_role = previous_submission.stakeholder_role
         if old_role in agg.stakeholder_distribution:
             agg.stakeholder_distribution[old_role] = max(
                 0, agg.stakeholder_distribution[old_role] - 1
             )
-        # Increment new stakeholder role
         new_role = submission.stakeholder_role
         agg.stakeholder_distribution[new_role] = (
             agg.stakeholder_distribution.get(new_role, 0) + 1
         )
 
-        # Update element ratings
         for elem in agg.proposal_specific:
             old_rating = previous_submission.element_ratings.get(elem.id)
             new_rating = submission.element_ratings.get(elem.id)
@@ -313,13 +298,7 @@ class GroupingConflict(Exception):
     """The displayed condition groups changed before an update could be saved."""
 
 
-# ============================================================================
-# Service Coordinator: Coordinates domain logic with persistence calls
-# ============================================================================
-
 class FeedbackService:
-    """Service layer that executes business logic and delegates storage to persistence repositories."""
-
     def __init__(
         self,
         db: Optional[Database] = None,
@@ -340,16 +319,13 @@ class FeedbackService:
         self.analysis_cache = self.feedback.db["feedback_request_analysis"]
 
     def get_proposals(self) -> List[Proposal]:
-        """Fetch all proposals from persistence."""
         return [to_display_proposal(record) for record in self.proposals.get_all()]
 
     def get_proposal(self, proposal_id: str) -> Optional[Proposal]:
-        """Fetch a single proposal from persistence."""
         record = self.proposals.get_by_id(proposal_id)
         return to_display_proposal(record) if record is not None else None
 
     def save_proposal(self, proposal: Proposal) -> Proposal:
-        """Save a proposal to persistence."""
         data = proposal.model_dump(mode="python")
         aggregate = data.pop("community_aggregate", None)
         record = {"id": proposal.id, "display_overrides": data}
@@ -358,7 +334,6 @@ class FeedbackService:
         return to_display_proposal(self.proposals.save(record))
 
     def seed_initial_proposals(self, force: bool = False) -> int:
-        """Seed initial proposal dataset via persistence."""
         return self.proposals.seed_if_empty(force=force)
 
     def preview_feedback_requests(self, proposal_id, preview):
@@ -370,12 +345,10 @@ class FeedbackService:
     def submit_feedback(
         self, submission: ProposalFeedbackSubmissionDTO
     ) -> Tuple[ProposalFeedbackSubmissionDTO, ProposalCommunityAggregateDTO]:
-        """Business workflow: validate, persist submission, calculate aggregate, and persist updated aggregate."""
         proposal = self.get_proposal(submission.proposal_id)
         if proposal is None:
             raise ValueError(f"Proposal '{submission.proposal_id}' not found.")
 
-        # 1. Call persistence to save the raw submission
         saved_sub, is_new, previous_sub = self.feedback.save_submission(submission)
 
         aggregate = self.apply_saved_feedback(saved_sub, previous_sub)
@@ -614,13 +587,11 @@ class FeedbackService:
     def get_participant_feedback(
         self, proposal_id: str, participant_id: str
     ) -> Optional[ProposalFeedbackSubmissionDTO]:
-        """Fetch participant feedback from persistence."""
         return self.feedback.get_by_participant(proposal_id, participant_id)
 
     def get_aggregate(
         self, proposal_id: str
     ) -> Optional[ProposalCommunityAggregateDTO]:
-        """Fetch proposal aggregate from persistence."""
         proposal = self.get_proposal(proposal_id)
         if proposal is None:
             return None

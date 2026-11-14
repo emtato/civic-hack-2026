@@ -1,21 +1,4 @@
-/**
- * Proposal Feedback & Community Aggregate DTO
- *
- * Designed for CIVIC Hack 2026:
- * - Part 1: Visual sentiment distributions, stakeholder connection breakdown,
- *   element-level ratings, and AI-grouped condition clusters with drill-down verbatim evidence.
- * - Part 2: Interactive citizen feedback submission (stance, role, element ratings,
- *   free-text comment, structured condition, and optional concern coordinates).
- */
-
-// ============================================================================
-// 1. Primitive Keys & Scales
-// ============================================================================
-
-/**
- * 5-point Likert scale for overall proposal stance + separate 'unsure' option.
- * Municipal rule: Never average positions into a single score.
- */
+// Keep stance counts separate from one another.
 export type PositionStance =
   | 'strongly_oppose'
   | 'oppose'
@@ -24,10 +7,6 @@ export type PositionStance =
   | 'strongly_support'
   | 'unsure'
 
-/**
- * Universal stakeholder connection dimension.
- * Helps municipal staff distinguish immediate residents/business owners from citywide interest.
- */
 export type StakeholderRole =
   | 'resident'   // Live in immediate neighbourhood
   | 'business'   // Local business owner or employee
@@ -35,14 +14,7 @@ export type StakeholderRole =
   | 'visitor'    // Occasional visitor for dining/recreation
   | 'citywide'   // Toronto resident interested in broad city policy
 
-/**
- * Element-level rating choice for proposal-specific design features.
- */
 export type ElementRatingKey = 'oppose' | 'neutral' | 'support' | 'unsure'
-
-// ============================================================================
-// 2. Display Configurations & Metadata
-// ============================================================================
 
 export interface PositionMeta {
   key: PositionStance
@@ -154,14 +126,6 @@ export const ORDERED_STAKEHOLDERS: StakeholderRole[] = [
   'citywide',
 ]
 
-// ============================================================================
-// 3. Condition Item & Condition Cluster DTOs (The Free-Form Section)
-// ============================================================================
-
-/**
- * Individual verified condition record contributed by a resident.
- * Preserves verbatim comments, exact requirements, time windows, and optional coordinates.
- */
 export interface ConditionItemDTO {
   id: string
   participant_id?: string
@@ -176,10 +140,6 @@ export interface ConditionItemDTO {
   submitted_at: string
 }
 
-/**
- * Cluster row for the condition bar chart.
- * Represents an AI-grouped or rule-grouped theme of citizen conditions.
- */
 export interface ConditionClusterDTO {
   is_suggested?: boolean
   id: string
@@ -192,14 +152,6 @@ export interface ConditionClusterDTO {
   items: ConditionItemDTO[]      // Verbatim evidence list (for drill-down expansion)
 }
 
-// ============================================================================
-// 4. Proposal-Specific Elements (Array of Row Maps)
-// ============================================================================
-
-/**
- * Row map for a proposal-specific design element.
- * E.g., 'Commercial Delivery Hours', 'Weekend Pedestrianization', etc.
- */
 export interface ProposalSpecificElementDTO {
   id: string                     // e.g. 'loading_hours', 'pedestrian_schedule'
   title: string                  // e.g. 'Commercial Loading Windows'
@@ -209,14 +161,6 @@ export interface ProposalSpecificElementDTO {
   total_responses: number
 }
 
-// ============================================================================
-// 5. Overall Proposal Community Aggregate DTO (Part 1 Display)
-// ============================================================================
-
-/**
- * Complete community aggregate DTO for a proposal.
- * Powers the charts, distribution bars, and condition clusters in the Community tab.
- */
 export interface ProposalCommunityAggregateDTO {
   total_participants: number
   total_conditions: number
@@ -224,36 +168,12 @@ export interface ProposalCommunityAggregateDTO {
   grouping_status?: 'pending' | 'ready' | 'error'
   grouping_error?: string | null
   grouping_updated_at?: string | null
-
-  /**
-   * Distribution of overall stances.
-   * Map format ensures O(1) lookup & safety against duplicates.
-   */
   position_distribution: Record<PositionStance, number>
-
-  /**
-   * Breakdown by personal stakeholder connection to the project area.
-   */
   stakeholder_distribution: Record<StakeholderRole, number>
-
-  /**
-   * Array of proposal-specific element rows, each with its own distribution map.
-   */
   proposal_specific: ProposalSpecificElementDTO[]
-
-  /**
-   * Free-form condition section: bar chart clusters with inspectable underlying quotes.
-   */
   condition_clusters: ConditionClusterDTO[]
 }
 
-// ============================================================================
-// 6. Citizen Feedback Submission DTO (Part 2 Feedback Input)
-// ============================================================================
-
-/**
- * Citizen submission payload sent when a participant submits their position & conditions.
- */
 export interface ConfirmedCommentRequestDTO {
   requirement: string
   quote: string
@@ -290,35 +210,20 @@ export interface ProposalFeedbackSubmissionDTO {
   my_vote?: number
 }
 
-// ============================================================================
-// 7. Business Logic & Aggregation Rules
-// ============================================================================
-
-/**
- * Safely computes the percentage of a count relative to a total.
- */
 export function getPercentage(count: number, total: number): number {
   if (!total || total <= 0) return 0
   return Math.round((count / total) * 100)
 }
 
-/**
- * Returns formatted percentage string (e.g. "45%").
- */
 export function formatPercentage(count: number, total: number): string {
   return `${getPercentage(count, total)}%`
 }
 
-/**
- * Immutably updates an existing Community Aggregate DTO with a new citizen submission.
- * This enables instant live updates to all charts and clusters without page reloads.
- */
 export function applyFeedbackToAggregate(
   aggregate: ProposalCommunityAggregateDTO,
   submission: ProposalFeedbackSubmissionDTO,
   previousSubmission?: ProposalFeedbackSubmissionDTO | null,
 ): ProposalCommunityAggregateDTO {
-  // 1. Clone deep structure
   const next: ProposalCommunityAggregateDTO = {
     ...aggregate,
     total_participants: aggregate.total_participants + (previousSubmission ? 0 : 1),
@@ -363,19 +268,16 @@ export function applyFeedbackToAggregate(
     }
   }
 
-  // 2. Increment position stance count
   if (submission.position in next.position_distribution) {
     next.position_distribution[submission.position] =
       (next.position_distribution[submission.position] || 0) + 1
   }
 
-  // 3. Increment stakeholder connection count
   if (submission.stakeholder_role in next.stakeholder_distribution) {
     next.stakeholder_distribution[submission.stakeholder_role] =
       (next.stakeholder_distribution[submission.stakeholder_role] || 0) + 1
   }
 
-  // 4. Update proposal-specific element distribution rows
   for (const row of next.proposal_specific) {
     const userRating = submission.element_ratings[row.id]
     if (userRating && userRating in row.distribution) {
@@ -439,9 +341,6 @@ export function applyFeedbackToAggregate(
   return next
 }
 
-/**
- * Creates an empty aggregate DTO template for a new proposal.
- */
 export function createEmptyAggregate(): ProposalCommunityAggregateDTO {
   return {
     total_participants: 0,

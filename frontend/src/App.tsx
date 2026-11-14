@@ -262,7 +262,6 @@ export default function App() {
     fitResults()
   }, [fitResults])
 
-  // Map initialization
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return
     const map = L.map(mapContainerRef.current, {
@@ -312,7 +311,6 @@ export default function App() {
     fitResults()
   }, [fitResults])
 
-  // Sync map markers
   useEffect(() => {
     const markerLayer = markerLayerRef.current
     if (!markerLayer) return
@@ -339,7 +337,6 @@ export default function App() {
     })
   }, [filteredProposals, selectedId, openProposal])
 
-  // Sync route polyline
   useEffect(() => {
     const projectLayer = projectLayerRef.current
     if (!projectLayer) return
@@ -374,7 +371,6 @@ export default function App() {
   return (
     <ProposalUpdatesProvider proposals={proposals}>
     <div id="app">
-      {/* Top Bar / App Header */}
       <header className="app-header">
         <a
           className="brand"
@@ -427,9 +423,7 @@ export default function App() {
         />
       </header>
 
-      {/* Main Workspace Layout */}
       <main className={`workspace ${selectedId ? 'detail-open' : ''} ${mobileShowMap ? 'mobile-map' : ''}`}>
-        {/* Sidebar Component */}
         <Sidebar
           sidebarRef={sidebarRef}
           selectedProposal={selectedProposal}
@@ -459,7 +453,6 @@ export default function App() {
           notificationTarget={notificationTarget}
         />
 
-        {/* Map Shell & Outer Map Controls */}
         <section className="map-shell" aria-label="Toronto proposal map">
           <div id="map" ref={mapContainerRef} aria-label="Interactive map showing proposal locations" />
           {citywideResults && (
@@ -496,7 +489,6 @@ export default function App() {
           )}
         </section>
 
-        {/* Mobile View Toggle */}
         <button
           id="mobile-toggle"
           className="mobile-toggle"
@@ -512,7 +504,6 @@ export default function App() {
         </button>
       </main>
 
-      {/* Floating Notification Toast */}
       <div id="toast" role="status" className="toast" hidden={!toastMessage}>
         {toastMessage}
       </div>
