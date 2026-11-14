@@ -1,7 +1,7 @@
-"""On-demand source capture, comparison and orchestration for frontend polling.
+"""Capture and compare known Toronto notices for the hourly source checker.
 
-Only existing Toronto notice IDs are refreshed. This does not discover new notices,
-download linked attachments, publish revisions or alter participant feedback.
+The browser reads stored comparisons. Source checks leave published proposal
+revisions and participant feedback untouched.
 """
 
 import hashlib

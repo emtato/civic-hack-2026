@@ -176,8 +176,6 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
 
   async function save(submission: ProposalFeedbackSubmissionDTO) {
     if (savingRef.current) return
-    // Defense in depth: never attempt a server write without a logged-in user.
-    // The backend also enforces this; this keeps the UI honest.
     if (mode === 'server' && !currentUser) {
       setError('Please log in to submit feedback. Your answers are still here.')
       return
@@ -193,8 +191,6 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
         setResponse(submission)
         setReceipt(persisted ? 'Your response was saved on this device. You can return and edit it.' : 'Your response was saved for this visit. Browser storage is unavailable; it will not survive a refresh.')
       } else {
-        // The backend sets participant_id from the verified token; we also
-        // send the username so the optimistic client state matches.
         const serverSubmission: ProposalFeedbackSubmissionDTO = currentUser
           ? { ...submission, participant_id: currentUser.username }
           : submission
@@ -280,8 +276,6 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
         </div>
 
         {(() => {
-          // Server mode requires an account to submit. Demo mode (no server)
-          // stays open so the device-only prototype still works offline.
           const needsLogin = mode === 'server' && !currentUser
           return (
             <div className="feedback-invitation">

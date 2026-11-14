@@ -49,7 +49,6 @@ from persistence.persistence import UserRepository
 from persistence.notifications import NotificationRepository
 from notifications_DTO import NotificationInboxDTO
 
-# Load environment variables from backend/.env
 HERE = Path(__file__).resolve().parent
 load_dotenv(HERE / ".env")
 
@@ -198,10 +197,6 @@ def get_snapshot_service(request: Request) -> ProposalSnapshotService:
     return ProposalSnapshotService(db)
 
 
-# ============================================================================
-# Health Check Endpoints
-# ============================================================================
-
 @app.get("/health", tags=["Health"])
 def health():
     """Check that the API is running, independently of MongoDB."""
@@ -226,10 +221,6 @@ def database_health(request: Request):
         ) from None
     return {"status": "ok", "database": "connected"}
 
-
-# ============================================================================
-# Auth Endpoints (Controller)
-# ============================================================================
 
 @app.post(
     "/api/auth/register",
@@ -305,10 +296,6 @@ def read_current_user(current_user: UserPublicDTO = Depends(get_current_user)):
     return current_user
 
 
-# ============================================================================
-# Proposals Endpoints (Controller)
-# ============================================================================
-
 @app.get("/api/proposals", response_model=List[Proposal], tags=["Proposals"])
 def list_proposals(
     topic: Optional[str] = Query(None, description="Filter by proposal topic"),
@@ -352,42 +339,6 @@ def get_proposal(
             detail="Failed to query database for proposal.",
         ) from exc
 
-
-# @app.post("/api/proposals", response_model=Proposal, status_code=status.HTTP_201_CREATED, tags=["Proposals"])
-# def save_proposal(
-#     proposal: Proposal,
-#     service: FeedbackService = Depends(get_service),
-# ):
-#     """Create or update a proposal in MongoDB with its attached feedback aggregate."""
-#     try:
-#         saved = service.save_proposal(proposal)
-#         return saved
-#     except PyMongoError as exc:
-#         raise HTTPException(
-#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-#             detail="Failed to save proposal to database.",
-#         ) from exc
-#
-#
-# @app.post("/api/proposals/seed", tags=["Proposals"])
-# def seed_proposals(
-#     force: bool = Query(False, description="Whether to overwrite existing proposals"),
-#     service: FeedbackService = Depends(get_service),
-# ):
-#     """Seed the saved set of existing proposals into MongoDB if empty or if force=true."""
-#     try:
-#         count = service.seed_initial_proposals(force=force)
-#         return {"status": "ok", "seeded_count": count}
-#     except Exception as exc:
-#         raise HTTPException(
-#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-#             detail=f"Failed to seed proposals: {type(exc).__name__}",
-#         ) from exc
-
-
-# ============================================================================
-# Feedback Endpoints (Controller)
-# ============================================================================
 
 @app.get(
     "/api/proposals/{proposal_id}/snapshots/{snapshot_id}",
