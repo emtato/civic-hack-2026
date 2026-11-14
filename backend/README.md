@@ -28,6 +28,12 @@ URL-encode special characters in the database password. Ensure Atlas permits you
 machine's IP and that the database user has access to the chosen database.
 Restart the server after changing `.env`.
 
+Set `GROQ_API_KEY` in the backend environment to enable **Suggest groups**
+on a live proposal. This uses Groq (OpenAI-compatible Chat Completions, model
+`openai/gpt-oss-120b` by default; override with `GROQ_MODEL`) to find equivalent
+confirmed requirements. It sends the requirement and its recorded time and place.
+Signed-in residents can remove their own requirement from a suggested group.
+
 `MONGODB_DATABASE` selects the database name. MongoDB creates the database when
 you first write data; pinging it does not create a database or collection.
 The shared database handle is available as `request.app.state.database` when

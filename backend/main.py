@@ -16,14 +16,17 @@ from pymongo.errors import PyMongoError
 
 from database.database import ensure_indexes, get_database, get_mongo_client
 from proposals_DTO import (
+    CommentVoteRequestDTO,
     Proposal,
     ProposalCommunityAggregateDTO,
     ProposalFeedbackSubmissionDTO,
 )
-from service.service import FeedbackService
+from service.condition_grouping import GroupingUnavailable
+from service.service import FeedbackService, GroupingConflict
 from auth import (
     create_access_token,
     get_current_user,
+    get_optional_user,
     get_user_repository,
     hash_password,
     verify_password,
@@ -287,6 +290,46 @@ def get_proposal(
 # ============================================================================
 
 @app.post(
+    "/api/proposals/{proposal_id}/condition-groups",
+    response_model=ProposalCommunityAggregateDTO,
+    tags=["Feedback"],
+    dependencies=[Depends(get_current_user)],
+)
+def group_conditions(proposal_id: str, service: FeedbackService = Depends(get_service)):
+    try:
+        return service.group_conditions(proposal_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except GroupingConflict as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except GroupingUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Could not update condition groups.") from exc
+
+
+@app.post(
+    "/api/proposals/{proposal_id}/condition-groups/{condition_id}/reject",
+    response_model=ProposalCommunityAggregateDTO,
+    tags=["Feedback"],
+)
+def reject_condition_group(
+    proposal_id: str,
+    condition_id: str,
+    current_user: UserPublicDTO = Depends(get_current_user),
+    service: FeedbackService = Depends(get_service),
+):
+    try:
+        return service.reject_condition_group(proposal_id, condition_id, current_user.username)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except GroupingConflict as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except PyMongoError as exc:
+        raise HTTPException(status_code=503, detail="Could not update condition groups.") from exc
+
+
+@app.post(
     "/api/proposals/{proposal_id}/feedback",
     response_model=dict,
     status_code=status.HTTP_201_CREATED,
@@ -340,21 +383,60 @@ def submit_feedback(
 def list_feedback_for_proposal(
     proposal_id: str,
     service: FeedbackService = Depends(get_service),
+    viewer: Optional[UserPublicDTO] = Depends(get_optional_user),
 ):
-    """Retrieve all stored feedback submissions for a proposal."""
+    """Retrieve all stored feedback submissions for a proposal.
+
+    Public route. When the caller is logged in, each comment also reports
+    that viewer's own vote so the UI can highlight it.
+    """
     try:
         if service.get_proposal(proposal_id) is None:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Proposal '{proposal_id}' was not found.",
             )
-        return service.get_feedback_submissions(proposal_id)
+        return service.get_feedback_submissions(
+            proposal_id, viewer_id=viewer.username if viewer else None
+        )
     except HTTPException:
         raise
     except PyMongoError as exc:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="Database error retrieving feedback submissions.",
+        ) from exc
+
+
+@app.post(
+    "/api/proposals/{proposal_id}/comments/{comment_owner}/vote",
+    response_model=ProposalFeedbackSubmissionDTO,
+    tags=["Feedback"],
+)
+def vote_on_comment(
+    proposal_id: str,
+    comment_owner: str,
+    body: CommentVoteRequestDTO,
+    service: FeedbackService = Depends(get_service),
+    current_user: UserPublicDTO = Depends(get_current_user),
+):
+    """Up/down-vote another participant's comment, or clear your vote (value 0).
+
+    Requires authentication. Voters are taken from the verified token, so a
+    user votes only as themselves and cannot vote on their own comment.
+    """
+    try:
+        return service.vote_on_comment(
+            proposal_id, comment_owner, current_user.username, body.value
+        )
+    except ValueError as exc:
+        detail = str(exc)
+        code = status.HTTP_400_BAD_REQUEST if "own comment" in detail else status.HTTP_404_NOT_FOUND
+        raise HTTPException(status_code=code, detail=detail) from exc
+    except PyMongoError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Database error saving your vote.",
         ) from exc
 
 

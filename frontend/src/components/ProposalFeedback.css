@@ -70,17 +70,17 @@
 .feedback-condition-group[open] .feedback-disclosure { transform:rotate(90deg); }
 .feedback-condition-group.is-ungrouped { border-style:dashed; }
 .feedback-condition-group.is-ungrouped .feedback-cluster-track i { background:#9b9d85; }
-.feedback-evidence { padding:0 15px 15px; border-top:1px solid #e8ebdf; background:#fafbf5; }
-.feedback-evidence>.feedback-help { margin-top:13px; }
-.feedback-quote { padding:15px 0 0; }
-.feedback-quote+.feedback-quote { margin-top:16px; border-top:1px solid #e0e5d6; }
-.feedback-requirement-tag { display:inline-block; background:#eeeede; padding:4px 7px; border-radius:4px; color:#606044; font-size:12px; letter-spacing:.2px; }
+.feedback-evidence { padding:0 15px 12px; border-top:1px solid #e8ebdf; background:#fafbf5; }
+.feedback-evidence>.feedback-help { margin-top:9px; }
+.feedback-quote { padding:10px 0 0; }
+.feedback-quote+.feedback-quote { margin-top:10px; border-top:1px solid #e0e5d6; }
+.feedback-requirement-tag { display:inline-block; background:#eeeede; padding:3px 7px; border-radius:4px; color:#606044; font-size:12px; letter-spacing:.2px; }
 .feedback-requirement-tag.conditional { background:#e7efdf; color:#527140; }
-.proposal-feedback blockquote { margin:10px 0 14px; color:#52604d; font-size:14px; line-height:1.9; white-space:pre-wrap; overflow-wrap:anywhere; }
-.feedback-recorded-requirement { border-left:2px solid #c5d2b7; padding-left:11px; }
+.proposal-feedback blockquote { margin:6px 0 8px; color:#52604d; font-size:13px; line-height:1.6; white-space:pre-wrap; overflow-wrap:anywhere; }
+.feedback-recorded-requirement { border-left:2px solid #c5d2b7; padding-left:10px; }
 .feedback-recorded-requirement strong { text-transform:uppercase; font-size:12px; letter-spacing:.7px; color:#58694c; }
-.feedback-recorded-requirement p { font-size:13px; line-height:1.8; margin-top:4px; overflow-wrap:anywhere; }
-.feedback-quote-context { display:flex; flex-wrap:wrap; gap:12px; font-size:12px; color:#58694c; margin-top:13px; }
+.feedback-recorded-requirement p { font-size:13px; line-height:1.55; margin-top:3px; overflow-wrap:anywhere; }
+.feedback-quote-context { display:flex; flex-wrap:wrap; gap:12px; font-size:12px; color:#58694c; margin-top:8px; }
 .feedback-quote-context>span { display:flex; gap:5px; align-items:center; }
 .feedback-quote-context .icon { width:12px; height:12px; }
 .feedback-count-note { padding-top:16px; border-top:1px solid #e8ebdf; margin-top:20px; }

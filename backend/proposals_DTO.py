@@ -37,6 +37,7 @@ class DTOModel(BaseModel):
 class ConditionItemDTO(DTOModel):
     id: str
     participant_id: Optional[str] = None
+    grouping_rejected: bool = False
     verbatim_quote: str = ""
     extracted_requirement: str = ""
     is_conditional_support: bool = True
@@ -54,6 +55,7 @@ class ConditionClusterDTO(DTOModel):
     count: int = 0
     percentage: Optional[float] = None
     is_ungrouped: Optional[bool] = False
+    is_suggested: bool = False
     items: list[ConditionItemDTO] = Field(default_factory=list)
 
 
@@ -97,6 +99,16 @@ class ProposalFeedbackSubmissionDTO(DTOModel):
     condition: Optional[FeedbackConditionDTO] = None
     concern_coordinates: Optional[list[float]] = None
     submitted_at: Optional[str] = None
+    # Comment vote tallies (read-only; populated by the service on read).
+    upvotes: int = 0
+    downvotes: int = 0
+    score: int = 0
+    my_vote: int = 0  # The requesting viewer's vote: 1, -1, or 0 if none/anonymous.
+
+
+class CommentVoteRequestDTO(DTOModel):
+    # 1 = upvote, -1 = downvote, 0 = clear the viewer's existing vote.
+    value: Literal[-1, 0, 1]
 
 
 class Proposal(DTOModel):

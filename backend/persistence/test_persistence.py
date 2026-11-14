@@ -81,6 +81,13 @@ class MockMongoCollection:
             return SimpleNamespace(matched_count=0, modified_count=0, upserted_id=doc_id)
         return SimpleNamespace(matched_count=0, modified_count=0, upserted_id=None)
 
+    def delete_one(self, query):
+        matches = list(self._filter(query))
+        if matches:
+            del self.documents[matches[0]["_id"]]
+            return SimpleNamespace(deleted_count=1)
+        return SimpleNamespace(deleted_count=0)
+
     def _filter(self, query):
         for doc in self.documents.values():
             match = True

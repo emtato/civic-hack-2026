@@ -327,7 +327,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       {community?.hasResponse ? 'Edit your feedback' : 'Submit feedback / comment'} <Icon name="arrow" />
                     </button>
                   </section>
-                  <ProposalComments proposalId={selectedProposal.id} refreshKey={community?.aggregate.last_updated} />
+                  <ProposalComments proposalId={selectedProposal.id} refreshKey={community?.aggregate.last_updated} currentUser={currentUser} />
                 </div>
               </div>
             )}

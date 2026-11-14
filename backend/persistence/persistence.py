@@ -78,6 +78,14 @@ class ProposalRepository:
             )
         return result.matched_count > 0
 
+    def replace_aggregate_if_current(self, record: dict, aggregate: ProposalCommunityAggregateDTO) -> bool:
+        """Compare against the raw stored snapshot so older records work too."""
+        result = self.collection.update_one(
+            {"_id": record["_id"], "community_aggregate": record.get("community_aggregate")},
+            {"$set": {"community_aggregate": aggregate.model_dump(mode="python")}},
+        )
+        return result.matched_count > 0
+
     def seed_if_empty(
         self, seed_file_path: Optional[Path] = None, force: bool = False
     ) -> int:
@@ -175,6 +183,66 @@ class FeedbackRepository:
     def count_by_proposal(self, proposal_id: str) -> int:
         """Count total feedback submissions for a proposal."""
         return self.collection.count_documents({"proposal_id": proposal_id})
+
+
+class CommentVoteRepository:
+    """Persistence for upvotes/downvotes on individual comments.
+
+    A comment is identified by the proposal plus the comment author's
+    participant id (one submission per participant per proposal). A vote is
+    identified by that pair plus the voter, so each user holds at most one
+    vote per comment and can change or clear it.
+    """
+
+    def __init__(self, db: Optional[Database] = None):
+        self.db = db if db is not None else get_database()
+        if self.db is None:
+            raise ValueError("MongoDB database handle is required for CommentVoteRepository.")
+        self.collection = self.db["comment_votes"]
+
+    def _doc_id(self, proposal_id: str, comment_owner: str, voter: str) -> str:
+        return f"{proposal_id}:{comment_owner}:{voter}"
+
+    def set_vote(self, proposal_id: str, comment_owner: str, voter: str, value: int) -> None:
+        """Record, change, or clear a single voter's vote on a comment."""
+        doc_id = self._doc_id(proposal_id, comment_owner, voter)
+        if value == 0:
+            self.collection.delete_one({"_id": doc_id})
+            return
+        self.collection.replace_one(
+            {"_id": doc_id},
+            {
+                "_id": doc_id,
+                "proposal_id": proposal_id,
+                "comment_owner": comment_owner,
+                "voter": voter,
+                "value": value,
+            },
+            upsert=True,
+        )
+
+    def tallies_by_proposal(self, proposal_id: str) -> dict[str, dict[str, int]]:
+        """Return per-comment-owner vote tallies: {owner: {up, down}}."""
+        tallies: dict[str, dict[str, int]] = {}
+        for doc in self.collection.find({"proposal_id": proposal_id}):
+            owner = doc.get("comment_owner")
+            if owner is None:
+                continue
+            bucket = tallies.setdefault(owner, {"up": 0, "down": 0})
+            if doc.get("value", 0) > 0:
+                bucket["up"] += 1
+            elif doc.get("value", 0) < 0:
+                bucket["down"] += 1
+        return tallies
+
+    def votes_by_voter(self, proposal_id: str, voter: str) -> dict[str, int]:
+        """Return {comment_owner: value} for all of one voter's votes on a proposal."""
+        result: dict[str, int] = {}
+        for doc in self.collection.find({"proposal_id": proposal_id, "voter": voter}):
+            owner = doc.get("comment_owner")
+            if owner is not None:
+                result[owner] = doc.get("value", 0)
+        return result
 
 
 class UserRepository:

@@ -124,3 +124,24 @@ def get_current_user(
         raise credentials_error
 
     return UserPublicDTO(username=record.username, created_at=record.created_at)
+
+
+def get_optional_user(
+    token: Optional[str] = Depends(oauth2_scheme),
+    users: UserRepository = Depends(get_user_repository),
+) -> Optional[UserPublicDTO]:
+    """Like ``get_current_user`` but returns None instead of raising.
+
+    Use on public read routes that want to personalise the response for a
+    logged-in viewer (e.g. showing the viewer's own comment vote) while
+    still serving anonymous visitors.
+    """
+    if not token:
+        return None
+    username = decode_token(token)
+    if username is None:
+        return None
+    record = users.get_by_username(username)
+    if record is None:
+        return None
+    return UserPublicDTO(username=record.username, created_at=record.created_at)

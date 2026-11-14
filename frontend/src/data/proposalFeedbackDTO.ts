@@ -179,6 +179,7 @@ export interface ConditionItemDTO {
  * Represents an AI-grouped or rule-grouped theme of citizen conditions.
  */
 export interface ConditionClusterDTO {
+  is_suggested?: boolean
   id: string
   label: string                  // e.g. "Commercial Loading Windows (7–9 AM)"
   icon: string                   // Lucide/SVG icon identifier e.g. "bus", "pin", "check"
@@ -268,6 +269,12 @@ export interface ProposalFeedbackSubmissionDTO {
   }
   concern_coordinates?: [number, number]
   submitted_at: string
+  /** Comment vote tallies, populated by the server on read. */
+  upvotes?: number
+  downvotes?: number
+  score?: number
+  /** The requesting viewer's vote on this comment: 1, -1, or 0. */
+  my_vote?: number
 }
 
 // ============================================================================

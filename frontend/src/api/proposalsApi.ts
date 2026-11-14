@@ -13,6 +13,24 @@ import { parseProposalCatalogue } from './catalogue'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
+export async function updateConditionGroups(
+  proposalId: string,
+  rejectedConditionId?: string,
+): Promise<ProposalCommunityAggregateDTO> {
+  const token = getToken()
+  if (!token) throw new Error('Sign in to update condition groups.')
+  const action = rejectedConditionId ? `/${encodeURIComponent(rejectedConditionId)}/reject` : ''
+  const response = await fetch(
+    `${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/condition-groups${action}`,
+    { method: 'POST', headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(25000) },
+  )
+  if (!response.ok) {
+    const body = await response.json().catch(() => null)
+    throw new Error(typeof body?.detail === 'string' ? body.detail : 'Could not update condition groups.')
+  }
+  return response.json()
+}
+
 /**
  * Fetch the published proposal catalogue. An empty array is a valid result.
  */
@@ -77,11 +95,43 @@ export async function fetchProposalFeedback(
   signal?: AbortSignal,
 ): Promise<ProposalFeedbackSubmissionDTO[]> {
   const timeout = AbortSignal.timeout(8000)
+  // Reads are public, but sending the token (when present) lets the server
+  // mark which comments the current viewer has already voted on.
+  const token = getToken()
+  const headers: Record<string, string> = { Accept: 'application/json' }
+  if (token) headers.Authorization = `Bearer ${token}`
   const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/feedback`, {
-    headers: { Accept: 'application/json' },
+    headers,
     signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
   })
   if (!res.ok) throw new Error('Comments could not be loaded.')
+  return res.json()
+}
+
+/**
+ * Up/down-vote another participant's comment, or clear the vote (value 0).
+ * Requires a signed-in user. Returns the updated comment with fresh tallies.
+ */
+export async function voteOnComment(
+  proposalId: string,
+  commentOwner: string,
+  value: -1 | 0 | 1,
+): Promise<ProposalFeedbackSubmissionDTO> {
+  const token = getToken()
+  if (!token) throw new Error('Sign in to vote on comments.')
+  const res = await fetch(
+    `${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/comments/${encodeURIComponent(commentOwner)}/vote`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify({ value }),
+      signal: AbortSignal.timeout(10000),
+    },
+  )
+  if (!res.ok) {
+    const body = await res.json().catch(() => null)
+    throw new Error(typeof body?.detail === 'string' ? body.detail : 'Your vote could not be saved.')
+  }
   return res.json()
 }
 

@@ -61,6 +61,10 @@ def ensure_indexes(db: Database) -> None:
 
         # Users collection: usernames must be unique
         db.users.create_index([("username", ASCENDING)], unique=True, name="uniq_username")
+
+        # Comment votes: look up tallies by proposal, and a voter's own votes
+        db.comment_votes.create_index([("proposal_id", ASCENDING), ("comment_owner", ASCENDING)])
+        db.comment_votes.create_index([("proposal_id", ASCENDING), ("voter", ASCENDING)])
     except Exception:
         # Indexes may fail if offline or permissions are read-only; allow gracefully
         pass
