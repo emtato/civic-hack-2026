@@ -11,33 +11,6 @@ function scoreOf(comment: ProposalFeedbackSubmissionDTO): number {
   return comment.score ?? ((comment.upvotes ?? 0) - (comment.downvotes ?? 0))
 }
 
-/** Stable hash of a string, for deterministic sample data. */
-function hash(value: string): number {
-  let h = 2166136261
-  for (let i = 0; i < value.length; i++) {
-    h ^= value.charCodeAt(i)
-    h = Math.imul(h, 16777619)
-  }
-  return h >>> 0
-}
-
-/**
- * Give comments plausible, stable vote tallies for testing when the server
- * has none yet. Real votes always win: once a comment has any up/down vote,
- * or the viewer has voted, the server values are left untouched.
- */
-function withSampleVotes(comments: ProposalFeedbackSubmissionDTO[]): ProposalFeedbackSubmissionDTO[] {
-  return comments.map(comment => {
-    if ((comment.upvotes ?? 0) > 0 || (comment.downvotes ?? 0) > 0 || (comment.my_vote ?? 0) !== 0) {
-      return comment
-    }
-    const seed = hash(comment.participant_id)
-    const upvotes = seed % 37          // 0..36
-    const downvotes = (seed >> 5) % 8  // 0..7
-    return { ...comment, upvotes, downvotes, score: upvotes - downvotes }
-  })
-}
-
 export function ProposalComments({ proposalId, refreshKey, layout = 'list', currentUser = null }: {
   proposalId: string
   refreshKey?: string
@@ -63,7 +36,7 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
     fetchProposalFeedback(proposalId, controller.signal)
       .then(feedback => {
         if (controller.signal.aborted) return
-        const comments = withSampleVotes(feedback.filter(row => row.comment.trim()))
+        const comments = feedback.filter(row => row.comment.trim())
         setResult({ proposalId, state: 'ready', comments })
       })
       .catch(() => {

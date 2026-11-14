@@ -10,7 +10,8 @@ from unittest.mock import patch
 
 from proposals_DTO import FeedbackConditionDTO, Proposal, ProposalFeedbackSubmissionDTO
 from service.condition_grouping import (
-    CommentExtraction, ExtractedRequest, GroupingUnavailable, SuggestedGroup, _complete, extract_requests,
+    CommentExtraction, ExtractedRequest, ExtractionResult, GroupingUnavailable, SuggestedGroup,
+    _complete, extract_requests, strict_response_format,
 )
 from service.feedback_analysis import input_hash
 from service.grouping_scheduler import GroupingJobs, GroupingScheduler
@@ -275,6 +276,25 @@ class AutomaticGroupingTests(unittest.TestCase):
 
 
 class ProviderValidationTests(unittest.TestCase):
+    def test_supported_models_enforce_the_complete_nested_response_schema(self):
+        response_format = strict_response_format(ExtractionResult)
+        schema = response_format["json_schema"]["schema"]
+        request = schema["$defs"]["ExtractedRequest"]
+        self.assertTrue(response_format["json_schema"]["strict"])
+        self.assertFalse(schema["additionalProperties"])
+        self.assertEqual(set(request["properties"]), set(request["required"]))
+        self.assertFalse(request["additionalProperties"])
+        self.assertNotIn("default", request["properties"]["time_window"])
+        for model, expected in [("openai/gpt-oss-120b", "json_schema"), ("other-model", "json_object")]:
+            with self.subTest(model=model), patch.dict("os.environ", {"GROQ_API_KEY": "test", "GROQ_MODEL": model}), \
+                    patch("service.condition_grouping.OpenAI") as client:
+                create = client.return_value.__enter__.return_value.chat.completions.create
+                create.return_value = SimpleNamespace(choices=[SimpleNamespace(
+                    finish_reason="stop", message=SimpleNamespace(content='{"comments":[]}'),
+                )])
+                _complete("instructions", [], ExtractionResult)
+                self.assertEqual(expected, create.call_args.kwargs["response_format"]["type"])
+
     def test_invented_quote_missing_and_duplicated_comments_are_rejected(self):
         rows = [{"number": 0, "comment": "Add shade.", "explicit_requirement": None}]
         for result in [

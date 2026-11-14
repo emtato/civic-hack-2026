@@ -41,6 +41,9 @@ and place. General opinions do not become requests, and extracted requests never
 imply conditional support. Equivalent requests from one author count once within
 a suggested group. Unique requests and residents' grouping opt-outs stay visible.
 Existing fixture counts without original feedback records are preserved.
+GPT-OSS models use Groq's strict JSON Schema response mode to prevent malformed
+response structures; other model overrides retain JSON object mode. Local schema,
+quote, coverage and membership validation still runs before saving any analysis.
 
 Comment analyses are cached by content and analysis version in
 `feedback_request_analysis`. Completed proposals are skipped until their relevant
@@ -152,7 +155,9 @@ Reverting to older content still creates a new observation in the history.
 of the backend's hourly checker. On subsequent requests, use the last received
 `snapshot_sequence`. It returns `proposal_id`, `checked_at` (last successful source
 check), `snapshot_id`, `snapshot_sequence`, `snapshot_created: false`, `source_status`,
-`source_error`, and all unseen `diffs` including before/after values and text diffs.
+`source_error`, and all saved `diffs` including before/after values and text diffs.
+Comparisons may be saved after their snapshot was polled, so every read replays
+saved comparison history regardless of the cursor. Clients deduplicate by diff ID.
 Before the first capture, status is `pending`, sequence is zero, and snapshot/time
 are null. Source failures retain saved comparisons and the last successful check.
 The old `POST .../updates/check` remains as a deprecated read-only compatibility

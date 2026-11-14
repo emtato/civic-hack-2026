@@ -11,8 +11,35 @@ import type {
 import { getToken } from '../data/auth'
 import { parseProposalCatalogue } from './catalogue'
 import type { ProposalUpdateCheck, ProposalSnapshot } from '../data/proposalUpdates'
+import type { ConfirmedCommentRequestDTO } from '../data/proposalFeedbackDTO'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+
+/** Interpret an unsaved draft. This endpoint never saves feedback or changes counts. */
+export async function previewFeedbackRequests(
+  proposalId: string,
+  draft: Pick<ProposalFeedbackSubmissionDTO, 'comment' | 'condition'>,
+  signal: AbortSignal,
+): Promise<ConfirmedCommentRequestDTO[]> {
+  const token = getToken()
+  if (!token) throw new Error('Please log in to review requests from your comment.')
+  const response = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/feedback/preview`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    body: JSON.stringify(draft),
+    signal: AbortSignal.any([signal, AbortSignal.timeout(65000)]),
+  })
+  if (!response.ok) throw new Error('Your comment could not be analysed. Retry, or continue with your comment and manually recorded requirement only.')
+  const requests: ConfirmedCommentRequestDTO[] = await response.json()
+  if (!Array.isArray(requests) || requests.length > 8 || requests.some(request =>
+    !request || typeof request.requirement !== 'string' || !request.requirement.trim() || request.requirement.length > 1000
+    || typeof request.quote !== 'string' || !request.quote.trim() || !draft.comment.includes(request.quote)
+    || (request.time_window != null && (typeof request.time_window !== 'string' || request.time_window.length > 200))
+    || (request.location_label != null && (typeof request.location_label !== 'string' || request.location_label.length > 200)))) {
+    throw new Error('The request suggestions could not be verified. Retry, or continue without AI requests.')
+  }
+  return requests
+}
 
 export async function updateConditionGroups(
   proposalId: string,

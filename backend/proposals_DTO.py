@@ -7,7 +7,7 @@ Matches the frontend contracts defined in:
 
 from datetime import datetime, timezone
 from typing import Literal, Optional
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 PositionStance = Literal[
@@ -96,6 +96,20 @@ class FeedbackConditionDTO(DTOModel):
     location_label: Optional[str] = Field(default=None, max_length=200)
 
 
+class ConfirmedCommentRequestDTO(DTOModel):
+    model_config = ConfigDict(extra="ignore", populate_by_name=True, str_strip_whitespace=True)
+
+    requirement: str = Field(min_length=1, max_length=1000)
+    quote: str = Field(min_length=1, max_length=4000)
+    time_window: Optional[str] = Field(default=None, max_length=200)
+    location_label: Optional[str] = Field(default=None, max_length=200)
+
+
+class FeedbackPreviewDTO(DTOModel):
+    comment: str = Field(default="", max_length=4000)
+    condition: Optional[FeedbackConditionDTO] = None
+
+
 class ProposalFeedbackSubmissionDTO(DTOModel):
     proposal_id: str
     version_id: Optional[str] = None
@@ -105,6 +119,9 @@ class ProposalFeedbackSubmissionDTO(DTOModel):
     element_ratings: dict[str, ElementRatingKey] = Field(default_factory=dict)
     comment: str = Field(default="", max_length=4000)
     condition: Optional[FeedbackConditionDTO] = None
+    # None identifies legacy feedback. New HTTP submissions always store a list;
+    # an empty list means the resident chose not to record comment requests.
+    confirmed_requests: Optional[list[ConfirmedCommentRequestDTO]] = Field(default=None, max_length=8)
     concern_coordinates: Optional[list[float]] = None
     submitted_at: Optional[str] = None
     # Comment vote tallies (read-only; populated by the service on read).
@@ -112,6 +129,12 @@ class ProposalFeedbackSubmissionDTO(DTOModel):
     downvotes: int = 0
     score: int = 0
     my_vote: int = 0  # The requesting viewer's vote: 1, -1, or 0 if none/anonymous.
+
+    @model_validator(mode="after")
+    def validate_confirmed_quotes(self):
+        if any(request.quote not in self.comment for request in self.confirmed_requests or []):
+            raise ValueError("Each confirmed request must quote the submitted comment exactly.")
+        return self
 
 
 class CommentVoteRequestDTO(DTOModel):

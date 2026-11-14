@@ -2,7 +2,8 @@ import { useEffect, useId, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import type { Proposal } from '../data/proposals'
 import { ORDERED_STAKEHOLDERS, POSITION_CONFIG, STAKEHOLDER_CONFIG } from '../data/proposalFeedbackDTO'
-import type { ElementRatingKey, PositionStance, ProposalFeedbackSubmissionDTO, ProposalSpecificElementDTO, StakeholderRole } from '../data/proposalFeedbackDTO'
+import type { ConfirmedCommentRequestDTO, ElementRatingKey, PositionStance, ProposalFeedbackSubmissionDTO, ProposalSpecificElementDTO, StakeholderRole } from '../data/proposalFeedbackDTO'
+import { previewFeedbackRequests } from '../api/proposalsApi'
 import { getParticipantId } from '../data/feedbackSession'
 import { Icon } from './Icon'
 
@@ -130,6 +131,10 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
   const [confirmed, setConfirmed] = useState(false)
   const [reviewing, setReviewing] = useState(false)
   const [answerError, setAnswerError] = useState('')
+  const [requests, setRequests] = useState<ConfirmedCommentRequestDTO[]>([])
+  const [previewStatus, setPreviewStatus] = useState<'loading' | 'ready' | 'error'>('loading')
+  const [previewError, setPreviewError] = useState('')
+  const [previewAttempt, setPreviewAttempt] = useState(0)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const positionRef = useRef<HTMLInputElement>(null)
   const situationRef = useRef<HTMLButtonElement>(null)
@@ -145,6 +150,41 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
     if (!active) { setReviewing(false); setConfirmed(false) }
   }, [active])
 
+  useEffect(() => {
+    if (!active || !reviewing) return
+    const controller = new AbortController()
+    setConfirmed(false)
+    setRequests([])
+    setPreviewError('')
+    if (demo || !comment.trim()) {
+      setPreviewStatus('ready')
+      return () => controller.abort()
+    }
+    setPreviewStatus('loading')
+    previewFeedbackRequests(proposal.id, {
+      comment: comment.trim(),
+      condition: hasCondition ? {
+        requirement: requirement.trim(), feature_id: feature || undefined,
+        time_window: time.trim() || undefined, location_label: location.trim() || undefined,
+        is_conditional_support: conditional,
+      } : undefined,
+    }, controller.signal).then(suggestions => {
+      if (controller.signal.aborted) return
+      setRequests(suggestions)
+      setPreviewStatus('ready')
+    }).catch(error => {
+      if (controller.signal.aborted) return
+      setPreviewError(error instanceof Error ? error.message : 'Your comment could not be analysed.')
+      setPreviewStatus('error')
+    })
+    return () => controller.abort()
+  }, [active, reviewing, previewAttempt, demo, proposal.id, comment, hasCondition, requirement, feature, time, location, conditional])
+
+  function editRequest(index: number, changes: Partial<ConfirmedCommentRequestDTO>) {
+    setRequests(current => current.map((request, i) => i === index ? { ...request, ...changes } : request))
+    setConfirmed(false)
+  }
+
   function buildSubmission(): ProposalFeedbackSubmissionDTO {
     return {
       proposal_id: proposal.id,
@@ -154,6 +194,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
       stakeholder_role: role as StakeholderRole,
       element_ratings: ratings,
       comment: comment.trim(),
+      confirmed_requests: requests,
       condition: hasCondition ? {
         requirement: requirement.trim(),
         feature_id: feature || undefined,
@@ -190,7 +231,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
           return
         }
         if (!reviewing) { setReviewing(true); setConfirmed(false) }
-        else if (!hasCondition || confirmed) void onSave(buildSubmission())
+        else if (previewStatus === 'ready' && confirmed && requests.every(request => request.requirement.trim())) void onSave(buildSubmission())
       }}>
         <div hidden={reviewing}>
           <fieldset className="feedback-fieldset" disabled={saving}>
@@ -223,7 +264,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
           <fieldset className="feedback-fieldset" disabled={saving}>
             <legend><span>{elements.length ? '04' : '03'}</span>What matters to you <small>Optional</small></legend>
             <label className="feedback-field-label" htmlFor="feedback-comment">Your comment</label>
-            <p className="feedback-help" id="comment-help">Share your experience, a concern, or what could make this work. Specific requests in comments are included in shared request groups. They do not imply a promise of support.</p>
+            <p className="feedback-help" id="comment-help">Share your experience, a concern, or what could make this work. You can review and edit requests identified in your comment before anything is saved or counted. They do not imply a promise of support.</p>
             <textarea id="feedback-comment" maxLength={4000} rows={4} value={comment} aria-describedby="comment-help" placeholder="For example: I rely on accessible pickup near the entrance in the evening…" onChange={e => { setComment(e.target.value); setConfirmed(false) }} />
             <span className="feedback-character-count">{comment.length} / 4,000</span>
             <label className="feedback-checkbox"><input type="checkbox" checked={hasCondition} onChange={e => { setHasCondition(e.target.checked); setConfirmed(false) }} /><span>I have a specific requirement to record.</span></label>
@@ -257,8 +298,33 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
               <div><dt>Place</dt><dd>{location.trim() || 'Not specified'}</dd></div><div><dt>Time</dt><dd>{time.trim() || 'Not specified'}</dd></div>
               <div><dt>Conditional support</dt><dd>{conditional ? 'I would support this if my requirement is met.' : 'No promise of support; this is a requirement or concern.'}</dd></div>
             </dl>
-            <label className="feedback-checkbox"><input type="checkbox" required checked={confirmed} disabled={saving} onChange={e => setConfirmed(e.target.checked)} /><span>I confirm this requirement and its meaning reflect what I want to say.</span></label>
           </div>}
+          <section aria-label="Requests to record" className="feedback-review-requests">
+            <h3>Requests identified in your comment</h3>
+            <p className="feedback-help">Edit or remove any suggestion. Only the requests you confirm here will contribute to “What would make a difference”. Your original comment stays unchanged.</p>
+            {previewStatus === 'loading' && <p role="status" className="feedback-help">Reading your comment… Nothing has been saved or counted.</p>}
+            {previewStatus === 'error' && <div role="alert">
+              <p className="feedback-error">{previewError}</p>
+              <button type="button" className="feedback-inline-button" onClick={() => setPreviewAttempt(value => value + 1)}>Retry analysis</button>
+              <button type="button" className="feedback-inline-button" onClick={() => { setRequests([]); setPreviewStatus('ready'); setConfirmed(false) }}>Continue without AI requests</button>
+            </div>}
+            {previewStatus === 'ready' && !requests.length && <p className="feedback-help">{demo ? 'AI suggestions are unavailable in device-only mode. Your manually recorded requirement can still count.' : 'No additional comment requests will be recorded. Your comment will still be saved when you submit.'}</p>}
+            {requests.map((request, index) => <fieldset className="feedback-fieldset" key={index} disabled={saving}>
+              <legend>Request {index + 1}</legend>
+              <blockquote>“{request.quote}”</blockquote>
+              <label className="feedback-field-label" htmlFor={`review-request-${index}`}>What you want to happen</label>
+              <textarea id={`review-request-${index}`} rows={2} maxLength={1000} required value={request.requirement} onChange={event => editRequest(index, { requirement: event.target.value })} />
+              <div className="feedback-field-pair">
+                <label className="feedback-field-label">Where? <small>Optional</small><input maxLength={200} value={request.location_label ?? ''} onChange={event => editRequest(index, { location_label: event.target.value })} /></label>
+                <label className="feedback-field-label">When? <small>Optional</small><input maxLength={200} value={request.time_window ?? ''} onChange={event => editRequest(index, { time_window: event.target.value })} /></label>
+              </div>
+              <button type="button" className="feedback-inline-button" onClick={() => { setRequests(current => current.filter((_, i) => i !== index)); setConfirmed(false) }}>Remove request</button>
+            </fieldset>)}
+          </section>
+          {previewStatus === 'ready' && <>
+            <p className="feedback-help">On submission, your overall position and individual ratings will count as shown above. Your recorded requirement and {requests.length} additional comment {requests.length === 1 ? 'request' : 'requests'} will appear in the request chart, initially ungrouped. Equivalent requests may share a group, with each person counted once per group. Editing replaces your previous contribution without adding another participant.</p>
+            <label className="feedback-checkbox"><input type="checkbox" required checked={confirmed} disabled={saving} onChange={e => setConfirmed(e.target.checked)} /><span>I confirm my answers and the requests above reflect what I want to say.</span></label>
+          </>}
           <p className="feedback-help">{demo ? 'This response will be saved on this device only.' : 'This response will be included in community results.'} Editing an existing response replaces it without adding another participant.</p>
         </div>}
 
@@ -266,7 +332,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
         {error && <p className="feedback-error" role="alert"><Icon name="info" />{error}</p>}
         <div className="feedback-form-actions">
           {reviewing && <button className="feedback-secondary-button" type="button" disabled={saving} onClick={() => { setReviewing(false); setConfirmed(false) }}><Icon name="back" />Edit answers</button>}
-          <button type="submit" className="feedback-action" disabled={saving || (reviewing && hasCondition && !confirmed)}>
+          <button type="submit" className="feedback-action" disabled={saving || (reviewing && (previewStatus !== 'ready' || !confirmed || requests.some(request => !request.requirement.trim())))}>
             {saving ? 'Saving your response…' : !reviewing ? 'Review your response' : demo ? 'Save response on this device' : existing ? 'Save updated response' : 'Save your response'}<Icon name={reviewing ? 'check' : 'arrow'} />
           </button>
         </div>

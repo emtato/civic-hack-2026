@@ -90,6 +90,8 @@ timers; these reads do not control the backend's independent hourly source sched
 
 `fetchProposalUpdates` sends the last received snapshot sequence to
 `GET /api/proposals/{id}/updates?after_sequence=...`. It only reads stored results.
+Each response replays saved comparisons, including those saved after a previous
+poll advanced its cursor. The client deduplicates them by diff ID.
 The backend checks official sources at the start of each hour, saves changed
 snapshots and comparisons even with no browsers open. Initial capture is a
 baseline, not a reported amendment. This requires the backend host to stay awake.

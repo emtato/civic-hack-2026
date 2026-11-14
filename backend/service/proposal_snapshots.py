@@ -294,7 +294,9 @@ class ProposalSnapshotService:
         diffs = []
         for diff in self.history.all_diffs(proposal_id):
             after = self.history.get(proposal_id, diff.after_snapshot_id).sequence
-            if diff.is_demo or after_sequence < after <= sequence:
+            # Comparisons can be saved after their snapshot has been polled.
+            # Replay saved history; the browser deduplicates comparisons by ID.
+            if diff.is_demo or after <= sequence:
                 diffs.append((not diff.is_demo, after, diff))
         # Keep the demo first; a genuine newer source change should be selected last.
         diffs.sort(key=lambda item: item[:2])

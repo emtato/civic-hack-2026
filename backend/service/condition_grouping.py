@@ -1,7 +1,7 @@
 """Extract requests from comments and suggest groups of equivalent requests.
 
-Uses Groq's OpenAI-compatible Chat Completions API. Groq does not support the
-OpenAI Responses API, so we request JSON output and validate it with pydantic.
+Uses Groq's OpenAI-compatible Chat Completions API with strict structured
+outputs on supported models, followed by local schema and evidence validation.
 """
 
 import json
@@ -86,15 +86,41 @@ EXTRACTION_INSTRUCTIONS = (
 )
 
 
-def _complete(instructions: str, data: list[dict]) -> str:
+def strict_response_format(result_model: type[BaseModel]) -> dict:
+    """Require every object field; nullable context fields still accept null."""
+    schema = result_model.model_json_schema()
+
+    def visit(node):
+        if isinstance(node, dict):
+            node.pop("default", None)
+            if node.get("type") == "object":
+                node["additionalProperties"] = False
+                node["required"] = list(node.get("properties", {}))
+            for value in node.values():
+                visit(value)
+        elif isinstance(node, list):
+            for value in node:
+                visit(value)
+
+    visit(schema)
+    return {"type": "json_schema", "json_schema": {
+        "name": result_model.__name__, "strict": True, "schema": schema,
+    }}
+
+
+def _complete(instructions: str, data: list[dict], result_model: type[BaseModel] | None = None) -> str:
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise GroupingUnavailable("AI grouping is unavailable. Configure GROQ_API_KEY on the server.")
+    model = os.getenv("GROQ_MODEL", GROQ_MODEL)
+    response_format = {"type": "json_object"}
+    if result_model is not None and model in {"openai/gpt-oss-20b", "openai/gpt-oss-120b"}:
+        response_format = strict_response_format(result_model)
     try:
         with OpenAI(api_key=api_key, base_url=os.getenv("GROQ_BASE_URL", GROQ_BASE_URL), timeout=30, max_retries=0) as client:
             response = client.chat.completions.create(
-                model=os.getenv("GROQ_MODEL", GROQ_MODEL),
-                response_format={"type": "json_object"},
+                model=model,
+                response_format=response_format,
                 messages=[
                     {"role": "system", "content": instructions},
                     {"role": "user", "content": json.dumps(data, ensure_ascii=False)},
@@ -127,7 +153,7 @@ def _complete(instructions: str, data: list[dict]) -> str:
 
 def extract_requests(comments: list[dict]) -> list[CommentExtraction]:
     try:
-        result = ExtractionResult.model_validate_json(_complete(EXTRACTION_INSTRUCTIONS, comments))
+        result = ExtractionResult.model_validate_json(_complete(EXTRACTION_INSTRUCTIONS, comments, ExtractionResult))
         numbers = [item.number for item in result.comments]
         if len(numbers) != len(set(numbers)) or set(numbers) != {row["number"] for row in comments}:
             raise GroupingUnavailable("AI comment analysis omitted or repeated a comment.")
@@ -144,7 +170,7 @@ def extract_requests(comments: list[dict]) -> list[CommentExtraction]:
 def suggest_groups(requirements: list[dict]) -> list[SuggestedGroup]:
     """Send only numbered requirement text and its recorded context."""
     try:
-        parsed = GroupingResult.model_validate_json(_complete(INSTRUCTIONS, requirements))
+        parsed = GroupingResult.model_validate_json(_complete(INSTRUCTIONS, requirements, GroupingResult))
         return parsed.groups
     except (OpenAIError, ValueError, ValidationError) as exc:
         raise GroupingUnavailable("AI grouping is temporarily unavailable.") from exc
