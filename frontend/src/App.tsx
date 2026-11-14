@@ -25,6 +25,9 @@ const colors: Record<string, string> = {
   review: '#79828b',
 }
 
+// Approximate bounds covering Toronto, including Etobicoke and Scarborough.
+const TORONTO_BOUNDS: L.LatLngBoundsExpression = [[43.58, -79.64], [43.86, -79.11]]
+
 interface DialogData {
   eyebrow?: string
   title: string
@@ -99,6 +102,9 @@ export default function App() {
       `${p.title} ${p.neighbourhood} ${p.topic}`.toLocaleLowerCase().includes(term)
     )
   }, [proposals, query, activeTab, saved, topic, status])
+
+  const citywideResults = filteredProposals.length > 0 &&
+    filteredProposals.every(p => p.neighbourhood === 'Toronto-wide')
 
   const selectedProposal = useMemo(() => {
     return proposals.find(p => p.id === selectedId) || null
@@ -181,6 +187,10 @@ export default function App() {
   const fitResults = useCallback(() => {
     const map = mapRef.current
     if (!map) return
+    if (citywideResults) {
+      map.fitBounds(TORONTO_BOUNDS, { padding: [30, 30] })
+      return
+    }
     const mapped = filteredProposals.filter(hasMapCoordinates)
     if (mapped.length) {
       map.fitBounds(L.latLngBounds(mapped.map(p => p.coordinates)), {
@@ -188,7 +198,7 @@ export default function App() {
         maxZoom: 14,
       })
     }
-  }, [filteredProposals])
+  }, [filteredProposals, citywideResults])
 
   const openProposal = useCallback((id: string) => {
     const p = proposals.find(item => item.id === id)
@@ -240,7 +250,7 @@ export default function App() {
     const map = L.map(mapContainerRef.current, {
       zoomControl: false,
       scrollWheelZoom: true,
-      minZoom: 10,
+      minZoom: 8,
       maxZoom: 18,
     }).setView([43.658, -79.398], 13)
 
@@ -279,15 +289,10 @@ export default function App() {
     }
   }, [])
 
-  // Initial data arrives after map creation; fit the fetched catalogue once.
+  // Fit the current results after React has applied a filter change.
   useEffect(() => {
-    const mapped = proposals.filter(hasMapCoordinates)
-    if (mapped.length && mapRef.current) {
-      mapRef.current.fitBounds(L.latLngBounds(mapped.map(p => p.coordinates)), {
-        padding: [70, 95], maxZoom: 14,
-      })
-    }
-  }, [proposals])
+    fitResults()
+  }, [fitResults])
 
   // Sync map markers
   useEffect(() => {
@@ -450,13 +455,15 @@ export default function App() {
           onBackToExplorer={showExplorer}
           onClearFilters={clearFilters}
           onToggleFollow={toggleFollow}
-          onFitResults={fitResults}
           currentUser={currentUser}
         />
 
         {/* Map Shell & Outer Map Controls */}
         <section className="map-shell" aria-label="Toronto proposal map">
           <div id="map" ref={mapContainerRef} aria-label="Interactive map showing proposal locations" />
+          {citywideResults && (
+            <div className="map-citywide-banner" role="status">City wide</div>
+          )}
           
           <div className="map-controls-stack">
             <div className="map-tools" role="toolbar" aria-label="Map controls">

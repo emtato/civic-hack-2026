@@ -1,12 +1,108 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import type { Proposal } from '../data/proposals'
-import { ORDERED_POSITIONS, ORDERED_STAKEHOLDERS, POSITION_CONFIG, STAKEHOLDER_CONFIG } from '../data/proposalFeedbackDTO'
+import { ORDERED_STAKEHOLDERS, POSITION_CONFIG, STAKEHOLDER_CONFIG } from '../data/proposalFeedbackDTO'
 import type { ElementRatingKey, PositionStance, ProposalFeedbackSubmissionDTO, ProposalSpecificElementDTO, StakeholderRole } from '../data/proposalFeedbackDTO'
 import { getParticipantId } from '../data/feedbackSession'
 import { Icon } from './Icon'
 
-const RATINGS: ElementRatingKey[] = ['oppose', 'neutral', 'support', 'unsure']
+const OVERALL_RATINGS = ['strongly_oppose', 'oppose', 'neutral', 'support', 'strongly_support'] as const
+const ELEMENT_RATINGS = ['oppose', 'neutral', 'support'] as const
+
+function FeedbackSlider<T extends Exclude<PositionStance, 'unsure'>>({ label, options, value, onChange, inputRef }: {
+  label: string
+  options: readonly T[]
+  value: T | 'unsure' | ''
+  onChange: (value: T | 'unsure' | '') => void
+  inputRef?: React.Ref<HTMLInputElement>
+}) {
+  const id = useId()
+  const previousRating = useRef<T | ''>(value === 'unsure' ? '' : value)
+  const unsure = value === 'unsure'
+  const rating = unsure ? previousRating.current : value
+  const index = rating ? options.indexOf(rating) : Math.floor(options.length / 2)
+  const meta = value ? POSITION_CONFIG[value] : null
+
+  return <div className={`feedback-slider ${unsure ? 'is-unsure' : ''} ${!value ? 'is-unanswered' : ''}`} style={{ '--rating-count': options.length, '--rating-color': meta?.color || '#8b967e' } as CSSProperties}>
+    <div className="feedback-slider-scale">
+      <input id={id} ref={inputRef} className="feedback-range" type="range" min={0} max={options.length - 1} step={1} value={index} disabled={unsure}
+      aria-label={label} aria-valuetext={unsure ? POSITION_CONFIG.unsure.label : rating ? POSITION_CONFIG[rating].label : 'Not answered; choose a position'}
+      onChange={event => onChange(options[Number(event.target.value)])}
+      onPointerUp={event => { if (!event.currentTarget.disabled) onChange(options[Number(event.currentTarget.value)]) }}
+      onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); onChange(options[index]) } }} />
+      <div className="feedback-slider-labels" style={{ gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` }}>
+      {options.map(option => <button key={option} type="button" disabled={unsure} className={value === option ? 'is-selected' : ''}
+        aria-label={`${label}: ${POSITION_CONFIG[option].label}`} aria-pressed={value === option} onClick={() => onChange(option)}>
+        <span aria-hidden="true" />{POSITION_CONFIG[option].shortLabel}
+      </button>)}
+      </div>
+    </div>
+    <label className="feedback-checkbox feedback-unsure">
+      <input type="checkbox" aria-label={`${label}: Unsure`} checked={unsure} onChange={event => {
+        if (event.target.checked) { previousRating.current = value === 'unsure' ? '' : value; onChange('unsure') }
+        else onChange(previousRating.current)
+      }} />
+      <span>Unsure</span>
+    </label>
+  </div>
+}
+
+function SituationSelect({ value, onChange, invalid, buttonRef }: {
+  value: StakeholderRole | ''
+  onChange: (value: StakeholderRole) => void
+  invalid: boolean
+  buttonRef: React.RefObject<HTMLButtonElement | null>
+}) {
+  const id = useId()
+  const [open, setOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const selected = value ? STAKEHOLDER_CONFIG[value] : null
+
+  useEffect(() => {
+    if (!open) return
+    function closeOutside(event: PointerEvent) {
+      if (!containerRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    document.addEventListener('pointerdown', closeOutside)
+    return () => document.removeEventListener('pointerdown', closeOutside)
+  }, [open])
+
+  useEffect(() => {
+    if (open) document.getElementById(`${id}-${activeIndex}`)?.scrollIntoView({ block: 'nearest' })
+  }, [open, activeIndex, id])
+
+  return <div className="feedback-situation-select" ref={containerRef} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false) }}>
+    <button ref={buttonRef} type="button" role="combobox" className={`feedback-choice feedback-situation-trigger ${value ? 'is-selected' : ''}`}
+      aria-label="Your situation" aria-required="true" aria-invalid={invalid || undefined} aria-describedby={invalid ? 'feedback-answer-error' : undefined}
+      aria-haspopup="listbox" aria-expanded={open} aria-controls={id} aria-activedescendant={open ? `${id}-${activeIndex}` : undefined}
+      onClick={() => { setActiveIndex(value ? ORDERED_STAKEHOLDERS.indexOf(value) : 0); setOpen(!open) }}
+      onKeyDown={event => {
+        if (event.key === 'Escape') { event.preventDefault(); setOpen(false) }
+        else if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+          event.preventDefault()
+          const current = open ? activeIndex : value ? ORDERED_STAKEHOLDERS.indexOf(value) : event.key === 'ArrowUp' ? 0 : -1
+          setActiveIndex(event.key === 'Home' ? 0 : event.key === 'End' ? ORDERED_STAKEHOLDERS.length - 1 : (current + (event.key === 'ArrowUp' ? -1 : 1) + ORDERED_STAKEHOLDERS.length) % ORDERED_STAKEHOLDERS.length)
+          setOpen(true)
+        } else if ((event.key === 'Enter' || event.key === ' ') && open) {
+          event.preventDefault(); onChange(ORDERED_STAKEHOLDERS[activeIndex]); setOpen(false)
+        } else if (event.key.length === 1 && /\S/.test(event.key)) {
+          const match = ORDERED_STAKEHOLDERS.findIndex(key => STAKEHOLDER_CONFIG[key].label.toLowerCase().startsWith(event.key.toLowerCase()))
+          if (match >= 0) { event.preventDefault(); setActiveIndex(match); setOpen(true) }
+        }
+      }}>
+      <Icon name={selected?.icon || 'user'} /><span>{selected?.label || 'Select your situation'}</span><Icon name="back" className="feedback-select-chevron" />
+    </button>
+    {open && <div id={id} role="listbox" aria-label="Your situation" className="feedback-situation-options">
+      {ORDERED_STAKEHOLDERS.map((key, index) => <div id={`${id}-${index}`} key={key} role="option" aria-selected={value === key}
+        className={`feedback-choice ${value === key ? 'is-selected' : ''} ${activeIndex === index ? 'is-active' : ''}`}
+        onPointerMove={() => setActiveIndex(index)} onMouseDown={event => event.preventDefault()}
+        onClick={() => { onChange(key); setOpen(false); buttonRef.current?.focus() }}>
+        <Icon name={STAKEHOLDER_CONFIG[key].icon} /><span>{STAKEHOLDER_CONFIG[key].label}</span>{value === key && <Icon name="check" />}
+      </div>)}
+    </div>}
+  </div>
+}
 
 interface Props {
   proposal: Proposal
@@ -33,7 +129,10 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
   const [conditional, setConditional] = useState(existing?.condition?.is_conditional_support || false)
   const [confirmed, setConfirmed] = useState(false)
   const [reviewing, setReviewing] = useState(false)
+  const [answerError, setAnswerError] = useState('')
   const titleRef = useRef<HTMLHeadingElement>(null)
+  const positionRef = useRef<HTMLInputElement>(null)
+  const situationRef = useRef<HTMLButtonElement>(null)
   const requirementRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
@@ -77,6 +176,13 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
       <form onSubmit={event => {
         event.preventDefault()
         if (saving) return
+        if (!position || !role) {
+          setAnswerError(!position ? 'Choose your overall position or select Unsure.' : 'Select the situation that best describes you.')
+          if (!position) positionRef.current?.focus()
+          else situationRef.current?.focus()
+          return
+        }
+        setAnswerError('')
         if (hasCondition && !requirement.trim()) {
           setReviewing(false)
           requirementRef.current?.setCustomValidity('Describe your requirement using your own words.')
@@ -90,23 +196,13 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
           <fieldset className="feedback-fieldset" disabled={saving}>
             <legend><span>01</span>Your overall position <small>Required</small></legend>
             <p className="feedback-help">How do you feel about this proposal as a whole?</p>
-            <div className="feedback-position-choices">
-              {ORDERED_POSITIONS.map(key => <label key={key} className={`feedback-choice ${position === key ? 'is-selected' : ''}`} style={{ '--choice-color': POSITION_CONFIG[key].color, '--choice-background': POSITION_CONFIG[key].bgLight } as CSSProperties}>
-                <input type="radio" name="position" value={key} required={!reviewing} checked={position === key} onChange={() => setPosition(key)} />
-                <span>{POSITION_CONFIG[key].label}</span>
-              </label>)}
-            </div>
+            <FeedbackSlider label="Your overall position" options={OVERALL_RATINGS} value={position} inputRef={positionRef} onChange={value => { setPosition(value); setAnswerError('') }} />
           </fieldset>
 
           <fieldset className="feedback-fieldset" disabled={saving}>
-            <legend><span>02</span>Your connection <small>Required</small></legend>
-            <p className="feedback-help">Choose the connection that best describes you for this response.</p>
-            <div className="feedback-role-choices">
-              {ORDERED_STAKEHOLDERS.map(key => <label key={key} className={`feedback-choice ${role === key ? 'is-selected' : ''}`}>
-                <input type="radio" name="stakeholder" value={key} required={!reviewing} checked={role === key} onChange={() => setRole(key)} />
-                <Icon name={STAKEHOLDER_CONFIG[key].icon} /><span>{STAKEHOLDER_CONFIG[key].label}</span>
-              </label>)}
-            </div>
+            <legend><span>02</span>Your situation <small>Required</small></legend>
+            <p className="feedback-help">Do you live, work, travel through, or visit this area? Choose what best describes you.</p>
+            <SituationSelect value={role} onChange={value => { setRole(value); setAnswerError('') }} invalid={!!answerError && !role && !!position} buttonRef={situationRef} />
           </fieldset>
 
           {elements.length > 0 && <fieldset className="feedback-fieldset" disabled={saving}>
@@ -114,12 +210,12 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
             <p className="feedback-help">Rate any details you have a view on. Skipping a question is different from being neutral or unsure.</p>
             {elements.map(element => <fieldset className="feedback-element-question" key={element.id}>
               <legend>{element.title}</legend><p className="feedback-help">{element.prompt}</p>
-              <div className="feedback-element-choices">
-                {RATINGS.map(key => <label key={key} className={`feedback-choice ${ratings[element.id] === key ? 'is-selected' : ''}`}>
-                  <input type="radio" name={`element-${element.id}`} value={key} checked={ratings[element.id] === key} onChange={() => setRatings(current => ({ ...current, [element.id]: key }))} />
-                  <span>{POSITION_CONFIG[key].shortLabel}</span>
-                </label>)}
-              </div>
+              <FeedbackSlider label={element.title} options={ELEMENT_RATINGS} value={ratings[element.id] || ''} onChange={value => setRatings(current => {
+                const next = { ...current }
+                if (value) next[element.id] = value
+                else delete next[element.id]
+                return next
+              })} />
               {ratings[element.id] && <button className="feedback-inline-button" type="button" onClick={() => setRatings(current => { const next = { ...current }; delete next[element.id]; return next })}>Clear answer</button>}
             </fieldset>)}
           </fieldset>}
@@ -151,7 +247,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
         {reviewing && <div className="feedback-review">
           <dl>
             <div><dt>Overall position</dt><dd>{position && POSITION_CONFIG[position].label}</dd></div>
-            <div><dt>Your connection</dt><dd>{role && STAKEHOLDER_CONFIG[role].label}</dd></div>
+            <div><dt>Your situation</dt><dd>{role && STAKEHOLDER_CONFIG[role].label}</dd></div>
             {elements.map(element => ratings[element.id] && <div key={element.id}><dt>{element.title}</dt><dd>{POSITION_CONFIG[ratings[element.id]].shortLabel}</dd></div>)}
           </dl>
           {comment.trim() && <div className="feedback-review-comment"><h3>Your original words</h3><blockquote>“{comment.trim()}”</blockquote></div>}
@@ -166,6 +262,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
           <p className="feedback-help">{demo ? 'This response will be saved on this device only.' : 'This response will be included in community results.'} Editing an existing response replaces it without adding another participant.</p>
         </div>}
 
+        {answerError && <p id="feedback-answer-error" className="feedback-error" role="alert"><Icon name="info" />{answerError}</p>}
         {error && <p className="feedback-error" role="alert"><Icon name="info" />{error}</p>}
         <div className="feedback-form-actions">
           {reviewing && <button className="feedback-secondary-button" type="button" disabled={saving} onClick={() => { setReviewing(false); setConfirmed(false) }}><Icon name="back" />Edit answers</button>}

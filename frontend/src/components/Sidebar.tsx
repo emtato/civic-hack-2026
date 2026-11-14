@@ -3,6 +3,7 @@ import type { Proposal, Topic } from '../data/proposals'
 import type { AuthUser } from '../data/auth'
 import { getProposalPresentation } from '../data/proposalPresentation'
 import { Icon } from './Icon'
+import { FilterDropdown } from './FilterDropdown'
 import { DistributionChart, ProposalFeedback } from './ProposalFeedback'
 import type { CommunitySnapshot } from './ProposalFeedback'
 import { ProposalComments } from './ProposalComments'
@@ -34,7 +35,6 @@ export interface SidebarProps {
   onBackToExplorer: () => void
   onClearFilters: () => void
   onToggleFollow: (id: string) => void
-  onFitResults: () => void
   sidebarRef?: React.RefObject<HTMLElement | null>
   currentUser: AuthUser | null
 }
@@ -60,7 +60,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onBackToExplorer,
   onClearFilters,
   onToggleFollow,
-  onFitResults,
   sidebarRef,
   currentUser,
 }) => {
@@ -118,21 +117,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
             />
           </div>
 
-          <div className="topic-filters" aria-label="Filter by topic">
-            {topics.map(t => (
-              <button
-                key={t}
-                className={`topic-chip ${t === topic ? 'active' : ''}`}
-                data-topic={t}
-                aria-pressed={t === topic}
-                onClick={() => {
-                  setTopic(t)
-                  setTimeout(onFitResults, 50)
-                }}
-              >
-                {t}
-              </button>
-            ))}
+          <div className="sidebar-filters">
+            <FilterDropdown label="Filter by topic" value={topic} options={topics.map(value => ({ value, label: value }))} onChange={setTopic} />
+            <FilterDropdown label="Filter by status" value={status} options={[{ value: 'all', label: 'All statuses' }, ...statuses.map(value => ({ value, label: value }))]} onChange={setStatus} />
           </div>
 
           <div className="results-toolbar">
@@ -142,20 +129,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {filteredProposals.length === 1 ? '' : 's'}</>
               )}
             </span>
-            <label className="status-filter">
-              <span className="sr-only">Filter by status</span>
-              <select
-                id="status"
-                value={status}
-                onChange={e => {
-                  setStatus(e.target.value)
-                  setTimeout(onFitResults, 50)
-                }}
-              >
-                <option value="all">All statuses</option>
-                {statuses.map(value => <option key={value} value={value}>{value}</option>)}
-              </select>
-            </label>
           </div>
 
           <div id="proposal-list" className="proposal-list" aria-busy={catalogueState === 'loading'}>
