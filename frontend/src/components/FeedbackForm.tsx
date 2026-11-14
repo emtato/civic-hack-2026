@@ -123,7 +123,7 @@ interface Props {
 }
 
 export function FeedbackForm({ proposal, elements, existing, demo, active, saving, error, versionContext, previewRequests, onSave, onCancel }: Props) {
-  const [position, setPosition] = useState<PositionStance | ''>(existing?.position || '')
+  const [position, setPosition] = useState<PositionStance | ''>(existing?.position || 'neutral')
   const [role, setRole] = useState<StakeholderRole | ''>(existing?.stakeholder_role || '')
   const [ratings, setRatings] = useState<Record<string, ElementRatingKey>>(existing?.element_ratings || {})
   const [comment, setComment] = useState(existing?.comment || '')
