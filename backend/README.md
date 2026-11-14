@@ -35,8 +35,16 @@ backfill of existing feedback, then checks for new/edited feedback every ten
 seconds, even when no browser is open. `GROUPING_SCHEDULER_ENABLED=false` disables
 it. The backend must remain running for this in-process worker to make progress.
 
-Analysis extracts specific requests from original comments, requires an exact
-supporting quote, and groups these with explicit requirements using their time
+`POST /api/proposals/{id}/feedback/preview` takes a draft comment and optional
+manual condition, requires sign-in, and returns editable request suggestions with
+exact supporting quotes. It writes no feedback, analysis cache or aggregates.
+The resident reviews the suggestions before final submission. New HTTP saves
+store `confirmed_requests` (an empty list opts out); they count immediately and
+background processing only groups those confirmed requests. Missing lists on old
+HTTP clients become empty lists. Previously stored legacy records with no list
+retain the original background extraction path.
+
+Analysis groups requests with explicit requirements using their time
 and place. General opinions do not become requests, and extracted requests never
 imply conditional support. Equivalent requests from one author count once within
 a suggested group. Unique requests and residents' grouping opt-outs stay visible.

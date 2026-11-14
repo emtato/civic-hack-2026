@@ -160,6 +160,7 @@
 .feedback-review-condition>p { font-size:14px; line-height:1.9; white-space:pre-wrap; overflow-wrap:anywhere; margin-top:9px; }
 .feedback-review-condition { border-left:2px solid #bdcfae; padding-left:14px; }
 .feedback-review>.feedback-help { margin-top:20px; }
+.feedback-review-requests blockquote { margin:12px 0; padding-left:12px; border-left:2px solid #bdcfae; font-size:13px; line-height:1.8; white-space:pre-wrap; overflow-wrap:anywhere; }
 .feedback-error { display:flex; align-items:flex-start; gap:8px; padding:12px; margin-top:20px; border:1px solid #dec0ad; background:#fff2e9; border-radius:6px; color:#994d36; font-size:13px; line-height:1.8; }
 .feedback-error .icon { width:15px; height:15px; margin-top:2px; }
 @media(max-width:1100px) {

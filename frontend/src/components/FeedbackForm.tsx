@@ -185,6 +185,13 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
     setConfirmed(false)
   }
 
+  const recordedRequestCount = new Set([
+    ...(hasCondition ? [{ requirement, time_window: time, location_label: location }] : []),
+    ...requests,
+  ].map(request => JSON.stringify([
+    request.requirement, request.time_window ?? '', request.location_label ?? '',
+  ].map(value => value.trim().toLowerCase())))).size
+
   function buildSubmission(): ProposalFeedbackSubmissionDTO {
     return {
       proposal_id: proposal.id,
@@ -322,7 +329,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
             </fieldset>)}
           </section>
           {previewStatus === 'ready' && <>
-            <p className="feedback-help">On submission, your overall position and individual ratings will count as shown above. Your recorded requirement and {requests.length} additional comment {requests.length === 1 ? 'request' : 'requests'} will appear in the request chart, initially ungrouped. Equivalent requests may share a group, with each person counted once per group. Editing replaces your previous contribution without adding another participant.</p>
+            <p className="feedback-help">On submission, your overall position and individual ratings will count as shown above. You will contribute {recordedRequestCount} recorded {recordedRequestCount === 1 ? 'request' : 'requests'} to the request chart. New requests appear ungrouped. Equivalent requests may share a group, with each person counted once per group.</p>
             <label className="feedback-checkbox"><input type="checkbox" required checked={confirmed} disabled={saving} onChange={e => setConfirmed(e.target.checked)} /><span>I confirm my answers and the requests above reflect what I want to say.</span></label>
           </>}
           <p className="feedback-help">{demo ? 'This response will be saved on this device only.' : 'This response will be included in community results.'} Editing an existing response replaces it without adding another participant.</p>

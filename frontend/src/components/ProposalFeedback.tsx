@@ -342,9 +342,9 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
           <div className="feedback-section-heading"><h3 id="conditions-heading">What would make a difference</h3><span>{aggregate.total_conditions} requests</span></div>
           <p className="feedback-help">Explore shared requests from recorded requirements and comments. A request only means conditional support when the participant explicitly says so. Each voice counts a person once within a group.</p>
           {mode === 'server' && <p className="feedback-help" role="status">{
-            aggregate.grouping_status === 'ready' ? 'Requests are analysed and grouped automatically. Unique requests stay visible.'
+            aggregate.grouping_status === 'ready' ? 'Recorded requests are grouped automatically. Unique requests stay visible.'
               : aggregate.grouping_status === 'error' ? aggregate.grouping_error || 'AI analysis is temporarily unavailable and will retry automatically.'
-                : 'Analysing comments and updating request groups. New feedback is saved and will appear automatically.'
+                : 'Updating request groups. Your confirmed requests are already saved and counted.'
           }</p>}
           {mode === 'server' && currentUser && <div>
             <button type="button" className="feedback-secondary-button" disabled={grouping || saving}

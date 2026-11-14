@@ -6,9 +6,10 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
-from auth import get_current_user
+from auth import get_current_user, get_user_repository
 from main import app, get_service
 from proposals_DTO import Proposal
+from persistence.persistence import UserRepository
 from service.condition_grouping import CommentExtraction, ExtractedRequest, GroupingUnavailable
 from service.service import FeedbackService
 from service.test_automatic_grouping import Database
@@ -24,6 +25,7 @@ class FeedbackPreviewTests(unittest.TestCase):
             status="Proposed", summary="", source="",
         ))
         app.dependency_overrides[get_service] = lambda: self.service
+        app.dependency_overrides[get_user_repository] = lambda: UserRepository(self.db)
         app.dependency_overrides[get_current_user] = lambda: UserPublicDTO(username="alice")
         self.client = TestClient(app)
         self.url = "/api/proposals/park/feedback"

@@ -82,3 +82,34 @@ test('an unrelated edit retains existing requirement evidence and group membersh
   assert.equal(updated.condition_clusters[0].items[0].id, group.items[0].id)
   assert.equal(updated.position_distribution.oppose, 1)
 })
+
+test('confirmed comment requests count immediately and edits replace them without extra participants', () => {
+  const first = submission({
+    comment: 'Please add benches and shade.',
+    confirmed_requests: [
+      { requirement: 'Add accessible benches', quote: 'add benches', location_label: 'Entrance' },
+      { requirement: 'Add shade', quote: 'shade' },
+    ],
+  })
+  const original = createEmptyAggregate()
+  const saved = applyFeedbackToAggregate(original, first)
+  assert.equal(original.total_conditions, 0)
+  assert.equal(saved.total_conditions, 2)
+  assert.equal(saved.total_participants, 1)
+  assert.equal(saved.condition_clusters[0].items[0].source, 'comment')
+  assert.equal(saved.condition_clusters[0].items[0].is_conditional_support, false)
+  const second = { ...first, confirmed_requests: [] }
+  const edited = applyFeedbackToAggregate(saved, second, first)
+  assert.equal(edited.total_conditions, 0)
+  assert.equal(edited.total_participants, 1)
+})
+
+test('manual and confirmed requests with the same wording and context count once', () => {
+  const saved = applyFeedbackToAggregate(createEmptyAggregate(), submission({
+    comment: 'Please add benches.',
+    condition: { requirement: 'Add benches', is_conditional_support: true },
+    confirmed_requests: [{ requirement: 'Add benches', quote: 'add benches' }],
+  }))
+  assert.equal(saved.total_conditions, 1)
+  assert.equal(saved.condition_clusters[0].items[0].is_conditional_support, true)
+})
