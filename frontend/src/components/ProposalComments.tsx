@@ -38,11 +38,12 @@ function withSampleVotes(comments: ProposalFeedbackSubmissionDTO[]): ProposalFee
   })
 }
 
-export function ProposalComments({ proposalId, refreshKey, layout = 'list', currentUser = null }: {
+export function ProposalComments({ proposalId, refreshKey, layout = 'list', currentUser = null, storedComments }: {
   proposalId: string
   refreshKey?: string
   layout?: 'list' | 'grid'
   currentUser?: AuthUser | null
+  storedComments?: ProposalFeedbackSubmissionDTO[]
 }) {
   const headingId = useId()
   const sortId = useId()
@@ -58,6 +59,7 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
   const [pendingVote, setPendingVote] = useState<string | null>(null)
 
   useEffect(() => {
+    if (storedComments) return
     const controller = new AbortController()
     setResult({ proposalId, state: 'loading', comments: [] })
     fetchProposalFeedback(proposalId, controller.signal)
@@ -70,9 +72,11 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
         if (!controller.signal.aborted) setResult({ proposalId, state: 'error', comments: [] })
       })
     return () => controller.abort()
-  }, [proposalId, refreshKey, attempt])
+  }, [proposalId, refreshKey, attempt, storedComments])
 
-  const current = result.proposalId === proposalId ? result : null
+  const current = storedComments
+    ? { state: 'ready' as const, comments: storedComments }
+    : result.proposalId === proposalId ? result : null
 
   const sortedComments = useMemo(() => {
     const rows = current?.comments ? [...current.comments] : []
@@ -152,6 +156,7 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
               return <article className="overview-comment" key={comment.participant_id}>
                 <div className="overview-comment-head">
                   <div className="overview-comment-author"><span aria-hidden="true">{author.charAt(0)}</span><AuthorHeading>{author}</AuthorHeading></div>
+                  {storedComments ? <span className="overview-vote-score" aria-label={`Score ${scoreOf(comment)}`}>{scoreOf(comment)}</span> :
                   <div className="overview-comment-votes" title={voteTitle}>
                     <button type="button" className={`overview-vote-button${myVote === 1 ? ' is-active' : ''}`}
                       disabled={!canVote || busy} aria-pressed={myVote === 1} aria-label="Upvote comment"
@@ -160,11 +165,11 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
                     <button type="button" className={`overview-vote-button${myVote === -1 ? ' is-active down' : ''}`}
                       disabled={!canVote || busy} aria-pressed={myVote === -1} aria-label="Downvote comment"
                       onClick={() => castVote(comment, -1)}><Icon name="chevron-down" /></button>
-                  </div>
+                  </div>}
                 </div>
                 <p style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{comment.comment}</p>
                 {requirement && <div className="overview-comment-requirement">
-                  <span className="overview-requirement-tag">Requirement</span>
+                  <span className="overview-requirement-tag">{storedComments && comment.condition?.is_conditional_support ? 'Support condition' : 'Requirement'}</span>
                   <p>{requirement}</p>
                   {(comment.condition?.location_label || comment.condition?.time_window) && <span className="overview-comment-requirement-context">
                     {[comment.condition?.location_label, comment.condition?.time_window].filter(Boolean).join(' · ')}

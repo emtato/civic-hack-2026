@@ -74,6 +74,22 @@ FastAPI runs these handlers in its thread pool.
 cover Vite on port 5173. Add the deployed frontend origin when hosting it.
 The frontend should call the API on port 8000; keep the MongoDB URI in the backend.
 
+### Labatt demo seed
+
+The backend loads the prepared rounds from `data/labatt-demo.json`. From
+`backend/`, run `python seed_labatt_demo.py` to validate the bundled seed and
+preview its counts. To install an updated fixture, preview it with
+`python seed_labatt_demo.py path/to/fixture.json`, then repeat with `--write`.
+Restart the API to load the fixture. The command only updates the bundled
+Labatt fixture. Visitor review progress stays in `labatt_demo_sessions`.
+
+With the app running, open **7 Labatt Avenue and 77 River Street** from the
+list or map, or go to `/#labatt-demo`. Use **Proposal version** above the tabs
+to switch the whole sidebar between rounds. On **Overview**, choose **Trace
+feedback to changes** for the side-by-side comparison or **Try the resident
+review** to revisit an earlier response. **View imported proposal** opens the
+original record and source-check history.
+
 For a Render web service, use `backend` as the root directory, install with
 `pip install -r requirements.txt`, and start with
 `uvicorn main:app --host 0.0.0.0 --port $PORT`. Set environment variables in

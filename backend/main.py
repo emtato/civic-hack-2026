@@ -14,6 +14,7 @@ from fastapi import Depends, FastAPI, HTTPException, Query, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo.errors import PyMongoError
 
+from labatt_demo_api import router as labatt_demo_router
 from database.database import ensure_indexes, get_database, get_mongo_client
 from proposals_DTO import (
     CommentVoteRequestDTO,
@@ -98,6 +99,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.include_router(labatt_demo_router)
 
 origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
 app.add_middleware(

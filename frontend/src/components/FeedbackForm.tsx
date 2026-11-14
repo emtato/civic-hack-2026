@@ -112,11 +112,12 @@ interface Props {
   active: boolean
   saving: boolean
   error: string
+  versionContext?: { id: string; participantId: string; confirmPrevious: boolean }
   onSave: (submission: ProposalFeedbackSubmissionDTO) => Promise<void>
   onCancel: () => void
 }
 
-export function FeedbackForm({ proposal, elements, existing, demo, active, saving, error, onSave, onCancel }: Props) {
+export function FeedbackForm({ proposal, elements, existing, demo, active, saving, error, versionContext, onSave, onCancel }: Props) {
   const [position, setPosition] = useState<PositionStance | ''>(existing?.position || '')
   const [role, setRole] = useState<StakeholderRole | ''>(existing?.stakeholder_role || '')
   const [ratings, setRatings] = useState<Record<string, ElementRatingKey>>(existing?.element_ratings || {})
@@ -128,12 +129,13 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
   const [time, setTime] = useState(existing?.condition?.time_window || '')
   const [conditional, setConditional] = useState(existing?.condition?.is_conditional_support || false)
   const [confirmed, setConfirmed] = useState(false)
-  const [reviewing, setReviewing] = useState(false)
+  const [reviewing, setReviewing] = useState(versionContext?.confirmPrevious ?? false)
   const [answerError, setAnswerError] = useState('')
   const titleRef = useRef<HTMLHeadingElement>(null)
   const positionRef = useRef<HTMLInputElement>(null)
   const situationRef = useRef<HTMLButtonElement>(null)
   const requirementRef = useRef<HTMLTextAreaElement>(null)
+  const versioned = !!versionContext
 
   useEffect(() => {
     if (active) titleRef.current?.focus()
@@ -142,14 +144,14 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
   // A successful save can update the existing response without losing a draft
   // when the user briefly switches to the overview tab.
   useEffect(() => {
-    if (!active) { setReviewing(false); setConfirmed(false) }
-  }, [active])
+    if (!active && !versioned) { setReviewing(false); setConfirmed(false) }
+  }, [active, versioned])
 
   function buildSubmission(): ProposalFeedbackSubmissionDTO {
     return {
       proposal_id: proposal.id,
-      version_id: existing?.version_id,
-      participant_id: getParticipantId(),
+      version_id: versionContext?.id ?? existing?.version_id,
+      participant_id: versionContext?.participantId ?? getParticipantId(),
       position: position as PositionStance,
       stakeholder_role: role as StakeholderRole,
       element_ratings: ratings,
@@ -223,7 +225,9 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
           <fieldset className="feedback-fieldset" disabled={saving}>
             <legend><span>{elements.length ? '04' : '03'}</span>What matters to you <small>Optional</small></legend>
             <label className="feedback-field-label" htmlFor="feedback-comment">Your comment</label>
-            <p className="feedback-help" id="comment-help">Share your experience, a concern, or what could make this work. Specific requests in comments are included in shared request groups. They do not imply a promise of support.</p>
+            <p className="feedback-help" id="comment-help">{versionContext
+              ? 'Share your experience, a concern, or what could make this work. Use the requirement field to record a specific request.'
+              : 'Share your experience, a concern, or what could make this work. Specific requests in comments are included in shared request groups. They do not imply a promise of support.'}</p>
             <textarea id="feedback-comment" maxLength={4000} rows={4} value={comment} aria-describedby="comment-help" placeholder="For example: I rely on accessible pickup near the entrance in the evening…" onChange={e => { setComment(e.target.value); setConfirmed(false) }} />
             <span className="feedback-character-count">{comment.length} / 4,000</span>
             <label className="feedback-checkbox"><input type="checkbox" checked={hasCondition} onChange={e => { setHasCondition(e.target.checked); setConfirmed(false) }} /><span>I have a specific requirement to record.</span></label>
@@ -259,7 +263,8 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
             </dl>
             <label className="feedback-checkbox"><input type="checkbox" required checked={confirmed} disabled={saving} onChange={e => setConfirmed(e.target.checked)} /><span>I confirm this requirement and its meaning reflect what I want to say.</span></label>
           </div>}
-          <p className="feedback-help">{demo ? 'This response will be saved on this device only.' : 'This response will be included in community results.'} Editing an existing response replaces it without adding another participant.</p>
+          <p className="feedback-help">{versionContext ? 'Your confirmed response will count in the current version’s results. Your earlier response will remain in the earlier round.'
+            : <>{demo ? 'This response will be saved on this device only.' : 'This response will be included in community results.'} Editing an existing response replaces it without adding another participant.</>}</p>
         </div>}
 
         {answerError && <p id="feedback-answer-error" className="feedback-error" role="alert"><Icon name="info" />{answerError}</p>}
@@ -267,7 +272,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
         <div className="feedback-form-actions">
           {reviewing && <button className="feedback-secondary-button" type="button" disabled={saving} onClick={() => { setReviewing(false); setConfirmed(false) }}><Icon name="back" />Edit answers</button>}
           <button type="submit" className="feedback-action" disabled={saving || (reviewing && hasCondition && !confirmed)}>
-            {saving ? 'Saving your response…' : !reviewing ? 'Review your response' : demo ? 'Save response on this device' : existing ? 'Save updated response' : 'Save your response'}<Icon name={reviewing ? 'check' : 'arrow'} />
+            {saving ? 'Saving your response…' : !reviewing ? 'Review your response' : versionContext ? 'Confirm and save response' : demo ? 'Save response on this device' : existing ? 'Save updated response' : 'Save your response'}<Icon name={reviewing ? 'check' : 'arrow'} />
           </button>
         </div>
       </form>

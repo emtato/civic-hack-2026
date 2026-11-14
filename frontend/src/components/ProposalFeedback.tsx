@@ -4,7 +4,8 @@ import {
   ORDERED_POSITIONS, ORDERED_STAKEHOLDERS, POSITION_CONFIG, STAKEHOLDER_CONFIG,
   applyFeedbackToAggregate, createEmptyAggregate, formatPercentage,
 } from '../data/proposalFeedbackDTO'
-import type { ConditionClusterDTO, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
+import type { ReactNode } from 'react'
+import type { ConditionClusterDTO, ConditionItemDTO, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
 import { readDemoFeedback, saveDemoFeedback } from '../data/feedbackSession'
 import { fetchParticipantFeedback, fetchProposalAggregate, submitProposalFeedback, updateConditionGroups } from '../api/proposalsApi'
 import { startAggregatePolling } from '../data/aggregatePolling'
@@ -58,13 +59,14 @@ export function DistributionChart({ counts, total, elements = false }: {
   )
 }
 
-function ConditionGroup({ cluster, total, username, busy, reviewed, onReject }: {
+export function ConditionGroup({ cluster, total, username, busy = false, reviewed, onReject, renderAssessment }: {
   cluster: ConditionClusterDTO
   total: number
   username?: string
-  busy: boolean
+  busy?: boolean
   reviewed: boolean
-  onReject: (id: string) => void
+  onReject?: (id: string) => void
+  renderAssessment?: (item: ConditionItemDTO) => ReactNode
 }) {
   const voices = new Set(cluster.items.map(item => item.participant_id).filter(Boolean)).size
   return (
@@ -96,7 +98,8 @@ function ConditionGroup({ cluster, total, username, busy, reviewed, onReject }: 
               {item.location_label && <span><Icon name="pin" />{item.location_label}</span>}
               {item.time_window && <span><Icon name="clock" />{item.time_window}</span>}
             </div>}
-            {cluster.is_suggested && username && item.participant_id === username &&
+            {renderAssessment?.(item)}
+            {onReject && cluster.is_suggested && username && item.participant_id === username &&
               <button type="button" className="feedback-inline-button" disabled={busy} onClick={() => onReject(item.id)}>
                 Remove my request from this group
               </button>}
@@ -119,7 +122,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
   const groupingRef = useRef(false)
   const mutationRevision = useRef(0)
   const [groupMessage, setGroupMessage] = useState('')
-  const headingRef = useRef<HTMLHeadingElement>(null)
+  const headingRef = useRef<HTMLDivElement>(null)
   const savingRef = useRef(false)
   const mountedRef = useRef(true)
 
@@ -270,13 +273,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
       </div>
 
       <div hidden={isResponding}>
-        <div className="feedback-section-heading feedback-community-heading">
-          <div><h2 ref={headingRef} tabIndex={-1}>Different perspectives. Shared place.</h2></div>
-          <span className="feedback-live-label"><i />{mode === 'loading' ? 'LOADING' : 'COMMUNITY RESPONSES'}</span>
-        </div>
-        <p className="feedback-intro">See where people stand, what matters to them, and what would make this proposal work.</p>
-
-        <div className="feedback-stat-row">
+        <div className="feedback-stat-row" ref={headingRef} tabIndex={-1}>
           <div><strong>{aggregate.total_participants}</strong><span>participants</span></div>
           <div><strong>{aggregate.total_conditions}</strong><span>recorded requests</span></div>
           <div className="feedback-stat-updated"><Icon name="clock" /><span>Updated<br />{Number.isNaN(date.getTime()) ? 'Not available' : date.toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}</span></div>
@@ -311,7 +308,8 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
           <DistributionChart counts={aggregate.position_distribution} total={aggregate.total_participants} />
         </section>
 
-        <section className="feedback-card" aria-labelledby="connection-heading">
+        <div className="feedback-card-row">
+        <section className="feedback-card feedback-card-connection" aria-labelledby="connection-heading">
           <div className="feedback-section-heading"><h3 id="connection-heading">Connection to this place</h3><span>Self-reported</span></div>
           <p className="feedback-help">One primary connection per participant.</p>
           <div className="feedback-stakeholders">
@@ -327,9 +325,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
           </div>
         </section>
 
-        <section className="feedback-card" aria-labelledby="elements-heading">
-          <div className="feedback-section-heading"><h3 id="elements-heading">The details matter</h3><span>Proposal-specific elements</span></div>
-          <p className="feedback-help">People can support the whole proposal and feel differently about individual changes. Each element has its own response count.</p>
+        <section className="feedback-card feedback-card-elements" aria-label="Proposal-specific elements">
           {!aggregate.proposal_specific.length && <p className="feedback-empty">No element questions have been added to this proposal yet.</p>}
           {aggregate.proposal_specific.map(element => <article className="feedback-element" key={element.id}>
             <div className="feedback-section-heading"><h4>{element.title}</h4><span>{element.total_responses} responses</span></div>
@@ -337,28 +333,19 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
             <DistributionChart counts={element.distribution} total={element.total_responses} elements />
           </article>)}
         </section>
+        </div>
 
         <section className="feedback-card feedback-conditions" aria-labelledby="conditions-heading">
           <div className="feedback-section-heading"><h3 id="conditions-heading">What would make a difference</h3><span>{aggregate.total_conditions} requests</span></div>
-          <p className="feedback-help">Explore shared requests from recorded requirements and comments. A request only means conditional support when the participant explicitly says so. Each voice counts a person once within a group.</p>
-          {mode === 'server' && <p className="feedback-help" role="status">{
-            aggregate.grouping_status === 'ready' ? 'Requests are analysed and grouped automatically. Unique requests stay visible.'
-              : aggregate.grouping_status === 'error' ? aggregate.grouping_error || 'AI analysis is temporarily unavailable and will retry automatically.'
+          {mode === 'server' && aggregate.grouping_status !== 'ready' && <p className="feedback-help" role="status">{
+            aggregate.grouping_status === 'error' ? aggregate.grouping_error || 'AI analysis is temporarily unavailable and will retry automatically.'
                 : 'Analysing comments and updating request groups. New feedback is saved and will appear automatically.'
           }</p>}
-          {mode === 'server' && currentUser && <div>
-            <button type="button" className="feedback-secondary-button" disabled={grouping || saving}
-              aria-describedby="condition-grouping-help" onClick={() => void updateGroups()}>
-              Refresh groups
-            </button>
-            <p className="feedback-help" id="condition-grouping-help">AI compares specific requests and their time and place details. You can remove your own request from a suggested group.</p>
-          </div>}
           <div className="feedback-help" role="status">{groupMessage}</div>
           {conditionGroups.length ? conditionGroups.map(cluster => <ConditionGroup
             key={cluster.id} cluster={cluster} total={aggregate.total_conditions} busy={grouping || saving} reviewed={aggregate.grouping_status === 'ready'}
             username={mode === 'server' ? currentUser?.username : undefined} onReject={id => void updateGroups(id)} />)
             : <p className="feedback-empty">No specific requests recorded yet. Individual and less common needs will stay visible here.</p>}
-          <p className="feedback-help feedback-count-note">Percentages use requests, not participants. A person may have requests in several groups. Results describe participants, not a representative vote of the neighbourhood.</p>
         </section>
         <ProposalComments proposalId={proposal.id} refreshKey={aggregate.last_updated} layout="grid" currentUser={currentUser} />
       </div>

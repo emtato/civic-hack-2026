@@ -649,13 +649,12 @@ button {
   box-shadow:0 3px 12px #3a4b2a0c;
   overflow:hidden;
   pointer-events:auto;
-  width:100%
+  width:fit-content
 }
 
 .map-tools button {
-  flex:1;
   min-width:0;
-  padding:10px 0;
+  padding:10px 12px;
   display:grid;
   place-items:center;
   color:#52684a
@@ -682,7 +681,6 @@ button {
   flex-shrink:0
 }
 
-.map-legend,
 .map-citywide-banner {
   background:#fffef9f5;
   border:1px solid #dde2d4;
@@ -701,52 +699,6 @@ button {
   font-weight:600;
   color:#52684a;
   pointer-events:none
-}
-
-.map-legend {
-  padding:13px 16px;
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-  font-size:10px;
-  pointer-events:none;
-  width:100%
-}
-
-.legend-title {
-  font-size:8px;
-  letter-spacing:1.3px;
-  font-weight:600;
-  color:#929980;
-  display:block;
-  margin-bottom:2px
-}
-
-.map-legend>span:not(:first-child) {
-  display:flex;
-  gap:8px;
-  align-items:center;
-  color:#79836c
-}
-
-.legend-dot {
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  display:inline-block;
-  flex-shrink:0
-}
-
-.legend-dot.open {
-  background:#397360
-}
-
-.legend-dot.updated {
-  background:#be6739
-}
-
-.legend-dot.review {
-  background:#79828b
 }
 
 .leaflet-control-attribution {
@@ -1745,16 +1697,11 @@ dialog p {
     gap:6px
   }
   .map-tools button {
-    padding:8px 0
+    padding:8px 10px
   }
   .map-tools .icon {
     width:15px;
     height:15px
-  }
-  .map-legend {
-    padding:11px 13px;
-    font-size:9px;
-    gap:7px
   }
   .leaflet-control-attribution {
     font-size:8px!important

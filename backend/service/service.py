@@ -89,7 +89,9 @@ def to_display_proposal(record: dict) -> Proposal:
         "id": imported.id, "title": imported.title, "neighbourhood": neighbourhood,
         "topic": TOPIC_LABELS[imported.category], "status": status,
         "coordinates": coordinates, "summary": imported.summary or "Summary not available yet.",
-        "changes": [f.proposed_change or f.description or f.label for f in imported.features or []],
+        "changes": list(dict.fromkeys(
+            f.proposed_change or f.description or f.label for f in imported.features or []
+        )),
         "source": latest.url if latest else "", "shape": [],
         "community_aggregate": aggregate,
     }
@@ -136,6 +138,21 @@ def create_empty_aggregate() -> ProposalCommunityAggregateDTO:
             )
         ],
     )
+
+
+def add_response_counts(
+    aggregate: ProposalCommunityAggregateDTO, submission: ProposalFeedbackSubmissionDTO
+) -> None:
+    aggregate.total_participants += 1
+    position = submission.position
+    aggregate.position_distribution[position] = aggregate.position_distribution.get(position, 0) + 1
+    role = submission.stakeholder_role
+    aggregate.stakeholder_distribution[role] = aggregate.stakeholder_distribution.get(role, 0) + 1
+    for element in aggregate.proposal_specific:
+        rating = submission.element_ratings.get(element.id)
+        if rating:
+            element.distribution[rating] = element.distribution.get(rating, 0) + 1
+            element.total_responses += 1
 
 
 def apply_feedback_to_aggregate(
@@ -187,23 +204,7 @@ def apply_feedback_to_aggregate(
                 elem.total_responses += 1
 
     else:
-        # Brand-new participant
-        agg.total_participants += 1
-
-        # Increment position count
-        pos = submission.position
-        agg.position_distribution[pos] = agg.position_distribution.get(pos, 0) + 1
-
-        # Increment stakeholder role count
-        role = submission.stakeholder_role
-        agg.stakeholder_distribution[role] = agg.stakeholder_distribution.get(role, 0) + 1
-
-        # Update proposal-specific element distributions
-        for elem in agg.proposal_specific:
-            rating = submission.element_ratings.get(elem.id)
-            if rating:
-                elem.distribution[rating] = elem.distribution.get(rating, 0) + 1
-                elem.total_responses += 1
+        add_response_counts(agg, submission)
 
     # Keep existing evidence and membership when only ratings/role were edited.
     same_requests = previous_submission is not None and (

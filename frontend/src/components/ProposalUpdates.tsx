@@ -21,7 +21,7 @@ function SourceLinks({ snapshot }: { snapshot?: ProposalSnapshot }) {
   )}</div>
 }
 
-function FieldComparison({ field }: { field: ComparisonField }) {
+export function FieldComparison({ field, label }: { field: ComparisonField; label?: string }) {
   const removed = field.operation === 'removed'
   const added = field.operation === 'added'
   const before = added ? '' : formatComparisonValue(field.before, field.path)
@@ -29,7 +29,7 @@ function FieldComparison({ field }: { field: ComparisonField }) {
   const segments = useMemo(() => highlightTextChanges(before, after), [before, after])
   return <article className={`updates-field is-${field.operation}`}>
     <div className="updates-field-heading">
-      <h3>{comparisonFieldLabel(field.path)}</h3>
+      <h3>{label || comparisonFieldLabel(field.path)}</h3>
       <span>{field.operation === 'unchanged' ? 'Unchanged' : field.operation === 'added' ? 'Added' : field.operation === 'removed' ? 'Removed' : 'Changed'}</span>
     </div>
     <div className="updates-pair">
@@ -90,17 +90,11 @@ export function ProposalUpdates({ proposalId, initialDiffId }: { proposalId: str
   const diffs = state?.diffs ?? []
   const selected = diffs.find(diff => diff.id === selectedId) ?? diffs[diffs.length - 1]
   return <section className="proposal-updates" aria-labelledby="proposal-updates-heading">
-    <div className="updates-heading"><span className="updates-eyebrow"><Icon name="layers" /> Proposal history</span>
-      <h2 id="proposal-updates-heading">What changed</h2>
-      <p>Compare earlier and later copies of the official notice. Removed words are crossed out; additions are underlined.</p>
+    <div className="updates-heading"><span className="updates-eyebrow" id="proposal-updates-heading"><Icon name="layers" /> Proposal history</span>
     </div>
-    <div className="updates-notice"><Icon name="info" /><p>{selected?.is_demo
-      ? 'demo change, the "before" version is an example to show how this would work'
-      : 'Detected changes have not been reviewed. They may include small edits as well as changes to the proposal.'}</p></div>
     {state?.status === 'error' && <div className="updates-error" role="alert"><p>{state.error}</p>{selected && <p>Previously detected changes are still available below.</p>}</div>}
     {(!state || state.status === 'checking') && <p className="updates-status" role="status">Loading saved updates…</p>}
     {state?.status === 'pending' && <p className="updates-status" role="status">Waiting for the first scheduled source check. The backend checks hourly, even when nobody has this page open.</p>}
-    {state?.checked_at && <p className="updates-checked">Source last checked {dateLabel(state.checked_at)} · Backend checks hourly.</p>}
     {selected ? <>
       <div className="updates-history-control">
         <label htmlFor="update-comparison">Compare changes</label>

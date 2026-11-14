@@ -1,0 +1,81 @@
+.labatt-demo-tag {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 5px;
+  background: #e7efdc;
+  color: #345a39;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.proposal-version-header, .labatt-entry, .labatt-toolbar, .labatt-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.proposal-version-header { justify-content: space-between; margin-bottom: 19px; }
+.proposal-version-header .back-button { margin: 0; }
+.proposal-version-header .labatt-reference-return { padding: 6px 0; }
+.labatt-entry { margin: 12px 0 16px; }
+.labatt-toolbar { margin: 5px 0 14px; }
+.labatt-toolbar { justify-content: space-between; }
+.labatt-toolbar .text-button { padding: 6px 0; }
+.labatt-disclosure { color: #58654f; font-size: 13px; line-height: 1.6; }
+.labatt-version { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 4px 8px; margin-left: auto; font-size: 13px; }
+.labatt-version select {
+  padding: 7px 9px;
+  border: 1px solid #cfd9c5;
+  border-radius: 6px;
+  background: #fffefb;
+  color: #294537;
+  font: inherit;
+}
+
+.labatt-historical { margin-left: auto; font-size: 12px; color: #58654f; }
+.labatt-demo .labatt-actions { margin: 12px 0 20px; }
+.labatt-demo .overview-participate .labatt-actions { margin: 0; }
+.labatt-demo .overview-side:has(> .overview-comments:only-child) { grid-template-rows: minmax(0, 1fr); }
+.labatt-totals { flex-wrap: wrap; }
+.labatt-review { margin: 0 0 18px; }
+.labatt-review h3 { margin: 12px 0 6px; }
+.labatt-review summary { cursor: pointer; font-size: 14px; font-weight: 650; }
+.labatt-prior-response { display: grid; gap: 12px; margin: 16px 0; }
+.labatt-prior-response dt { font-weight: 650; font-size: 13px; }
+.labatt-prior-response dd { margin: 3px 0 0; font-size: 14px; line-height: 1.6; }
+.labatt-change-notes { display: grid; gap: 10px; padding-left: 20px; font-size: 13px; line-height: 1.7; }
+.labatt-assessment { display: inline-block; margin-top: 6px; color: #355d3e; font-size: 12px; }
+.labatt-assessment-result { margin-top: 12px; font-size: 13px; line-height: 1.7; }
+.labatt-overview-impact > p { margin: 8px 0 10px; }
+.labatt-comparison-item { margin-bottom: 16px; }
+.labatt-comparison-item .updates-field { border-top: 1px solid #dce2d4; border-radius: 0; }
+.labatt-impact {
+  padding: 10px 18px 15px;
+  background: #f4f7ed;
+  border: 1px solid #dce2d4;
+  border-top: 0;
+  border-radius: 0 0 9px 9px;
+}
+.labatt-impact > .labatt-assessment {
+  margin: 0 0 9px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #e5eddb;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+.labatt-impact-evidence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; }
+.labatt-impact-evidence h4, .labatt-impact-evidence p { font-size: 13px; line-height: 1.7; }
+.labatt-impact-evidence h4 { margin: 0 0 3px; }
+.labatt-impact-evidence p + h4 { margin-top: 10px; }
+.labatt-impact-evidence blockquote { padding-left: 9px; border-left: 2px solid #c9d7be; }
+@media (max-width: 650px) {
+  .labatt-impact { padding: 10px 13px 13px; }
+  .labatt-impact-evidence { grid-template-columns: 1fr; }
+}
+.labatt-matched-positions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr)); gap: 16px; }
+.labatt-demo [hidden] { display: none; }

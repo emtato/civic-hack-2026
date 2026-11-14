@@ -12,6 +12,7 @@ import { Notifications } from './components/Notifications'
 import { fetchFollowing, setProposalFollow, type ProposalNotification } from './api/notificationsApi'
 import { fetchCurrentUser, getStoredUser, logout, type AuthUser } from './data/auth'
 import { ProposalUpdatesProvider } from './data/ProposalUpdatesContext'
+import { LABATT_DEMO_HASH, LABATT_PROPOSAL_ID } from './data/labattDemo'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -36,7 +37,8 @@ export default function App() {
   const [catalogueState, setCatalogueState] = useState<'loading' | 'ready' | 'error'>('loading')
   const [catalogueError, setCatalogueError] = useState('')
   const [loadAttempt, setLoadAttempt] = useState(0)
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [fullDemo, setFullDemo] = useState(() => window.location.hash === LABATT_DEMO_HASH)
+  const [selectedId, setSelectedId] = useState<string | null>(() => fullDemo ? LABATT_PROPOSAL_ID : null)
   const [activeTab, setActiveTab] = useState<'explore' | 'saved'>('explore')
   const [topic, setTopic] = useState<string>('All topics')
   const [query, setQuery] = useState<string>('')
@@ -206,10 +208,18 @@ export default function App() {
     }
   }, [filteredProposals, citywideResults])
 
-  const openProposal = useCallback((id: string) => {
+  const showDemoRoute = useCallback((show: boolean) => {
+    setFullDemo(show)
+    if (show || window.location.hash === LABATT_DEMO_HASH) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search + (show ? LABATT_DEMO_HASH : ''))
+    }
+  }, [])
+
+  const openProposal = useCallback((id: string, showReference = false) => {
     const p = proposals.find(item => item.id === id)
     if (!p) return
     setNotificationTarget(null)
+    showDemoRoute(id === LABATT_PROPOSAL_ID && !showReference)
     const wasOpen = selectedId !== null
     setSelectedId(id)
     setMobileShowMap(false)
@@ -229,10 +239,11 @@ export default function App() {
     } else if (map && !wasOpen) {
       animateMapResize()
     }
-  }, [proposals, selectedId, animateMapResize])
+  }, [proposals, selectedId, animateMapResize, showDemoRoute])
 
   const showExplorer = useCallback(() => {
     const wasOpen = selectedId !== null
+    showDemoRoute(false)
     setSelectedId(null)
     if (sidebarRef.current) sidebarRef.current.scrollTop = 0
     if (wasOpen) {
@@ -242,7 +253,7 @@ export default function App() {
     } else {
       fitResults()
     }
-  }, [selectedId, animateMapResize, fitResults])
+  }, [selectedId, animateMapResize, fitResults, showDemoRoute])
 
   const clearFilters = useCallback(() => {
     setQuery('')
@@ -356,7 +367,7 @@ export default function App() {
       showToast('This proposal is not in the current catalogue. Try refreshing the catalogue.')
       return
     }
-    openProposal(notification.proposal_id)
+    openProposal(notification.proposal_id, true)
     setNotificationTarget({ proposalId: notification.proposal_id, diffId: notification.diff_id, request: Date.now() })
   }
 
@@ -422,6 +433,10 @@ export default function App() {
         <Sidebar
           sidebarRef={sidebarRef}
           selectedProposal={selectedProposal}
+          fullDemo={fullDemo && selectedProposal?.id === LABATT_PROPOSAL_ID}
+          demoAvailable={proposals.some(proposal => proposal.id === LABATT_PROPOSAL_ID)}
+          onViewVersions={() => openProposal(LABATT_PROPOSAL_ID)}
+          onViewReference={() => openProposal(LABATT_PROPOSAL_ID, true)}
           filteredProposals={filteredProposals}
           topics={topics}
           statuses={statuses}
@@ -471,24 +486,8 @@ export default function App() {
               >
                 <Icon name="minus" />
               </button>
-              <span className="tool-divider" aria-hidden="true" />
-              <button
-                id="reset-map"
-                aria-label="Show all matching proposals"
-                title="Show all matching proposals"
-                onClick={() => {
-                  showExplorer()
-                  fitResults()
-                }}
-              >
-                <Icon name="target" />
-              </button>
             </div>
 
-            {statuses.length > 0 && <div className="map-legend" aria-label="Proposal status legend">
-              <span className="legend-title">PROPOSAL STATUS</span>
-              {statuses.map(value => <span key={value}><i className={`legend-dot ${statusClass(value)}`} />{value}</span>)}
-            </div>}
           </div>
 
           {mapError && (

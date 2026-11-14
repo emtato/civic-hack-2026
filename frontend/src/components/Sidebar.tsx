@@ -9,6 +9,8 @@ import type { CommunitySnapshot } from './ProposalFeedback'
 import { ProposalComments } from './ProposalComments'
 import { ProposalUpdates } from './ProposalUpdates'
 import { useProposalUpdates } from '../data/ProposalUpdatesContext'
+import { demoVersionLabel, LABATT_PROPOSAL_ID } from '../data/labattDemo'
+import { LabattDemoContent, useLabattDemo, type DetailTab } from './LabattDemo'
 
 const topicIcons: Record<Topic, string> = {
   'Public space': 'leaf',
@@ -18,6 +20,10 @@ const topicIcons: Record<Topic, string> = {
 
 export interface SidebarProps {
   selectedProposal: Proposal | null
+  fullDemo: boolean
+  demoAvailable: boolean
+  onViewVersions: () => void
+  onViewReference: () => void
   filteredProposals: Proposal[]
   topics: string[]
   statuses: string[]
@@ -44,6 +50,10 @@ export interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({
   selectedProposal,
+  fullDemo,
+  demoAvailable,
+  onViewVersions,
+  onViewReference,
   filteredProposals,
   topics,
   statuses,
@@ -67,8 +77,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
   currentUser,
   notificationTarget,
 }) => {
-  const [detailTab, setDetailTab] = useState<'overview' | 'feedback' | 'updates'>('overview')
+  const [detailTab, setDetailTab] = useState<DetailTab>('overview')
   const [feedbackOpen, setFeedbackOpen] = useState(false)
+  const [demoVersionId, setDemoVersionId] = useState('')
+  const [demoBusy, setDemoBusy] = useState(false)
+  const demo = useLabattDemo(fullDemo)
+  const demoVersion = demo.journey?.versions.find(version => version.id === (demoVersionId || demo.journey?.current_version_id))
+  const historical = !!demoVersion && demoVersion.id !== demo.journey?.current_version_id
   const [communitySnapshot, setCommunitySnapshot] = useState<CommunitySnapshot | null>(null)
   const community = communitySnapshot?.proposalId === selectedProposal?.id ? communitySnapshot : null
   const selectedPresentation = selectedProposal ? getProposalPresentation(selectedProposal) : null
@@ -79,14 +94,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const onlyDemoUpdates = updateCount > 0 && updateState?.diffs.every(diff => diff.is_demo)
 
   useEffect(() => {
+    setDemoVersionId('')
+    setDemoBusy(false)
     if (selectedProposal) {
       setDetailTab('overview')
       setFeedbackOpen(false)
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         detailTitleRef.current?.focus({ preventScroll: true })
       }, 50)
+      return () => clearTimeout(timer)
     }
-  }, [selectedProposal?.id])
+  }, [selectedProposal?.id, fullDemo])
 
   useEffect(() => {
     if (notificationTarget?.proposalId === selectedProposal?.id && selectedProposal) {
@@ -108,6 +126,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
     setDetailTab(tabs[nextIndex])
     const nextButton = document.getElementById(`tab-${tabs[nextIndex]}`)
     nextButton?.focus()
+  }
+
+  function openDemoTab(tab: DetailTab) {
+    setDetailTab(tab)
+    document.getElementById(`tab-${tab}`)?.focus()
   }
 
   return (
@@ -168,6 +191,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         <i aria-hidden="true" />
                         {presentation.badgeLabel}
                       </span>
+                      {p.id === LABATT_PROPOSAL_ID && <span className="labatt-demo-tag">Version history example</span>}
                       <span className="card-category">
                         <Icon name={topicIcons[p.topic] || 'pin'} />
                       </span>
@@ -211,14 +235,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       ) : (
         <div id="proposal-detail">
-          <button className="back-button" id="back-to-list" onClick={onBackToExplorer}>
-            <Icon name="back" /> Back to proposals
-          </button>
+          <div className="proposal-version-header">
+            <button className="back-button" id="back-to-list" onClick={onBackToExplorer}>
+              <Icon name="back" /> Back to proposals
+            </button>
+            {selectedProposal.id === LABATT_PROPOSAL_ID && !fullDemo
+              ? <button className="text-button labatt-reference-return" onClick={onViewVersions}>View proposal versions</button>
+              : <label className="labatt-version">
+                <span>Proposal version</span>
+                <select value={demoVersion?.id ?? ''} disabled={!demoVersion || demoBusy}
+                  onChange={event => setDemoVersionId(event.target.value)}>
+                  {fullDemo && demo.journey ? [...demo.journey.versions].reverse().map(version =>
+                    <option key={version.id} value={version.id}>{demoVersionLabel(version)}</option>
+                  ) : <option value="">{fullDemo ? 'Versions' : 'Imported proposal'}</option>}
+                </select>
+              </label>}
+          </div>
           <div className="detail-kicker">
-            <span className={`status-badge ${selectedPresentation?.badgeClass}`} title={selectedProposal.status}>
+            {!fullDemo && <span className={`status-badge ${selectedPresentation?.badgeClass}`} title={selectedProposal.status}>
               <i aria-hidden="true" />
               {selectedPresentation?.badgeLabel}
-            </span>
+            </span>}
+            {fullDemo && <span className="labatt-demo-tag">Version history example</span>}
             <span className="detail-topic">
               <Icon name={topicIcons[selectedProposal.topic] || 'pin'} />
               {selectedProposal.topic}
@@ -231,6 +269,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <h1 tabIndex={-1} id="detail-title" ref={detailTitleRef}>
             {selectedPresentation?.title}
           </h1>
+
+          {fullDemo ? <>
+            <p className="labatt-disclosure">This example uses fictional revisions and feedback. Responses here are not sent to the City.</p>
+            <div className="labatt-toolbar">
+              <button className="text-button" onClick={onViewReference}>View imported proposal</button>
+              {historical && <span className="labatt-historical">Historical · Read only</span>}
+            </div>
+          </> : null}
 
           <div className="detail-toolbar">
             <div className="detail-tabs" role="tablist" aria-label="Proposal information">
@@ -284,11 +330,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
 
           <div id="detail-content" role="tabpanel" aria-labelledby={`tab-${detailTab}`}>
+            {fullDemo ? demoVersion && demo.journey ? (
+              <LabattDemoContent key={demoVersion.id} proposal={selectedProposal} journey={demo.journey}
+                version={demoVersion} detailTab={detailTab} onTab={openDemoTab} onJourney={demo.setJourney} onBusy={setDemoBusy} />
+            ) : demo.loadError ? <div className="updates-error" role="alert">
+              <p>Proposal versions couldn’t load.</p><button className="text-button" onClick={demo.retry}>Try again</button>
+            </div> : <p className="updates-status" role="status">Loading proposal versions…</p> : <>
             {detailTab === 'overview' && (
               <div className="proposal-overview">
                 <div className="overview-main">
                   <section className="overview-card overview-brief" aria-labelledby="overview-brief-heading">
-                    <h2 id="overview-brief-heading">At a glance</h2>
+                    <h2 id="overview-brief-heading">Summary</h2>
                     <p>{selectedProposal.summary}</p>
                     <ul className="overview-changes">
                       {selectedProposal.changes.map(change => (
@@ -348,15 +400,24 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
 
             <div hidden={detailTab !== 'feedback'}>
+              {demoAvailable && selectedProposal.id !== LABATT_PROPOSAL_ID && !feedbackOpen && <div className="labatt-entry">
+                <button className="text-button" onClick={onViewVersions}>See how feedback shaped the Labatt revision <Icon name="arrow" /></button>
+              </div>}
               <ProposalFeedback key={selectedProposal.id} proposal={selectedProposal}
                 isResponding={feedbackOpen && detailTab === 'feedback'} onRespondingChange={setFeedbackOpen}
                 onCommunityChange={setCommunitySnapshot} currentUser={currentUser} />
             </div>
 
             {detailTab === 'updates' && (
-              <ProposalUpdates key={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.request : selectedProposal.id}
+              <>
+                {demoAvailable && selectedProposal.id !== LABATT_PROPOSAL_ID && <div className="labatt-entry">
+                  <button className="text-button" onClick={onViewVersions}>See how feedback shaped the Labatt revision <Icon name="arrow" /></button>
+                </div>}
+                <ProposalUpdates key={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.request : selectedProposal.id}
                 proposalId={selectedProposal.id} initialDiffId={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.diffId : undefined} />
+              </>
             )}
+            </>}
           </div>
 
 
