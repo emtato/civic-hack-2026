@@ -101,6 +101,13 @@ feedback to changes** for the side-by-side comparison or **Try the resident
 review** to revisit an earlier response. **View imported proposal** opens the
 original record and source-check history.
 
+Resident review uses the visitor's demo session without account sign-in.
+`POST /api/demos/labatt/feedback/preview` returns unsaved AI suggestions using
+`X-Proviso-Demo-Session`. Confirmed requests are retained on save and counted in
+the current round; edits replace that session's contribution. Earlier rounds and
+the imported proposal remain unchanged. Labatt notifications open the same
+version-history view as the list and map, with the current comparison selected.
+
 For a Render web service, use `backend` as the root directory, install with
 `pip install -r requirements.txt`, and start with
 `uvicorn main:app --host 0.0.0.0 --port $PORT`. Set environment variables in

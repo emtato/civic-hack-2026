@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { DemoSessionConflict, fetchLabattDemo, resetLabattDemo, saveLabattDemo } from '../api/labattDemoApi'
+import { DemoSessionConflict, fetchLabattDemo, previewLabattDemoRequests, resetLabattDemo, saveLabattDemo } from '../api/labattDemoApi'
 import { demoVersionLabel } from '../data/labattDemo'
 import type { DemoChange, DemoJourney, DemoRound } from '../data/labattDemo'
 import { POSITION_CONFIG } from '../data/proposalFeedbackDTO'
@@ -320,6 +320,7 @@ export function LabattDemoContent({ proposal, journey, version, detailTab, onTab
       </details>
       <FeedbackForm proposal={proposal} elements={version.features}
         existing={reviewMode === 'edit' ? journey.current_response : previous} demo={false}
+        previewRequests={previewLabattDemoRequests}
         versionContext={{ id: version.id, participantId: previous.participant_id, confirmPrevious: reviewMode === 'keep' }}
         active={tab === 'feedback'} saving={busy} error={error}
         onSave={mutate} onCancel={() => { setError(''); setReviewMode(reviewMode === 'edit' ? null : 'previous') }} />

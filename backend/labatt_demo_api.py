@@ -6,7 +6,9 @@ from fastapi import APIRouter, Depends, Header, HTTPException, Request, Response
 from pydantic import BaseModel, Field
 from pymongo.errors import PyMongoError
 
-from proposals_DTO import ProposalFeedbackSubmissionDTO
+from proposals_DTO import ConfirmedCommentRequestDTO, FeedbackPreviewDTO, ProposalFeedbackSubmissionDTO
+from service.condition_grouping import GroupingUnavailable
+from service.feedback_analysis import preview_comment_requests
 from service.labatt_demo import COLLECTION, DemoConflict, DemoJourney, LabattDemo
 
 router = APIRouter(prefix="/api/demos/labatt", tags=["Labatt demo"])
@@ -37,6 +39,15 @@ def read_journey(response: Response, demo: LabattDemo = Depends(get_demo)):
         return demo.read()
     except PyMongoError as exc:
         raise HTTPException(status_code=503, detail="The demo couldn’t load. Try again.") from exc
+
+
+@router.post("/feedback/preview", response_model=list[ConfirmedCommentRequestDTO])
+def preview_response(preview: FeedbackPreviewDTO, _demo: LabattDemo = Depends(get_demo)):
+    """The anonymous demo uses its own session, not a resident account. No writes."""
+    try:
+        return preview_comment_requests(preview)
+    except GroupingUnavailable as exc:
+        raise HTTPException(status_code=503, detail="Request suggestions are unavailable. Retry or continue without AI requests.") from exc
 
 
 @router.put("/response", response_model=DemoJourney)

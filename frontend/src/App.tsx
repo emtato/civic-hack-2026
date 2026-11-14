@@ -367,7 +367,7 @@ export default function App() {
       showToast('This proposal is not in the current catalogue. Try refreshing the catalogue.')
       return
     }
-    openProposal(notification.proposal_id, true)
+    openProposal(notification.proposal_id)
     setNotificationTarget({ proposalId: notification.proposal_id, diffId: notification.diff_id, request: Date.now() })
   }
 

@@ -30,10 +30,13 @@ export async function previewFeedbackRequests(
     signal: AbortSignal.any([signal, AbortSignal.timeout(65000)]),
   })
   if (!response.ok) throw new Error('Your comment could not be analysed. Retry, or continue with your comment and manually recorded requirement only.')
-  const requests: ConfirmedCommentRequestDTO[] = await response.json()
+  return parseFeedbackPreview(await response.json(), draft.comment)
+}
+
+export function parseFeedbackPreview(requests: ConfirmedCommentRequestDTO[], comment: string): ConfirmedCommentRequestDTO[] {
   if (!Array.isArray(requests) || requests.length > 8 || requests.some(request =>
     !request || typeof request.requirement !== 'string' || !request.requirement.trim() || request.requirement.length > 1000
-    || typeof request.quote !== 'string' || !request.quote.trim() || !draft.comment.includes(request.quote)
+    || typeof request.quote !== 'string' || !request.quote.trim() || !comment.includes(request.quote)
     || (request.time_window != null && (typeof request.time_window !== 'string' || request.time_window.length > 200))
     || (request.location_label != null && (typeof request.location_label !== 'string' || request.location_label.length > 200)))) {
     throw new Error('The request suggestions could not be verified. Retry, or continue without AI requests.')

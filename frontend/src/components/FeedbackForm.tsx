@@ -114,11 +114,15 @@ interface Props {
   saving: boolean
   error: string
   versionContext?: { id: string; participantId: string; confirmPrevious: boolean }
+  previewRequests?: (
+    draft: Pick<ProposalFeedbackSubmissionDTO, 'comment' | 'condition'>,
+    signal: AbortSignal,
+  ) => Promise<ConfirmedCommentRequestDTO[]>
   onSave: (submission: ProposalFeedbackSubmissionDTO) => Promise<void>
   onCancel: () => void
 }
 
-export function FeedbackForm({ proposal, elements, existing, demo, active, saving, error, versionContext, onSave, onCancel }: Props) {
+export function FeedbackForm({ proposal, elements, existing, demo, active, saving, error, versionContext, previewRequests, onSave, onCancel }: Props) {
   const [position, setPosition] = useState<PositionStance | ''>(existing?.position || '')
   const [role, setRole] = useState<StakeholderRole | ''>(existing?.stakeholder_role || '')
   const [ratings, setRatings] = useState<Record<string, ElementRatingKey>>(existing?.element_ratings || {})
@@ -163,7 +167,8 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
       return () => controller.abort()
     }
     setPreviewStatus('loading')
-    previewFeedbackRequests(proposal.id, {
+    const preview = previewRequests ?? ((draft, signal) => previewFeedbackRequests(proposal.id, draft, signal))
+    preview({
       comment: comment.trim(),
       condition: hasCondition ? {
         requirement: requirement.trim(), feature_id: feature || undefined,
@@ -180,7 +185,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
       setPreviewStatus('error')
     })
     return () => controller.abort()
-  }, [active, reviewing, previewAttempt, demo, proposal.id, comment, hasCondition, requirement, feature, time, location, conditional])
+  }, [active, reviewing, previewAttempt, previewRequests, demo, proposal.id, comment, hasCondition, requirement, feature, time, location, conditional])
 
   function editRequest(index: number, changes: Partial<ConfirmedCommentRequestDTO>) {
     setRequests(current => current.map((request, i) => i === index ? { ...request, ...changes } : request))

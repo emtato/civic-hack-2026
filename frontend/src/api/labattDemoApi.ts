@@ -1,6 +1,7 @@
 import { labattDemoSession } from '../data/labattDemo'
 import type { DemoJourney } from '../data/labattDemo'
-import type { ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
+import type { ConfirmedCommentRequestDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
+import { parseFeedbackPreview } from './proposalsApi'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
@@ -25,6 +26,23 @@ async function requestDemo(path: string, init: RequestInit, signal?: AbortSignal
 
 export function fetchLabattDemo(signal?: AbortSignal): Promise<DemoJourney> {
   return requestDemo('', {}, signal)
+}
+
+export async function previewLabattDemoRequests(
+  draft: Pick<ProposalFeedbackSubmissionDTO, 'comment' | 'condition'>,
+  signal: AbortSignal,
+): Promise<ConfirmedCommentRequestDTO[]> {
+  const response = await fetch(`${API_BASE}/api/demos/labatt/feedback/preview`, {
+    method: 'POST', cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Proviso-Demo-Session': labattDemoSession(),
+    },
+    body: JSON.stringify(draft),
+    signal: AbortSignal.any([signal, AbortSignal.timeout(65000)]),
+  })
+  if (!response.ok) throw new Error('Request suggestions are unavailable. Retry, or continue with your comment and manual requirement only.')
+  return parseFeedbackPreview(await response.json(), draft.comment)
 }
 
 export function saveLabattDemo(revision: string | null, response: ProposalFeedbackSubmissionDTO): Promise<DemoJourney> {

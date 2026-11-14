@@ -108,6 +108,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   useEffect(() => {
     if (notificationTarget?.proposalId === selectedProposal?.id && selectedProposal) {
+      setDemoVersionId('')
       setDetailTab('updates')
       setFeedbackOpen(false)
     }

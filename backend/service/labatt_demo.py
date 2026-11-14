@@ -21,6 +21,7 @@ from proposals_DTO import (
     ProposalSpecificElementDTO,
 )
 from service.service import add_response_counts, create_empty_aggregate, ungrouped_cluster, update_condition_percentages
+from service.feedback_analysis import confirmed_comment_evidence
 
 PROPOSAL_ID = "toronto-labatt-river-towers"
 RESIDENT_ID = "demo-resident"
@@ -170,7 +171,9 @@ def bundled_seed() -> DemoSeed:
 
 def response_action(previous: ProposalFeedbackSubmissionDTO, current: ProposalFeedbackSubmissionDTO) -> Literal["reconfirmed", "revised"]:
     answers = {"position", "stakeholder_role", "element_ratings", "comment", "condition", "concern_coordinates"}
-    return "reconfirmed" if previous.model_dump(include=answers) == current.model_dump(include=answers) else "revised"
+    unchanged = (previous.model_dump(include=answers) == current.model_dump(include=answers)
+                 and (previous.confirmed_requests or []) == (current.confirmed_requests or []))
+    return "reconfirmed" if unchanged else "revised"
 
 
 def build_round(
@@ -186,6 +189,12 @@ def build_round(
     for row in responses:
         response, group_id = row.submission, row.group_id
         add_response_counts(aggregate, response)
+        requests = confirmed_comment_evidence(response, response.submitted_at or version.date.isoformat())
+        if requests:
+            target = ungrouped_cluster(aggregate)
+            target.items.extend(requests)
+            target.count += len(requests)
+            aggregate.total_conditions += len(requests)
         condition = response.condition
         if condition is None:
             continue
@@ -284,6 +293,7 @@ class LabattDemo:
             proposal_id=PROPOSAL_ID, version_id=current.id, participant_id=RESIDENT_ID,
             position=submission.position, stakeholder_role=submission.stakeholder_role,
             element_ratings=submission.element_ratings, comment=submission.comment,
+            confirmed_requests=submission.confirmed_requests or [],
             condition=submission.condition, submitted_at=datetime.now(timezone.utc).isoformat(),
         )
         return self._write(revision, response)

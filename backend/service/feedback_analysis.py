@@ -54,6 +54,46 @@ def extract_bounded(rows, heartbeat):
         return extract_bounded(rows[:middle], heartbeat) + extract_bounded(rows[middle:], heartbeat)
 
 
+def preview_comment_requests(preview):
+    """Interpret an unsaved draft without writing feedback, caches or totals."""
+    if not preview.comment.strip():
+        return []
+    results = extract_bounded([{
+        "number": 0, "comment": preview.comment.strip(),
+        "explicit_requirement": preview.condition.requirement if preview.condition else None,
+    }], lambda: None)
+    if len(results) != 1 or results[0].number != 0:
+        raise GroupingUnavailable("AI comment analysis did not cover your comment.")
+    if any(r.quote not in preview.comment or not r.quote.strip() for r in results[0].requests):
+        raise GroupingUnavailable("AI comment analysis returned unsupported evidence.")
+    return results[0].requests
+
+
+def confirmed_comment_evidence(submission, submitted_at):
+    """Build counted evidence once per confirmed request, excluding manual repeats."""
+    seen = set()
+    if submission.condition:
+        c = submission.condition
+        seen.add((c.requirement.strip().casefold(), (c.time_window or "").strip().casefold(),
+                  (c.location_label or "").strip().casefold()))
+    evidence = []
+    for request in submission.confirmed_requests or []:
+        key = (request.requirement.strip().casefold(), (request.time_window or "").strip().casefold(),
+               (request.location_label or "").strip().casefold())
+        if key in seen:
+            continue
+        seen.add(key)
+        evidence.append(ConditionItemDTO(
+            id="request-" + digest([submission.proposal_id, submission.participant_id, "comment", key])[:24],
+            participant_id=submission.participant_id, source="comment",
+            verbatim_quote=request.quote, extracted_requirement=request.requirement,
+            is_conditional_support=False, time_window=request.time_window,
+            location_label=request.location_label, concern_coordinates=submission.concern_coordinates,
+            submitted_at=submitted_at,
+        ))
+    return evidence
+
+
 def collect_evidence(submissions, aggregate, cache, heartbeat=lambda: None):
     """Return all current requests; cache valid batches even if a later batch fails."""
     previous = {evidence_key(item): item for group in aggregate.condition_clusters for item in group.items}

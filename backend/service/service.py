@@ -11,7 +11,7 @@ from typing import List, Optional, Tuple
 
 from pymongo.database import Database
 from .condition_grouping import GroupingUnavailable, SuggestedGroup, suggest_groups
-from .feedback_analysis import collect_evidence, digest, extract_bounded, input_hash
+from .feedback_analysis import collect_evidence, confirmed_comment_evidence, digest, input_hash, preview_comment_requests
 
 try:
     from proposals_DTO import (
@@ -274,26 +274,9 @@ def apply_feedback_to_aggregate(
         target.count += 1
         target.items.insert(0, condition_item)
 
-    seen = set()
-    if submission.condition:
-        c = submission.condition
-        seen.add((c.requirement.strip().casefold(), (c.time_window or "").strip().casefold(),
-                  (c.location_label or "").strip().casefold()))
-    for request in submission.confirmed_requests or []:
-        key = (request.requirement.strip().casefold(), (request.time_window or "").strip().casefold(),
-               (request.location_label or "").strip().casefold())
-        if key in seen:
-            continue
-        seen.add(key)
+    for item in confirmed_comment_evidence(submission, now_iso):
         target = ungrouped_cluster(agg)
-        target.items.append(ConditionItemDTO(
-            id="request-" + digest([submission.proposal_id, submission.participant_id, "comment", key])[:24],
-            participant_id=submission.participant_id, source="comment",
-            verbatim_quote=request.quote, extracted_requirement=request.requirement,
-            is_conditional_support=False, time_window=request.time_window,
-            location_label=request.location_label, concern_coordinates=submission.concern_coordinates,
-            submitted_at=now_iso,
-        ))
+        target.items.append(item)
         target.count += 1
         agg.total_conditions += 1
 
@@ -382,17 +365,7 @@ class FeedbackService:
         """Interpret an unsaved comment without storing feedback, cache or counts."""
         if self.proposals.get_by_id(proposal_id) is None:
             raise ValueError("Proposal was not found.")
-        if not preview.comment.strip():
-            return []
-        results = extract_bounded([{
-            "number": 0, "comment": preview.comment.strip(),
-            "explicit_requirement": preview.condition.requirement if preview.condition else None,
-        }], lambda: None)
-        if len(results) != 1 or results[0].number != 0:
-            raise GroupingUnavailable("AI comment analysis did not cover your comment.")
-        if any(r.quote not in preview.comment or not r.quote.strip() for r in results[0].requests):
-            raise GroupingUnavailable("AI comment analysis returned unsupported evidence.")
-        return results[0].requests
+        return preview_comment_requests(preview)
 
     def submit_feedback(
         self, submission: ProposalFeedbackSubmissionDTO

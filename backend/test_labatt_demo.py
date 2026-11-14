@@ -9,6 +9,7 @@ from pymongo.errors import AutoReconnect, DuplicateKeyError
 from main import app
 from persistence.test_persistence import MockMongoCollection, MockMongoDatabase
 from service.labatt_demo import COLLECTION, PROPOSAL_ID, build_journey, bundled_seed
+from service.condition_grouping import CommentExtraction, ExtractedRequest, GroupingUnavailable
 
 SEED = bundled_seed()
 EARLIER, CURRENT = SEED.earlier, SEED.current
@@ -160,6 +161,76 @@ class LabattDemoTests(unittest.TestCase):
             self.assertEqual(self.save(initial).status_code, 503)
         self.assertEqual(self.request().json(), initial)
         self.assertEqual(self.save(initial).status_code, 200)
+
+    def test_anonymous_preview_requires_only_demo_session_and_writes_nothing(self):
+        initial = self.request().json()
+        before = copy.deepcopy({name: collection.documents for name, collection in self.db.collections.items()})
+        draft = {"comment": "Please add shade."}
+        with patch("service.feedback_analysis.extract_requests", return_value=[CommentExtraction(
+            number=0, requests=[ExtractedRequest(requirement="Add shade", quote="add shade")],
+        )]):
+            result = self.client.post("/api/demos/labatt/feedback/preview", json=draft, headers={
+                "X-Proviso-Demo-Session": "a" * 64,
+            })
+        self.assertEqual(200, result.status_code)
+        self.assertEqual("Add shade", result.json()[0]["requirement"])
+        self.assertEqual(before, {name: collection.documents for name, collection in self.db.collections.items()})
+        self.assertEqual(initial, self.request().json())
+        self.assertEqual(422, self.client.post("/api/demos/labatt/feedback/preview", json=draft).status_code)
+
+    def test_preview_failure_preserves_session(self):
+        initial = self.request().json()
+        with patch("service.feedback_analysis.extract_requests", side_effect=GroupingUnavailable("offline")):
+            result = self.request("POST", "/feedback/preview", json={"comment": "Please add shade."})
+        self.assertEqual(503, result.status_code)
+        self.assertEqual(initial, self.request().json())
+
+    def test_confirmed_comment_requests_survive_save_reload_edit_and_removal(self):
+        initial = self.request().json()
+        baseline = initial["versions"][1]["aggregate"]
+        requests = [
+            {"requirement": "Add shade near the entrance", "quote": "add shade", "location_label": "Entrance"},
+            {"requirement": "Add benches", "quote": "benches"},
+        ]
+        result = self.save(initial, comment="Please add shade and benches.", condition=None, confirmed_requests=requests)
+        self.assertEqual(200, result.status_code)
+        saved = result.json()
+        self.assertEqual(2, len(saved["current_response"]["confirmed_requests"]))
+        current = saved["versions"][1]["aggregate"]
+        self.assertEqual(baseline["total_conditions"] + 2, current["total_conditions"])
+        self.assertEqual(baseline["total_participants"] + 1, current["total_participants"])
+        evidence = [item for group in current["condition_clusters"] for item in group["items"]
+                    if item["participant_id"] == PREVIOUS.participant_id]
+        self.assertEqual([r["requirement"] for r in requests], [item["extracted_requirement"] for item in evidence])
+        self.assertTrue(all(item["source"] == "comment" and not item["is_conditional_support"] for item in evidence))
+        self.assertEqual("Entrance", evidence[0]["location_label"])
+        self.assertEqual(saved, self.request().json())
+        self.assertEqual(initial["versions"][0], saved["versions"][0])
+        self.assertIsNone(self.request(token="b" * 64).json()["current_response"])
+
+        edited = self.save(saved, comment="Please add shade and benches.", condition=None,
+                           confirmed_requests=requests[:1]).json()
+        self.assertEqual(baseline["total_conditions"] + 1, edited["versions"][1]["aggregate"]["total_conditions"])
+        removed = self.save(edited, comment="Please add shade and benches.", condition=None,
+                            confirmed_requests=[]).json()
+        self.assertEqual(baseline["total_conditions"], removed["versions"][1]["aggregate"]["total_conditions"])
+        self.assertEqual(baseline["total_participants"] + 1, removed["versions"][1]["aggregate"]["total_participants"])
+
+    def test_confirmed_request_matching_manual_requirement_counts_once(self):
+        initial = self.request().json()
+        result = self.save(initial, comment="Please add shade.", condition={"requirement": "Add shade"},
+                           confirmed_requests=[{"requirement": "Add shade", "quote": "add shade"}])
+        self.assertEqual(200, result.status_code)
+        baseline = initial["versions"][1]["aggregate"]["total_conditions"]
+        self.assertEqual(baseline + 1, result.json()["versions"][1]["aggregate"]["total_conditions"])
+
+    def test_confirmed_requests_are_part_of_revision_classification(self):
+        initial = self.request().json()
+        result = self.save(initial, confirmed_requests=[{
+            "requirement": "A further request", "quote": initial["previous_response"]["comment"],
+        }])
+        self.assertEqual(200, result.status_code)
+        self.assertEqual("revised", result.json()["participant_action"])
 
     def test_requirement_assessment_cites_matching_feature_without_changing_position(self):
         journey = self.request().json()
