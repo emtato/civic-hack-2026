@@ -53,12 +53,13 @@ This backend provides the persistence layer communicating with MongoDB for:
 - `GET /health/database` - Database ping check.
 - `GET /api/proposals` - List all proposals (with attached feedback aggregates). Filterable by `topic` and `status`.
 - `GET /api/proposals/{proposal_id}` - Get a single proposal with its attached community feedback aggregate.
-- `POST /api/proposals` - Save display edits in `display_overrides`, preserving the rich source record, and optionally its aggregate.
-- `POST /api/proposals/seed` - Trigger seeding from `data/proposals.formatted.json` (`?force=true` to reseed).
 - `POST /api/proposals/{proposal_id}/feedback` - Submit citizen feedback; stores the submission in MongoDB and atomically updates the proposal's attached aggregate.
 - `GET /api/proposals/{proposal_id}/feedback` - Retrieve all feedback submissions for a proposal.
 - `GET /api/proposals/{proposal_id}/feedback/{participant_id}` - Retrieve a specific participant's feedback.
 - `GET /api/proposals/{proposal_id}/aggregate` - Retrieve just the current community aggregate feedback object.
+
+Proposal creation, editing, and forced seeding are not exposed through the HTTP API.
+An empty catalogue can still be seeded automatically at startup.
 
 List/detail/aggregate routes and feedback writes use the same imported proposal
 IDs. The service reverses GeoJSON longitude/latitude into frontend

@@ -250,36 +250,36 @@ def get_proposal(
         ) from exc
 
 
-@app.post("/api/proposals", response_model=Proposal, status_code=status.HTTP_201_CREATED, tags=["Proposals"])
-def save_proposal(
-    proposal: Proposal,
-    service: FeedbackService = Depends(get_service),
-):
-    """Create or update a proposal in MongoDB with its attached feedback aggregate."""
-    try:
-        saved = service.save_proposal(proposal)
-        return saved
-    except PyMongoError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to save proposal to database.",
-        ) from exc
-
-
-@app.post("/api/proposals/seed", tags=["Proposals"])
-def seed_proposals(
-    force: bool = Query(False, description="Whether to overwrite existing proposals"),
-    service: FeedbackService = Depends(get_service),
-):
-    """Seed the saved set of existing proposals into MongoDB if empty or if force=true."""
-    try:
-        count = service.seed_initial_proposals(force=force)
-        return {"status": "ok", "seeded_count": count}
-    except Exception as exc:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to seed proposals: {type(exc).__name__}",
-        ) from exc
+# @app.post("/api/proposals", response_model=Proposal, status_code=status.HTTP_201_CREATED, tags=["Proposals"])
+# def save_proposal(
+#     proposal: Proposal,
+#     service: FeedbackService = Depends(get_service),
+# ):
+#     """Create or update a proposal in MongoDB with its attached feedback aggregate."""
+#     try:
+#         saved = service.save_proposal(proposal)
+#         return saved
+#     except PyMongoError as exc:
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail="Failed to save proposal to database.",
+#         ) from exc
+#
+#
+# @app.post("/api/proposals/seed", tags=["Proposals"])
+# def seed_proposals(
+#     force: bool = Query(False, description="Whether to overwrite existing proposals"),
+#     service: FeedbackService = Depends(get_service),
+# ):
+#     """Seed the saved set of existing proposals into MongoDB if empty or if force=true."""
+#     try:
+#         count = service.seed_initial_proposals(force=force)
+#         return {"status": "ok", "seeded_count": count}
+#     except Exception as exc:
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail=f"Failed to seed proposals: {type(exc).__name__}",
+#         ) from exc
 
 
 # ============================================================================

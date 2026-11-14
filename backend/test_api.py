@@ -141,6 +141,16 @@ class AuthApiTests(unittest.TestCase):
         self.assertEqual(self.client.get("/api/proposals/kensington").status_code, 200)
         self.assertEqual(self.client.get("/api/proposals/kensington/aggregate").status_code, 200)
 
+    def test_proposal_write_and_seed_endpoints_are_unavailable(self):
+        original = self.client.get("/api/proposals/kensington").json()
+        edited = {**original, "title": "Unauthorized edit"}
+        self.assertEqual(self.client.post("/api/proposals", json=edited).status_code, 405)
+        self.assertEqual(self.client.post("/api/proposals/seed?force=true").status_code, 405)
+        self.assertEqual(self.client.get("/api/proposals/kensington").json(), original)
+        schema = self.client.get("/openapi.json").json()
+        self.assertNotIn("post", schema["paths"]["/api/proposals"])
+        self.assertNotIn("/api/proposals/seed", schema["paths"])
+
     def test_submitting_feedback_without_token_is_rejected(self):
         res = self.client.post("/api/proposals/kensington/feedback", json={
             "proposal_id": "kensington", "participant_id": "nobody",
