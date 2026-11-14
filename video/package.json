@@ -1,0 +1,39 @@
+{
+  "name": "video",
+  "version": "1.0.0",
+  "description": "Proviso CIVIC Hack submission video draft",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.543",
+    "@remotion/media": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.543",
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "render": "remotion render Proviso-Draft out/proviso-draft-v1.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --concurrency=2 --is-production=false",
+    "render:opening": "remotion render Proviso-Draft out/proviso-opening.mp4 --frames=0-599 --codec=h264 --crf=20 --concurrency=2 --is-production=false",
+    "music": "python3 scripts/make-music.py",
+    "capture:api": "node scripts/fixture-server.mjs"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}
