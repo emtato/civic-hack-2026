@@ -58,6 +58,7 @@ def to_display_proposal(record: dict) -> Proposal:
         # never an automatic fallback to the old MongoDB collection.
         data = {**record, **record.get("display_overrides", {})}
         data.setdefault("id", str(record.get("_id", "")))
+        data["changes"] = list(dict.fromkeys(data.get("changes", [])))
         return Proposal.model_validate(data)
     imported = ImportedProposal.model_validate({
         key: value for key, value in record.items() if key in ImportedProposal.model_fields
@@ -96,6 +97,9 @@ def to_display_proposal(record: dict) -> Proposal:
     # Display edits have their own namespace and cannot overwrite source facts.
     data.update(record.get("display_overrides", {}))
     data["community_aggregate"] = aggregate
+    # Distinct feedback features can quote the same source sentence. Show it
+    # once in the overview, preserving source wording and first-seen order.
+    data["changes"] = list(dict.fromkeys(data["changes"]))
     return Proposal.model_validate(data)
 
 

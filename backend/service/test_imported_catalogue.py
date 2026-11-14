@@ -9,7 +9,7 @@ from fastapi.testclient import TestClient
 from main import app, get_service
 from persistence.test_persistence import MockMongoDatabase
 from proposals_DTO import Proposal, ProposalFeedbackSubmissionDTO
-from service.service import FeedbackService
+from service.service import FeedbackService, to_display_proposal
 
 
 class ImportedCatalogueTests(unittest.TestCase):
@@ -56,6 +56,38 @@ class ImportedCatalogueTests(unittest.TestCase):
         self.assertIsNone(converted.coordinates)
         self.assertEqual("Toronto-wide", converted.neighbourhood)
         self.assertEqual(stored_before, self.db.imported_proposals.documents)
+
+    def test_shared_feature_sentences_appear_once_without_removing_feedback_elements(self):
+        original = next(row for row in self.rows if row["id"] == "toronto-labatt-river-towers")
+        stored_before = copy.deepcopy(self.db.imported_proposals.documents)
+        changes = [f["proposed_change"] or f["description"] or f["label"] for f in original["features"]]
+        self.assertGreater(len(changes), len(set(changes)))
+
+        response = self.client.get(f'/api/proposals/{original["id"]}')
+        self.assertEqual(200, response.status_code)
+        display = response.json()
+        self.assertEqual(list(dict.fromkeys(changes)), display["changes"])
+        self.assertEqual(
+            [f["id"] for f in original["features"]],
+            [element["id"] for element in display["community_aggregate"]["proposal_specific"]],
+        )
+        catalogue = self.client.get("/api/proposals").json()
+        self.assertTrue(all(len(row["changes"]) == len(set(row["changes"])) for row in catalogue))
+        self.assertEqual(stored_before, self.db.imported_proposals.documents)
+
+    def test_display_overrides_and_saved_dtos_preserve_only_first_occurrence(self):
+        original = copy.deepcopy(self.rows[0])
+        changes = ["First change", "Second change", "First change", "Third change", "Second change"]
+        original["display_overrides"] = {"changes": changes}
+        before = copy.deepcopy(original)
+        display = to_display_proposal(original)
+        self.assertEqual(["First change", "Second change", "Third change"], display.changes)
+        self.assertEqual(before, original)
+
+        saved_dto = display.model_dump()
+        saved_dto["changes"] = changes
+        self.assertEqual(display.changes, to_display_proposal(saved_dto).changes)
+        self.assertEqual(changes, saved_dto["changes"])
 
     def test_feedback_updates_imported_aggregate_and_preserves_rich_record(self):
         pid = self.rows[0]["id"]
