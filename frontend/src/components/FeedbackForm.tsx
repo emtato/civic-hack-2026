@@ -28,6 +28,7 @@ function FeedbackSlider<T extends Exclude<PositionStance, 'unsure'>>({ label, op
     <div className="feedback-slider-scale">
       <input id={id} ref={inputRef} className="feedback-range" type="range" min={0} max={options.length - 1} step={1} value={index} disabled={unsure}
       aria-label={label} aria-valuetext={unsure ? POSITION_CONFIG.unsure.label : rating ? POSITION_CONFIG[rating].label : 'Not answered; choose a position'}
+      data-tooltip="Choose a position with the slider or the labels below. Neutral means neither support nor oppose; Unsure means you need more information."
       onChange={event => onChange(options[Number(event.target.value)])}
       onPointerUp={event => { if (!event.currentTarget.disabled) onChange(options[Number(event.currentTarget.value)]) }}
       onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); onChange(options[index]) } }} />
@@ -39,7 +40,7 @@ function FeedbackSlider<T extends Exclude<PositionStance, 'unsure'>>({ label, op
       </div>
     </div>
     <label className="feedback-checkbox feedback-unsure">
-      <input type="checkbox" aria-label={`${label}: Unsure`} checked={unsure} onChange={event => {
+      <input type="checkbox" aria-label={`${label}: Unsure`} data-tooltip="Choose this if you need more information to form a view. Unchecking it restores your previous rating." checked={unsure} onChange={event => {
         if (event.target.checked) { previousRating.current = value === 'unsure' ? '' : value; onChange('unsure') }
         else onChange(previousRating.current)
       }} />
@@ -75,6 +76,7 @@ function SituationSelect({ value, onChange, invalid, buttonRef }: {
 
   return <div className="feedback-situation-select" ref={containerRef} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false) }}>
     <button ref={buttonRef} type="button" role="combobox" className={`feedback-choice feedback-situation-trigger ${value ? 'is-selected' : ''}`}
+      data-tooltip="Choose your main connection to this place: resident, local business, commuter, visitor, or interested Toronto resident."
       aria-label="Your situation" aria-required="true" aria-invalid={invalid || undefined} aria-describedby={invalid ? 'feedback-answer-error' : undefined}
       aria-haspopup="listbox" aria-expanded={open} aria-controls={id} aria-activedescendant={open ? `${id}-${activeIndex}` : undefined}
       onClick={() => { setActiveIndex(value ? ORDERED_STAKEHOLDERS.indexOf(value) : 0); setOpen(!open) }}
@@ -271,7 +273,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
                 else delete next[element.id]
                 return next
               })} />
-              {ratings[element.id] && <button className="feedback-inline-button" type="button" onClick={() => setRatings(current => { const next = { ...current }; delete next[element.id]; return next })}>Clear answer</button>}
+              {ratings[element.id] && <button className="feedback-inline-button" type="button" data-tooltip="Leave this optional feature unrated. An unanswered question is different from Neutral or Unsure." onClick={() => setRatings(current => { const next = { ...current }; delete next[element.id]; return next })}>Clear answer</button>}
             </fieldset>)}
           </fieldset>}
 
@@ -283,19 +285,19 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
               : 'Share your experience, a concern, or what could make this work. You can review and edit requests identified in your comment before anything is saved or counted. They do not imply a promise of support.'}</p>
             <textarea id="feedback-comment" maxLength={4000} rows={4} value={comment} aria-describedby="comment-help" placeholder="For example: I rely on accessible pickup near the entrance in the evening…" onChange={e => { setComment(e.target.value); setConfirmed(false) }} />
             <span className="feedback-character-count">{comment.length} / 4,000</span>
-            <label className="feedback-checkbox"><input type="checkbox" checked={hasCondition} onChange={e => { setHasCondition(e.target.checked); setConfirmed(false) }} /><span>I have a specific requirement to record.</span></label>
+            <label className="feedback-checkbox"><input type="checkbox" checked={hasCondition} data-tooltip="Add a specific change you want, with an optional place and time. Recording a requirement does not mean you support the proposal." onChange={e => { setHasCondition(e.target.checked); setConfirmed(false) }} /><span>I have a specific requirement to record.</span></label>
 
             {hasCondition && <div className="feedback-condition-fields">
               <p className="feedback-help">Record one requirement in your own words. Include any place or time that matters. Your wording stays available alongside any suggested group.</p>
               <label className="feedback-field-label" htmlFor="feedback-requirement">What needs to happen? <small>Required</small></label>
               <textarea id="feedback-requirement" ref={requirementRef} rows={3} maxLength={1000} required={!reviewing && hasCondition} value={requirement} onChange={e => { e.target.setCustomValidity(''); setRequirement(e.target.value); setConfirmed(false) }} placeholder="Keep accessible pickup available near the clinic entrance until 8 p.m." />
               <label className="feedback-field-label" htmlFor="feedback-feature">Related change</label>
-              <select id="feedback-feature" value={feature} onChange={e => { setFeature(e.target.value); setConfirmed(false) }}><option value="">Whole proposal / another detail</option>{elements.map(element => <option key={element.id} value={element.id}>{element.title}</option>)}</select>
+              <select id="feedback-feature" value={feature} data-tooltip="Link your requirement to a particular proposed change, or leave it about the whole proposal or another detail." onChange={e => { setFeature(e.target.value); setConfirmed(false) }}><option value="">Whole proposal / another detail</option>{elements.map(element => <option key={element.id} value={element.id}>{element.title}</option>)}</select>
               <div className="feedback-field-pair">
                 <label className="feedback-field-label" htmlFor="feedback-location">Where? <small>Optional</small><input id="feedback-location" maxLength={200} value={location} placeholder="Affected place or entrance" onChange={e => { setLocation(e.target.value); setConfirmed(false) }} /></label>
                 <label className="feedback-field-label" htmlFor="feedback-time">When? <small>Optional</small><input id="feedback-time" maxLength={200} value={time} placeholder="Days or hours that matter" onChange={e => { setTime(e.target.value); setConfirmed(false) }} /></label>
               </div>
-              <label className="feedback-checkbox"><input type="checkbox" checked={conditional} onChange={e => { setConditional(e.target.checked); setConfirmed(false) }} /><span>I would support this proposal if this requirement is met.</span></label>
+              <label className="feedback-checkbox"><input type="checkbox" checked={conditional} data-tooltip="Record that meeting this requirement would earn your support. Your overall position remains the answer you selected above." onChange={e => { setConditional(e.target.checked); setConfirmed(false) }} /><span>I would support this proposal if this requirement is met.</span></label>
               <p className="feedback-help">Your overall position stays as you selected it. A requirement does not automatically imply support.</p>
             </div>}
           </fieldset>
@@ -349,7 +351,7 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
         {error && <p className="feedback-error" role="alert"><Icon name="info" />{error}</p>}
         <div className="feedback-form-actions">
           {reviewing && <button className="feedback-secondary-button" type="button" disabled={saving} onClick={() => { setReviewing(false); setConfirmed(false) }}><Icon name="back" />Edit answers</button>}
-          <button type="submit" className="feedback-action" disabled={saving || (reviewing && (previewStatus !== 'ready' || !confirmed || requests.some(request => !request.requirement.trim())))}>
+          <button type="submit" className="feedback-action" data-tooltip={reviewing ? 'Save the answers and requests you confirmed above. Editing a response replaces it without adding another participant.' : 'Check your answers and any suggested requests before saving. This step does not submit your response.'} disabled={saving || (reviewing && (previewStatus !== 'ready' || !confirmed || requests.some(request => !request.requirement.trim())))}>
             {saving ? 'Saving your response…' : !reviewing ? 'Review your response' : versionContext ? 'Confirm and save response' : demo ? 'Save response on this device' : existing ? 'Save updated response' : 'Save your response'}<Icon name={reviewing ? 'check' : 'arrow'} />
           </button>
         </div>

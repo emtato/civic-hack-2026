@@ -148,6 +148,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               type="search"
               placeholder="Search proposals or neighbourhoods"
               aria-label="Search proposals or neighbourhoods"
+              data-tooltip="Type a proposal name or neighbourhood to narrow the list and map."
               autoComplete="off"
               value={query}
               onChange={e => setQuery(e.target.value)}
@@ -155,8 +156,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
 
           <div className="sidebar-filters">
-            <FilterDropdown label="Filter by topic" value={topic} options={topics.map(value => ({ value, label: value }))} onChange={setTopic} />
-            <FilterDropdown label="Filter by status" value={status} options={[{ value: 'all', label: 'All statuses' }, ...statuses.map(value => ({ value, label: value }))]} onChange={setStatus} />
+            <FilterDropdown label="Filter by topic" help="Show proposals about a particular topic. Choose All topics to remove this filter." value={topic} options={topics.map(value => ({ value, label: value }))} onChange={setTopic} />
+            <FilterDropdown label="Filter by status" help="Show proposals at a particular stage, such as open for feedback. Choose All statuses to remove this filter." value={status} options={[{ value: 'all', label: 'All statuses' }, ...statuses.map(value => ({ value, label: value }))]} onChange={setStatus} />
           </div>
 
           <div className="results-toolbar">
@@ -183,6 +184,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     key={p.id}
                     className="proposal-card"
                     data-proposal={p.id}
+                    data-tooltip={p.id === LABATT_PROPOSAL_ID ? 'Open a fictional two-version walkthrough: explore sample feedback, see revisions, and try reviewing an earlier resident response.' : 'Open this proposal’s summary, community feedback, and updates.'}
                     onClick={() => onSelectProposal(p.id)}
                   >
                     <div className="card-top">
@@ -227,7 +229,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     ? 'Open a proposal and follow it to find it here.'
                     : 'Try another search or clear your filters.'}
                 </p>
-                {!!catalogueCount && <button id="clear-filters" className="text-button" onClick={onClearFilters}>
+                {!!catalogueCount && <button id="clear-filters" className="text-button" data-tooltip="Clear your search, topic, and status filters." onClick={onClearFilters}>
                   Clear filters
                 </button>}
               </div>
@@ -238,12 +240,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       ) : (
         <div id="proposal-detail">
           <div className="proposal-version-header">
-            <button className="back-button" id="back-to-list" onClick={onBackToExplorer}>
+            <button className="back-button" id="back-to-list" data-tooltip="Return to the proposal list with your current search and filters." onClick={onBackToExplorer}>
               <Icon name="back" /> Back to proposals
             </button>
             <label className="labatt-version">
                 <span>Proposal version</span>
                 <select value={demoVersion?.id ?? ''} disabled={!demoVersion || demoBusy}
+                  data-tooltip="Switch between the earlier and current demo proposal. Each version shows its own feedback; the earlier round is read only."
                   onChange={event => setDemoVersionId(event.target.value)}>
                   {fullDemo && demo.journey ? [...demo.journey.versions].reverse().map(version =>
                     <option key={version.id} value={version.id}>{demoVersionLabel(version)}</option>
@@ -286,6 +289,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 aria-controls="detail-content"
                 tabIndex={detailTab === 'overview' ? 0 : -1}
                 data-detail-tab="overview"
+                data-tooltip="Read the proposal summary, see community sentiment, and find ways to participate."
                 onClick={() => setDetailTab('overview')}
                 onKeyDown={e => handleDetailTabKeyDown(e, 0)}
               >
@@ -298,6 +302,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 aria-controls="detail-content"
                 tabIndex={detailTab === 'feedback' ? 0 : -1}
                 data-detail-tab="feedback"
+                data-tooltip="Explore people’s positions, feature ratings, comments, and specific requests. You can also add or review your response here."
                 onClick={() => setDetailTab('feedback')}
                 onKeyDown={e => handleDetailTabKeyDown(e, 1)}
               >
@@ -310,6 +315,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 aria-controls="detail-content"
                 tabIndex={detailTab === 'updates' ? 0 : -1}
                 data-detail-tab="updates"
+                data-tooltip={fullDemo ? 'Compare the two demo versions and see how earlier feedback relates to the revisions.' : 'Compare saved versions of the official notice to see what changed.'}
                 onClick={() => setDetailTab('updates')}
                 onKeyDown={e => handleDetailTabKeyDown(e, 2)}
               >
@@ -321,6 +327,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               className={`follow-button ${saved.includes(selectedProposal.id) ? 'following' : ''}`}
               id="follow-button"
               aria-pressed={saved.includes(selectedProposal.id)}
+              data-tooltip={saved.includes(selectedProposal.id) ? 'Stop following this proposal and remove it from your Following list.' : currentUser ? 'Save this proposal to Following and receive notifications when it changes.' : 'Sign in to save this proposal to Following and receive notifications when it changes.'}
               onClick={() => onToggleFollow(selectedProposal.id)}
             >
               <Icon name={saved.includes(selectedProposal.id) ? 'check' : 'bookmark'} />
@@ -347,7 +354,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       ))}
                     </ul>
                     {!selectedProposal.coordinates && <p>No map location is available for this proposal.</p>}
-                    {selectedProposal.source && <a className="source-link" href={selectedProposal.source} target="_blank" rel="noopener noreferrer">
+                    {selectedProposal.source && <a className="source-link" data-tooltip="Open the City’s original proposal notice in a new tab." href={selectedProposal.source} target="_blank" rel="noopener noreferrer">
                       Read the official proposal <Icon name="external" />
                     </a>}
                   </section>
@@ -365,7 +372,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         <DistributionChart counts={community.aggregate.position_distribution} total={community.aggregate.total_participants} />
                       </>
                     )}
-                    <button className="overview-link" onClick={() => { setFeedbackOpen(false); setDetailTab('feedback'); document.getElementById('tab-feedback')?.focus() }}>
+                    <button className="overview-link" data-tooltip="See the full breakdown of positions, ratings, requests, and comments in Community." onClick={() => { setFeedbackOpen(false); setDetailTab('feedback'); document.getElementById('tab-feedback')?.focus() }}>
                       Explore community feedback <Icon name="arrow" />
                     </button>
                   </section>
@@ -375,7 +382,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     <h2 id="overview-update-heading">Latest update</h2>
                     <h3>{onlyDemoUpdates ? 'Demo comparison available' : updateCount ? `${updateCount} ${updateCount === 1 ? 'change' : 'changes'} detected` : updateState?.status === 'error' ? 'Update check unavailable' : updateState?.status === 'ready' ? 'No changes detected yet' : 'Checking for changes'}</h3>
                     <p>{onlyDemoUpdates ? 'See fictional earlier wording beside the actual saved notice.' : updateCount ? 'Compare the earlier and later notices to see what changed.' : updateState?.status === 'error' ? 'Checks will retry automatically.' : 'The backend checks official notices hourly, even while this page is closed.'}</p>
-                    <button className="overview-link" onClick={() => { setDetailTab('updates'); document.getElementById('tab-updates')?.focus() }}>
+                    <button className="overview-link" data-tooltip="Open the proposal’s change history and compare earlier and later wording." onClick={() => { setDetailTab('updates'); document.getElementById('tab-updates')?.focus() }}>
                       View updates <Icon name="arrow" />
                     </button>
                   </section>
@@ -389,6 +396,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       <p>Share where you stand, leave a comment, or tell us what would make this proposal work for you.</p>
                     </div>
                     <button className="primary-button" id="preview-feedback"
+                      data-tooltip="Share your overall position, rate individual changes, and add comments or requirements. You’ll review your answers before saving."
                       onClick={() => { setDetailTab('feedback'); setFeedbackOpen(true) }}>
                       {community?.hasResponse ? 'Edit your feedback' : 'Submit feedback / comment'} <Icon name="arrow" />
                     </button>
@@ -400,7 +408,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             <div hidden={detailTab !== 'feedback'}>
               {demoAvailable && selectedProposal.id !== LABATT_PROPOSAL_ID && !feedbackOpen && <div className="labatt-entry">
-                <button className="text-button" onClick={onViewVersions}>See how feedback shaped the Labatt revision <Icon name="arrow" /></button>
+                <button className="text-button" data-tooltip="Open the Labatt demo to trace sample requests through a revision and try the returning-resident review." onClick={onViewVersions}>See how feedback shaped the Labatt revision <Icon name="arrow" /></button>
               </div>}
               <ProposalFeedback key={selectedProposal.id} proposal={selectedProposal}
                 isResponding={feedbackOpen && detailTab === 'feedback'} onRespondingChange={setFeedbackOpen}
@@ -410,7 +418,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {detailTab === 'updates' && (
               <>
                 {demoAvailable && selectedProposal.id !== LABATT_PROPOSAL_ID && <div className="labatt-entry">
-                  <button className="text-button" onClick={onViewVersions}>See how feedback shaped the Labatt revision <Icon name="arrow" /></button>
+                  <button className="text-button" data-tooltip="Open the Labatt demo to trace sample requests through a revision and try the returning-resident review." onClick={onViewVersions}>See how feedback shaped the Labatt revision <Icon name="arrow" /></button>
                 </div>}
                 <ProposalUpdates key={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.request : selectedProposal.id}
                 proposalId={selectedProposal.id} initialDiffId={notificationTarget?.proposalId === selectedProposal.id ? notificationTarget.diffId : undefined} />

@@ -248,10 +248,12 @@ export function LabattDemoContent({ proposal, journey, version, detailTab, onTab
 
   const reviewingForm = reviewMode && reviewMode !== 'previous'
   const residentActions = current && <div className="labatt-actions" ref={actions} tabIndex={-1}>
-    <button className="feedback-action" type="button" disabled={busy} onClick={startReview}>
+    <button className="feedback-action" type="button" disabled={busy} onClick={startReview}
+      data-tooltip={journey.current_response ? 'Change the response you saved for the current demo version. Saving replaces that response.' : 'Step into the role of a returning resident: compare a sample earlier response with the revised proposal, then keep or change it.'}>
       {journey.current_response ? 'Edit your current response' : 'Try the resident review'} <Icon name="arrow" />
     </button>
-    <button className="feedback-inline-button" type="button" disabled={busy} onClick={() => void mutate()}>Reset my demo</button>
+    <button className="feedback-inline-button" type="button" disabled={busy} onClick={() => void mutate()}
+      data-tooltip="Clear your saved current-version demo response and return to not reviewed. The sample community data and earlier response stay intact. This affects only your demo session.">Reset my demo</button>
   </div>
 
   return <div className="proposal-feedback labatt-demo">
@@ -268,7 +270,7 @@ export function LabattDemoContent({ proposal, journey, version, detailTab, onTab
         <section className="overview-card overview-sentiment">
           <div className="overview-card-heading"><h2>Community sentiment</h2><span>{version.aggregate.total_participants} responses</span></div>
           <DistributionChart counts={version.aggregate.position_distribution} total={version.aggregate.total_participants} />
-          <button className="overview-link" onClick={() => onTab('feedback')}>Explore community feedback <Icon name="arrow" /></button>
+          <button className="overview-link" data-tooltip="See the positions, ratings, comments, and requests recorded for the selected demo version." onClick={() => onTab('feedback')}>Explore community feedback <Icon name="arrow" /></button>
         </section>
         <section className="overview-card overview-update labatt-overview-impact">
           <h2>How feedback shaped the revision</h2>
@@ -278,7 +280,7 @@ export function LabattDemoContent({ proposal, journey, version, detailTab, onTab
           {current && <ul className="overview-changes">{version.changes.map(change =>
             <li key={change.feature_id}><Icon name={change.before === change.after ? 'info' : 'check'} /><span>{change.summary}</span></li>
           )}</ul>}
-          <button className="overview-link" onClick={() => onTab('updates')}>Trace feedback to changes <Icon name="arrow" /></button>
+          <button className="overview-link" data-tooltip="Compare earlier requests with the revised wording and see how the same participants responded." onClick={() => onTab('updates')}>Trace feedback to changes <Icon name="arrow" /></button>
         </section>
       </div>
       <div className="overview-side">
@@ -309,13 +311,13 @@ export function LabattDemoContent({ proposal, journey, version, detailTab, onTab
       </dl>
       <ChangeNotes version={version} journey={journey} />
       <div className="labatt-actions">
-        <button className="feedback-action" onClick={() => setReviewMode('keep')}>Keep my response</button>
-        <button className="feedback-secondary-button" onClick={() => setReviewMode('change')}>Review and change</button>
+        <button className="feedback-action" data-tooltip="Carry your earlier answers into a confirmation screen for the current version. Nothing is saved until you confirm." onClick={() => setReviewMode('keep')}>Keep my response</button>
+        <button className="feedback-secondary-button" data-tooltip="Start with your earlier answers and edit your position, ratings, comment, or requirement before confirming for the current version." onClick={() => setReviewMode('change')}>Review and change</button>
       </div>
     </section>}
     {reviewingForm && <div hidden={tab !== 'feedback'}>
       <details className="feedback-card labatt-review" open>
-        <summary>Relevant changes since your earlier response</summary>
+        <summary data-tooltip="Expand or collapse the revision notes and the assessment of your earlier requirement.">Relevant changes since your earlier response</summary>
         <ChangeNotes version={version} journey={journey} />
       </details>
       <FeedbackForm proposal={proposal} elements={version.features}

@@ -9,6 +9,7 @@ import { Icon, icon } from './components/Icon'
 import { Sidebar } from './components/Sidebar'
 import { AuthBar } from './components/AuthBar'
 import { Notifications } from './components/Notifications'
+import { HelpTooltip } from './components/HelpTooltip'
 import { fetchFollowing, setProposalFollow, type ProposalNotification } from './api/notificationsApi'
 import { fetchCurrentUser, getStoredUser, logout, type AuthUser } from './data/auth'
 import { ProposalUpdatesProvider } from './data/ProposalUpdatesContext'
@@ -376,6 +377,7 @@ export default function App() {
           className="brand"
           href="#"
           aria-label="proviso home"
+          data-tooltip="Return to all proposals and clear your search and filters."
           onClick={e => {
             e.preventDefault()
             setActiveTab('explore')
@@ -391,6 +393,7 @@ export default function App() {
           <button
             className={`nav-item ${activeTab === 'explore' ? 'active' : ''}`}
             data-nav="explore"
+            data-tooltip="Browse local proposals and find them on the map."
             onClick={() => {
               setActiveTab('explore')
               showExplorer()
@@ -402,6 +405,7 @@ export default function App() {
           <button
             className={`nav-item ${activeTab === 'saved' ? 'active' : ''}`}
             data-nav="saved"
+            data-tooltip="Show proposals you follow so you can return to them and check for updates."
             onClick={() => {
               setActiveTab('saved')
               showExplorer()
@@ -464,7 +468,7 @@ export default function App() {
               <button
                 id="zoom-in"
                 aria-label="Zoom in"
-                title="Zoom in"
+                data-tooltip="Zoom in to see proposal locations more closely."
                 onClick={() => mapRef.current?.zoomIn()}
               >
                 <Icon name="plus" />
@@ -473,7 +477,7 @@ export default function App() {
               <button
                 id="zoom-out"
                 aria-label="Zoom out"
-                title="Zoom out"
+                data-tooltip="Zoom out to see proposals across a wider area."
                 onClick={() => mapRef.current?.zoomOut()}
               >
                 <Icon name="minus" />
@@ -492,6 +496,7 @@ export default function App() {
         <button
           id="mobile-toggle"
           className="mobile-toggle"
+          data-tooltip={mobileShowMap ? 'Switch from the map to the proposal list and details.' : 'Switch to the map to explore proposal locations.'}
           onClick={() => {
             setMobileShowMap(prev => {
               const next = !prev
@@ -503,6 +508,7 @@ export default function App() {
           <Icon name={mobileShowMap ? 'list' : 'pin'} /> {mobileShowMap ? 'Show proposals' : 'Show map'}
         </button>
       </main>
+      <HelpTooltip />
 
       <div id="toast" role="status" className="toast" hidden={!toastMessage}>
         {toastMessage}

@@ -90,6 +90,7 @@ export function Notifications({ user, proposals, onSelect }: {
   return <div className="notifications" ref={root}>
     <button ref={bell} type="button" className={`notification-bell${open ? ' is-open' : ''}`}
       aria-label={hasNew ? 'Notifications, new updates' : 'Notifications'}
+      data-tooltip="See updates to proposals you follow or have responded to. Opening this panel marks notifications as seen."
       aria-expanded={open} aria-controls={panelId} onClick={() => {
         setOpen(!open)
         if (!open) void refresh(true)
@@ -103,7 +104,7 @@ export function Notifications({ user, proposals, onSelect }: {
       </div>
       {!!demoNotifications.length && <ul className="notification-list" aria-label="Demo notifications">
         {demoNotifications.map(item => <li key={item.id}>
-          <button className="notification-item" onClick={() => { onSelect(item); setOpen(false) }}>
+          <button className="notification-item" data-tooltip="Open the Labatt demo’s Updates tab to explore the sample revision." onClick={() => { onSelect(item); setOpen(false) }}>
             <span className="notification-item-icon"><Icon name="layers" /></span>
             <span><strong>{item.proposal_title}</strong><span>Demo: Proposal details changed. Review it.</span></span>
           </button>
@@ -117,7 +118,7 @@ export function Notifications({ user, proposals, onSelect }: {
         {!!inbox?.items.length && <>
           <p className="notification-caption">Updates to proposals you follow or have participated in</p>
           <ul className="notification-list">{inbox.items.map(item => <li key={item.id}>
-            <button className="notification-item" onClick={() => { onSelect(item); setOpen(false) }}>
+            <button className="notification-item" data-tooltip="Open this proposal’s Updates tab and inspect the detected change." onClick={() => { onSelect(item); setOpen(false) }}>
               <span className="notification-item-icon"><Icon name="layers" /></span>
               <span><strong>{item.proposal_title}</strong><span>A source update is available</span>
                 <time dateTime={item.created_at}>{timestamp(item.created_at)}</time></span>

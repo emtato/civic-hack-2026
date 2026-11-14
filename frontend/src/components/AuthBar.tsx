@@ -88,6 +88,7 @@ export function AuthBar({ currentUser, onAuthenticated, onLogout }: Props) {
     <div className="auth-bar" ref={popoverRef}>
       <button
         className="auth-button"
+        data-tooltip="Sign in or create an account to submit feedback, keep followed proposals, and receive updates. You can browse and try the full demo without signing in."
         aria-haspopup="dialog"
         aria-expanded={open}
         onClick={() => { setOpen(o => !o); setMode('login'); resetForm() }}
@@ -101,12 +102,14 @@ export function AuthBar({ currentUser, onAuthenticated, onLogout }: Props) {
             <button
               role="tab"
               aria-selected={mode === 'login'}
+              data-tooltip="Sign in with an existing username and password."
               className={mode === 'login' ? 'active' : ''}
               onClick={() => { setMode('login'); setError('') }}
             >Log in</button>
             <button
               role="tab"
               aria-selected={mode === 'register'}
+              data-tooltip="Choose a username and password to create an account for submitting feedback and following proposals."
               className={mode === 'register' ? 'active' : ''}
               onClick={() => { setMode('register'); setError('') }}
             >Create account</button>

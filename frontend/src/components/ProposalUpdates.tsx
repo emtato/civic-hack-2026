@@ -98,7 +98,7 @@ export function ProposalUpdates({ proposalId, initialDiffId }: { proposalId: str
     {selected ? <>
       <div className="updates-history-control">
         <label htmlFor="update-comparison">Compare changes</label>
-        <select id="update-comparison" value={selected.id} onChange={event => setSelectedId(event.target.value)}>
+        <select id="update-comparison" value={selected.id} data-tooltip="Choose which saved change to inspect. Earlier and later wording appears side by side below." onChange={event => setSelectedId(event.target.value)}>
           {[...diffs].reverse().map((diff, index) => <option key={diff.id} value={diff.id}>
             {diff.is_demo ? 'Demo comparison' : `Change ${diffs.length - index}`}{index === 0 ? ' · Latest' : ''} · {diff.changes.length} {diff.changes.length === 1 ? 'field' : 'fields'}
           </option>)}

@@ -78,6 +78,23 @@ button .icon,a .icon {
   clip:rect(0,0,0,0)
 }
 
+.help-tooltip {
+  position:fixed;
+  z-index:10000;
+  width:max-content;
+  max-width:min(290px, calc(100vw - 16px));
+  padding:10px 13px;
+  border:1px solid #426351;
+  border-radius:9px;
+  background:#263d34;
+  color:#fff;
+  box-shadow:0 4px 16px #14281c26;
+  font-size:12px;
+  font-weight:450;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+
 h1,h2,h3,p {
   margin:0
 }

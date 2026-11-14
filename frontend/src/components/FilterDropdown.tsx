@@ -3,12 +3,13 @@ import { Icon } from './Icon'
 
 interface Props {
   label: string
+  help: string
   value: string
   options: { value: string; label: string }[]
   onChange: (value: string) => void
 }
 
-export function FilterDropdown({ label, value, options, onChange }: Props) {
+export function FilterDropdown({ label, help, value, options, onChange }: Props) {
   const id = useId()
   const [open, setOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -42,6 +43,7 @@ export function FilterDropdown({ label, value, options, onChange }: Props) {
   }}>
     <span className="filter-dropdown-label" id={`${id}-label`}>{label}</span>
     <button ref={buttonRef} type="button" role="combobox" className={`filter-dropdown-trigger ${selectedIndex > 0 ? 'is-selected' : ''}`}
+      data-tooltip={help}
       aria-labelledby={`${id}-label`} aria-haspopup="listbox" aria-expanded={open} aria-controls={`${id}-options`}
       aria-activedescendant={open ? `${id}-${activeIndex}` : undefined}
       onClick={() => { setActiveIndex(Math.max(0, selectedIndex)); setOpen(!open) }}

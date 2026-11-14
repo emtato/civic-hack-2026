@@ -71,7 +71,7 @@ export function ConditionGroup({ cluster, total, username, busy = false, reviewe
   const voices = new Set(cluster.items.map(item => item.participant_id).filter(Boolean)).size
   return (
     <details className={`feedback-condition-group ${cluster.is_ungrouped ? 'is-ungrouped' : ''}`}>
-      <summary>
+      <summary data-tooltip="Expand this group to inspect the original comments and individual requests behind the count.">
         <span className="feedback-cluster-icon"><Icon name={cluster.icon} /></span>
         <span className="feedback-cluster-main">
           <span className="feedback-cluster-title">{cluster.is_ungrouped
@@ -289,6 +289,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
                     : 'Share your position, the details that matter, and any requirements.'}</p>
               </div>
               <button className="feedback-action" disabled={mode === 'loading' || needsLogin}
+                data-tooltip={response ? 'Update your saved position, ratings, comment, or requirements. Saving replaces your response without counting you twice.' : 'Share your position and the details that matter to you, then review everything before saving.'}
                 onClick={() => { setReceipt(''); setError(''); onRespondingChange(true) }}>
                 {needsLogin ? 'Log in to respond' : response ? 'Edit your response' : 'Share your perspective'}<Icon name="arrow" />
               </button>

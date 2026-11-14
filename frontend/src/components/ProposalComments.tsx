@@ -129,7 +129,7 @@ export function ProposalComments({ proposalId, refreshKey, layout = 'list', curr
           {current?.state === 'ready' && current.comments.length > 1 && (
             <label className="overview-comments-sort" htmlFor={sortId}>
               <span>Sort by:</span>
-              <select id={sortId} value={sort} onChange={event => setSort(event.target.value as SortMode)}>
+              <select id={sortId} value={sort} data-tooltip="Order comments by vote score (Most liked) or by the most recent submission (Newest)." onChange={event => setSort(event.target.value as SortMode)}>
                 <option value="top">Most liked</option>
                 <option value="new">Newest</option>
               </select>
