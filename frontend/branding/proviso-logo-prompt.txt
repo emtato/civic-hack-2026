@@ -1,0 +1,11 @@
+Generated with the built-in image_gen tool.
+Header asset: public/proviso-logo.png
+Favicon assets: public/favicon.png and public/favicon.ico
+
+Use case: logo-brand
+Asset type: square app icon for Proviso, a municipal proposal explorer where residents discover local city proposals and share feedback; used at 40px in a website header and 16–32px as a browser favicon.
+Primary request: one polished minimal flat graphic icon combining a city skyline and a speech bubble, communicating local civic proposals and community voice. A single bold warm cream speech bubble silhouette with a short tail at bottom left, containing a very simple forest-green skyline made of three chunky building silhouettes of varied height. Keep broad negative space and large solid shapes legible when tiny.
+Color palette: solid deep forest green #285a45 background, warm cream #fffbea foreground; two colors only.
+Composition: square 1:1 image, centered icon filling about 80 percent of the canvas, dark green rounded-square tile with modest corner radius. Straight-on flat vector-like artwork, geometrically clean, confident and friendly. Crisp edges.
+Text: none.
+Constraints: no letters, no wordmark, no mockup, no decorative border, no shadow, no gradient, no texture, no tiny windows, no thin linework, no watermark. Output only the single square icon.

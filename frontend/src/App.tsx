@@ -387,7 +387,7 @@ export default function App() {
             clearFilters()
           }}
         >
-          <span className="brand-mark"><Icon name="layers" /></span>
+          <img className="brand-mark" src={`${import.meta.env.BASE_URL}proviso-logo.png`} alt="" width="32" height="32" />
           proviso<span className="brand-dot">.</span>
         </a>
 

@@ -122,20 +122,13 @@ button {
 }
 
 .brand-mark {
-  display:grid;
-  place-items:center;
-  background:var(--green);
-  color:#faf8e9;
+  display:block;
+  flex-shrink:0;
   border-radius:8px;
-  width:28px;
-  height:30px;
-  transform:rotate(-5deg);
+  width:32px;
+  height:32px;
+  object-fit:contain;
   margin-right:2px
-}
-
-.brand-mark .icon {
-  width:18px;
-  height:18px
 }
 
 .brand-dot {
