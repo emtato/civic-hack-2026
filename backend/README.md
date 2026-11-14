@@ -28,11 +28,41 @@ URL-encode special characters in the database password. Ensure Atlas permits you
 machine's IP and that the database user has access to the chosen database.
 Restart the server after changing `.env`.
 
-Set `GROQ_API_KEY` in the backend environment to enable **Suggest groups**
-on a live proposal. This uses Groq (OpenAI-compatible Chat Completions, model
-`openai/gpt-oss-120b` by default; override with `GROQ_MODEL`) to find equivalent
-confirmed requirements. It sends the requirement and its recorded time and place.
-Signed-in residents can remove their own requirement from a suggested group.
+Set `GROQ_API_KEY` in the backend environment to enable automatic request analysis.
+This uses Groq (OpenAI-compatible Chat Completions, model `openai/gpt-oss-120b`
+by default; override with `GROQ_MODEL`). The background worker starts with a
+backfill of existing feedback, then checks for new/edited feedback every ten
+seconds, even when no browser is open. `GROUPING_SCHEDULER_ENABLED=false` disables
+it. The backend must remain running for this in-process worker to make progress.
+
+Analysis extracts specific requests from original comments, requires an exact
+supporting quote, and groups these with explicit requirements using their time
+and place. General opinions do not become requests, and extracted requests never
+imply conditional support. Equivalent requests from one author count once within
+a suggested group. Unique requests and residents' grouping opt-outs stay visible.
+Existing fixture counts without original feedback records are preserved.
+
+Comment analyses are cached by content and analysis version in
+`feedback_request_analysis`. Completed proposals are skipped until their relevant
+feedback changes. MongoDB leases prevent duplicate background work across API
+workers. Provider failures retain existing evidence, expose an error status and
+retry after a minute. Interrupted feedback saves are recovered before analysis;
+aggregate compare-and-swap prevents stale AI results overwriting new feedback.
+Original comments and explicit requirements are never rewritten by analysis.
+Rate limits use the provider's retry time and a shared cooldown across workers,
+so one limited request does not cause repeated calls for every proposal.
+
+Signed-in residents can **Refresh groups** (queues analysis without waiting for
+the provider) or remove their own request from a suggested group. Public aggregate
+reads include `grouping_status`, `grouping_error` and `grouping_updated_at`; the
+frontend refreshes them every five seconds. Internal `total_conditions` and
+`condition_clusters` field names are retained for API compatibility, but include
+comment-derived requests as well as explicitly recorded requirements.
+
+To process existing feedback immediately without starting the HTTP server, run
+`.venv/bin/python backfill_feedback_groups.py` from `backend/`. Use `--status`
+for a read-only summary. Reruns skip completed content and reuse cached comment
+analysis; failed proposals respect their retry time.
 
 `MONGODB_DATABASE` selects the database name. MongoDB creates the database when
 you first write data; pinging it does not create a database or collection.

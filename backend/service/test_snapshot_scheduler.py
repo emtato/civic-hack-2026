@@ -159,9 +159,13 @@ class SchedulerLifecycleTests(unittest.IsolatedAsyncioTestCase):
         scheduler = Mock()
         scheduler.start.side_effect = lambda: events.append("scheduler started")
         scheduler.stop = AsyncMock(side_effect=lambda: events.append("scheduler stopped"))
+        grouping = Mock()
+        grouping.start.side_effect = lambda: events.append("grouping started")
+        grouping.stop = AsyncMock(side_effect=lambda: events.append("grouping stopped"))
         with patch("main.get_mongo_client", return_value=client), patch("main.get_database", return_value={}), \
              patch("main.ensure_indexes"), patch("main.FeedbackService"), patch("main.SnapshotScheduler", return_value=scheduler), \
-             patch.dict("os.environ", {"SNAPSHOT_SCHEDULER_ENABLED": "true"}):
+             patch("main.GroupingScheduler", return_value=grouping), \
+             patch.dict("os.environ", {"SNAPSHOT_SCHEDULER_ENABLED": "true", "GROUPING_SCHEDULER_ENABLED": "true"}):
             async with lifespan(FastAPI()):
-                self.assertEqual(["scheduler started"], events)
-        self.assertEqual(["scheduler started", "scheduler stopped", "database closed"], events)
+                self.assertEqual(["scheduler started", "grouping started"], events)
+        self.assertEqual(["scheduler started", "grouping started", "scheduler stopped", "grouping stopped", "database closed"], events)

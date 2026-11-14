@@ -24,6 +24,7 @@ from proposals_DTO import (
 from service.condition_grouping import GroupingUnavailable
 from service.service import FeedbackService, GroupingConflict
 from service.snapshot_scheduler import SnapshotScheduler
+from service.grouping_scheduler import GroupingScheduler
 from service.proposal_snapshots import ProposalSnapshotService, ProposalNotFoundError, SnapshotCursorError
 from proposal_snapshots_DTO import SnapshotPollRequestDTO, SnapshotPollResponseDTO, SnapshotViewDTO
 from auth import (
@@ -59,6 +60,7 @@ async def lifespan(app: FastAPI):
     app.state.mongo_client = client
     app.state.database = db
     scheduler = None
+    grouping_scheduler = None
 
     if db is not None:
         try:
@@ -73,12 +75,18 @@ async def lifespan(app: FastAPI):
             scheduler = SnapshotScheduler(db)
             scheduler.start()
 
+        if os.getenv("GROUPING_SCHEDULER_ENABLED", "true").lower() not in {"false", "0", "no"}:
+            grouping_scheduler = GroupingScheduler(db)
+            grouping_scheduler.start()
+
     try:
         yield
     finally:
         try:
             if scheduler is not None:
                 await scheduler.stop()
+            if grouping_scheduler is not None:
+                await grouping_scheduler.stop()
         finally:
             if client is not None:
                 client.close()
@@ -436,7 +444,7 @@ def check_proposal_updates(
 )
 def group_conditions(proposal_id: str, service: FeedbackService = Depends(get_service)):
     try:
-        return service.group_conditions(proposal_id)
+        return service.queue_condition_groups(proposal_id)
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except GroupingConflict as exc:

@@ -7,6 +7,7 @@ import {
 import type { ConditionClusterDTO, ProposalCommunityAggregateDTO, ProposalFeedbackSubmissionDTO } from '../data/proposalFeedbackDTO'
 import { readDemoFeedback, saveDemoFeedback } from '../data/feedbackSession'
 import { fetchParticipantFeedback, fetchProposalAggregate, submitProposalFeedback, updateConditionGroups } from '../api/proposalsApi'
+import { startAggregatePolling } from '../data/aggregatePolling'
 import type { AuthUser } from '../data/auth'
 import { FeedbackForm } from './FeedbackForm'
 import { ProposalComments } from './ProposalComments'
@@ -57,43 +58,47 @@ export function DistributionChart({ counts, total, elements = false }: {
   )
 }
 
-function ConditionGroup({ cluster, total, username, busy, onReject }: {
+function ConditionGroup({ cluster, total, username, busy, reviewed, onReject }: {
   cluster: ConditionClusterDTO
   total: number
   username?: string
   busy: boolean
+  reviewed: boolean
   onReject: (id: string) => void
 }) {
+  const voices = new Set(cluster.items.map(item => item.participant_id).filter(Boolean)).size
   return (
     <details className={`feedback-condition-group ${cluster.is_ungrouped ? 'is-ungrouped' : ''}`}>
       <summary>
         <span className="feedback-cluster-icon"><Icon name={cluster.icon} /></span>
         <span className="feedback-cluster-main">
-          <span className="feedback-cluster-title">{cluster.label}</span>
+          <span className="feedback-cluster-title">{cluster.is_ungrouped
+            ? reviewed ? 'Individual / unmatched requests' : 'Individual requests / awaiting grouping'
+            : cluster.label}</span>
           <span className="feedback-cluster-track" aria-hidden="true"><i style={{ width: formatPercentage(cluster.count, total) }} /></span>
-          <span className="feedback-cluster-meta">{cluster.count} {cluster.count === 1 ? 'condition' : 'conditions'} · {formatPercentage(cluster.count, total)} of conditions{cluster.is_suggested && ' · AI-suggested group'}</span>
+          <span className="feedback-cluster-meta">{cluster.count} {cluster.count === 1 ? 'request' : 'requests'} · {formatPercentage(cluster.count, total)} of requests{voices > 0 && ` · ${voices} ${voices === 1 ? 'voice' : 'voices'}${cluster.items.length < cluster.count ? ' in supplied examples' : ''}`}{cluster.is_suggested && ' · AI-suggested group'}</span>
         </span>
         <Icon name="back" className="feedback-disclosure" />
       </summary>
       <div className="feedback-evidence">
         <p className="feedback-help">{cluster.items.length < cluster.count
-          ? `Showing ${cluster.items.length} supplied ${cluster.items.length === 1 ? 'example' : 'examples'} of ${cluster.count} conditions in this group.`
-          : 'Original comments and the requirements recorded alongside them.'}</p>
+          ? `Showing ${cluster.items.length} supplied ${cluster.items.length === 1 ? 'example' : 'examples'} of ${cluster.count} requests in this group.`
+          : 'Original comments, recorded requirements, and requests identified in comments.'}</p>
         {!cluster.items.length && <p className="feedback-help">No individual examples are supplied for this group.</p>}
         {cluster.items.map(item => (
           <article className="feedback-quote" key={item.id}>
             <span className={`feedback-requirement-tag ${item.is_conditional_support ? 'conditional' : ''}`}>
-              {item.is_conditional_support ? 'Explicit support condition' : 'Requirement / concern'}
+              {item.source === 'comment' ? 'AI-identified request from comment' : item.is_conditional_support ? 'Explicit support condition' : 'Recorded requirement / concern'}
             </span>
             {item.verbatim_quote && <blockquote>“{item.verbatim_quote}”</blockquote>}
-            <div className="feedback-recorded-requirement"><strong>Recorded requirement</strong><p>{item.extracted_requirement}</p></div>
+            <div className="feedback-recorded-requirement"><strong>{item.source === 'comment' ? 'Request identified in comment' : 'Recorded requirement'}</strong><p>{item.extracted_requirement}</p></div>
             {(item.location_label || item.time_window) && <div className="feedback-quote-context">
               {item.location_label && <span><Icon name="pin" />{item.location_label}</span>}
               {item.time_window && <span><Icon name="clock" />{item.time_window}</span>}
             </div>}
             {cluster.is_suggested && username && item.participant_id === username &&
               <button type="button" className="feedback-inline-button" disabled={busy} onClick={() => onReject(item.id)}>
-                Remove my requirement from this group
+                Remove my request from this group
               </button>}
           </article>
         ))}
@@ -111,6 +116,8 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
   const [receipt, setReceipt] = useState('')
   const [loadAttempt, setLoadAttempt] = useState(0)
   const [grouping, setGrouping] = useState(false)
+  const groupingRef = useRef(false)
+  const mutationRevision = useRef(0)
   const [groupMessage, setGroupMessage] = useState('')
   const headingRef = useRef<HTMLHeadingElement>(null)
   const savingRef = useRef(false)
@@ -153,6 +160,17 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
     return () => { active = false }
   }, [proposal.id, loadAttempt, currentUser?.username])
 
+  useEffect(() => {
+    if (mode !== 'server') return
+    return startAggregatePolling({
+      fetch: () => fetchProposalAggregate(proposal.id),
+      apply: updated => setAggregate(current => current.last_updated === updated.last_updated
+        && current.grouping_status === updated.grouping_status ? current : updated),
+      busy: () => savingRef.current || groupingRef.current,
+      revision: () => mutationRevision.current,
+    })
+  }, [proposal.id, mode])
+
   async function save(submission: ProposalFeedbackSubmissionDTO) {
     if (savingRef.current) return
     // Defense in depth: never attempt a server write without a logged-in user.
@@ -162,6 +180,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
       return
     }
     savingRef.current = true
+    mutationRevision.current += 1
     setSaving(true)
     setError('')
     try {
@@ -193,17 +212,20 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
   }
 
   async function updateGroups(rejectedId?: string) {
+    if (groupingRef.current || savingRef.current) return
+    groupingRef.current = true
+    mutationRevision.current += 1
     setGrouping(true)
     setGroupMessage(rejectedId ? 'Removing your requirement from the group…' : 'Looking for related requirements…')
     try {
       const updated = await updateConditionGroups(proposal.id, rejectedId)
       if (!mountedRef.current) return
       setAggregate(updated)
-      setGroupMessage(rejectedId ? 'Your requirement is now ungrouped.' :
-        updated.condition_clusters.some(cluster => cluster.is_suggested) ? 'Suggested groups updated.' : 'No clear matches found.')
+      setGroupMessage(rejectedId ? 'Your request is now ungrouped.' : 'Analysis queued. Groups will refresh automatically.')
     } catch (error) {
       if (mountedRef.current) setGroupMessage(error instanceof Error ? error.message : 'Could not update condition groups.')
     } finally {
+      groupingRef.current = false
       if (mountedRef.current) setGrouping(false)
     }
   }
@@ -256,7 +278,7 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
 
         <div className="feedback-stat-row">
           <div><strong>{aggregate.total_participants}</strong><span>participants</span></div>
-          <div><strong>{aggregate.total_conditions}</strong><span>recorded conditions</span></div>
+          <div><strong>{aggregate.total_conditions}</strong><span>recorded requests</span></div>
           <div className="feedback-stat-updated"><Icon name="clock" /><span>Updated<br />{Number.isNaN(date.getTime()) ? 'Not available' : date.toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}</span></div>
         </div>
 
@@ -317,21 +339,26 @@ export function ProposalFeedback({ proposal, isResponding, onRespondingChange, o
         </section>
 
         <section className="feedback-card feedback-conditions" aria-labelledby="conditions-heading">
-          <div className="feedback-section-heading"><h3 id="conditions-heading">What would make a difference</h3><span>{aggregate.total_conditions} conditions</span></div>
-          <p className="feedback-help">Explore grouped requirements and their original comments. A condition is a specific need; it only means conditional support when the participant explicitly says so.</p>
-          {mode === 'server' && currentUser && aggregate.total_conditions >= 2 && <div>
+          <div className="feedback-section-heading"><h3 id="conditions-heading">What would make a difference</h3><span>{aggregate.total_conditions} requests</span></div>
+          <p className="feedback-help">Explore shared requests from recorded requirements and comments. A request only means conditional support when the participant explicitly says so. Each voice counts a person once within a group.</p>
+          {mode === 'server' && <p className="feedback-help" role="status">{
+            aggregate.grouping_status === 'ready' ? 'Requests are analysed and grouped automatically. Unique requests stay visible.'
+              : aggregate.grouping_status === 'error' ? aggregate.grouping_error || 'AI analysis is temporarily unavailable and will retry automatically.'
+                : 'Analysing comments and updating request groups. New feedback is saved and will appear automatically.'
+          }</p>}
+          {mode === 'server' && currentUser && <div>
             <button type="button" className="feedback-secondary-button" disabled={grouping || saving}
               aria-describedby="condition-grouping-help" onClick={() => void updateGroups()}>
-              Suggest groups
+              Refresh groups
             </button>
-            <p className="feedback-help" id="condition-grouping-help">OpenAI compares recorded requirements and their time and place details.</p>
+            <p className="feedback-help" id="condition-grouping-help">AI compares specific requests and their time and place details. You can remove your own request from a suggested group.</p>
           </div>}
           <div className="feedback-help" role="status">{groupMessage}</div>
           {conditionGroups.length ? conditionGroups.map(cluster => <ConditionGroup
-            key={cluster.id} cluster={cluster} total={aggregate.total_conditions} busy={grouping || saving}
+            key={cluster.id} cluster={cluster} total={aggregate.total_conditions} busy={grouping || saving} reviewed={aggregate.grouping_status === 'ready'}
             username={mode === 'server' ? currentUser?.username : undefined} onReject={id => void updateGroups(id)} />)
-            : <p className="feedback-empty">No conditions recorded yet. Individual and less common needs will stay visible here.</p>}
-          <p className="feedback-help feedback-count-note">Percentages use recorded conditions, not participants. Groups may include the same person. Results describe participants, not a representative vote of the neighbourhood.</p>
+            : <p className="feedback-empty">No specific requests recorded yet. Individual and less common needs will stay visible here.</p>}
+          <p className="feedback-help feedback-count-note">Percentages use requests, not participants. A person may have requests in several groups. Results describe participants, not a representative vote of the neighbourhood.</p>
         </section>
         <ProposalComments proposalId={proposal.id} refreshKey={aggregate.last_updated} layout="grid" currentUser={currentUser} />
       </div>

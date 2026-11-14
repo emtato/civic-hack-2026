@@ -10,7 +10,8 @@ from datetime import datetime, timezone
 from typing import List, Optional, Tuple
 
 from pymongo.database import Database
-from .condition_grouping import GroupingUnavailable, suggest_groups
+from .condition_grouping import GroupingUnavailable, SuggestedGroup, suggest_groups
+from .feedback_analysis import collect_evidence, digest, input_hash
 
 try:
     from proposals_DTO import (
@@ -32,9 +33,9 @@ except ImportError:
     )
 
 try:
-    from persistence.persistence import CommentVoteRepository, FeedbackRepository, ProposalRepository
+    from persistence.persistence import CommentVoteRepository, FeedbackRepository, ProposalRepository, feedback_revision
 except ImportError:
-    from backend.persistence.persistence import CommentVoteRepository, FeedbackRepository, ProposalRepository
+    from backend.persistence.persistence import CommentVoteRepository, FeedbackRepository, ProposalRepository, feedback_revision
 
 logger = logging.getLogger("proviso.service")
 
@@ -127,7 +128,7 @@ def create_empty_aggregate() -> ProposalCommunityAggregateDTO:
         condition_clusters=[
             ConditionClusterDTO(
                 id="cluster-ungrouped",
-                label="Ungrouped / Unique Access Conditions",
+                label="Individual requests / awaiting grouping",
                 icon="help",
                 count=0,
                 is_ungrouped=True,
@@ -204,16 +205,41 @@ def apply_feedback_to_aggregate(
                 elem.distribution[rating] = elem.distribution.get(rating, 0) + 1
                 elem.total_responses += 1
 
-    # Replace the participant's previous condition evidence on every edit.
-    grouping_rejected = False
+    # Keep existing evidence and membership when only ratings/role were edited.
+    same_requests = previous_submission is not None and (
+        previous_submission.condition == submission.condition
+        and previous_submission.comment.strip() == submission.comment.strip()
+    )
+    if same_requests:
+        for cluster in agg.condition_clusters:
+            for item in cluster.items:
+                if item.participant_id == submission.participant_id:
+                    item.concern_coordinates = submission.concern_coordinates
+        return agg
+
+    agg.grouping_status = "pending"
+    agg.grouping_error = None
+    agg.grouping_retry_after = None
+
+    # Replace changed evidence; background analysis will add comment requests.
+    retained_requirement = False
+    same_requirement = previous_submission is not None and previous_submission.condition and submission.condition and (
+        previous_submission.condition.requirement == submission.condition.requirement
+        and previous_submission.condition.time_window == submission.condition.time_window
+        and previous_submission.condition.location_label == submission.condition.location_label
+    )
     if previous_submission is not None:
         for cluster in agg.condition_clusters:
-            if previous_submission.condition == submission.condition:
-                grouping_rejected |= any(
-                    item.participant_id == submission.participant_id and item.grouping_rejected
-                    for item in cluster.items
-                )
-            remaining = [item for item in cluster.items if item.participant_id != submission.participant_id]
+            remaining = []
+            for item in cluster.items:
+                if item.participant_id != submission.participant_id:
+                    remaining.append(item)
+                elif same_requirement and item.source == "requirement" and not retained_requirement:
+                    retained_requirement = True
+                    item.verbatim_quote = submission.comment.strip()
+                    item.is_conditional_support = submission.condition.is_conditional_support
+                    item.concern_coordinates = submission.concern_coordinates
+                    remaining.append(item)
             removed = len(cluster.items) - len(remaining)
             cluster.items = remaining
             cluster.count = max(0, cluster.count - removed)
@@ -221,13 +247,12 @@ def apply_feedback_to_aggregate(
 
     # General comments are preserved on the submission, not interpreted as
     # support promises. Only a participant-confirmed requirement counts here.
-    if submission.condition and submission.condition.requirement.strip():
+    if not retained_requirement and submission.condition and submission.condition.requirement.strip():
         condition = submission.condition
         agg.total_conditions += 1
         condition_item = ConditionItemDTO(
             id=f"cond-{uuid.uuid4().hex[:8]}",
             participant_id=submission.participant_id,
-            grouping_rejected=grouping_rejected,
             verbatim_quote=submission.comment.strip(),
             extracted_requirement=condition.requirement.strip(),
             is_conditional_support=condition.is_conditional_support,
@@ -300,6 +325,7 @@ class FeedbackService:
             self.proposals = ProposalRepository(db)
             self.feedback = FeedbackRepository(db)
             self.votes = votes_repo if votes_repo is not None else CommentVoteRepository(db)
+        self.analysis_cache = self.feedback.db["feedback_request_analysis"]
 
     def get_proposals(self) -> List[Proposal]:
         """Fetch all proposals from persistence."""
@@ -334,21 +360,77 @@ class FeedbackService:
         # 1. Call persistence to save the raw submission
         saved_sub, is_new, previous_sub = self.feedback.save_submission(submission)
 
+        aggregate = self.apply_saved_feedback(saved_sub, previous_sub)
+        latest = self.feedback.get_by_participant(saved_sub.proposal_id, saved_sub.participant_id)
+        return latest or saved_sub, aggregate
+
+    def apply_saved_feedback(self, saved_sub, previous_sub):
+        """Idempotent completion also recovers a save interrupted before aggregation."""
+        revision = feedback_revision(saved_sub)
+
         # Retry if regrouping or another submission updated the aggregate first.
         while True:
-            record = self.proposals.get_by_id(submission.proposal_id)
+            record = self.proposals.get_by_id(saved_sub.proposal_id)
             if record is None:
-                raise ValueError(f"Proposal '{submission.proposal_id}' not found.")
+                raise ValueError(f"Proposal '{saved_sub.proposal_id}' not found.")
             current = to_display_proposal(record).community_aggregate or create_empty_aggregate()
-            updated = apply_feedback_to_aggregate(current, saved_sub, previous_submission=previous_sub)
+            latest = self.feedback.get_by_participant(saved_sub.proposal_id, saved_sub.participant_id)
+            if latest is None or feedback_revision(latest) != revision:
+                # A newer edit superseded this response before aggregation.
+                return current
+            if current.applied_feedback_revisions.get(saved_sub.participant_id) == revision:
+                self.feedback.mark_aggregated(saved_sub)
+                return current
+            applied = current.applied_feedback.get(saved_sub.participant_id)
+            if applied is not None:
+                previous = ProposalFeedbackSubmissionDTO.model_validate(applied)
+            else:
+                # Legacy responses have no applied snapshot yet. The raw record
+                # remembers the last committed response across interrupted saves.
+                previous = self.feedback.previous_aggregate_submission(saved_sub, previous_sub)
+            updated = apply_feedback_to_aggregate(current, saved_sub, previous_submission=previous)
+            updated.applied_feedback_revisions[saved_sub.participant_id] = revision
+            updated.applied_feedback[saved_sub.participant_id] = saved_sub.model_dump(mode="json")
             if self.proposals.replace_aggregate_if_current(record, updated):
-                return saved_sub, updated
+                self.feedback.mark_aggregated(saved_sub)
+                return updated
 
-    def group_conditions(self, proposal_id: str) -> ProposalCommunityAggregateDTO:
+    def recover_feedback_aggregates(self, proposal_id):
+        for submission, previous in self.feedback.get_pending_aggregates(proposal_id):
+            self.apply_saved_feedback(submission, previous)
+
+    def queue_condition_groups(self, proposal_id: str) -> ProposalCommunityAggregateDTO:
         record = self.proposals.get_by_id(proposal_id)
         if record is None:
             raise ValueError("Proposal was not found.")
         aggregate = to_display_proposal(record).community_aggregate or create_empty_aggregate()
+        aggregate.grouping_status = "pending"
+        aggregate.grouping_error = None
+        aggregate.grouping_retry_after = None
+        return self.save_condition_groups(record, aggregate)
+
+    def group_conditions(self, proposal_id: str, heartbeat=lambda: None) -> ProposalCommunityAggregateDTO:
+        record = self.proposals.get_by_id(proposal_id)
+        if record is None:
+            raise ValueError("Proposal was not found.")
+        aggregate = to_display_proposal(record).community_aggregate or create_empty_aggregate()
+        submissions = self.feedback.get_for_analysis(proposal_id)
+        if submissions is None:
+            raise GroupingConflict("Feedback is being saved. Grouping will retry shortly.")
+        fingerprint = input_hash(submissions, aggregate)
+        if submissions:
+            evidence = collect_evidence(submissions, aggregate, self.analysis_cache, heartbeat)
+            participants = {submission.participant_id for submission in submissions}
+            # Replace only evidence backed by current submissions. Preserve legacy
+            # fixture evidence/counts that cannot be reconstructed from raw feedback.
+            for cluster in aggregate.condition_clusters:
+                remaining = [item for item in cluster.items if item.participant_id not in participants]
+                cluster.count -= len(cluster.items) - len(remaining)
+                cluster.items = remaining
+            target = ungrouped_cluster(aggregate)
+            target.items.extend(evidence)
+            target.count += len(evidence)
+            aggregate.total_conditions = sum(cluster.count for cluster in aggregate.condition_clusters)
         sources = [
             cluster for cluster in aggregate.condition_clusters
             if cluster.is_ungrouped or cluster.is_suggested
@@ -357,14 +439,12 @@ class FeedbackService:
             item for cluster in sources for item in cluster.items
             if item.participant_id and item.extracted_requirement.strip() and not item.grouping_rejected
         ]
-        if len(items) < 2:
-            return aggregate
-
+        heartbeat()
         suggestions = suggest_groups([
             {"number": number, "requirement": item.extracted_requirement,
              "place": item.location_label, "time": item.time_window}
             for number, item in enumerate(items)
-        ])
+        ]) if len(items) >= 2 else []
         target = ungrouped_cluster(aggregate)
         for source in sources:
             if source.is_suggested:
@@ -372,6 +452,20 @@ class FeedbackService:
                 target.count += source.count
                 aggregate.condition_clusters.remove(source)
         sources = [cluster for cluster in aggregate.condition_clusters if cluster.is_ungrouped]
+        # Exact equivalents should never remain unmatched merely because the
+        # model omitted them. Context is part of the key, so opposites stay apart.
+        claimed = {member for group in suggestions for member in group.members}
+        exact = {}
+        for number, item in enumerate(items):
+            if number not in claimed:
+                key = (item.extracted_requirement.strip().casefold(),
+                       (item.time_window or "").strip().casefold(),
+                       (item.location_label or "").strip().casefold())
+                exact.setdefault(key, []).append(number)
+        suggestions = [*suggestions, *(
+            SuggestedGroup(label=items[members[0]].extracted_requirement[:100], members=members)
+            for members in exact.values() if len(members) > 1
+        )]
         used = set()
         for group in suggestions:
             members = set(group.members)
@@ -384,25 +478,35 @@ class FeedbackService:
             ):
                 raise GroupingUnavailable("AI grouping returned invalid suggestions.")
             used.update(members)
-            grouped_items = [items[index] for index in sorted(members)]
-            # Keep explicitly different time windows and locations separate.
-            context = (
-                {value.strip().casefold() for item in grouped_items
-                 if (value := getattr(item, field)) and value.strip()}
-                for field in ("time_window", "location_label")
-            )
-            if any(len(values) > 1 for values in context):
-                continue
-            aggregate.condition_clusters.append(ConditionClusterDTO(
-                id=f"suggested-{uuid.uuid4().hex}", label=group.label.strip(),
-                icon="message", count=len(grouped_items), is_suggested=True, items=grouped_items,
-            ))
-            ids = {item.id for item in grouped_items}
+            all_items = [items[index] for index in sorted(members)]
+            by_voice = {}
+            for item in sorted(all_items, key=lambda item: item.source != "requirement"):
+                by_voice.setdefault(item.participant_id or item.id, item)
+            grouped_items = list(by_voice.values())
+            # Semantic compatibility (including equivalent time/place wording) is
+            # assessed by the model, rather than rejecting unequal strings.
+            ids = {item.id for item in all_items}
             for source in sources:
                 remaining = [item for item in source.items if item.id not in ids]
                 source.count -= len(source.items) - len(remaining)
                 source.items = remaining
+            if len(grouped_items) >= 2:
+                aggregate.condition_clusters.append(ConditionClusterDTO(
+                    id="suggested-" + digest(sorted(item.id for item in grouped_items))[:24],
+                    label=group.label.strip(), icon="message", count=len(grouped_items),
+                    is_suggested=True, items=grouped_items,
+                ))
+            else:
+                target.items.extend(grouped_items)
+                target.count += len(grouped_items)
 
+        aggregate.condition_clusters = [c for c in aggregate.condition_clusters if c.count or c.is_ungrouped]
+        aggregate.total_conditions = sum(c.count for c in aggregate.condition_clusters)
+        aggregate.grouping_status = "ready"
+        aggregate.grouping_error = None
+        aggregate.grouping_retry_after = None
+        aggregate.grouping_input_hash = fingerprint
+        aggregate.grouping_updated_at = datetime.now(timezone.utc).isoformat()
         return self.save_condition_groups(record, aggregate)
 
     def reject_condition_group(
@@ -423,6 +527,8 @@ class FeedbackService:
                 if not cluster.is_suggested:
                     break
                 item.grouping_rejected = True
+                aggregate.grouping_status = "pending"
+                aggregate.grouping_retry_after = None
                 cluster.items.remove(item)
                 cluster.count -= 1
                 target = ungrouped_cluster(aggregate)
@@ -439,6 +545,7 @@ class FeedbackService:
         self, record: dict, aggregate: ProposalCommunityAggregateDTO
     ) -> ProposalCommunityAggregateDTO:
         update_condition_percentages(aggregate)
+        aggregate.last_updated = datetime.now(timezone.utc).isoformat()
         if not self.proposals.replace_aggregate_if_current(record, aggregate):
             raise GroupingConflict("Feedback changed. Refresh the groups and try again.")
         return aggregate

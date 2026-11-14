@@ -7,6 +7,7 @@ Pure persistence:
 """
 
 import json
+import hashlib
 import logging
 from pathlib import Path
 from typing import List, Optional, Tuple
@@ -29,6 +30,12 @@ logger = logging.getLogger("proviso.persistence")
 # Default seed data path
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DEFAULT_SEED_FILE = DATA_DIR / "proposals.formatted.json"
+
+
+def feedback_revision(submission: ProposalFeedbackSubmissionDTO) -> str:
+    return hashlib.sha256(submission.model_dump_json(exclude={
+        "upvotes", "downvotes", "score", "my_vote",
+    }).encode()).hexdigest()
 
 
 class ProposalRepository:
@@ -154,6 +161,12 @@ class FeedbackRepository:
         doc_data = submission.model_dump(mode="python")
         doc_data["_id"] = doc_id
         doc_data["updated_at"] = datetime.now(timezone.utc)
+        # Analysis must not consume a new raw response before its count update.
+        doc_data["_aggregate_pending"] = True
+        doc_data["_aggregate_previous"] = (
+            existing.get("_aggregate_previous") if existing and existing.get("_aggregate_pending")
+            else previous_sub.model_dump(mode="python") if previous_sub else None
+        )
         # Preserve first participation across edits for change notifications.
         doc_data["created_at"] = (
             (existing.get("created_at") or existing.get("submitted_at"))
@@ -162,6 +175,32 @@ class FeedbackRepository:
 
         self.collection.replace_one({"_id": doc_id}, doc_data, upsert=True)
         return submission, is_new, previous_sub
+
+    def mark_aggregated(self, submission: ProposalFeedbackSubmissionDTO) -> None:
+        self.collection.update_one(
+            {"_id": self._doc_id(submission.proposal_id, submission.participant_id),
+             **submission.model_dump(mode="python")},
+            {"$set": {"_aggregate_pending": False}},
+        )
+
+    def previous_aggregate_submission(self, submission, fallback=None):
+        document = self.collection.find_one({"_id": self._doc_id(submission.proposal_id, submission.participant_id)})
+        if document is None or "_aggregate_previous" not in document:
+            return fallback
+        previous = document["_aggregate_previous"]
+        return ProposalFeedbackSubmissionDTO.model_validate(previous) if previous else None
+
+    def get_for_analysis(self, proposal_id: str) -> list[ProposalFeedbackSubmissionDTO] | None:
+        documents = list(self.collection.find({"proposal_id": proposal_id}))
+        if any(doc.get("_aggregate_pending") for doc in documents):
+            return None
+        return [ProposalFeedbackSubmissionDTO.model_validate(doc) for doc in documents]
+
+    def get_pending_aggregates(self, proposal_id: str):
+        for doc in self.collection.find({"proposal_id": proposal_id, "_aggregate_pending": True}):
+            previous = doc.get("_aggregate_previous")
+            yield (ProposalFeedbackSubmissionDTO.model_validate(doc),
+                   ProposalFeedbackSubmissionDTO.model_validate(previous) if previous else None)
 
     def get_by_proposal(self, proposal_id: str) -> List[ProposalFeedbackSubmissionDTO]:
         """Retrieve all feedback submissions for a proposal, sorted by submitted_at."""

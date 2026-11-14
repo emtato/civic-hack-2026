@@ -38,9 +38,10 @@ class ConditionItemDTO(DTOModel):
     id: str
     participant_id: Optional[str] = None
     grouping_rejected: bool = False
+    source: Literal["requirement", "comment"] = "requirement"
     verbatim_quote: str = ""
     extracted_requirement: str = ""
-    is_conditional_support: bool = True
+    is_conditional_support: bool = False
     time_window: Optional[str] = None
     location_label: Optional[str] = None
     concern_coordinates: Optional[list[float]] = None
@@ -76,6 +77,13 @@ class ProposalCommunityAggregateDTO(DTOModel):
     stakeholder_distribution: dict[StakeholderRole, int] = Field(default_factory=dict)
     proposal_specific: list[ProposalSpecificElementDTO] = Field(default_factory=list)
     condition_clusters: list[ConditionClusterDTO] = Field(default_factory=list)
+    grouping_status: Literal["pending", "ready", "error"] = "pending"
+    grouping_error: Optional[str] = None
+    grouping_input_hash: Optional[str] = None
+    grouping_updated_at: Optional[str] = None
+    grouping_retry_after: Optional[str] = None
+    applied_feedback_revisions: dict[str, str] = Field(default_factory=dict)
+    applied_feedback: dict[str, dict] = Field(default_factory=dict)
 
 
 class FeedbackConditionDTO(DTOModel):

@@ -165,6 +165,8 @@ export const ORDERED_STAKEHOLDERS: StakeholderRole[] = [
 export interface ConditionItemDTO {
   id: string
   participant_id?: string
+  source?: 'requirement' | 'comment'
+  grouping_rejected?: boolean
   verbatim_quote: string
   extracted_requirement: string
   is_conditional_support: boolean // true = "I support if...", false = standalone objection
@@ -219,6 +221,9 @@ export interface ProposalCommunityAggregateDTO {
   total_participants: number
   total_conditions: number
   last_updated: string
+  grouping_status?: 'pending' | 'ready' | 'error'
+  grouping_error?: string | null
+  grouping_updated_at?: string | null
 
   /**
    * Distribution of overall stances.
@@ -323,6 +328,13 @@ export function applyFeedbackToAggregate(
   }
 
   // An edit replaces this participant's contribution rather than adding a vote.
+  const sameRequests = !!previousSubmission
+    && previousSubmission.comment.trim() === submission.comment.trim()
+    && previousSubmission.condition?.requirement === submission.condition?.requirement
+    && previousSubmission.condition?.feature_id === submission.condition?.feature_id
+    && previousSubmission.condition?.time_window === submission.condition?.time_window
+    && previousSubmission.condition?.location_label === submission.condition?.location_label
+    && previousSubmission.condition?.is_conditional_support === submission.condition?.is_conditional_support
   if (previousSubmission) {
     next.position_distribution[previousSubmission.position] = Math.max(0, (next.position_distribution[previousSubmission.position] || 0) - 1)
     next.stakeholder_distribution[previousSubmission.stakeholder_role] = Math.max(0, (next.stakeholder_distribution[previousSubmission.stakeholder_role] || 0) - 1)
@@ -333,7 +345,7 @@ export function applyFeedbackToAggregate(
         row.total_responses = Math.max(0, row.total_responses - 1)
       }
     }
-    for (const cluster of next.condition_clusters) {
+    for (const cluster of sameRequests ? [] : next.condition_clusters) {
       const remaining = cluster.items.filter(item => item.participant_id !== submission.participant_id)
       const removed = cluster.items.length - remaining.length
       cluster.items = remaining
@@ -364,7 +376,7 @@ export function applyFeedbackToAggregate(
   }
 
   // Only an explicitly confirmed requirement is counted as a condition.
-  if (submission.condition?.requirement.trim()) {
+  if (!sameRequests && submission.condition?.requirement.trim()) {
     next.total_conditions += 1
 
     const newConditionItem: ConditionItemDTO = {

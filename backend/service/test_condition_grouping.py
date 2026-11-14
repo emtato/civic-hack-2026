@@ -8,13 +8,18 @@ from main import app, get_service
 from persistence.persistence import UserRepository
 from persistence.test_persistence import MockMongoDatabase
 from proposals_DTO import FeedbackConditionDTO, Proposal, ProposalFeedbackSubmissionDTO
-from service.condition_grouping import GroupingUnavailable, SuggestedGroup
+from service.condition_grouping import CommentExtraction, GroupingUnavailable, SuggestedGroup
 from service.service import FeedbackService, GroupingConflict
 from users_DTO import UserRecordDTO
 
 
 class ConditionGroupingTests(unittest.TestCase):
     def setUp(self):
+        extractor = patch("service.feedback_analysis.extract_requests", side_effect=lambda rows: [
+            CommentExtraction(number=row["number"], requests=[]) for row in rows
+        ])
+        self.extractor = extractor.start()
+        self.addCleanup(extractor.stop)
         self.service = FeedbackService(MockMongoDatabase())
         self.service.save_proposal(Proposal(
             id="proposal", title="Street design", neighbourhood="Toronto",
@@ -34,7 +39,7 @@ class ConditionGroupingTests(unittest.TestCase):
 
     def test_groups_preserve_originals_and_totals_and_keep_distinct_items(self):
         with patch("service.service.suggest_groups", return_value=[
-            SuggestedGroup(label="Keep accessible pickup", members=[2, 3]),
+            SuggestedGroup(label="Keep accessible pickup", members=[0, 1]),
         ]) as provider:
             aggregate = self.service.group_conditions("proposal")
         suggested = next(group for group in aggregate.condition_clusters if group.is_suggested)
@@ -66,20 +71,20 @@ class ConditionGroupingTests(unittest.TestCase):
             self.service.group_conditions("proposal")
         self.assertEqual(self.service.get_aggregate("proposal"), previous)
 
-    def test_different_time_windows_stay_separate(self):
+    def test_time_windows_are_supplied_for_semantic_comparison(self):
         self.submit("alice", "Keep accessible pickup", time_window="morning")
         self.submit("bob", "Keep accessible pickup", time_window="evening")
-        with patch("service.service.suggest_groups", return_value=[
-            SuggestedGroup(label="Keep accessible pickup", members=[0, 1]),
-        ]):
+        with patch("service.service.suggest_groups", return_value=[]) as provider:
             updated = self.service.group_conditions("proposal")
         self.assertFalse(any(group.is_suggested for group in updated.condition_clusters))
         self.assertEqual(updated.total_conditions, 4)
+        rows = provider.call_args.args[0]
+        self.assertEqual([row["time"] for row in rows[:2]], ["morning", "evening"])
 
     def test_grouping_does_not_overwrite_concurrent_feedback(self):
         def suggest(_):
             self.submit("erin", "Preserve pedestrian access")
-            return [SuggestedGroup(label="Keep accessible pickup", members=[2, 3])]
+            return [SuggestedGroup(label="Keep accessible pickup", members=[0, 1])]
 
         with patch("service.service.suggest_groups", side_effect=suggest), self.assertRaises(GroupingConflict):
             self.service.group_conditions("proposal")
@@ -96,10 +101,12 @@ class ConditionGroupingTests(unittest.TestCase):
         self.assertEqual(client.post(path).status_code, 401)
         headers = {"Authorization": f"Bearer {create_access_token('alice')}"}
         with patch("service.service.suggest_groups", return_value=[
-            SuggestedGroup(label="Keep accessible pickup", members=[2, 3]),
+            SuggestedGroup(label="Keep accessible pickup", members=[0, 1]),
         ]):
+            self.service.group_conditions("proposal")
             response = client.post(path, headers=headers)
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["grouping_status"], "pending")
         group = next(group for group in response.json()["condition_clusters"] if group["is_suggested"])
         alice = next(item for item in group["items"] if item["participant_id"] == "alice")
         self.assertEqual(client.post(f"{path}/{alice['id']}/reject", headers=headers).status_code, 200)

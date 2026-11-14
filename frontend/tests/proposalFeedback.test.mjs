@@ -68,3 +68,17 @@ test('an unmatched requirement creates an ungrouped cluster instead of changing 
   assert.equal(updated.condition_clusters[1].count, 1)
   assert.equal(updated.condition_clusters[1].percentage, 33)
 })
+
+test('an unrelated edit retains existing requirement evidence and group membership', () => {
+  const first = submission({ condition: { requirement: 'More benches', is_conditional_support: false } })
+  const aggregate = applyFeedbackToAggregate(createEmptyAggregate(), first)
+  const group = aggregate.condition_clusters[0]
+  group.id = 'existing-group'
+  group.is_suggested = true
+  group.is_ungrouped = false
+  const updated = applyFeedbackToAggregate(aggregate, { ...first, position: 'oppose' }, first)
+  assert.equal(updated.total_conditions, 1)
+  assert.equal(updated.condition_clusters[0].id, 'existing-group')
+  assert.equal(updated.condition_clusters[0].items[0].id, group.items[0].id)
+  assert.equal(updated.position_distribution.oppose, 1)
+})

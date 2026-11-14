@@ -223,13 +223,13 @@ export function FeedbackForm({ proposal, elements, existing, demo, active, savin
           <fieldset className="feedback-fieldset" disabled={saving}>
             <legend><span>{elements.length ? '04' : '03'}</span>What matters to you <small>Optional</small></legend>
             <label className="feedback-field-label" htmlFor="feedback-comment">Your comment</label>
-            <p className="feedback-help" id="comment-help">Share your experience, a concern, or what could make this work. A comment alone is not counted as a support condition.</p>
+            <p className="feedback-help" id="comment-help">Share your experience, a concern, or what could make this work. Specific requests in comments are included in shared request groups. They do not imply a promise of support.</p>
             <textarea id="feedback-comment" maxLength={4000} rows={4} value={comment} aria-describedby="comment-help" placeholder="For example: I rely on accessible pickup near the entrance in the evening…" onChange={e => { setComment(e.target.value); setConfirmed(false) }} />
             <span className="feedback-character-count">{comment.length} / 4,000</span>
             <label className="feedback-checkbox"><input type="checkbox" checked={hasCondition} onChange={e => { setHasCondition(e.target.checked); setConfirmed(false) }} /><span>I have a specific requirement to record.</span></label>
 
             {hasCondition && <div className="feedback-condition-fields">
-              <p className="feedback-help">Record one requirement in your own words. Include any place or time that matters; no automatic interpretation is applied.</p>
+              <p className="feedback-help">Record one requirement in your own words. Include any place or time that matters. Your wording stays available alongside any suggested group.</p>
               <label className="feedback-field-label" htmlFor="feedback-requirement">What needs to happen? <small>Required</small></label>
               <textarea id="feedback-requirement" ref={requirementRef} rows={3} maxLength={1000} required={!reviewing && hasCondition} value={requirement} onChange={e => { e.target.setCustomValidity(''); setRequirement(e.target.value); setConfirmed(false) }} placeholder="Keep accessible pickup available near the clinic entrance until 8 p.m." />
               <label className="feedback-field-label" htmlFor="feedback-feature">Related change</label>

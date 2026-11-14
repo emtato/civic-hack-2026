@@ -5,13 +5,15 @@ from fastapi.testclient import TestClient
 
 try:
     from main import app, get_service
-    from auth import get_current_user
+    from auth import get_current_user, get_user_repository
+    from persistence.persistence import UserRepository
     from users_DTO import UserPublicDTO
     from persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from service.service import FeedbackService
 except ImportError:
     from backend.main import app, get_service
-    from backend.auth import get_current_user
+    from backend.auth import get_current_user, get_user_repository
+    from backend.persistence.persistence import UserRepository
     from backend.users_DTO import UserPublicDTO
     from backend.persistence.test_persistence import MockMongoDatabase, SEED_FILE
     from backend.service.service import FeedbackService
@@ -24,6 +26,7 @@ class ApiIntegrationTests(unittest.TestCase):
         self.service.proposals.seed_if_empty(SEED_FILE)
 
         app.dependency_overrides[get_service] = lambda: self.service
+        app.dependency_overrides[get_user_repository] = lambda: UserRepository(self.mock_db)
         # Simulate an authenticated user for write endpoints.
         app.dependency_overrides[get_current_user] = lambda: UserPublicDTO(
             username="api-tester-1", created_at="2026-11-13T00:00:00+00:00"
