@@ -34,20 +34,18 @@ export async function fetchProposalSnapshot(
   return snapshot
 }
 
-/** Refresh official sources and retrieve every diff since this browser's cursor. */
-export async function checkProposalUpdates(
+/** Read results from the backend's hourly source checker. Never trigger a refresh. */
+export async function fetchProposalUpdates(
   proposalId: string,
   afterSequence: number,
   signal?: AbortSignal,
 ): Promise<ProposalUpdateCheck> {
-  const timeout = AbortSignal.timeout(120000)
-  const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/updates/check`, {
-    method: 'POST',
-    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ after_sequence: afterSequence }),
+  const timeout = AbortSignal.timeout(20000)
+  const res = await fetch(`${API_BASE}/api/proposals/${encodeURIComponent(proposalId)}/updates?after_sequence=${afterSequence}`, {
+    headers: { Accept: 'application/json' },
     signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
   })
-  if (!res.ok) throw new Error('Proposal updates could not be checked. They will be retried next hour.')
+  if (!res.ok) throw new Error('Saved proposal updates could not be loaded. We’ll retry shortly.')
   return res.json()
 }
 

@@ -76,30 +76,35 @@ Run `npm test` for aggregate regression checks (Node 22.18+), and `npm run build
 
 ## Proposal update polling and comparison
 
-`ProposalUpdatesProvider` wraps the application and checks every loaded catalogue
-proposal immediately, then every hour while the page remains open. Requests run
+`ProposalUpdatesProvider` wraps the application and reads saved updates for every
+loaded catalogue proposal immediately, then once a minute. Requests run
 serially without overlapping passes. Unmounting or changing the catalogue IDs
 aborts the old polling session and clears its timer. Browser suspension can delay
-timers; this is not a background server scheduler.
+timers; these reads do not control the backend's independent hourly source schedule.
 
-`checkProposalUpdates` posts the last received snapshot sequence to
-`/api/proposals/{id}/updates/check`. The backend refreshes official notice sources,
-saves changed snapshots, compares unseen transitions and returns complete diff
-records. Initial capture is a baseline, not a reported amendment.
+`fetchProposalUpdates` sends the last received snapshot sequence to
+`GET /api/proposals/{id}/updates?after_sequence=...`. It only reads stored results.
+The backend checks official sources at the start of each hour, saves changed
+snapshots and comparisons even with no browsers open. Initial capture is a
+baseline, not a reported amendment. This requires the backend host to stay awake.
 
 UI components read `useProposalUpdates()[proposalId]` from
 `src/data/ProposalUpdatesContext.tsx`. Each entry has `status`, `snapshot_id`,
 `snapshot_sequence`, `checked_at`, accumulated/deduplicated `diffs`, and `error`.
 An unchanged response retains previous diffs. A failed request retains both data
-and cursor, continues with other proposals, and retries next hour. State is held
+and cursor, continues with other proposals, and retries the next minute. State is held
 in memory; reloading retrieves history again from sequence zero. Detected changes
 remain unclassified.
+
+`checked_at` is the last successful source check, not when the browser last read
+the data. Pending initial captures and failed source checks are represented
+separately; stored comparisons remain available after a source failure.
 
 The Updates tab displays earlier/later fields with word-level removal/addition
 highlights, a change selector, capture dates and official source links. It fetches
 both saved notices through `GET /api/proposals/{id}/snapshots/{snapshot_id}`.
-"Show unchanged fields" includes the complete normalized source content alongside
-the changes. On narrow screens the earlier/later cells stack with explicit labels.
+The viewer shows changed fields only. On narrow screens the earlier/later cells
+stack with explicit labels.
 If full-source reads fail, changed fields remain visible and a retry is available.
 No-change, source-check failure and loading states are explicit. The Overview card
 also reflects the current detected-change count.

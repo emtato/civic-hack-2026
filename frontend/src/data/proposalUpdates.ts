@@ -16,19 +16,23 @@ export interface ProposalSnapshotDiff {
   changes: ProposalSnapshotChange[]
   classification: 'unclassified'
   review_required: boolean
+  is_demo?: boolean
+  demo_label?: string | null
 }
 
 export interface ProposalUpdateCheck {
   proposal_id: string
-  checked_at: string
-  snapshot_id: string
+  checked_at: string | null
+  snapshot_id: string | null
   snapshot_sequence: number
   snapshot_created: boolean
   diffs: ProposalSnapshotDiff[]
+  source_status?: 'pending' | 'ready' | 'error'
+  source_error?: string | null
 }
 
 export interface ProposalUpdateState {
-  status: 'checking' | 'ready' | 'error'
+  status: 'checking' | 'ready' | 'error' | 'pending'
   snapshot_id: string | null
   snapshot_sequence: number
   checked_at: string | null
@@ -45,4 +49,6 @@ export interface ProposalSnapshot {
   captured_at: string
   source_urls: string[]
   content: Record<string, unknown>
+  is_demo?: boolean
+  demo_label?: string | null
 }

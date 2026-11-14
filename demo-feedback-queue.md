@@ -2,6 +2,14 @@
 
 Created November 13, 2026. This file is the handoff for populating **synthetic demonstration feedback**, not reporting actual public opinion.
 
+## Conditions follow-up — November 13, 2026
+
+The later request, “it looks like most proposals dont have recorded conditins. add a few (2-7) for each,” authorizes a separate conditions batch across all 24 proposals. The original six-at-a-time queue and condition-preservation rules below describe the completed ordinary-feedback batches; they do not limit this follow-up.
+
+Added **98 fictional participants with one structured condition and original comment each**, varying from 2–7 per proposal. Existing feedback and condition evidence were preserved, including Labatt/River's 9 earlier conditions (now 15). All proposals now have conditions, with 107 recorded in total. New conditions remain individual requirements under the existing service behavior; only explicit support promises receive the conditional-support label. No feature ratings were added or changed.
+
+Final payload and verification: [submissions.json](backend/data/demo-feedback/conditions-v1/submissions.json) and [manifest.json](backend/data/demo-feedback/conditions-v1/manifest.json). Stable `demo-conditions-v1-*` participant IDs identify fictional voices. Continue to explain synthetic origin in presentations. This follow-up is complete; do not regenerate it when resuming the original queue.
+
 ## Current checkpoint
 
 - **Completed: 24 / 24 proposals.** Batches 1–4 persisted and verified; 986 synthetic responses, including 312 ordinary comments.

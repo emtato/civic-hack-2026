@@ -1,0 +1,230 @@
+{
+  "label": "SYNTHETIC DEMONSTRATION CONDITIONS — fictional, not public opinion",
+  "generated_at": "2026-11-14T04:02:16.577786+00:00",
+  "status": "persisted; storage, API and duplicate-free rerun verified",
+  "records": "submissions.json",
+  "proposals": [
+    {
+      "proposal_id": "toronto-labatt-river-towers",
+      "added_conditions": 6,
+      "previous_conditions": 9,
+      "total_conditions": 15,
+      "previous_participants": 73,
+      "total_participants": 79
+    },
+    {
+      "proposal_id": "toronto-augusta-hotel",
+      "added_conditions": 5,
+      "previous_conditions": 0,
+      "total_conditions": 5,
+      "previous_participants": 32,
+      "total_participants": 37
+    },
+    {
+      "proposal_id": "toronto-neilson-medical-housing",
+      "added_conditions": 5,
+      "previous_conditions": 0,
+      "total_conditions": 5,
+      "previous_participants": 43,
+      "total_participants": 48
+    },
+    {
+      "proposal_id": "toronto-lawrence-heights-revitalization",
+      "added_conditions": 7,
+      "previous_conditions": 0,
+      "total_conditions": 7,
+      "previous_participants": 77,
+      "total_participants": 84
+    },
+    {
+      "proposal_id": "toronto-lawrence-heritage-intention",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 36,
+      "total_participants": 39
+    },
+    {
+      "proposal_id": "toronto-weston-heritage-demolition",
+      "added_conditions": 4,
+      "previous_conditions": 0,
+      "total_conditions": 4,
+      "previous_participants": 52,
+      "total_participants": 56
+    },
+    {
+      "proposal_id": "toronto-stotts-bridge-heritage",
+      "added_conditions": 4,
+      "previous_conditions": 0,
+      "total_conditions": 4,
+      "previous_participants": 44,
+      "total_participants": 48
+    },
+    {
+      "proposal_id": "toronto-queen-heritage-amendment",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 27,
+      "total_participants": 30
+    },
+    {
+      "proposal_id": "toronto-lawrence-road-closure",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 19,
+      "total_participants": 22
+    },
+    {
+      "proposal_id": "toronto-permit-parking-area-1e",
+      "added_conditions": 4,
+      "previous_conditions": 0,
+      "total_conditions": 4,
+      "previous_participants": 28,
+      "total_participants": 32
+    },
+    {
+      "proposal_id": "toronto-aren-levy-lane",
+      "added_conditions": 2,
+      "previous_conditions": 0,
+      "total_conditions": 2,
+      "previous_participants": 13,
+      "total_participants": 15
+    },
+    {
+      "proposal_id": "toronto-six-points-road-closure",
+      "added_conditions": 4,
+      "previous_conditions": 0,
+      "total_conditions": 4,
+      "previous_participants": 39,
+      "total_participants": 43
+    },
+    {
+      "proposal_id": "toronto-nightclub-definition",
+      "added_conditions": 5,
+      "previous_conditions": 0,
+      "total_conditions": 5,
+      "previous_participants": 58,
+      "total_participants": 63
+    },
+    {
+      "proposal_id": "toronto-business-licence-action-plan",
+      "added_conditions": 4,
+      "previous_conditions": 0,
+      "total_conditions": 4,
+      "previous_participants": 46,
+      "total_participants": 50
+    },
+    {
+      "proposal_id": "toronto-street-vending-rules",
+      "added_conditions": 6,
+      "previous_conditions": 0,
+      "total_conditions": 6,
+      "previous_participants": 67,
+      "total_participants": 73
+    },
+    {
+      "proposal_id": "toronto-permit-parking-exclusion-process",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 34,
+      "total_participants": 37
+    },
+    {
+      "proposal_id": "toronto-rentsafeto-fees",
+      "added_conditions": 5,
+      "previous_conditions": 0,
+      "total_conditions": 5,
+      "previous_participants": 61,
+      "total_participants": 66
+    },
+    {
+      "proposal_id": "toronto-ravine-permit-fees",
+      "added_conditions": 4,
+      "previous_conditions": 0,
+      "total_conditions": 4,
+      "previous_participants": 41,
+      "total_participants": 45
+    },
+    {
+      "proposal_id": "toronto-budget-user-fees-2026",
+      "added_conditions": 5,
+      "previous_conditions": 0,
+      "total_conditions": 5,
+      "previous_participants": 63,
+      "total_participants": 68
+    },
+    {
+      "proposal_id": "toronto-development-application-fees",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 35,
+      "total_participants": 38
+    },
+    {
+      "proposal_id": "toronto-fleet-property-lease",
+      "added_conditions": 5,
+      "previous_conditions": 0,
+      "total_conditions": 5,
+      "previous_participants": 48,
+      "total_participants": 53
+    },
+    {
+      "proposal_id": "toronto-sheppard-surplus-lane",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 23,
+      "total_participants": 26
+    },
+    {
+      "proposal_id": "toronto-van-horne-surplus",
+      "added_conditions": 2,
+      "previous_conditions": 0,
+      "total_conditions": 2,
+      "previous_participants": 14,
+      "total_participants": 16
+    },
+    {
+      "proposal_id": "toronto-woodbine-surplus",
+      "added_conditions": 3,
+      "previous_conditions": 0,
+      "total_conditions": 3,
+      "previous_participants": 26,
+      "total_participants": 29
+    }
+  ],
+  "total_added_conditions": 98,
+  "scope": "New request adds 2–7 conditions to each of all 24 proposals, including Labatt/River. This supersedes the earlier batches’ instruction to leave conditions untouched for this new batch only.",
+  "disclosure": "All demo-conditions-v1-* participants, comments and requirements are fictional demonstration material. They are not real residents, a representative poll or official consultation. Explain synthetic origin when presenting these results.",
+  "approach": "Each new participant supplies one original comment and one structured requirement linked to an existing feature. Explicit support promises alone set is_conditional_support=true. Conditions remain individual and ungrouped under existing service behavior. No fabricated agreement clusters, demographic estimates, feature ratings or concern pins.",
+  "preservation": "Existing feedback, condition items, votes, source records, features, status and source history are preserved. Participant and stance/connection totals increase by the new submissions. Existing feature rating distributions remain unchanged.",
+  "rerun_behavior": "Stable participant IDs. Verify identical existing payloads and skip them; never replace existing feedback or duplicate conditions.",
+  "destination_database": "civic_hack",
+  "committed_at": "2026-11-14T04:03:59.050264+00:00",
+  "verification": {
+    "verified_at": "2026-11-14T04:04:34.135856+00:00",
+    "all_24_proposals_read_back": true,
+    "all_98_submissions_match": true,
+    "existing_feedback_unchanged": true,
+    "existing_conditions_preserved": true,
+    "participant_position_connection_and_condition_counts_reconciled": true,
+    "feature_ratings_unchanged": true,
+    "source_features_history_status_unchanged": true,
+    "duplicate_free": true,
+    "idempotent_rerun_verified": true,
+    "write_method": "One MongoDB transaction inserts stable fictional feedback IDs and updates only community_aggregate. Snapshot isolation and write conflicts protect concurrent changes.",
+    "existing_feedback_sha256": "49d297cc982b88bcfad5d1a1022f7b8e3ba7d30a45a8cc2e8fdb174f42f42931",
+    "protected_proposal_fields_sha256": "0e75fb65a6c90291514bf286e328a49feaa8a82db11740273b7e430c27689ae5",
+    "api": {
+      "url": "http://127.0.0.1:8000/api/proposals",
+      "proposals": 24,
+      "verified": true
+    },
+    "service_tests": "python -m unittest service.test_service: 5 passed"
+  },
+  "cleanup": "Retained only final submissions.json and manifest.json. Temporary generation/persistence scripts and baseline files removed after verification. No MongoDB records deleted."
+}

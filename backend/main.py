@@ -8,7 +8,6 @@ import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import List, Optional
-from urllib.error import URLError
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query, Request, status
@@ -22,6 +21,7 @@ from proposals_DTO import (
     ProposalFeedbackSubmissionDTO,
 )
 from service.service import FeedbackService
+from service.snapshot_scheduler import SnapshotScheduler
 from service.proposal_snapshots import ProposalSnapshotService, ProposalNotFoundError, SnapshotCursorError
 from proposal_snapshots_DTO import SnapshotPollRequestDTO, SnapshotPollResponseDTO, SnapshotViewDTO
 from auth import (
@@ -53,6 +53,7 @@ async def lifespan(app: FastAPI):
 
     app.state.mongo_client = client
     app.state.database = db
+    scheduler = None
 
     if db is not None:
         try:
@@ -63,11 +64,19 @@ async def lifespan(app: FastAPI):
             # Allow startup even if network/db is temporarily unreachable
             pass
 
+        if os.getenv("SNAPSHOT_SCHEDULER_ENABLED", "true").lower() not in {"false", "0", "no"}:
+            scheduler = SnapshotScheduler(db)
+            scheduler.start()
+
     try:
         yield
     finally:
-        if client is not None:
-            client.close()
+        try:
+            if scheduler is not None:
+                await scheduler.stop()
+        finally:
+            if client is not None:
+                client.close()
 
 
 app = FastAPI(
@@ -315,27 +324,37 @@ def get_proposal_snapshot(
         raise HTTPException(status_code=503, detail="Saved proposal versions are unavailable.") from exc
 
 
-@app.post(
-    "/api/proposals/{proposal_id}/updates/check",
+@app.get(
+    "/api/proposals/{proposal_id}/updates",
     response_model=SnapshotPollResponseDTO,
     tags=["Proposal updates"],
 )
-def check_proposal_updates(
+def get_proposal_updates(
     proposal_id: str,
-    poll: SnapshotPollRequestDTO,
+    after_sequence: int = Query(0, ge=0),
     service: ProposalSnapshotService = Depends(get_snapshot_service),
 ):
-    """Public source check; captures evidence without publishing proposal edits."""
+    """Read results saved by the backend's hourly source checker."""
     try:
-        return service.check_proposal_updates(proposal_id, poll.after_sequence)
+        return service.read_proposal_updates(proposal_id, after_sequence)
     except ProposalNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except SnapshotCursorError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     except PyMongoError as exc:
         raise HTTPException(status_code=503, detail="Proposal update history is unavailable.") from exc
-    except (URLError, OSError, ValueError) as exc:
-        raise HTTPException(status_code=502, detail="Official proposal sources could not be checked.") from exc
+
+
+@app.post(
+    "/api/proposals/{proposal_id}/updates/check", response_model=SnapshotPollResponseDTO,
+    tags=["Proposal updates"], deprecated=True,
+)
+def check_proposal_updates(
+    proposal_id: str, poll: SnapshotPollRequestDTO,
+    service: ProposalSnapshotService = Depends(get_snapshot_service),
+):
+    """Compatibility for older clients; now reads saved results without a source fetch."""
+    return get_proposal_updates(proposal_id, poll.after_sequence, service)
 
 @app.post(
     "/api/proposals/{proposal_id}/feedback",

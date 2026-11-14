@@ -58,3 +58,13 @@ class ProposalSnapshotRepository:
         )
         document = self.diffs.find_one({"_id": diff.id})
         return SnapshotDiffDTO.model_validate({k: v for k, v in document.items() if k != "_id"})
+
+    def demo_diffs(self, proposal_id: str) -> list[SnapshotDiffDTO]:
+        documents = self.diffs.find({"proposal_id": proposal_id, "is_demo": True}).sort("compared_at", ASCENDING)
+        return [SnapshotDiffDTO.model_validate({k: v for k, v in document.items() if k != "_id"})
+                for document in documents]
+
+    def all_diffs(self, proposal_id: str) -> list[SnapshotDiffDTO]:
+        documents = self.diffs.find({"proposal_id": proposal_id}).sort("compared_at", ASCENDING)
+        return [SnapshotDiffDTO.model_validate({k: v for k, v in document.items() if k != "_id"})
+                for document in documents]

@@ -74,6 +74,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const proposalUpdates = useProposalUpdates()
   const updateState = selectedProposal ? proposalUpdates[selectedProposal.id] : undefined
   const updateCount = updateState?.diffs.length ?? 0
+  const onlyDemoUpdates = updateCount > 0 && updateState?.diffs.every(diff => diff.is_demo)
 
   useEffect(() => {
     if (selectedProposal) {
@@ -312,8 +313,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <section className="overview-card overview-update" aria-labelledby="overview-update-heading">
                     <span className="overview-section-icon"><Icon name="clock" /></span>
                     <h2 id="overview-update-heading">Latest update</h2>
-                    <h3>{updateCount ? `${updateCount} ${updateCount === 1 ? 'change' : 'changes'} detected` : updateState?.status === 'error' ? 'Update check unavailable' : updateState?.status === 'ready' ? 'No changes detected yet' : 'Checking for changes'}</h3>
-                    <p>{updateCount ? 'Compare the earlier and later notices to see what changed.' : updateState?.status === 'error' ? 'The next check will retry automatically.' : 'Changes to the official notice will appear here after they are detected.'}</p>
+                    <h3>{onlyDemoUpdates ? 'Demo comparison available' : updateCount ? `${updateCount} ${updateCount === 1 ? 'change' : 'changes'} detected` : updateState?.status === 'error' ? 'Update check unavailable' : updateState?.status === 'ready' ? 'No changes detected yet' : 'Checking for changes'}</h3>
+                    <p>{onlyDemoUpdates ? 'See fictional earlier wording beside the actual saved notice.' : updateCount ? 'Compare the earlier and later notices to see what changed.' : updateState?.status === 'error' ? 'Checks will retry automatically.' : 'The backend checks official notices hourly, even while this page is closed.'}</p>
                     <button className="overview-link" onClick={() => { setDetailTab('updates'); document.getElementById('tab-updates')?.focus() }}>
                       View updates <Icon name="arrow" />
                     </button>

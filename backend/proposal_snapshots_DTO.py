@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class SnapshotDTO(BaseModel):
@@ -11,7 +11,7 @@ class SnapshotDTO(BaseModel):
 
     id: str
     proposal_id: str
-    sequence: int = Field(ge=1)
+    sequence: int = Field(ge=0)
     previous_snapshot_id: str | None = None
     captured_at: datetime
     source_urls: list[str]
@@ -20,6 +20,15 @@ class SnapshotDTO(BaseModel):
     content: dict[str, Any]
     # Retain original evidence, including fields ignored by normalization.
     raw_notices: list[dict[str, Any]]
+    is_demo: bool = False
+    demo_label: str | None = None
+    demo_after_snapshot_id: str | None = None
+
+    @model_validator(mode="after")
+    def reserve_zero_for_demo(self):
+        if self.sequence == 0 and not self.is_demo:
+            raise ValueError("Sequence zero is reserved for a synthetic demo predecessor.")
+        return self
 
 
 class SnapshotRefreshDTO(BaseModel):
@@ -36,6 +45,8 @@ class SnapshotViewDTO(BaseModel):
     captured_at: datetime
     source_urls: list[str]
     content: dict[str, Any]
+    is_demo: bool = False
+    demo_label: str | None = None
 
 
 class SnapshotChangeDTO(BaseModel):
@@ -58,6 +69,8 @@ class SnapshotDiffDTO(BaseModel):
     changes: list[SnapshotChangeDTO]
     classification: Literal["unclassified"] = "unclassified"
     review_required: bool
+    is_demo: bool = False
+    demo_label: str | None = None
 
 
 class SnapshotPollRequestDTO(BaseModel):
@@ -66,8 +79,10 @@ class SnapshotPollRequestDTO(BaseModel):
 
 class SnapshotPollResponseDTO(BaseModel):
     proposal_id: str
-    checked_at: datetime
-    snapshot_id: str
+    checked_at: datetime | None
+    snapshot_id: str | None
     snapshot_sequence: int
     snapshot_created: bool
     diffs: list[SnapshotDiffDTO]
+    source_status: Literal["pending", "ready", "error"] = "ready"
+    source_error: str | None = None

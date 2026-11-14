@@ -92,15 +92,15 @@ records, readable normalized content, source URLs, capture times, hashes and
 previous-snapshot IDs. A unique proposal/sequence index guards concurrent appends.
 Reverting to older content still creates a new observation in the history.
 
-`POST /api/proposals/{proposal_id}/updates/check` now orchestrates these methods
-for frontend polling. Send `{"after_sequence": 0}` on the first request, then
-the last successfully received `snapshot_sequence` on subsequent requests.
-The public endpoint returns `proposal_id`, `checked_at`, `snapshot_id`,
-`snapshot_sequence`, `snapshot_created`, and all unseen `diffs` (including full
-before/after values and text diffs). The initial snapshot establishes a baseline
-without a diff. Even when refresh finds no new content, the endpoint returns
-unseen historical transitions detected by other visitors. Missing comparisons
-are generated from saved snapshots, so an interrupted earlier request can recover.
+`GET /api/proposals/{proposal_id}/updates?after_sequence=0` reads the saved results
+of the backend's hourly checker. On subsequent requests, use the last received
+`snapshot_sequence`. It returns `proposal_id`, `checked_at` (last successful source
+check), `snapshot_id`, `snapshot_sequence`, `snapshot_created: false`, `source_status`,
+`source_error`, and all unseen `diffs` including before/after values and text diffs.
+Before the first capture, status is `pending`, sequence is zero, and snapshot/time
+are null. Source failures retain saved comparisons and the last successful check.
+The old `POST .../updates/check` remains as a deprecated read-only compatibility
+endpoint; opening a browser never triggers a source fetch or database write.
 
 `GET /api/proposals/{proposal_id}/snapshots/{snapshot_id}` returns `SnapshotViewDTO`
 for the comparison viewer: ID, proposal ID, sequence, capture time, source URLs
@@ -108,11 +108,33 @@ and complete normalized content. It performs no source refresh or database write
 Unknown IDs and IDs belonging to another proposal return 404; database failures
 return 503. Raw duplicate records and internal hashes are excluded from this view.
 
-Unknown proposals return 404, invalid/ahead cursors 422/409, source failures 502,
-and database failures 503. There are no startup hooks or backend scheduled jobs;
-checks run when requested by an open frontend. They do not modify imported
-proposals, published versions, aggregates or feedback. No live database capture
-is performed as part of the tests.
+Unknown proposals return 404, invalid/ahead cursors 422/409, and database failures
+503. No live database capture is performed as part of the tests.
+
+### Hourly backend checks
+
+FastAPI lifespan starts `service/snapshot_scheduler.py` automatically when MongoDB
+is configured. It catches up once for the current hour on startup, then runs at
+`:00` each hour (UTC hour slots). Official source fetches run in a worker thread,
+leaving the API event loop available. Closing every browser does not stop the job.
+Successful hours are not repeated after restart or by other API workers:
+`proposal_snapshot_jobs` stores atomic claims keyed by proposal/hour. Claims expire
+after ten minutes if a worker dies; failed jobs retry after five minutes. The
+scheduler wakes at most every five minutes to recover due work, while successful
+checks remain deduplicated. Individual source failures do not block other proposals.
+`proposal_snapshot_status` stores the last attempt/success and readable failure state.
+Snapshots and missing comparisons are saved by the scheduler, not by readers.
+
+Shutdown stops taking new proposals, waits for the current HTTP/DB work and then
+closes MongoDB. Set `SNAPSHOT_SCHEDULER_ENABLED=false` to disable the job, for example
+in an API-only test environment. It never changes catalogue records, published
+versions, aggregates or feedback.
+
+The backend process must stay running for this in-process schedule. Render Free
+web services [sleep after 15 minutes without inbound traffic](https://render.com/docs/free#spinning-down-on-idle);
+an always-on instance or an external scheduler is required for hourly execution
+while the host would otherwise be asleep. A restarted process catches up for its
+current hour; it cannot reconstruct source changes that happened while offline.
 
 Formatting attributes, whitespace, array ordering and generated map-image URLs
 are excluded from change detection. Description text, link targets, contact
@@ -132,3 +154,21 @@ automatically published municipal revisions.
 
 Run the isolated checks from `backend/` with
 `.venv/bin/python -m unittest service.test_proposal_snapshots`.
+
+### Seeded comparison examples
+
+`seed_demo_snapshot_diffs.py` adds one labelled fictional predecessor per proposal.
+It changes the description's opening sentence to "Demo previous version example."
+and prefixes its title with "Demo previous title —". The real saved source is the
+right side. Synthetic predecessors reserve sequence zero, contain no claimed raw
+source evidence, and never become the latest observed source. Existing snapshots,
+catalogue records and feedback are left intact. `is_demo` and `demo_label` travel
+through the DTOs and are shown in the viewer and Overview card.
+
+Run from `backend/`: `.venv/bin/python seed_demo_snapshot_diffs.py` previews;
+add `--write` to insert the demo snapshots and comparisons. Rerunning reuses the
+same IDs and comparisons. `--manifest data/demo-snapshot-diffs-manifest.json`
+retains a non-sensitive record of the seeded pairs. A real baseline must exist for
+every proposal before seeding. Polling includes these labelled examples even when
+a browser has already seen the current snapshot sequence. Future actual changes
+still compare real snapshots and remain distinct from the seeded example.

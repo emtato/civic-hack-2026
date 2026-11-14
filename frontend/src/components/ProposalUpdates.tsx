@@ -14,6 +14,7 @@ function dateLabel(value: string): string {
 }
 
 function SourceLinks({ snapshot }: { snapshot?: ProposalSnapshot }) {
+  if (snapshot?.is_demo) return null
   const urls = snapshot?.source_urls.filter(url => /^https?:\/\//i.test(url)) ?? []
   return <div className="updates-source-links">{urls.map((url, index) =>
     <a key={url} href={url} target="_blank" rel="noopener noreferrer">Official notice{urls.length > 1 ? ` ${index + 1}` : ''} ↗</a>
@@ -52,7 +53,6 @@ function SnapshotComparison({ diff }: { diff: ProposalSnapshotDiff }) {
   const [result, setResult] = useState<{ before: ProposalSnapshot; after: ProposalSnapshot } | null>(null)
   const [error, setError] = useState('')
   const [attempt, setAttempt] = useState(0)
-  const [showUnchanged, setShowUnchanged] = useState(false)
 
   useEffect(() => {
     const controller = new AbortController()
@@ -69,19 +69,15 @@ function SnapshotComparison({ diff }: { diff: ProposalSnapshotDiff }) {
     return () => controller.abort()
   }, [diff.proposal_id, diff.before_snapshot_id, diff.after_snapshot_id, attempt])
 
-  const fields = useMemo(() => comparisonFields(diff.changes, result?.before, result?.after, showUnchanged), [diff.changes, result, showUnchanged])
+  const fields = useMemo(() => comparisonFields(diff.changes), [diff.changes])
   return <>
-    <div className="updates-comparison-toolbar">
-      <label><input type="checkbox" checked={showUnchanged} disabled={!result} onChange={event => setShowUnchanged(event.target.checked)} /> Show unchanged fields</label>
-      <div className="updates-legend"><span><del>Removed</del></span><span><ins>Added</ins></span></div>
-    </div>
     {!result && !error && <p className="updates-status" role="status">Loading saved versions…</p>}
     {error && <div className="updates-error" role="alert"><p>{error}</p><button className="text-button" onClick={() => setAttempt(value => value + 1)}>Try again</button></div>}
     <div className="updates-version-headings updates-pair">
-      <div><h3>Earlier{result ? ` · Capture ${result.before.sequence}` : ''}</h3>
-        {result && <p>{dateLabel(result.before.captured_at)}</p>}<SourceLinks snapshot={result?.before} /></div>
-      <div><h3>Later{result ? ` · Capture ${result.after.sequence}` : ''}</h3>
-        {result && <p>{dateLabel(result.after.captured_at)}</p>}<SourceLinks snapshot={result?.after} /></div>
+      <div><h3>{diff.is_demo ? 'Demo previous version' : 'Earlier'}{result && !result.before.is_demo ? ` · Capture ${result.before.sequence}` : ''}</h3>
+        {result && <p>{result.before.is_demo ? 'Fictional wording for comparison' : dateLabel(result.before.captured_at)}</p>}<SourceLinks snapshot={result?.before} /></div>
+      <div><h3>{result ? `Capture on ${dateLabel(result.after.captured_at)}` : 'Later capture'}</h3>
+        <SourceLinks snapshot={result?.after} /></div>
     </div>
     {fields.length ? fields.map(field => <FieldComparison key={field.path} field={field} />)
       : <p className="updates-empty">These captures contain no field changes.</p>}
@@ -98,16 +94,19 @@ export function ProposalUpdates({ proposalId }: { proposalId: string }) {
       <h2 id="proposal-updates-heading">What changed</h2>
       <p>Compare earlier and later copies of the official notice. Removed words are crossed out; additions are underlined.</p>
     </div>
-    <div className="updates-notice"><Icon name="info" /><p>Detected changes have not been reviewed. They may include small edits as well as changes to the proposal.</p></div>
+    <div className="updates-notice"><Icon name="info" /><p>{selected?.is_demo
+      ? 'demo change, the "before" version is an example to show how this would work'
+      : 'Detected changes have not been reviewed. They may include small edits as well as changes to the proposal.'}</p></div>
     {state?.status === 'error' && <div className="updates-error" role="alert"><p>{state.error}</p>{selected && <p>Previously detected changes are still available below.</p>}</div>}
-    {(!state || state.status === 'checking') && <p className="updates-status" role="status">{state ? 'Checking official notices…' : 'Waiting to check this proposal…'}</p>}
-    {state?.checked_at && <p className="updates-checked">Last checked {dateLabel(state.checked_at)} · Checks hourly while this page is open.</p>}
+    {(!state || state.status === 'checking') && <p className="updates-status" role="status">Loading saved updates…</p>}
+    {state?.status === 'pending' && <p className="updates-status" role="status">Waiting for the first scheduled source check. The backend checks hourly, even when nobody has this page open.</p>}
+    {state?.checked_at && <p className="updates-checked">Source last checked {dateLabel(state.checked_at)} · Backend checks hourly.</p>}
     {selected ? <>
       <div className="updates-history-control">
         <label htmlFor="update-comparison">Compare changes</label>
         <select id="update-comparison" value={selected.id} onChange={event => setSelectedId(event.target.value)}>
           {[...diffs].reverse().map((diff, index) => <option key={diff.id} value={diff.id}>
-            Change {diffs.length - index}{index === 0 ? ' · Latest' : ''} · {diff.changes.length} {diff.changes.length === 1 ? 'field' : 'fields'}
+            {diff.is_demo ? 'Demo comparison' : `Change ${diffs.length - index}`}{index === 0 ? ' · Latest' : ''} · {diff.changes.length} {diff.changes.length === 1 ? 'field' : 'fields'}
           </option>)}
         </select>
       </div>

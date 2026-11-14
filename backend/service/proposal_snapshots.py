@@ -179,6 +179,7 @@ class ProposalSnapshotService:
     def __init__(self, db: Database, *, fetch_notices: Callable | None = None):
         self.proposals = ProposalRepository(db)
         self.history = ProposalSnapshotRepository(db)
+        self.statuses = db["proposal_snapshot_status"]
         self.fetch_notices = fetch_notices or _fetch_notices
 
     def refresh_proposal_snapshot(self, proposal_id: str) -> SnapshotRefreshDTO:
@@ -239,6 +240,8 @@ class ProposalSnapshotService:
             id=_digest([proposal_id, before.id, after.id]), proposal_id=proposal_id,
             before_snapshot_id=before.id, after_snapshot_id=after.id,
             compared_at=datetime.now(timezone.utc), changes=changes, review_required=bool(changes),
+            is_demo=before.is_demo or after.is_demo,
+            demo_label=before.demo_label if before.is_demo else after.demo_label if after.is_demo else None,
         )
         return self.history.save_diff(diff)
 
@@ -259,7 +262,9 @@ class ProposalSnapshotService:
         latest = refresh.snapshot
         if after_sequence > latest.sequence:
             raise SnapshotCursorError("Requested sequence is ahead of the stored snapshot history.")
-        diffs = []
+        # Synthetic predecessors live at sequence zero, outside observed source
+        # history. Include their labelled examples even for returning browsers.
+        diffs = self.history.demo_diffs(proposal_id)
         for snapshot in self.history.since(proposal_id, after_sequence, latest.sequence):
             if snapshot.previous_snapshot_id is not None:
                 diffs.append(self.compare_proposal_snapshots(
@@ -269,4 +274,28 @@ class ProposalSnapshotService:
             proposal_id=proposal_id, checked_at=datetime.now(timezone.utc),
             snapshot_id=latest.id, snapshot_sequence=latest.sequence,
             snapshot_created=refresh.created, diffs=diffs,
+        )
+
+    def read_proposal_updates(self, proposal_id: str, after_sequence: int = 0) -> SnapshotPollResponseDTO:
+        """Serve saved scheduler results only. No source calls or database writes."""
+        if self.proposals.get_by_id(proposal_id) is None:
+            raise ProposalNotFoundError(f"Proposal '{proposal_id}' was not found.")
+        latest = self.history.latest(proposal_id)
+        sequence = latest.sequence if latest else 0
+        if after_sequence < 0 or after_sequence > sequence:
+            raise SnapshotCursorError("Requested sequence is outside the stored snapshot history.")
+        diffs = []
+        for diff in self.history.all_diffs(proposal_id):
+            after = self.history.get(proposal_id, diff.after_snapshot_id).sequence
+            if diff.is_demo or after_sequence < after <= sequence:
+                diffs.append((not diff.is_demo, after, diff))
+        # Keep the demo first; a genuine newer source change should be selected last.
+        diffs.sort(key=lambda item: item[:2])
+        status = self.statuses.find_one({"_id": proposal_id}) or {}
+        return SnapshotPollResponseDTO(
+            proposal_id=proposal_id, checked_at=status.get("last_successful_at") or (latest.captured_at if latest else None),
+            snapshot_id=latest.id if latest else None, snapshot_sequence=sequence,
+            snapshot_created=False, diffs=[item[2] for item in diffs],
+            source_status=status.get("source_status", "ready" if latest else "pending"),
+            source_error=status.get("source_error"),
         )

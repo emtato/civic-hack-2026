@@ -3,7 +3,7 @@
 .updates-eyebrow { display:flex; align-items:center; gap:7px; color:#58694c; font-size:11px; letter-spacing:1px; text-transform:uppercase; }
 .updates-eyebrow .icon { width:15px; height:15px; }
 #detail-content .updates-heading h2 { margin:9px 0; font-size:25px; letter-spacing:-.8px; }
-.updates-heading>p { max-width:680px; color:#58654f; line-height:1.8; }
+.updates-heading>p { color:#58654f; line-height:1.8; }
 .updates-notice { display:flex; align-items:flex-start; gap:9px; padding:13px 15px; border:1px solid #e5dcc5; border-radius:8px; background:#f5f1e6; font-size:12px; line-height:1.8; color:#665f47; margin-bottom:15px; }
 .updates-notice .icon { width:16px; height:16px; margin-top:2px; }
 .updates-status,.updates-checked { font-size:12px; line-height:1.8; color:#58654f; margin:12px 0; }
@@ -12,13 +12,8 @@
 .updates-history-control { margin:22px 0 15px; max-width:360px; }
 .updates-history-control label { display:block; font-size:12px; font-weight:600; margin-bottom:7px; }
 .updates-history-control select { width:100%; padding:11px 12px; border:1px solid #cfd9c5; border-radius:7px; background:#fffefb; color:#355339; }
-.updates-comparison-toolbar { display:flex; justify-content:space-between; align-items:center; gap:15px; flex-wrap:wrap; margin:18px 0; font-size:12px; }
-.updates-comparison-toolbar label { display:flex; align-items:center; gap:8px; cursor:pointer; }
-.updates-comparison-toolbar input { accent-color:#285a45; width:16px; height:16px; }
-.updates-legend { display:flex; gap:14px; }
 .proposal-updates del { background:#f8ded5; color:#783c2c; text-decoration:line-through; text-decoration-thickness:1px; border-radius:2px; }
 .proposal-updates ins { background:#dfeeda; color:#28502e; text-decoration:underline; text-underline-offset:3px; border-radius:2px; }
-.updates-legend del,.updates-legend ins { padding:2px 5px; }
 .updates-pair { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
 .updates-version-headings { border:1px solid #d7e0cf; background:#edf2e6; border-radius:9px 9px 0 0; }
 .updates-version-headings>div { padding:16px 18px; min-width:0; }

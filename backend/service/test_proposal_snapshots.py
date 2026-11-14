@@ -6,6 +6,7 @@ import ssl
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 from urllib.error import URLError
 from urllib.parse import parse_qs, urlparse
@@ -37,6 +38,8 @@ class Collection:
     def matches(doc, query):
         for key, value in query.items():
             if isinstance(value, dict):
+                if "$in" in value and doc.get(key) not in value["$in"]:
+                    return False
                 if "$gt" in value and doc.get(key, 0) <= value["$gt"]:
                     return False
                 if "$lte" in value and doc.get(key, 0) > value["$lte"]:
@@ -60,8 +63,24 @@ class Collection:
         self.documents[document["_id"]] = copy.deepcopy(document)
 
     def update_one(self, query, update, upsert=False):
-        if query["_id"] not in self.documents and upsert:
-            self.insert_one({**query, **update["$setOnInsert"]})
+        found = self.find_one(query)
+        if found is None:
+            if not upsert:
+                return SimpleNamespace(matched_count=0)
+            self.insert_one({**query, **update.get("$setOnInsert", {}), **update.get("$set", {})})
+            return SimpleNamespace(matched_count=0)
+        document = self.documents[found["_id"]]
+        document.update(copy.deepcopy(update.get("$set", {})))
+        for key, value in update.get("$inc", {}).items():
+            document[key] = document.get(key, 0) + value
+        return SimpleNamespace(matched_count=1)
+
+    def find_one_and_update(self, query, update, **kwargs):
+        found = self.find_one(query)
+        if found is None:
+            return None
+        self.update_one(query, update)
+        return self.find_one({"_id": found["_id"]})
 
 
 class Database:
@@ -303,8 +322,16 @@ class SnapshotTests(unittest.TestCase):
             baseline = client.post(url, json={"after_sequence": 0})
             self.assertEqual(200, baseline.status_code)
             self.assertEqual([], baseline.json()["diffs"])
+            self.assertEqual("pending", baseline.json()["source_status"])
+            self.assertEqual(0, baseline.json()["snapshot_sequence"])
+            self.service.check_proposal_updates("example")
             self.raw["title"] = "Revised title"
-            response = client.post(url, json={"after_sequence": 1})
+            self.service.check_proposal_updates("example")
+            before_documents = copy.deepcopy(self.db["proposal_snapshots"].documents)
+            with patch.object(self.service, "fetch_notices", side_effect=AssertionError("Browser must not fetch sources")):
+                response = client.get("/api/proposals/example/updates?after_sequence=1")
+                self.assertEqual(response.json(), client.post(url, json={"after_sequence": 1}).json())
+            self.assertEqual(before_documents, self.db["proposal_snapshots"].documents)
             self.assertEqual(200, response.status_code)
             payload = response.json()
             self.assertEqual(2, payload["snapshot_sequence"])
@@ -314,9 +341,8 @@ class SnapshotTests(unittest.TestCase):
             self.assertEqual(422, client.post(url, json={"after_sequence": -1}).status_code)
             self.assertEqual(409, client.post(url, json={"after_sequence": 99}).status_code)
             self.assertEqual(404, client.post("/api/proposals/missing/updates/check", json={}).status_code)
-            for error, status in [(URLError("offline"), 502), (ValueError("bad source"), 502), (PyMongoError("offline"), 503)]:
-                with patch.object(self.service, "check_proposal_updates", side_effect=error):
-                    self.assertEqual(status, client.post(url, json={}).status_code)
+            with patch.object(self.service, "read_proposal_updates", side_effect=PyMongoError("offline")):
+                self.assertEqual(503, client.post(url, json={}).status_code)
         finally:
             app.dependency_overrides.pop(get_snapshot_service, None)
 
@@ -346,6 +372,83 @@ class SnapshotTests(unittest.TestCase):
                 self.assertEqual(503, client.get(url).status_code)
         finally:
             app.dependency_overrides.pop(get_snapshot_service, None)
+
+    def test_demo_seed_adds_two_labelled_edits_without_changing_real_snapshots(self):
+        from seed_demo_snapshot_diffs import seed_demo_diffs, DEMO_SENTENCE
+
+        real = self.capture().snapshot
+        real_document = copy.deepcopy(self.db["proposal_snapshots"].documents[real.id])
+        proposal_documents = copy.deepcopy(self.db["imported_proposals"].documents)
+        feedback_documents = copy.deepcopy(self.db["feedback"].documents)
+        results = seed_demo_diffs(self.db, write=True)
+        self.assertEqual(1, len(results))
+        self.assertEqual(real.id, self.service.history.latest("example").id)
+        self.assertEqual(real_document, self.db["proposal_snapshots"].documents[real.id])
+        self.assertEqual(proposal_documents, self.db["imported_proposals"].documents)
+        self.assertEqual(feedback_documents, self.db["feedback"].documents)
+        before = self.service.history.get("example", results[0]["before_snapshot_id"])
+        self.assertEqual(0, before.sequence)
+        self.assertTrue(before.is_demo)
+        self.assertEqual([], before.raw_notices)
+        self.assertTrue(before.content["notices"]["8002"]["noticeDescription"].startswith(DEMO_SENTENCE))
+        self.assertIn("Keep access.", before.content["notices"]["8002"]["noticeDescription"])
+        diff = self.service.history.demo_diffs("example")[0]
+        self.assertTrue(diff.is_demo)
+        self.assertEqual(real.id, diff.after_snapshot_id)
+        self.assertEqual({"/notices/8002/title", "/notices/8002/noticeDescription"}, {c.path for c in diff.changes})
+
+    def test_demo_seed_is_repeatable_and_visible_to_an_already_polled_browser(self):
+        from seed_demo_snapshot_diffs import seed_demo_diffs
+
+        real = self.capture().snapshot
+        planned = seed_demo_diffs(self.db)
+        self.assertEqual("planned", planned[0]["status"])
+        self.assertEqual(1, len(self.db["proposal_snapshots"].documents))
+        seed_demo_diffs(self.db, write=True)
+        documents = copy.deepcopy(self.db["proposal_snapshots"].documents)
+        diffs = copy.deepcopy(self.db["proposal_snapshot_diffs"].documents)
+        self.assertEqual("already_seeded", seed_demo_diffs(self.db, write=True)[0]["status"])
+        self.assertEqual(documents, self.db["proposal_snapshots"].documents)
+        self.assertEqual(diffs, self.db["proposal_snapshot_diffs"].documents)
+        result = self.service.check_proposal_updates("example", real.sequence)
+        self.assertFalse(result.snapshot_created)
+        self.assertEqual(real.sequence, result.snapshot_sequence)
+        self.assertEqual(1, len(result.diffs))
+        self.assertTrue(result.diffs[0].is_demo)
+        self.assertEqual(real.id, result.diffs[0].after_snapshot_id)
+
+    def test_real_changes_after_demo_seeding_keep_their_real_classification(self):
+        from seed_demo_snapshot_diffs import seed_demo_diffs
+
+        real = self.capture().snapshot
+        seed_demo_diffs(self.db, write=True)
+        self.raw["title"] = "Actual source edit"
+        result = self.service.check_proposal_updates("example", real.sequence)
+        self.assertEqual(2, result.snapshot_sequence)
+        self.assertEqual(2, len(result.diffs))
+        self.assertTrue(result.diffs[0].is_demo)
+        self.assertFalse(result.diffs[1].is_demo)
+        self.assertEqual(real.id, result.diffs[1].before_snapshot_id)
+
+    def test_sequence_zero_is_reserved_for_labelled_demo_snapshots(self):
+        from proposal_snapshots_DTO import SnapshotDTO
+        from pydantic import ValidationError
+
+        data = self.capture().snapshot.model_dump()
+        data["sequence"] = 0
+        with self.assertRaises(ValidationError):
+            SnapshotDTO.model_validate(data)
+
+    def test_saved_results_are_ordered_by_source_sequence_when_old_comparisons_are_recovered_late(self):
+        first = self.capture().snapshot
+        self.raw["title"] = "Second"
+        second = self.capture().snapshot
+        self.raw["title"] = "Third"
+        third = self.capture().snapshot
+        self.service.compare_proposal_snapshots("example", second.id, third.id)
+        self.service.compare_proposal_snapshots("example", first.id, second.id)
+        result = self.service.read_proposal_updates("example")
+        self.assertEqual([second.id, third.id], [diff.after_snapshot_id for diff in result.diffs])
 
 
 if __name__ == "__main__":

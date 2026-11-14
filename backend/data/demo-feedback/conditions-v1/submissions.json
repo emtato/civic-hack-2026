@@ -1,0 +1,1766 @@
+[
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-aren-levy-lane-01",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Fine with Aren Levy Lane if the signs still make it clear this is a public lane.",
+    "condition": {
+      "feature_id": "toronto-aren-levy-lane-feature-name",
+      "requirement": "Keep public-lane access clear on the new signage.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-aren-levy-lane",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-aren-levy-lane-02",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Please give businesses a written explanation of whether delivery addresses need updating before the new signs go up.",
+    "condition": {
+      "feature_id": "toronto-aren-levy-lane-feature-name",
+      "requirement": "Notify nearby businesses of any delivery-address changes before installing signs.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-augusta-hotel-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I could support the hotel if there is an enforceable quiet-hours plan for guests arriving late. The entrance is the bit I worry about.",
+    "condition": {
+      "feature_id": "toronto-augusta-hotel-feature-1",
+      "requirement": "Provide an enforceable quiet-hours and late-arrival management plan.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-augusta-hotel-02",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Restaurant deliveries need a booked loading arrangement. Do not leave trucks idling outside nearby homes.",
+    "condition": {
+      "feature_id": "toronto-augusta-hotel-feature-2",
+      "requirement": "Schedule restaurant deliveries and prevent idling beside nearby homes.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-augusta-hotel-03",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "A restaurant could be good here, provided the waste storage is indoors and collections are scheduled.",
+    "condition": {
+      "feature_id": "toronto-augusta-hotel-feature-2",
+      "requirement": "Provide indoor waste storage and scheduled collections.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-augusta-hotel-04",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Show the step-free route from the sidewalk all the way to reception, not just a symbol on a drawing.",
+    "condition": {
+      "feature_id": "toronto-augusta-hotel-feature-1",
+      "requirement": "Publish a continuous step-free access route from sidewalk to hotel reception.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-augusta-hotel",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-augusta-hotel-05",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Would support it with a construction contact who actually answers and advance notice of the loud work.",
+    "condition": {
+      "feature_id": "toronto-augusta-hotel-feature-1",
+      "requirement": "Name a construction contact and give advance notice of noisy work.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-budget-user-fees-2026-01",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Need the old and proposed prices side by side. A link to a whole budget appendix is hard to work through.",
+    "condition": {
+      "feature_id": "toronto-budget-user-fees-2026-feature-fee-package",
+      "requirement": "Publish an accessible side-by-side list of existing and proposed fees.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-budget-user-fees-2026-02",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "I would support the package if people on low incomes have a clear, usable fee-relief route.",
+    "condition": {
+      "feature_id": "toronto-budget-user-fees-2026-feature-fee-package",
+      "requirement": "Provide a clear fee-relief process for people on low incomes.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-budget-user-fees-2026-03",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Give businesses notice of the final rates before they take effect so we can budget for them.",
+    "condition": {
+      "feature_id": "toronto-budget-user-fees-2026-feature-fee-package",
+      "requirement": "Provide advance notice of final rates and their effective dates.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-budget-user-fees-2026-04",
+    "position": "oppose",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Explain which services the new fees pay for and how that money will be tracked.",
+    "condition": {
+      "feature_id": "toronto-budget-user-fees-2026-feature-fee-package",
+      "requirement": "Publish the service rationale and revenue reporting for new fees.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-budget-user-fees-2026",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-budget-user-fees-2026-05",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Can support changes if the impact on frequent users is published, including people paying several fees together.",
+    "condition": {
+      "feature_id": "toronto-budget-user-fees-2026-feature-fee-package",
+      "requirement": "Publish the combined impact of the changes on frequent service users.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-business-licence-action-plan",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-business-licence-action-plan-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "More flexible hours are okay with me if noise complaints still have a clear response process.",
+    "condition": {
+      "feature_id": "toronto-business-licence-action-plan-feature-operating-hours",
+      "requirement": "Retain a clear noise-complaint response process when operating hours change.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-business-licence-action-plan",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-business-licence-action-plan-02",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "I support simpler registers provided there is a sample showing exactly what records we must keep.",
+    "condition": {
+      "feature_id": "toronto-business-licence-action-plan-feature-goods-registers",
+      "requirement": "Provide a sample of the goods-register records businesses must retain.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-business-licence-action-plan",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-business-licence-action-plan-03",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Put the licensing and zoning definitions in one guide. I need to know whether my operation fits both.",
+    "condition": {
+      "feature_id": "toronto-business-licence-action-plan-feature-nightclub-definition",
+      "requirement": "Publish one guide explaining how the licensing and zoning definitions apply together.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-business-licence-action-plan",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-business-licence-action-plan-04",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Happy to see the old videotape licence go if existing licensees are told what happens to renewals and any prepaid fees.",
+    "condition": {
+      "feature_id": "toronto-business-licence-action-plan-feature-2",
+      "requirement": "Notify existing videotape-store licensees how renewals and prepaid fees will be handled.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-development-application-fees-01",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "I could back the fee update if there is a transition rule for applications already being prepared.",
+    "condition": {
+      "feature_id": "toronto-development-application-fees-feature-site-plan-fees",
+      "requirement": "Publish a transition rule for applications in preparation when fees change.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-development-application-fees-02",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Show the actual before-and-after amounts for each of those reference numbers in plain language.",
+    "condition": {
+      "feature_id": "toronto-development-application-fees-feature-site-plan-fees",
+      "requirement": "Publish existing and proposed amounts for each affected site-plan fee.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-development-application-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-development-application-fees-03",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Please show how the fees relate to the cost of reviewing applications, and report on that after implementation.",
+    "condition": {
+      "feature_id": "toronto-development-application-fees-feature-site-plan-fees",
+      "requirement": "Explain the review-cost basis for the fees and publish follow-up reporting.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-fleet-property-lease-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I would support this if community access has guaranteed hours in the lease, rather than being left to an announcement later.",
+    "condition": {
+      "feature_id": "toronto-fleet-property-lease-feature-2",
+      "requirement": "Guarantee specific community-access hours in the lease.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-fleet-property-lease-02",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Publish the booking rules and prices for the community amenities before signing.",
+    "condition": {
+      "feature_id": "toronto-fleet-property-lease-feature-2",
+      "requirement": "Publish community-amenity booking rules and prices before the lease is signed.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-fleet-property-lease-03",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "A long lease needs public reporting on whether the promised community access actually happens.",
+    "condition": {
+      "feature_id": "toronto-fleet-property-lease-feature-1",
+      "requirement": "Require public reporting on delivery of community-access commitments.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-fleet-property-lease-04",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Could support a practice facility if the community spaces have step-free entrances and accessible changing facilities.",
+    "condition": {
+      "feature_id": "toronto-fleet-property-lease-feature-2",
+      "requirement": "Provide step-free access and accessible changing facilities for community users.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-fleet-property-lease",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-fleet-property-lease-05",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Support would depend on a delivery and event-traffic plan that keeps nearby entrances usable.",
+    "condition": {
+      "feature_id": "toronto-fleet-property-lease-feature-1",
+      "requirement": "Provide a delivery and event-traffic plan that maintains nearby entrance access.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-labatt-river-towers-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I could support the homes if construction always leaves a protected pedestrian route along the site.",
+    "condition": {
+      "feature_id": "toronto-labatt-river-towers-feature-1",
+      "requirement": "Maintain a protected pedestrian route along the site throughout construction.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:57:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-labatt-river-towers-02",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "More homes makes sense to me provided a defined share is secured as affordable housing, with the terms made public.",
+    "condition": {
+      "feature_id": "toronto-labatt-river-towers-feature-1",
+      "requirement": "Secure a defined affordable-housing share and publish the terms.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-labatt-river-towers-03",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Please publish a wind study showing what the sidewalks would feel like, plus the changes needed if conditions are poor.",
+    "condition": {
+      "feature_id": "toronto-labatt-river-towers-feature-1",
+      "requirement": "Publish a pedestrian wind study and the measures needed to address poor conditions.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-labatt-river-towers-04",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Would back the separate commercial building if loading can happen without blocking neighbouring business entrances.",
+    "condition": {
+      "feature_id": "toronto-labatt-river-towers-feature-2",
+      "requirement": "Design loading for the non-residential building to keep neighbouring entrances clear.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-labatt-river-towers-05",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "Show where delivery vehicles and pickups will stop so they are not left using the travel lanes.",
+    "condition": {
+      "feature_id": "toronto-labatt-river-towers-feature-1",
+      "requirement": "Provide designated delivery and pickup space outside travel lanes.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-labatt-river-towers",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-labatt-river-towers-06",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "I would support the non-residential space if its public entrances are step-free from the sidewalk.",
+    "condition": {
+      "feature_id": "toronto-labatt-river-towers-feature-2",
+      "requirement": "Provide step-free sidewalk access to public non-residential entrances.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "My support depends on a written right-to-return process for affected social-housing tenants, with a named person to contact.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-1",
+      "requirement": "Publish a written right-to-return process and named contact for affected social-housing tenants.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:56:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-02",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Need a phase-by-phase relocation plan before any moves, including who pays the moving costs.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-1",
+      "requirement": "Publish the relocation sequence and responsibility for moving costs before moves begin.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:57:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-03",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "I would support the affordable homes if the affordability period and eligibility rules are secured and published.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-affordable-housing",
+      "requirement": "Secure and publish the affordable homes’ affordability period and eligibility rules.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-04",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Would support the parks if usable step-free routes reach the seating and play areas.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-3",
+      "requirement": "Provide step-free park routes connecting entrances, seating and play areas.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-05",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Show how the market buildings fit into the construction sequence and when people get their streets back.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-market-housing",
+      "requirement": "Publish the market-building construction sequence and street-access milestones.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-06",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "Please keep a clearly signed walking route through each work phase, with changes posted ahead of time.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-3",
+      "requirement": "Maintain signed walking routes and announce route changes before each work phase.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heights-revitalization",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heights-revitalization-07",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I can support the community spaces if residents help set the booking rules and the fees are published before opening.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heights-revitalization-feature-3",
+      "requirement": "Involve residents in community-space booking rules and publish fees before opening.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heritage-intention-01",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "I support designation if the conservation approach still allows accessibility improvements at the arena.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heritage-intention-feature-designation",
+      "requirement": "Allow accessibility improvements within the arena conservation approach.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heritage-intention-02",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Please explain which parts of the arena would be protected and what routine repairs owners could still do.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heritage-intention-feature-designation",
+      "requirement": "Publish a plain-language guide to protected arena attributes and routine repairs.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-heritage-intention",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-heritage-intention-03",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Would support protecting it if there is a public maintenance plan with responsibilities spelled out.",
+    "condition": {
+      "feature_id": "toronto-lawrence-heritage-intention-feature-designation",
+      "requirement": "Publish a maintenance plan identifying who is responsible for the protected attributes.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-road-closure-01",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Put the exact pieces proposed for closure on a readable street map, with the remaining public routes marked.",
+    "condition": {
+      "feature_id": "toronto-lawrence-road-closure-feature-closure",
+      "requirement": "Publish a readable parcel map showing the closure limits and remaining public routes.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-road-closure-02",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "I could support closing those portions if the plan confirms which walking connections remain available.",
+    "condition": {
+      "feature_id": "toronto-lawrence-road-closure-feature-closure",
+      "requirement": "Confirm and publish the walking connections that remain available after closure.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-lawrence-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-lawrence-road-closure-03",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Before approval, explain whether any loading or servicing access is affected and how it would be maintained.",
+    "condition": {
+      "feature_id": "toronto-lawrence-road-closure-feature-closure",
+      "requirement": "Explain any servicing-access impacts and the arrangements for maintaining access.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-neilson-medical-housing-01",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "I would support the new housing if patients keep a step-free route to the retained medical building throughout construction.",
+    "condition": {
+      "feature_id": "toronto-neilson-medical-housing-feature-2",
+      "requirement": "Maintain step-free patient access to the retained medical building throughout construction.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-neilson-medical-housing-02",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Could support the homes with construction hours and a complaints contact published before work begins.",
+    "condition": {
+      "feature_id": "toronto-neilson-medical-housing-feature-1",
+      "requirement": "Publish construction hours and a complaints contact before work begins.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-neilson-medical-housing-03",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "We need deliveries and patient drop-offs separated from the construction vehicles. Show the arrangement.",
+    "condition": {
+      "feature_id": "toronto-neilson-medical-housing-feature-2",
+      "requirement": "Separate medical deliveries and patient drop-offs from construction vehicle routes.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-neilson-medical-housing-04",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Please show the shadow impacts on neighbouring properties by season, not just one view.",
+    "condition": {
+      "feature_id": "toronto-neilson-medical-housing-feature-1",
+      "requirement": "Publish seasonal shadow studies for neighbouring properties.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-neilson-medical-housing",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-neilson-medical-housing-05",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Support depends on clear signs from the street when the medical entrance route changes during the works.",
+    "condition": {
+      "feature_id": "toronto-neilson-medical-housing-feature-2",
+      "requirement": "Provide clear street-to-entrance signs whenever medical access routes change during construction.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-nightclub-definition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-nightclub-definition-01",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "I would support the threshold change if operators get a written explanation of which licence they need instead.",
+    "condition": {
+      "feature_id": "toronto-nightclub-definition-feature-1",
+      "requirement": "Give affected operators written guidance on their applicable licence category.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-nightclub-definition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-nightclub-definition-02",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Fine with the smaller-venue change if there is still a straightforward way to report late-night noise and get a response.",
+    "condition": {
+      "feature_id": "toronto-nightclub-definition-feature-1",
+      "requirement": "Maintain a clear late-night noise-complaint and response process for affected venues.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-nightclub-definition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-nightclub-definition-03",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Need a transition guide that checks zoning and licensing together before anyone is asked to switch categories.",
+    "condition": {
+      "feature_id": "toronto-nightclub-definition-feature-2",
+      "requirement": "Publish coordinated zoning and licensing transition guidance before category changes.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-nightclub-definition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-nightclub-definition-04",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Please explain how occupant load is verified, rather than leaving customers to guess from the licence name.",
+    "condition": {
+      "feature_id": "toronto-nightclub-definition-feature-1",
+      "requirement": "Explain how occupant load is verified for the definition threshold.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-nightclub-definition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-nightclub-definition-05",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Could support alignment if the city reviews how it works after a year and publishes the problems found.",
+    "condition": {
+      "feature_id": "toronto-nightclub-definition-feature-2",
+      "requirement": "Publish a one-year review of implementation issues after alignment takes effect.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-area-1e-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I could support the exclusion if prospective tenants are told clearly, before signing, that these addresses cannot get area 1E permits.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-area-1e-feature-exclusion",
+      "requirement": "Require clear pre-lease disclosure of area 1E permit ineligibility at the excluded addresses.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-area-1e-02",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Explain how disability-related loading and pickup needs would be handled for people living in the development.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-area-1e-feature-exclusion",
+      "requirement": "Publish arrangements for disability-related loading and pickups at the development.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-area-1e-03",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Need a plain map of the changed permit boundary and an effective date so staff do not rely on old information.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-area-1e-feature-exclusion",
+      "requirement": "Publish the revised permit boundary and its effective date.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-area-1e",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-area-1e-04",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Would support this if there is a named contact for correcting an address or eligibility error.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-area-1e-feature-exclusion",
+      "requirement": "Provide a named contact and process for correcting address or eligibility errors.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-exclusion-process",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-exclusion-process-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I can support a simpler process if neighbours still get notice and a chance to comment before a decision.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-exclusion-process-feature-1",
+      "requirement": "Retain advance notice and an opportunity for neighbours to comment on exclusions.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-exclusion-process",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-exclusion-process-02",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "A single schedule would help provided the online address list is searchable and dated whenever it changes.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-exclusion-process-feature-2",
+      "requirement": "Publish a searchable excluded-address schedule with revision dates.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-permit-parking-exclusion-process",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-permit-parking-exclusion-process-03",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Please show who made each decision and where someone can request a correction or review.",
+    "condition": {
+      "feature_id": "toronto-permit-parking-exclusion-process-feature-1",
+      "requirement": "Publish the decision-maker and correction or review route for each exclusion.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-queen-heritage-amendment",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-queen-heritage-amendment-01",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "I would support the wider protection if the timber-frame attributes are mapped clearly enough to guide future repairs.",
+    "condition": {
+      "feature_id": "toronto-queen-heritage-amendment-feature-2",
+      "requirement": "Clearly map the protected timber-frame attributes for future repairs.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-queen-heritage-amendment",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-queen-heritage-amendment-02",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Could support the expanded history if there is a readable public explanation of the associations being recognized.",
+    "condition": {
+      "feature_id": "toronto-queen-heritage-amendment-feature-1",
+      "requirement": "Provide a readable public explanation of the historical associations being recognized.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-queen-heritage-amendment",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-queen-heritage-amendment-03",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Need guidance on compatible repairs and accessibility alterations so the protection is workable day to day.",
+    "condition": {
+      "feature_id": "toronto-queen-heritage-amendment-feature-2",
+      "requirement": "Publish guidance on compatible repairs and accessibility alterations.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-ravine-permit-fees-01",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Show worked examples for one tree and several trees, including what makes an application complex.",
+    "condition": {
+      "feature_id": "toronto-ravine-permit-fees-feature-1",
+      "requirement": "Publish worked tree-fee examples and the criteria used to assess application complexity.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-ravine-permit-fees-02",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "I could support the flat grade-alteration fee if the city explains what work it covers and what requires a separate application.",
+    "condition": {
+      "feature_id": "toronto-ravine-permit-fees-feature-2",
+      "requirement": "Explain the scope of the standalone grade-alteration fee and when separate applications are required.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-ravine-permit-fees-03",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Would support the fee structure if payment is clearly separated from permission to do the work.",
+    "condition": {
+      "feature_id": "toronto-ravine-permit-fees-feature-1",
+      "requirement": "Make clear in fee guidance that payment does not authorize work without approval.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-ravine-permit-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-ravine-permit-fees-04",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Since the fees are non-refundable, please offer a way to check the required application type before paying.",
+    "condition": {
+      "feature_id": "toronto-ravine-permit-fees-feature-1",
+      "requirement": "Provide an application-type check before applicants pay non-refundable fees.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-rentsafeto-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-rentsafeto-fees-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I could support the sign fee if tenants can still see the current building rating while a replacement sign is being issued.",
+    "condition": {
+      "feature_id": "toronto-rentsafeto-fees-feature-1",
+      "requirement": "Keep the current building rating accessible to tenants during sign replacement.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-rentsafeto-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-rentsafeto-fees-02",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Publish the precise exemption criteria and the documents a social-housing provider needs to supply.",
+    "condition": {
+      "feature_id": "toronto-rentsafeto-fees-feature-2",
+      "requirement": "Publish social-housing exemption criteria and required documentation.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-rentsafeto-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-rentsafeto-fees-03",
+    "position": "support",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Would support remedial-work fees if residents get a clear update on what work was ordered and whether it was completed.",
+    "condition": {
+      "feature_id": "toronto-rentsafeto-fees-feature-3",
+      "requirement": "Give residents clear updates on ordered remedial work and its completion.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-rentsafeto-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-rentsafeto-fees-04",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Need itemized remedial-work bills and a clear way to challenge an error.",
+    "condition": {
+      "feature_id": "toronto-rentsafeto-fees-feature-3",
+      "requirement": "Provide itemized remedial-work bills and a process for disputing errors.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-rentsafeto-fees",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-rentsafeto-fees-05",
+    "position": "support",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "I support exemptions provided the inspection and repair expectations for exempt buildings are explained publicly.",
+    "condition": {
+      "feature_id": "toronto-rentsafeto-fees-feature-2",
+      "requirement": "Publicly explain inspection and repair expectations for buildings receiving fee exemptions.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-sheppard-surplus-lane-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Would support the purchase only once Council has actually approved the permanent closure and the limits are public.",
+    "condition": {
+      "feature_id": "toronto-sheppard-surplus-lane-feature-2",
+      "requirement": "Complete Council approval of permanent closure and publish its limits before the purchase proceeds.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-sheppard-surplus-lane-02",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Please show any access or servicing rights that have to remain in place before the lane portions are sold.",
+    "condition": {
+      "feature_id": "toronto-sheppard-surplus-lane-feature-1",
+      "requirement": "Identify and protect any required access or servicing rights before sale.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-sheppard-surplus-lane",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-sheppard-surplus-lane-03",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Publish the basis for the sale price and the final terms, subject to the usual privacy limits.",
+    "condition": {
+      "feature_id": "toronto-sheppard-surplus-lane-feature-1",
+      "requirement": "Publish the valuation basis and disclosable final sale terms.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-six-points-road-closure-01",
+    "position": "unsure",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "Show the exact Dundas pieces on a street-level map, including where pedestrians would still cross.",
+    "condition": {
+      "feature_id": "toronto-six-points-road-closure-feature-dundas-closure",
+      "requirement": "Map the specified Dundas closure portions and remaining pedestrian crossings.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-six-points-road-closure-02",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I could support the Kipling portion closing if a continuous step-free walking route is shown on the final plan.",
+    "condition": {
+      "feature_id": "toronto-six-points-road-closure-feature-kipling-closure",
+      "requirement": "Show a continuous step-free walking route in the final Kipling closure plan.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-six-points-road-closure-03",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Would support the Bloor portion if servicing access to affected properties is confirmed before it closes.",
+    "condition": {
+      "feature_id": "toronto-six-points-road-closure-feature-bloor-closure",
+      "requirement": "Confirm servicing access to affected properties before the specified Bloor portion closes.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-six-points-road-closure",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-six-points-road-closure-04",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Please put signs on site before the change so people can see what remains public and what is closing.",
+    "condition": {
+      "feature_id": "toronto-six-points-road-closure-feature-dundas-closure",
+      "requirement": "Install advance on-site signs identifying closure boundaries and remaining public routes.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-stotts-bridge-heritage-01",
+    "position": "oppose",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Before demolition, release the heritage documentation in a public archive people can actually find.",
+    "condition": {
+      "feature_id": "toronto-stotts-bridge-heritage-feature-demolition",
+      "requirement": "Make the pre-demolition heritage documentation publicly accessible in an archive.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-stotts-bridge-heritage-02",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "I could support the replacement arrangements if a route and access plan is published before any change to the crossing.",
+    "condition": {
+      "feature_id": "toronto-stotts-bridge-heritage-feature-1",
+      "requirement": "Publish route and access arrangements before changes to the crossing.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-stotts-bridge-heritage-03",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Would support the salvage approach if there is an inventory saying what is kept, where it goes and how it will be interpreted.",
+    "condition": {
+      "feature_id": "toronto-stotts-bridge-heritage-feature-2",
+      "requirement": "Publish an inventory of retained bridge material, its destination and interpretation plans.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-stotts-bridge-heritage",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-stotts-bridge-heritage-04",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Need the temporary-bridge stage and the permanent replacement stage explained separately, including when updates will be issued.",
+    "condition": {
+      "feature_id": "toronto-stotts-bridge-heritage-feature-1",
+      "requirement": "Publish separate temporary and permanent bridge stages with a schedule for progress updates.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-street-vending-rules",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-street-vending-rules-01",
+    "position": "neutral",
+    "stakeholder_role": "commuter",
+    "element_ratings": {},
+    "comment": "I support reopening applications if pitches leave a continuous clear path for wheelchairs and people with strollers.",
+    "condition": {
+      "feature_id": "toronto-street-vending-rules-feature-1",
+      "requirement": "Require a continuous unobstructed pedestrian path at sidewalk-vending pitches.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:57:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-street-vending-rules",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-street-vending-rules-02",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Longer mobile vending hours work for me if there is a waste plan and a clear contact for problems late in the day.",
+    "condition": {
+      "feature_id": "toronto-street-vending-rules-feature-2",
+      "requirement": "Require waste management and a late-hours complaints contact for extended mobile vending.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:58:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-street-vending-rules",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-street-vending-rules-03",
+    "position": "unsure",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Please put all permit steps, documents and fees in one checklist before the new regime starts.",
+    "condition": {
+      "feature_id": "toronto-street-vending-rules-feature-3",
+      "requirement": "Publish one checklist of permit steps, documents and fees before the new regime starts.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-street-vending-rules",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-street-vending-rules-04",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "I could support licensing on-foot sellers if the application is available on paper as well as online.",
+    "condition": {
+      "feature_id": "toronto-street-vending-rules-feature-on-foot-licensing",
+      "requirement": "Provide both paper and online application routes for on-foot vendor licences.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-street-vending-rules",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-street-vending-rules-05",
+    "position": "oppose",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Need a site plan that keeps neighbouring shop entrances and deliveries usable, not just a mark for the cart.",
+    "condition": {
+      "feature_id": "toronto-street-vending-rules-feature-1",
+      "requirement": "Require pitch plans to preserve neighbouring shop entrances and delivery access.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-street-vending-rules",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-street-vending-rules-06",
+    "position": "support",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Would support longer stays if the posted permit makes it easy to check where and when that vendor may operate.",
+    "condition": {
+      "feature_id": "toronto-street-vending-rules-feature-2",
+      "requirement": "Display permit information showing the vendor’s authorized location and operating times.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-van-horne-surplus-01",
+    "position": "neutral",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "I could support the transfer if the plan confirms that access to the library is kept usable.",
+    "condition": {
+      "feature_id": "toronto-van-horne-surplus-feature-conveyance",
+      "requirement": "Confirm how usable library access will be maintained after the parcel transfer.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-van-horne-surplus",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-van-horne-surplus-02",
+    "position": "unsure",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Please show the 32.6 square metres on a readable map and explain the intended municipal use before the transfer.",
+    "condition": {
+      "feature_id": "toronto-van-horne-surplus-feature-conveyance",
+      "requirement": "Publish a readable parcel map and explain the intended municipal use before transfer.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-weston-heritage-demolition-01",
+    "position": "neutral",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "I could support the alterations if the conservation and relocation plan is available publicly before the heritage work starts.",
+    "condition": {
+      "feature_id": "toronto-weston-heritage-demolition-feature-3",
+      "requirement": "Make the conservation and relocation plan public before heritage work begins.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T03:59:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-weston-heritage-demolition-02",
+    "position": "oppose",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "Document the specific attribute being removed with measured drawings and photographs before it goes.",
+    "condition": {
+      "feature_id": "toronto-weston-heritage-demolition-feature-2",
+      "requirement": "Prepare measured drawings and photographs of the specified heritage attribute before removal.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-weston-heritage-demolition-03",
+    "position": "support",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "Would support the conservation work if progress is checked by a qualified heritage professional and reported publicly.",
+    "condition": {
+      "feature_id": "toronto-weston-heritage-demolition-feature-3",
+      "requirement": "Require qualified heritage oversight and public reporting on conservation work.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-weston-heritage-demolition",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-weston-heritage-demolition-04",
+    "position": "unsure",
+    "stakeholder_role": "visitor",
+    "element_ratings": {},
+    "comment": "Need the construction access plan to show a protected walking route past the site during the alteration work.",
+    "condition": {
+      "feature_id": "toronto-weston-heritage-demolition-feature-1",
+      "requirement": "Maintain a protected walking route past the site during alteration work.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-woodbine-surplus-01",
+    "position": "neutral",
+    "stakeholder_role": "resident",
+    "element_ratings": {},
+    "comment": "I could support the proposed sale if the exact parcel and any access rights that remain are clearly mapped.",
+    "condition": {
+      "feature_id": "toronto-woodbine-surplus-feature-sale",
+      "requirement": "Clearly map the sale parcel and any access rights that must remain.",
+      "is_conditional_support": true,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:00:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-woodbine-surplus-02",
+    "position": "unsure",
+    "stakeholder_role": "citywide",
+    "element_ratings": {},
+    "comment": "Please explain the valuation basis and make the disclosable sale terms public before the decision.",
+    "condition": {
+      "feature_id": "toronto-woodbine-surplus-feature-sale",
+      "requirement": "Publish the valuation basis and disclosable sale terms before the decision.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:01:16.577786+00:00"
+  },
+  {
+    "proposal_id": "toronto-woodbine-surplus",
+    "version_id": null,
+    "participant_id": "demo-conditions-v1-woodbine-surplus-03",
+    "position": "neutral",
+    "stakeholder_role": "business",
+    "element_ratings": {},
+    "comment": "If utility access crosses the parcel, show how that access is protected in the transfer documents.",
+    "condition": {
+      "feature_id": "toronto-woodbine-surplus-feature-sale",
+      "requirement": "Identify any utility access requirements and protect them in the transfer documents.",
+      "is_conditional_support": false,
+      "time_window": null,
+      "location_label": null
+    },
+    "concern_coordinates": null,
+    "submitted_at": "2026-11-14T04:02:16.577786+00:00"
+  }
+]

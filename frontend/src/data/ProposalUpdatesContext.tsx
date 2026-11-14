@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import { checkProposalUpdates } from '../api/proposalsApi'
+import { fetchProposalUpdates } from '../api/proposalsApi'
 import { startProposalUpdatePolling } from './proposalUpdatePolling'
 import type { ProposalUpdates } from './proposalUpdates'
 
@@ -17,7 +17,7 @@ export function ProposalUpdatesProvider({ proposals, children }: {
   useEffect(() => startProposalUpdatePolling({
     proposalIds: JSON.parse(idsKey) as string[],
     initialState: retained.current,
-    check: checkProposalUpdates,
+    check: fetchProposalUpdates,
     onUpdate: (id, state) => {
       retained.current = { ...retained.current, [id]: state }
       setUpdates(retained.current)

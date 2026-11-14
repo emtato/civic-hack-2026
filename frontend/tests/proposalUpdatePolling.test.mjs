@@ -30,11 +30,11 @@ function harness(check, proposalIds = ['a', 'b']) {
   return { states, stop, tick: () => tick?.(), cancelled: () => cancelled }
 }
 
-test('polls every catalogue ID immediately and then hourly with per-proposal cursors', async () => {
+test('reads saved results immediately and every minute with per-proposal cursors', async () => {
   const calls = []
   const h = harness(async (id, sequence) => { calls.push([id, sequence]); return response(id) }, ['a', 'b', 'a'])
   await settle()
-  assert.equal(PROPOSAL_UPDATE_INTERVAL_MS, 3_600_000)
+  assert.equal(PROPOSAL_UPDATE_INTERVAL_MS, 60_000)
   assert.deepEqual(calls, [['a', 0], ['b', 0]])
   h.tick()
   await settle()
@@ -121,4 +121,33 @@ test('an empty catalogue starts no requests or timer', async () => {
   assert.equal(calls, 0)
   h.stop()
   assert.equal(h.cancelled(), false)
+})
+
+test('demo labels survive transfer and remain separate from real source changes', async () => {
+  const example = { ...diff('demo-change'), is_demo: true, demo_label: 'Synthetic previous version' }
+  const h = harness(async () => response('a', 1, [example]), ['a'])
+  await settle()
+  assert.equal(h.states.a.diffs[0].is_demo, true)
+  assert.equal(h.states.a.diffs[0].demo_label, example.demo_label)
+  assert.equal(h.states.a.snapshot_sequence, 1)
+  h.stop()
+})
+
+test('a proposal awaiting its first scheduled capture keeps a zero cursor without reporting failure', async () => {
+  const h = harness(async () => ({ ...response('a', 0), snapshot_id: null, checked_at: null, source_status: 'pending' }), ['a'])
+  await settle()
+  assert.equal(h.states.a.status, 'pending')
+  assert.equal(h.states.a.snapshot_sequence, 0)
+  assert.equal(h.states.a.error, null)
+  h.stop()
+})
+
+test('source-check errors from the backend still deliver stored diffs and the last successful check', async () => {
+  const h = harness(async () => ({ ...response('a', 2, [diff('saved-change')]), source_status: 'error', source_error: 'Backend retry scheduled' }), ['a'])
+  await settle()
+  assert.equal(h.states.a.status, 'error')
+  assert.equal(h.states.a.error, 'Backend retry scheduled')
+  assert.equal(h.states.a.diffs.length, 1)
+  assert.equal(h.states.a.checked_at, '2026-11-13T18:00:00Z')
+  h.stop()
 })
